@@ -1,0 +1,762 @@
+[
+  {
+    "id": "focal",
+    "name": "Alex",
+    "demographics": {
+      "age": 46,
+      "occupation": "public-library branch manager",
+      "education": "BA history; certificate in public administration",
+      "income": "middle",
+      "household": "co-parenting one teenager",
+      "region": "mid-sized city apartment renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "high",
+        "emotional_stability": "medium"
+      },
+      "risk": "moderate",
+      "uncertainty": "moderate",
+      "authority_trust": "conditional",
+      "evidence": "compares sources and implementation detail",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "community access",
+        "competent institutions",
+        "fairness",
+        "long-term opportunity"
+      ],
+      "role": "neighborhood connector",
+      "compromise": "supports transparent compromise"
+    },
+    "communication": "invites quieter views, summarizes disagreements, and asks concrete follow-up questions"
+  },
+  {
+    "id": "agent_01",
+    "name": "Mina",
+    "demographics": {
+      "age": 27,
+      "occupation": "freelance graphic designer",
+      "education": "BFA",
+      "income": "variable lower-middle",
+      "household": "shares a rental with friends",
+      "region": "dense urban neighborhood",
+      "work_stability": "variable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "very high",
+        "conscientiousness": "medium",
+        "extraversion": "high",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "moderate-high",
+      "uncertainty": "high",
+      "authority_trust": "low",
+      "evidence": "values lived experience alongside data",
+      "change_threshold": "low when arguments are concrete"
+    },
+    "values": {
+      "priorities": [
+        "personal freedom",
+        "creative opportunity",
+        "inclusion",
+        "affordability"
+      ],
+      "role": "informal peer-network organizer",
+      "compromise": "accepts it when it protects vulnerable people"
+    },
+    "communication": "expressive, candid, and likely to probe whether claims fit ordinary life"
+  },
+  {
+    "id": "agent_02",
+    "name": "David",
+    "demographics": {
+      "age": 59,
+      "occupation": "manufacturing supervisor",
+      "education": "technical diploma",
+      "income": "upper-middle",
+      "household": "married; two adult children",
+      "region": "outer suburb homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "low-medium",
+        "conscientiousness": "very high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low",
+      "authority_trust": "moderate",
+      "evidence": "prefers records, costs, and operating details",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "reliable work",
+        "order",
+        "fair rules",
+        "family security"
+      ],
+      "role": "workplace mentor",
+      "compromise": "accepts practical tradeoffs"
+    },
+    "communication": "brief, concrete, and skeptical of promises without a delivery plan"
+  },
+  {
+    "id": "agent_03",
+    "name": "Priya",
+    "demographics": {
+      "age": 38,
+      "occupation": "emergency-room nurse",
+      "education": "BSN",
+      "income": "middle",
+      "household": "married with a young child",
+      "region": "inner-ring suburb homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "high",
+        "emotional_stability": "medium"
+      },
+      "risk": "low",
+      "uncertainty": "moderate",
+      "authority_trust": "conditional",
+      "evidence": "weights frontline experience and credible expertise",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "safety",
+        "health access",
+        "dignity",
+        "functional services"
+      ],
+      "role": "caregiver and shift-team coordinator",
+      "compromise": "accepts it if safeguards are explicit"
+    },
+    "communication": "empathetic but practical; asks who bears implementation risks"
+  },
+  {
+    "id": "agent_04",
+    "name": "Jonah",
+    "demographics": {
+      "age": 21,
+      "occupation": "computer science student and part-time tutor",
+      "education": "undergraduate in progress",
+      "income": "low",
+      "household": "lives with parents",
+      "region": "college town",
+      "work_stability": "temporary"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "medium",
+        "extraversion": "low",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "high",
+      "uncertainty": "high",
+      "authority_trust": "low-medium",
+      "evidence": "looks for mechanisms and falsifiable claims",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "innovation",
+        "open information",
+        "future opportunity",
+        "fair access"
+      ],
+      "role": "student volunteer",
+      "compromise": "wary of vague compromise"
+    },
+    "communication": "analytical, asks for assumptions, and may revise after seeing a stronger mechanism"
+  },
+  {
+    "id": "agent_05",
+    "name": "Elena",
+    "demographics": {
+      "age": 67,
+      "occupation": "retired elementary-school principal",
+      "education": "MEd",
+      "income": "comfortable fixed",
+      "household": "widowed; close to grandchildren",
+      "region": "small town homeowner",
+      "work_stability": "retired"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "high",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low-medium",
+      "authority_trust": "medium-high",
+      "evidence": "trusts demonstrated service and professional consensus",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "education",
+        "civic trust",
+        "intergenerational responsibility",
+        "kindness"
+      ],
+      "role": "school-community volunteer",
+      "compromise": "strongly favors it"
+    },
+    "communication": "warm, narrative, and attentive to character and follow-through"
+  },
+  {
+    "id": "agent_06",
+    "name": "Samir",
+    "demographics": {
+      "age": 34,
+      "occupation": "restaurant owner",
+      "education": "associate degree",
+      "income": "variable middle",
+      "household": "married; supports extended family",
+      "region": "mixed-use city district renter",
+      "work_stability": "self-employed"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium-high",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "high",
+      "uncertainty": "medium",
+      "authority_trust": "low",
+      "evidence": "tests claims against small-business constraints",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "economic mobility",
+        "local community",
+        "speed",
+        "fair opportunity"
+      ],
+      "role": "employer and neighborhood merchant",
+      "compromise": "pragmatic"
+    },
+    "communication": "persuasive, energetic, and focused on second-order costs"
+  },
+  {
+    "id": "agent_07",
+    "name": "Ruth",
+    "demographics": {
+      "age": 52,
+      "occupation": "union electrician",
+      "education": "apprenticeship certification",
+      "income": "upper-middle",
+      "household": "divorced; shared custody",
+      "region": "industrial satellite city homeowner",
+      "work_stability": "cyclical"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "low-medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low-medium",
+      "uncertainty": "low",
+      "authority_trust": "low-medium",
+      "evidence": "values enforceable commitments and past conduct",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "worker security",
+        "honesty",
+        "safety",
+        "respect"
+      ],
+      "role": "worksite representative",
+      "compromise": "accepts it only when accountability remains"
+    },
+    "communication": "plain, assertive, and resistant to polished but unverifiable language"
+  },
+  {
+    "id": "agent_08",
+    "name": "Wei",
+    "demographics": {
+      "age": 44,
+      "occupation": "civil engineer",
+      "education": "MS engineering",
+      "income": "upper-middle",
+      "household": "married; cares for a parent",
+      "region": "growing suburb homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "very high",
+        "extraversion": "low",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low",
+      "authority_trust": "conditional",
+      "evidence": "prefers feasibility analysis and measurable milestones",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "infrastructure",
+        "competence",
+        "long-term maintenance",
+        "predictability"
+      ],
+      "role": "technical advisor in a civic group",
+      "compromise": "accepts it when constraints are explicit"
+    },
+    "communication": "reserved, systematic, and likely to separate aspiration from implementation"
+  },
+  {
+    "id": "agent_09",
+    "name": "Talia",
+    "demographics": {
+      "age": 31,
+      "occupation": "social worker",
+      "education": "MSW",
+      "income": "middle",
+      "household": "single; lives near siblings",
+      "region": "urban renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "very high",
+        "emotional_stability": "medium"
+      },
+      "risk": "medium",
+      "uncertainty": "high",
+      "authority_trust": "low-medium",
+      "evidence": "combines client experience with outcome evidence",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "dignity",
+        "housing security",
+        "fairness",
+        "voice"
+      ],
+      "role": "advocate and mediator",
+      "compromise": "supports it if directly affected people retain agency"
+    },
+    "communication": "careful, relational, and notices who is missing from a proposal"
+  },
+  {
+    "id": "agent_10",
+    "name": "Omar",
+    "demographics": {
+      "age": 73,
+      "occupation": "retired accountant",
+      "education": "BCom",
+      "income": "comfortable fixed",
+      "household": "married; adult children abroad",
+      "region": "rural county homeowner",
+      "work_stability": "retired"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "low-medium",
+        "conscientiousness": "very high",
+        "extraversion": "low",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "very low",
+      "uncertainty": "low",
+      "authority_trust": "medium",
+      "evidence": "checks incentives, budgets, and historical records",
+      "change_threshold": "very high"
+    },
+    "values": {
+      "priorities": [
+        "fiscal restraint",
+        "institutional continuity",
+        "honesty",
+        "local autonomy"
+      ],
+      "role": "volunteer treasurer",
+      "compromise": "possible if costs are disclosed"
+    },
+    "communication": "calm, numbers-oriented, and dislikes rhetorical pressure"
+  },
+  {
+    "id": "agent_11",
+    "name": "Kira",
+    "demographics": {
+      "age": 25,
+      "occupation": "climate nonprofit field organizer",
+      "education": "BA environmental studies",
+      "income": "lower-middle",
+      "household": "roommates",
+      "region": "coastal city renter",
+      "work_stability": "grant-funded"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "very high",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "medium",
+        "emotional_stability": "low-medium"
+      },
+      "risk": "medium-high",
+      "uncertainty": "high",
+      "authority_trust": "low",
+      "evidence": "values scientific consensus and affected communities",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "climate resilience",
+        "intergenerational fairness",
+        "participation",
+        "innovation"
+      ],
+      "role": "campaign organizer",
+      "compromise": "accepts staged progress but worries about delay"
+    },
+    "communication": "urgent, values-driven, and receptive to credible long-term tradeoffs"
+  },
+  {
+    "id": "agent_12",
+    "name": "Marcus",
+    "demographics": {
+      "age": 48,
+      "occupation": "police dispatcher",
+      "education": "community-college certificate",
+      "income": "middle",
+      "household": "married; two school-age children",
+      "region": "suburban renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium-low",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low",
+      "authority_trust": "medium-high",
+      "evidence": "trusts operational experience and clear procedures",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "public safety",
+        "stability",
+        "family time",
+        "respect for service workers"
+      ],
+      "role": "parent and emergency-services worker",
+      "compromise": "supports it if responsibility is clear"
+    },
+    "communication": "direct, calm, and looks for failure modes"
+  },
+  {
+    "id": "agent_13",
+    "name": "Sofia",
+    "demographics": {
+      "age": 56,
+      "occupation": "community-college economics lecturer",
+      "education": "PhD economics",
+      "income": "middle",
+      "household": "partnered; no children",
+      "region": "university city renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "medium",
+      "uncertainty": "high",
+      "authority_trust": "conditional",
+      "evidence": "compares tradeoffs, distributional effects, and evidence quality",
+      "change_threshold": "moderate-high"
+    },
+    "values": {
+      "priorities": [
+        "opportunity",
+        "evidence",
+        "fairness",
+        "institutional reform"
+      ],
+      "role": "teacher and public-forum participant",
+      "compromise": "supports principled compromise"
+    },
+    "communication": "precise, curious, and distinguishes values disagreements from factual ones"
+  },
+  {
+    "id": "agent_14",
+    "name": "Noah",
+    "demographics": {
+      "age": 40,
+      "occupation": "logistics coordinator",
+      "education": "BA communications",
+      "income": "middle",
+      "household": "married; newborn",
+      "region": "exurban homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "high",
+        "emotional_stability": "medium"
+      },
+      "risk": "medium-low",
+      "uncertainty": "medium",
+      "authority_trust": "medium",
+      "evidence": "prefers clear communication and practical examples",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "cost of living",
+        "reliability",
+        "family security",
+        "social cohesion"
+      ],
+      "role": "parent and volunteer coach",
+      "compromise": "readily accepts it"
+    },
+    "communication": "affable, solution-oriented, and tries to find overlap"
+  },
+  {
+    "id": "agent_15",
+    "name": "Inez",
+    "demographics": {
+      "age": 63,
+      "occupation": "family-farm co-owner",
+      "education": "high-school plus agricultural extension courses",
+      "income": "variable middle",
+      "household": "married; multigenerational household",
+      "region": "rural farming area homeowner",
+      "work_stability": "weather-sensitive"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "very high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "medium",
+      "uncertainty": "low-medium",
+      "authority_trust": "low-medium",
+      "evidence": "trusts long experience, local knowledge, and practical proof",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "rural livelihoods",
+        "self-reliance",
+        "stewardship",
+        "stable rules"
+      ],
+      "role": "farm cooperative member",
+      "compromise": "pragmatic if local voice is respected"
+    },
+    "communication": "grounded, story-based, and wary of one-size-fits-all plans"
+  },
+  {
+    "id": "agent_16",
+    "name": "Caleb",
+    "demographics": {
+      "age": 29,
+      "occupation": "software product manager",
+      "education": "BS information systems",
+      "income": "upper-middle",
+      "household": "single apartment renter",
+      "region": "technology hub",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "medium-high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "high",
+      "uncertainty": "high",
+      "authority_trust": "low-medium",
+      "evidence": "looks for scalable experiments and user feedback",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "innovation",
+        "economic dynamism",
+        "privacy",
+        "effective institutions"
+      ],
+      "role": "mentor in a coding nonprofit",
+      "compromise": "supports iteration over grand bargains"
+    },
+    "communication": "fast, comparative, and comfortable challenging assumptions"
+  },
+  {
+    "id": "agent_17",
+    "name": "Lena",
+    "demographics": {
+      "age": 36,
+      "occupation": "public-school teacher",
+      "education": "MEd",
+      "income": "middle",
+      "household": "single parent of two",
+      "region": "working-class city neighborhood renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "high",
+        "emotional_stability": "medium"
+      },
+      "risk": "low-medium",
+      "uncertainty": "medium",
+      "authority_trust": "conditional",
+      "evidence": "cares about implementation in daily institutions",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "education",
+        "family stability",
+        "fairness",
+        "community voice"
+      ],
+      "role": "teacher and parent liaison",
+      "compromise": "supports it when families gain predictability"
+    },
+    "communication": "inclusive, concrete, and asks how plans affect children and staff"
+  },
+  {
+    "id": "agent_18",
+    "name": "Graham",
+    "demographics": {
+      "age": 61,
+      "occupation": "regional hospital operations director",
+      "education": "MBA",
+      "income": "high",
+      "household": "married; adult children",
+      "region": "suburban homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "very high",
+        "extraversion": "medium",
+        "agreeableness": "low-medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low",
+      "authority_trust": "high when accountable",
+      "evidence": "uses performance data and institutional track records",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "competence",
+        "service continuity",
+        "efficiency",
+        "risk management"
+      ],
+      "role": "health-system manager",
+      "compromise": "accepts it if execution ownership is clear"
+    },
+    "communication": "formal, concise, and focused on operational accountability"
+  },
+  {
+    "id": "agent_19",
+    "name": "Aisha",
+    "demographics": {
+      "age": 42,
+      "occupation": "independent journalist",
+      "education": "MA journalism",
+      "income": "variable middle",
+      "household": "partnered; no children",
+      "region": "inner-city co-op resident",
+      "work_stability": "freelance"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "very high",
+        "conscientiousness": "medium-high",
+        "extraversion": "high",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "medium",
+      "uncertainty": "high",
+      "authority_trust": "low",
+      "evidence": "triangulates claims and asks about incentives",
+      "change_threshold": "moderate-high"
+    },
+    "values": {
+      "priorities": [
+        "accountability",
+        "free expression",
+        "fair process",
+        "community knowledge"
+      ],
+      "role": "local information intermediary",
+      "compromise": "accepts it if scrutiny remains possible"
+    },
+    "communication": "probing, conversational, and alerts others to missing information"
+  }
+]

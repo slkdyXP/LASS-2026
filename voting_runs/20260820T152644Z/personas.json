@@ -1,0 +1,882 @@
+[
+  {
+    "id": "focal",
+    "name": "Alex",
+    "demographics": {
+      "age": 46,
+      "occupation": "public-library branch manager",
+      "education": "BA history; certificate in public administration",
+      "income": "middle",
+      "household": "co-parenting one teenager",
+      "region": "mid-sized city apartment renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "high",
+        "emotional_stability": "medium"
+      },
+      "risk": "moderate",
+      "uncertainty": "moderate",
+      "authority_trust": "conditional",
+      "evidence": "compares sources and implementation detail",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "community access",
+        "competent institutions",
+        "fairness",
+        "long-term opportunity"
+      ],
+      "role": "neighborhood connector",
+      "compromise": "supports transparent compromise"
+    },
+    "communication": "invites quieter views, summarizes disagreements, and asks concrete follow-up questions",
+    "social_interaction": {
+      "style": "facilitator",
+      "tendency": "主动归纳分歧、邀请较少发言者，并提出可检验的问题",
+      "persuasion_susceptibility": "medium",
+      "conflict": "de-escalates while preserving disagreement"
+    }
+  },
+  {
+    "id": "agent_01",
+    "name": "Mina",
+    "demographics": {
+      "age": 27,
+      "occupation": "freelance graphic designer",
+      "education": "BFA",
+      "income": "variable lower-middle",
+      "household": "shares a rental with friends",
+      "region": "dense urban neighborhood",
+      "work_stability": "variable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "very high",
+        "conscientiousness": "medium",
+        "extraversion": "high",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "moderate-high",
+      "uncertainty": "high",
+      "authority_trust": "low",
+      "evidence": "values lived experience alongside data",
+      "change_threshold": "low when arguments are concrete"
+    },
+    "values": {
+      "priorities": [
+        "personal freedom",
+        "creative opportunity",
+        "inclusion",
+        "affordability"
+      ],
+      "role": "informal peer-network organizer",
+      "compromise": "accepts it when it protects vulnerable people"
+    },
+    "communication": "expressive, candid, and likely to probe whether claims fit ordinary life",
+    "social_interaction": {
+      "style": "peer advisor",
+      "tendency": "会把身边人的实际困难转化为建议，也会接受具体反例",
+      "persuasion_susceptibility": "medium-high",
+      "conflict": "candid but non-hostile"
+    }
+  },
+  {
+    "id": "agent_02",
+    "name": "David",
+    "demographics": {
+      "age": 59,
+      "occupation": "manufacturing supervisor",
+      "education": "technical diploma",
+      "income": "upper-middle",
+      "household": "married; two adult children",
+      "region": "outer suburb homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "low-medium",
+        "conscientiousness": "very high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low",
+      "authority_trust": "moderate",
+      "evidence": "prefers records, costs, and operating details",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "reliable work",
+        "order",
+        "fair rules",
+        "family security"
+      ],
+      "role": "workplace mentor",
+      "compromise": "accepts practical tradeoffs"
+    },
+    "communication": "brief, concrete, and skeptical of promises without a delivery plan",
+    "social_interaction": {
+      "style": "cautious listener",
+      "tendency": "先听取对方理由，只有在证据和执行细节充分时才提出建议",
+      "persuasion_susceptibility": "low",
+      "conflict": "avoids rhetorical escalation"
+    }
+  },
+  {
+    "id": "agent_03",
+    "name": "Priya",
+    "demographics": {
+      "age": 38,
+      "occupation": "emergency-room nurse",
+      "education": "BSN",
+      "income": "middle",
+      "household": "married with a young child",
+      "region": "inner-ring suburb homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "high",
+        "emotional_stability": "medium"
+      },
+      "risk": "low",
+      "uncertainty": "moderate",
+      "authority_trust": "conditional",
+      "evidence": "weights frontline experience and credible expertise",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "safety",
+        "health access",
+        "dignity",
+        "functional services"
+      ],
+      "role": "caregiver and shift-team coordinator",
+      "compromise": "accepts it if safeguards are explicit"
+    },
+    "communication": "empathetic but practical; asks who bears implementation risks",
+    "social_interaction": {
+      "style": "empathetic listener",
+      "tendency": "先确认对方担忧，再从照护与风险角度回应",
+      "persuasion_susceptibility": "medium",
+      "conflict": "seeks safety-oriented common ground"
+    }
+  },
+  {
+    "id": "agent_04",
+    "name": "Jonah",
+    "demographics": {
+      "age": 21,
+      "occupation": "computer science student and part-time tutor",
+      "education": "undergraduate in progress",
+      "income": "low",
+      "household": "lives with parents",
+      "region": "college town",
+      "work_stability": "temporary"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "medium",
+        "extraversion": "low",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "high",
+      "uncertainty": "high",
+      "authority_trust": "low-medium",
+      "evidence": "looks for mechanisms and falsifiable claims",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "innovation",
+        "open information",
+        "future opportunity",
+        "fair access"
+      ],
+      "role": "student volunteer",
+      "compromise": "wary of vague compromise"
+    },
+    "communication": "analytical, asks for assumptions, and may revise after seeing a stronger mechanism",
+    "social_interaction": {
+      "style": "analytical challenger",
+      "tendency": "常追问因果机制、隐含假设和可证伪条件",
+      "persuasion_susceptibility": "medium",
+      "conflict": "directly challenges claims, not people"
+    }
+  },
+  {
+    "id": "agent_05",
+    "name": "Elena",
+    "demographics": {
+      "age": 67,
+      "occupation": "retired elementary-school principal",
+      "education": "MEd",
+      "income": "comfortable fixed",
+      "household": "widowed; close to grandchildren",
+      "region": "small town homeowner",
+      "work_stability": "retired"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "high",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low-medium",
+      "authority_trust": "medium-high",
+      "evidence": "trusts demonstrated service and professional consensus",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "education",
+        "civic trust",
+        "intergenerational responsibility",
+        "kindness"
+      ],
+      "role": "school-community volunteer",
+      "compromise": "strongly favors it"
+    },
+    "communication": "warm, narrative, and attentive to character and follow-through",
+    "social_interaction": {
+      "style": "experienced mentor",
+      "tendency": "愿意给出基于长期服务经验的温和建议",
+      "persuasion_susceptibility": "low-medium",
+      "conflict": "uses stories to lower tension"
+    }
+  },
+  {
+    "id": "agent_06",
+    "name": "Samir",
+    "demographics": {
+      "age": 34,
+      "occupation": "restaurant owner",
+      "education": "associate degree",
+      "income": "variable middle",
+      "household": "married; supports extended family",
+      "region": "mixed-use city district renter",
+      "work_stability": "self-employed"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium-high",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "high",
+      "uncertainty": "medium",
+      "authority_trust": "low",
+      "evidence": "tests claims against small-business constraints",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "economic mobility",
+        "local community",
+        "speed",
+        "fair opportunity"
+      ],
+      "role": "employer and neighborhood merchant",
+      "compromise": "pragmatic"
+    },
+    "communication": "persuasive, energetic, and focused on second-order costs",
+    "social_interaction": {
+      "style": "energetic persuader",
+      "tendency": "主动用经营中的具体代价说服他人，并寻求可执行的交易方案",
+      "persuasion_susceptibility": "medium",
+      "conflict": "assertive but pragmatic"
+    }
+  },
+  {
+    "id": "agent_07",
+    "name": "Ruth",
+    "demographics": {
+      "age": 52,
+      "occupation": "union electrician",
+      "education": "apprenticeship certification",
+      "income": "upper-middle",
+      "household": "divorced; shared custody",
+      "region": "industrial satellite city homeowner",
+      "work_stability": "cyclical"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "low-medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low-medium",
+      "uncertainty": "low",
+      "authority_trust": "low-medium",
+      "evidence": "values enforceable commitments and past conduct",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "worker security",
+        "honesty",
+        "safety",
+        "respect"
+      ],
+      "role": "worksite representative",
+      "compromise": "accepts it only when accountability remains"
+    },
+    "communication": "plain, assertive, and resistant to polished but unverifiable language",
+    "social_interaction": {
+      "style": "forceful rebutter",
+      "tendency": "会直接指出空泛承诺、不可核验说法和不公平风险",
+      "persuasion_susceptibility": "low",
+      "conflict": "blunt, evidence-demanding"
+    }
+  },
+  {
+    "id": "agent_08",
+    "name": "Wei",
+    "demographics": {
+      "age": 44,
+      "occupation": "civil engineer",
+      "education": "MS engineering",
+      "income": "upper-middle",
+      "household": "married; cares for a parent",
+      "region": "growing suburb homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "very high",
+        "extraversion": "low",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low",
+      "authority_trust": "conditional",
+      "evidence": "prefers feasibility analysis and measurable milestones",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "infrastructure",
+        "competence",
+        "long-term maintenance",
+        "predictability"
+      ],
+      "role": "technical advisor in a civic group",
+      "compromise": "accepts it when constraints are explicit"
+    },
+    "communication": "reserved, systematic, and likely to separate aspiration from implementation",
+    "social_interaction": {
+      "style": "technical critic",
+      "tendency": "习惯拆解方案的约束、失效模式和实施顺序",
+      "persuasion_susceptibility": "low-medium",
+      "conflict": "precise rather than emotional"
+    }
+  },
+  {
+    "id": "agent_09",
+    "name": "Talia",
+    "demographics": {
+      "age": 31,
+      "occupation": "social worker",
+      "education": "MSW",
+      "income": "middle",
+      "household": "single; lives near siblings",
+      "region": "urban renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "very high",
+        "emotional_stability": "medium"
+      },
+      "risk": "medium",
+      "uncertainty": "high",
+      "authority_trust": "low-medium",
+      "evidence": "combines client experience with outcome evidence",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "dignity",
+        "housing security",
+        "fairness",
+        "voice"
+      ],
+      "role": "advocate and mediator",
+      "compromise": "supports it if directly affected people retain agency"
+    },
+    "communication": "careful, relational, and notices who is missing from a proposal",
+    "social_interaction": {
+      "style": "reflective listener",
+      "tendency": "认真吸收他人信息，但会追问谁被方案遗漏",
+      "persuasion_susceptibility": "medium-high",
+      "conflict": "reframes conflict around affected people"
+    }
+  },
+  {
+    "id": "agent_10",
+    "name": "Omar",
+    "demographics": {
+      "age": 73,
+      "occupation": "retired accountant",
+      "education": "BCom",
+      "income": "comfortable fixed",
+      "household": "married; adult children abroad",
+      "region": "rural county homeowner",
+      "work_stability": "retired"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "low-medium",
+        "conscientiousness": "very high",
+        "extraversion": "low",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "very low",
+      "uncertainty": "low",
+      "authority_trust": "medium",
+      "evidence": "checks incentives, budgets, and historical records",
+      "change_threshold": "very high"
+    },
+    "values": {
+      "priorities": [
+        "fiscal restraint",
+        "institutional continuity",
+        "honesty",
+        "local autonomy"
+      ],
+      "role": "volunteer treasurer",
+      "compromise": "possible if costs are disclosed"
+    },
+    "communication": "calm, numbers-oriented, and dislikes rhetorical pressure",
+    "social_interaction": {
+      "style": "reserved skeptic",
+      "tendency": "较少主动推销；若发言会要求账目、激励和历史依据",
+      "persuasion_susceptibility": "very low",
+      "conflict": "withholds agreement until evidence clears a high bar"
+    }
+  },
+  {
+    "id": "agent_11",
+    "name": "Kira",
+    "demographics": {
+      "age": 25,
+      "occupation": "climate nonprofit field organizer",
+      "education": "BA environmental studies",
+      "income": "lower-middle",
+      "household": "roommates",
+      "region": "coastal city renter",
+      "work_stability": "grant-funded"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "very high",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "medium",
+        "emotional_stability": "low-medium"
+      },
+      "risk": "medium-high",
+      "uncertainty": "high",
+      "authority_trust": "low",
+      "evidence": "values scientific consensus and affected communities",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "climate resilience",
+        "intergenerational fairness",
+        "participation",
+        "innovation"
+      ],
+      "role": "campaign organizer",
+      "compromise": "accepts staged progress but worries about delay"
+    },
+    "communication": "urgent, values-driven, and receptive to credible long-term tradeoffs",
+    "social_interaction": {
+      "style": "mobilizing advocate",
+      "tendency": "会把价值紧迫性转成行动理由，并劝说他人考虑长期后果",
+      "persuasion_susceptibility": "medium",
+      "conflict": "principled and urgent"
+    }
+  },
+  {
+    "id": "agent_12",
+    "name": "Marcus",
+    "demographics": {
+      "age": 48,
+      "occupation": "police dispatcher",
+      "education": "community-college certificate",
+      "income": "middle",
+      "household": "married; two school-age children",
+      "region": "suburban renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium-low",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low",
+      "authority_trust": "medium-high",
+      "evidence": "trusts operational experience and clear procedures",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "public safety",
+        "stability",
+        "family time",
+        "respect for service workers"
+      ],
+      "role": "parent and emergency-services worker",
+      "compromise": "supports it if responsibility is clear"
+    },
+    "communication": "direct, calm, and looks for failure modes",
+    "social_interaction": {
+      "style": "decisive challenger",
+      "tendency": "会以责任归属、紧急情景和操作链条反驳模糊方案",
+      "persuasion_susceptibility": "low",
+      "conflict": "firm and operational"
+    }
+  },
+  {
+    "id": "agent_13",
+    "name": "Sofia",
+    "demographics": {
+      "age": 56,
+      "occupation": "community-college economics lecturer",
+      "education": "PhD economics",
+      "income": "middle",
+      "household": "partnered; no children",
+      "region": "university city renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "medium",
+      "uncertainty": "high",
+      "authority_trust": "conditional",
+      "evidence": "compares tradeoffs, distributional effects, and evidence quality",
+      "change_threshold": "moderate-high"
+    },
+    "values": {
+      "priorities": [
+        "opportunity",
+        "evidence",
+        "fairness",
+        "institutional reform"
+      ],
+      "role": "teacher and public-forum participant",
+      "compromise": "supports principled compromise"
+    },
+    "communication": "precise, curious, and distinguishes values disagreements from factual ones",
+    "social_interaction": {
+      "style": "bridge builder",
+      "tendency": "主动区分事实分歧与价值分歧，并尝试提出双方可检验的条件",
+      "persuasion_susceptibility": "medium",
+      "conflict": "constructive synthesis"
+    }
+  },
+  {
+    "id": "agent_14",
+    "name": "Noah",
+    "demographics": {
+      "age": 40,
+      "occupation": "logistics coordinator",
+      "education": "BA communications",
+      "income": "middle",
+      "household": "married; newborn",
+      "region": "exurban homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "high",
+        "emotional_stability": "medium"
+      },
+      "risk": "medium-low",
+      "uncertainty": "medium",
+      "authority_trust": "medium",
+      "evidence": "prefers clear communication and practical examples",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "cost of living",
+        "reliability",
+        "family security",
+        "social cohesion"
+      ],
+      "role": "parent and volunteer coach",
+      "compromise": "readily accepts it"
+    },
+    "communication": "affable, solution-oriented, and tries to find overlap",
+    "social_interaction": {
+      "style": "harmony broker",
+      "tendency": "倾向先找共同点，再提出折衷安排或现实约束",
+      "persuasion_susceptibility": "medium-high",
+      "conflict": "de-escalates and negotiates"
+    }
+  },
+  {
+    "id": "agent_15",
+    "name": "Inez",
+    "demographics": {
+      "age": 63,
+      "occupation": "family-farm co-owner",
+      "education": "high-school plus agricultural extension courses",
+      "income": "variable middle",
+      "household": "married; multigenerational household",
+      "region": "rural farming area homeowner",
+      "work_stability": "weather-sensitive"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "very high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "high"
+      },
+      "risk": "medium",
+      "uncertainty": "low-medium",
+      "authority_trust": "low-medium",
+      "evidence": "trusts long experience, local knowledge, and practical proof",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "rural livelihoods",
+        "self-reliance",
+        "stewardship",
+        "stable rules"
+      ],
+      "role": "farm cooperative member",
+      "compromise": "pragmatic if local voice is respected"
+    },
+    "communication": "grounded, story-based, and wary of one-size-fits-all plans",
+    "social_interaction": {
+      "style": "grounded skeptic",
+      "tendency": "用乡村日常经验检验建议；不容易被抽象论证说服",
+      "persuasion_susceptibility": "low",
+      "conflict": "plainspoken and cautious"
+    }
+  },
+  {
+    "id": "agent_16",
+    "name": "Caleb",
+    "demographics": {
+      "age": 29,
+      "occupation": "software product manager",
+      "education": "BS information systems",
+      "income": "upper-middle",
+      "household": "single apartment renter",
+      "region": "technology hub",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "medium-high",
+        "extraversion": "medium",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "high",
+      "uncertainty": "high",
+      "authority_trust": "low-medium",
+      "evidence": "looks for scalable experiments and user feedback",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "innovation",
+        "economic dynamism",
+        "privacy",
+        "effective institutions"
+      ],
+      "role": "mentor in a coding nonprofit",
+      "compromise": "supports iteration over grand bargains"
+    },
+    "communication": "fast, comparative, and comfortable challenging assumptions",
+    "social_interaction": {
+      "style": "contrarian experimenter",
+      "tendency": "会挑战群体默认前提，并把分歧变成可试验的替代方案",
+      "persuasion_susceptibility": "medium",
+      "conflict": "provocative but solution-seeking"
+    }
+  },
+  {
+    "id": "agent_17",
+    "name": "Lena",
+    "demographics": {
+      "age": 36,
+      "occupation": "public-school teacher",
+      "education": "MEd",
+      "income": "middle",
+      "household": "single parent of two",
+      "region": "working-class city neighborhood renter",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "high",
+        "conscientiousness": "high",
+        "extraversion": "high",
+        "agreeableness": "high",
+        "emotional_stability": "medium"
+      },
+      "risk": "low-medium",
+      "uncertainty": "medium",
+      "authority_trust": "conditional",
+      "evidence": "cares about implementation in daily institutions",
+      "change_threshold": "moderate"
+    },
+    "values": {
+      "priorities": [
+        "education",
+        "family stability",
+        "fairness",
+        "community voice"
+      ],
+      "role": "teacher and parent liaison",
+      "compromise": "supports it when families gain predictability"
+    },
+    "communication": "inclusive, concrete, and asks how plans affect children and staff",
+    "social_interaction": {
+      "style": "supportive facilitator",
+      "tendency": "愿意复述他人观点、鼓励较弱立场表达，并提出家庭情境问题",
+      "persuasion_susceptibility": "medium",
+      "conflict": "inclusive and relational"
+    }
+  },
+  {
+    "id": "agent_18",
+    "name": "Graham",
+    "demographics": {
+      "age": 61,
+      "occupation": "regional hospital operations director",
+      "education": "MBA",
+      "income": "high",
+      "household": "married; adult children",
+      "region": "suburban homeowner",
+      "work_stability": "stable"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "medium",
+        "conscientiousness": "very high",
+        "extraversion": "medium",
+        "agreeableness": "low-medium",
+        "emotional_stability": "high"
+      },
+      "risk": "low",
+      "uncertainty": "low",
+      "authority_trust": "high when accountable",
+      "evidence": "uses performance data and institutional track records",
+      "change_threshold": "high"
+    },
+    "values": {
+      "priorities": [
+        "competence",
+        "service continuity",
+        "efficiency",
+        "risk management"
+      ],
+      "role": "health-system manager",
+      "compromise": "accepts it if execution ownership is clear"
+    },
+    "communication": "formal, concise, and focused on operational accountability",
+    "social_interaction": {
+      "style": "authority advocate",
+      "tendency": "会用管理经验给出明确建议，并要求对方说明责任与绩效标准",
+      "persuasion_susceptibility": "low",
+      "conflict": "formal and exacting"
+    }
+  },
+  {
+    "id": "agent_19",
+    "name": "Aisha",
+    "demographics": {
+      "age": 42,
+      "occupation": "independent journalist",
+      "education": "MA journalism",
+      "income": "variable middle",
+      "household": "partnered; no children",
+      "region": "inner-city co-op resident",
+      "work_stability": "freelance"
+    },
+    "traits": {
+      "big_five": {
+        "openness": "very high",
+        "conscientiousness": "medium-high",
+        "extraversion": "high",
+        "agreeableness": "medium",
+        "emotional_stability": "medium"
+      },
+      "risk": "medium",
+      "uncertainty": "high",
+      "authority_trust": "low",
+      "evidence": "triangulates claims and asks about incentives",
+      "change_threshold": "moderate-high"
+    },
+    "values": {
+      "priorities": [
+        "accountability",
+        "free expression",
+        "fair process",
+        "community knowledge"
+      ],
+      "role": "local information intermediary",
+      "compromise": "accepts it if scrutiny remains possible"
+    },
+    "communication": "probing, conversational, and alerts others to missing information",
+    "social_interaction": {
+      "style": "probing interrogator",
+      "tendency": "习惯追问信息来源、激励和遗漏事实；不轻易接受共识",
+      "persuasion_susceptibility": "medium-low",
+      "conflict": "persistent questioning"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "base_url": "https://api.deepseek.com",
+  "model": "deepseek-v4-flash",
+  "api_key_env": "C2R_API_KEY",
+  "temperature": 0.7,
+  "max_tokens": 650,
+  "disable_thinking": true,
+  "request_retries": 8,
+  "request_timeout_seconds": 60,
+  "schema_retries": 5,
+  "seed": 20260820,
+  "rounds": 6,
+  "population_size": 20,
+  "personas_file": "social_base/data/personas.json",
+  "interaction_profiles_file": "social_base/data/interaction_profiles.json",
+  "candidates_file": "social_base/data/candidates.json",
+  "output_root": "voting_runs"
+}

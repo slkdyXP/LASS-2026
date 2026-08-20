@@ -1,0 +1,29 @@
+{
+  "run_name": "replace_this_name",
+  "backend": "openai_compatible",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "api_key_env": "C2R_API_KEY",
+  "tasks_path": "data/tasks.example.jsonl",
+  "output_root": "runs",
+  "samples_per_agent_task": 1,
+  "temperature": 0.7,
+  "max_tokens": 128,
+  "request_retries": 3,
+  "seed": 20260820,
+  "control_level": "L1",
+  "agents": [
+    {
+      "agent_id": "knowledge_high_01",
+      "intervention": "You are an ordinary adult with substantial familiarity with this topic. Answer from your own knowledge."
+    },
+    {
+      "agent_id": "knowledge_medium_01",
+      "intervention": "You are an ordinary adult who has heard of this topic but does not know the exact quantity. Answer from your own knowledge."
+    },
+    {
+      "agent_id": "knowledge_low_01",
+      "intervention": "You are an ordinary adult with little prior familiarity with this topic. Answer from your own knowledge."
+    }
+  ]
+}

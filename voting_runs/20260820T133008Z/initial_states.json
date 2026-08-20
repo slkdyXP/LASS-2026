@@ -1,0 +1,535 @@
+{
+  "focal": {
+    "environment_summary": "A fictional mayoral election with six diverse candidates, each offering different strengths and tradeoffs, ranging from administrative experience to crisis leadership and long-term reform.",
+    "ranking": [
+      "A",
+      "F",
+      "D",
+      "C",
+      "E",
+      "B"
+    ],
+    "choice": "A",
+    "reason": "Candidate A's record of balancing budgets and delivering reliable services aligns with my priorities for competent institutions and practical infrastructure. As a library branch manager, I see daily the value of dependable public services. A's incremental approach, while not flashy, ensures stability and avoids risky overpromises.",
+    "confidence": 78.0,
+    "factors": [
+      "Administrative execution and fiscal discipline are critical for maintaining core services.",
+      "Cross-agency coordination is needed to address complex community needs.",
+      "Incremental change, though less dramatic, is more likely to be implemented successfully.",
+      "A's technical style matches my preference for evidence and detail.",
+      "Reliable public services directly impact my library and its patrons."
+    ],
+    "concerns": [
+      "A's tendency to delay difficult reforms may slow progress on issues like housing and equity.",
+      "Incrementalism might not be enough to address urgent challenges.",
+      "A's measured style could be seen as lacking vision."
+    ]
+  },
+  "agent_01": {
+    "environment_summary": "Dense urban neighborhood with affordability and inclusion pressures; election among six candidates with distinct experience and priorities, ranging from administrative reliability to equity-focused reform to growth-oriented entrepreneurship.",
+    "ranking": [
+      "C",
+      "F",
+      "E",
+      "A",
+      "B",
+      "D"
+    ],
+    "choice": "C",
+    "reason": "C's focus on affordable housing, health/family supports, and civil rights directly matches the daily pressures in my community, and I trust someone with a deep understanding of benefits administration to actually deliver on those priorities. While I worry about revenue choices and uncompromising style, C's accountability and equity agenda are more concrete and urgent to me than incremental efficiency, optimistic growth, or security-heavy approaches.",
+    "confidence": 72.0,
+    "factors": [
+      "Affordable housing is the top pressing need in my neighborhood",
+      "C's social services expertise aligns with lived experiences of people around me",
+      "F is a close second because of pragmatic community problem-solving",
+      "E's long-term evidence planning is appealing but too abstract and slow",
+      "B's growth promises feel risky and disconnected from public-sector reality",
+      "D's security emphasis could harm privacy and doesn't address economic needs"
+    ],
+    "concerns": [
+      "C's new spending plans may require tax increases that could burden lower-income residents",
+      "C's uncompromising negotiating style might stall progress in a divided council",
+      "F's ambiguous alliances could dilute necessary structural changes",
+      "E's plans may take too long to help people struggling now",
+      "B's optimistic investment assumptions could lead to broken promises",
+      "A's incrementalism may not keep up with the urgency of the housing crisis"
+    ]
+  },
+  "agent_02": {
+    "environment_summary": "A routine local election with six candidates offering different mixes of experience, change, and risk. The context favors practical delivery over bold promises, with no crisis forcing a dramatic departure from normal governance.",
+    "ranking": [
+      "A",
+      "D",
+      "F",
+      "B",
+      "E",
+      "C"
+    ],
+    "choice": "A",
+    "reason": "Candidate A has the most direct record of managing budgets and delivering services reliably, which matches my priorities of order, fair rules, and family security. The incremental approach is a plus because it means fewer surprises and a workable delivery plan.",
+    "confidence": 78.0,
+    "factors": [
+      "Proven administrative execution and fiscal discipline",
+      "Detailed and technical style aligns with my preference for records and costs",
+      "Lower risk of disruptive change",
+      "Practical infrastructure focus supports reliable services",
+      "D's crisis background is useful but less relevant to everyday operations",
+      "F is pragmatic but has ambiguous alliances"
+    ],
+    "concerns": [
+      "A may delay difficult reforms, but that is acceptable given my low tolerance for uncertainty",
+      "Incremental change might not address some long-term structural issues",
+      "A's style could be seen as unexciting, but I value competence over charisma"
+    ]
+  },
+  "agent_03": {
+    "environment_summary": "Local government election with six diverse candidates, ranging from administrative experts to crisis managers and reformers. Key issues include public services, economic growth, social equity, safety, and long-term planning.",
+    "ranking": [
+      "D",
+      "A",
+      "F",
+      "C",
+      "E",
+      "B"
+    ],
+    "choice": "D",
+    "reason": "As an ER nurse, I value calm, disciplined leadership and clear implementation chains, especially in crises. D's focus on public safety and institutional reliability aligns with my priorities for functional services and safety, though I note privacy concerns and less economic detail.",
+    "confidence": 72.0,
+    "factors": [
+      "Crisis leadership experience and calm under pressure",
+      "Clear implementation chains and institutional reliability",
+      "Prioritizes public safety and disaster preparedness",
+      "Practical and cautious approach fits my low-risk tolerance",
+      "Concern about privacy trade-offs and economic policy gaps"
+    ],
+    "concerns": [
+      "Security tools may affect privacy",
+      "Less detailed on long-term economic policy",
+      "May not address health access directly"
+    ]
+  },
+  "agent_04": {
+    "environment_summary": "A local election with six diverse candidates ranging from experienced administrators to entrepreneurs, lawyers, crisis managers, scientists, and community representatives, each with distinct strengths and tradeoffs.",
+    "ranking": [
+      "E",
+      "B",
+      "A",
+      "C",
+      "D",
+      "F"
+    ],
+    "choice": "E",
+    "reason": "I prioritize evidence-based, long-term reform. E offers a research-driven approach to clean energy, education, and resilience, which aligns with my values of innovation and open information. While some plans are slow, the focus on sustainable structural change is more compelling than incrementalism or optimistic growth promises.",
+    "confidence": 72.0,
+    "factors": [
+      "High openness to innovation and evidence-based policy",
+      "Desire for long-term solutions over short-term fixes",
+      "Concern about vague compromises and unverifiable claims",
+      "Value of future opportunity and fair access",
+      "Preference for mechanisms and falsifiable plans"
+    ],
+    "concerns": [
+      "E's abstract communication might hinder public support and implementation",
+      "Long timelines may not address urgent issues like cost of living",
+      "Limited emphasis on immediate economic growth or crisis management"
+    ]
+  },
+  "agent_05": {
+    "environment_summary": "A civic election in a small town with six candidates offering distinct leadership styles and priorities, ranging from administrative reliability to transformative change.",
+    "ranking": [
+      "A",
+      "F",
+      "E",
+      "D",
+      "C",
+      "B"
+    ],
+    "choice": "A",
+    "reason": "I value steady, reliable governance. Candidate A's record of fiscal discipline and cross-agency coordination aligns with my belief in practical, incremental progress that serves the community's long-term interests. While not flashy, this approach builds trust and avoids risky disruptions.",
+    "confidence": 75.0,
+    "factors": [
+      "Administrative experience and fiscal responsibility",
+      "Cross-agency coordination for effective service delivery",
+      "Incremental change reduces risk of failure",
+      "Reliable public services align with my civic priorities",
+      "Measured style promotes thoughtful decision-making"
+    ],
+    "concerns": [
+      "May lack the energy needed for bold reforms",
+      "Potential for delayed difficult decisions",
+      "Could be too cautious in addressing pressing issues"
+    ]
+  },
+  "agent_06": {
+    "environment_summary": "A fictional local election with six candidates offering different mixes of experience, speed, equity, safety, long-term planning, and community pragmatism, set against a backdrop of economic and administrative challenges.",
+    "ranking": [
+      "B",
+      "A",
+      "F",
+      "C",
+      "E",
+      "D"
+    ],
+    "choice": "B",
+    "reason": "As a small-business owner, I need faster permitting, less red tape, and a real push for economic growth. B's entrepreneurial background and clear focus on small business and technology investment align directly with my daily reality and the need for quick, tangible improvements in the business climate.",
+    "confidence": 75.0,
+    "factors": [
+      "Job creation and economic renewal",
+      "Reducing bureaucratic delays for permits and licenses",
+      "Willingness to challenge entrenched systems",
+      "Understanding of small business constraints",
+      "Pragmatic focus on speed and opportunity"
+    ],
+    "concerns": [
+      "Limited public-sector experience may lead to unrealistic execution",
+      "Optimistic investment assumptions could strain budgets",
+      "May overlook regulatory and social safeguards in pursuit of growth"
+    ]
+  },
+  "agent_07": {
+    "environment_summary": "A local election with six candidates offering different strengths and tradeoffs, ranging from administrative experience to crisis leadership to social equity advocacy. My focus is on practical outcomes that protect workers, maintain honest accountability, and deliver reliable services without overpromising.",
+    "ranking": [
+      "A",
+      "D",
+      "B",
+      "F",
+      "E",
+      "C"
+    ],
+    "choice": "A",
+    "reason": "Candidate A has a track record of balancing budgets and delivering routine services, which aligns with my priority of worker security and reliable public services. They are measured and technical, not flashy, and their incremental approach is more honest than big promises. I value fiscal discipline and enforceable commitments, and A's administrative execution suggests they can keep the city running safely without gambling on optimistic assumptions.",
+    "confidence": 68.0,
+    "factors": [
+      "Administrative execution and fiscal discipline match my value of worker security and safety",
+      "Measured style is more trustworthy than polished promises",
+      "Practical infrastructure supports jobs and daily life",
+      "Incremental change is acceptable if accountability remains",
+      "Less risk of reckless spending or privacy intrusions"
+    ],
+    "concerns": [
+      "May delay difficult reforms needed for long-term worker protections",
+      "Could be too cautious in addressing economic stagnation or housing pressures",
+      "Lacks a strong public voice for equity issues that affect my community"
+    ]
+  },
+  "agent_08": {
+    "environment_summary": "The civic group is evaluating candidates for a leadership role, with a focus on practical governance, fiscal responsibility, and long-term infrastructure reliability. The group values measurable outcomes and avoids speculative promises.",
+    "ranking": [
+      "A",
+      "D",
+      "F",
+      "C",
+      "E",
+      "B"
+    ],
+    "choice": "A",
+    "reason": "Candidate A has the most relevant administrative experience, a proven record of fiscal discipline, and a focus on practical infrastructure and reliable services—aligning directly with my priorities for competence, predictability, and long-term maintenance. While not dramatic, the incremental approach reduces risk and ensures stable delivery.",
+    "confidence": 78.0,
+    "factors": [
+      "Administrative execution and cross-agency coordination are critical for infrastructure projects",
+      "Fiscal discipline ensures budget resilience and avoids overcommitment",
+      "Practical infrastructure and reliable services match my long-term maintenance focus",
+      "Measured, technical style aligns with my systematic approach",
+      "Candidate D offers strong crisis management but lacks detailed economic policy",
+      "Candidate B's optimistic investment assumptions carry too much uncertainty"
+    ],
+    "concerns": [
+      "Candidate A may delay difficult reforms, potentially missing needed updates",
+      "Incremental change might not address systemic inefficiencies quickly enough",
+      "I am less certain about candidate A's stance on newer technology investments"
+    ]
+  },
+  "agent_09": {
+    "environment_summary": "An urban setting with competing demands for reliable services, economic growth, social equity, crisis readiness, long-term reform, and everyday constituent responsiveness. The election is shaped by uncertainty about resources and public trust, with candidates offering distinct tradeoffs between speed, depth, and inclusivity.",
+    "ranking": [
+      "C",
+      "F",
+      "A",
+      "E",
+      "D",
+      "B"
+    ],
+    "choice": "C",
+    "reason": "As a social worker, I prioritize housing security, dignity, and fair access to services. Candidate C has the deepest understanding of benefits administration and a persistent equity agenda, which aligns with the needs of the most vulnerable residents I serve. While their revenue choices may be contentious, their accountability focus and commitment to affordable housing and family supports are essential for meaningful change.",
+    "confidence": 72.0,
+    "factors": [
+      "Commitment to affordable housing and health/family supports",
+      "Deep understanding of benefits administration and social services",
+      "Accountability and equity focus",
+      "Strong advocacy for civil rights and marginalized voices",
+      "Willingness to persist on difficult equity concerns"
+    ],
+    "concerns": [
+      "Uncompromising negotiating style may hinder coalition-building",
+      "New spending plans require clear revenue choices that may be unpopular",
+      "Potential for slower progress on economic and infrastructure issues"
+    ]
+  },
+  "agent_10": {
+    "environment_summary": "A fictional election among six candidates with distinct profiles, ranging from experienced administrators to reform-focused outsiders, in a context emphasizing fiscal restraint, service delivery, and long-term planning.",
+    "ranking": [
+      "A",
+      "D",
+      "F",
+      "E",
+      "B",
+      "C"
+    ],
+    "choice": "A",
+    "reason": "Candidate A offers the most reliable fiscal discipline and administrative execution, matching my priorities of budget resilience, institutional continuity, and practical service delivery without risky or costly promises.",
+    "confidence": 75.0,
+    "factors": [
+      "Fiscal discipline and budget resilience",
+      "Administrative experience and execution",
+      "Measured, technical style",
+      "Low risk of disruptive change",
+      "Institutional continuity"
+    ],
+    "concerns": [
+      "May delay difficult reforms",
+      "Incremental change could be too slow for urgent issues"
+    ]
+  },
+  "agent_11": {
+    "environment_summary": "Coastal city facing climate risks and economic pressures; need for urgent, evidence-based action with community participation.",
+    "ranking": [
+      "E",
+      "C",
+      "A",
+      "D",
+      "F",
+      "B"
+    ],
+    "choice": "E",
+    "reason": "E prioritizes clean energy and long-term resilience, aligns with my evidence-based approach, and emphasizes open consultation, which is crucial for equitable climate action.",
+    "confidence": 78.0,
+    "factors": [
+      "Climate resilience and clean energy are top priorities",
+      "Evidence-based planning and scientific expertise",
+      "Open consultation process supports community participation",
+      "Long-term focus aligns with intergenerational fairness",
+      "Concern about incremental approaches from A and F"
+    ],
+    "concerns": [
+      "E's plans may take years to show results, risking political momentum",
+      "Abstract communication might fail to mobilize broad public support",
+      "Need for immediate action on coastal vulnerabilities may require more urgency"
+    ]
+  },
+  "agent_12": {
+    "environment_summary": "The fictional election features six candidates with distinct profiles ranging from administrative experience to crisis leadership, each with clear strengths and tradeoffs. As a police dispatcher and parent, I prioritize public safety, stability, and practical effectiveness.",
+    "ranking": [
+      "D",
+      "A",
+      "F",
+      "B",
+      "C",
+      "E"
+    ],
+    "choice": "D",
+    "reason": "Candidate D's emergency-management background aligns with my daily experience in public safety. Their calm under pressure, clear implementation chains, and focus on institutional reliability resonate with my values. I trust someone who has handled crises and values operational clarity over abstract promises.",
+    "confidence": 78.0,
+    "factors": [
+      "Public safety is my top priority, and D has direct crisis leadership experience.",
+      "D's plainspoken and disciplined style matches my communication preference.",
+      "D emphasizes institutional reliability, which I value in emergency services.",
+      "A is a close second for administrative competence, but D's safety focus is more relevant to my work.",
+      "F's pragmatism is appealing, but D offers stronger leadership in emergencies."
+    ],
+    "concerns": [
+      "D's emphasis on security tools could raise privacy issues, but I trust clear procedures.",
+      "D has less detail on long-term economic policy, but I prioritize safety and stability.",
+      "I worry about the potential for over-policing, but D's crisis experience suggests balanced judgment."
+    ]
+  },
+  "agent_13": {
+    "environment_summary": "We are selecting a local leader from six candidates with varied backgrounds in government, business, law, crisis management, science, and community representation. The context emphasizes both immediate practical needs and long-term reform, with tradeoffs around experience, ambition, equity, and inclusivity.",
+    "ranking": [
+      "E",
+      "C",
+      "A",
+      "D",
+      "F",
+      "B"
+    ],
+    "choice": "E",
+    "reason": "Candidate E combines evidence-based planning, long-horizon thinking, and collaborative consultation, which best aligns with my values of opportunity, fairness, and institutional reform. While their plans may take time, their focus on clean energy, schools, and resilience addresses fundamental structural issues rather than superficial fixes, and their open process promotes legitimacy.",
+    "confidence": 68.0,
+    "factors": [
+      "Strong evidence-based approach matches my economics training",
+      "Long-term resilience and education investments create broad opportunity",
+      "Collaborative style reduces risk of unilateral or poorly vetted decisions",
+      "Prioritizes clean energy and research, which are critical future challenges",
+      "Avoids the over-optimism of B and the security/privacy concerns of D",
+      "More transformative than A or F while still being principled"
+    ],
+    "concerns": [
+      "Abstract communication may hinder public engagement and momentum",
+      "Slow results could undermine political support",
+      "Less direct experience in crisis management or budget execution",
+      "Open consultation may lead to decision paralysis",
+      "Unclear on how to fund ambitious plans in the near term"
+    ]
+  },
+  "agent_14": {
+    "environment_summary": "We are choosing a local leader while I manage a new baby, a stable but busy job, and the rising cost of living in an exurban area. I want someone practical, reliable, and able to keep everyday services working without big disruptions or risky experiments.",
+    "ranking": [
+      "F",
+      "A",
+      "D",
+      "C",
+      "B",
+      "E"
+    ],
+    "choice": "F",
+    "reason": "F has the broadest understanding of everyday constituent problems, is a skilled compromiser, and prioritizes cost of living and local transport—both directly relevant to my family's security and daily routines. That practical, warm approach fits my preference for reliability and social cohesion over dramatic change.",
+    "confidence": 72.0,
+    "factors": [
+      "Cost of living is my top priority and F addresses it directly",
+      "Reliability matters with a newborn; F's pragmatic style lowers risk of disruptive change",
+      "F's coalition-building and compromise align with my willingness to accept tradeoffs",
+      "A is solid on execution but less focused on everyday cost pressures",
+      "D is strong on safety but less detailed on economic issues that affect my family"
+    ],
+    "concerns": [
+      "F's ambiguous alliances may lead to less accountability on tough decisions",
+      "F offers fewer structural changes, which might not address longer-term affordability",
+      "I worry F might be too incremental if larger budget pressures emerge"
+    ]
+  },
+  "agent_15": {
+    "environment_summary": "A rural farming area with weather-sensitive livelihoods, multigenerational household, and a need for stable rules and practical support.",
+    "ranking": [
+      "A",
+      "D",
+      "F",
+      "B",
+      "E",
+      "C"
+    ],
+    "choice": "A",
+    "reason": "As a farmer, I need someone who can keep the basics running—roads, budgets, clear rules—without fancy schemes that might not survive a bad season. A city manager knows how to make things work day-to-day, and that's what keeps our community going.",
+    "confidence": 70.0,
+    "factors": [
+      "Administrative execution and fiscal discipline are critical for rural infrastructure and services.",
+      "Incremental change is safer than risky big promises, especially with weather and market uncertainties.",
+      "Practical infrastructure and budget resilience directly affect farm operations and family living.",
+      "Measured style suggests they'll listen to local concerns and not impose one-size-fits-all plans."
+    ],
+    "concerns": [
+      "May not prioritize rural issues enough without local push.",
+      "Could be too cautious to cut through red tape that slows farm permits.",
+      "Lacks bold vision for long-term agricultural sustainability."
+    ]
+  },
+  "agent_16": {
+    "environment_summary": "A fictional local leadership race with six candidates offering distinct mixes of administrative competence, economic dynamism, social equity, crisis management, long-term reform, and community pragmatism. The context rewards balancing innovation with institutional reliability.",
+    "ranking": [
+      "B",
+      "A",
+      "E",
+      "D",
+      "C",
+      "F"
+    ],
+    "choice": "B",
+    "reason": "As a product manager who values scalable experiments and economic dynamism, B's growth agenda and willingness to challenge bureaucracy align with my priorities for innovation and faster permitting. While public-sector experience is limited, the region's tech hub culture favors entrepreneurial energy, and B's clear job-creation focus can be iterated with feedback loops.",
+    "confidence": 62.0,
+    "factors": [
+      "Prioritizes innovation and economic dynamism",
+      "Clear growth agenda with job creation experience",
+      "Willing to challenge bureaucratic inertia",
+      "Faster permitting supports tech investment",
+      "Iterative approach fits my evidence-based style"
+    ],
+    "concerns": [
+      "Optimistic investment assumptions may be unrealistic",
+      "Limited public-sector experience could hinder execution",
+      "May overlook equity and privacy safeguards",
+      "High risk of overpromising without institutional backing"
+    ]
+  },
+  "agent_17": {
+    "environment_summary": "A municipal leadership election with six candidates offering different mixes of administrative experience, economic growth, social equity, crisis management, long-term planning, and community pragmatism. My perspective is shaped by my role as a teacher and single parent in a working-class neighborhood, so I weigh impacts on schools, family stability, and practical daily services heavily.",
+    "ranking": [
+      "E",
+      "C",
+      "A",
+      "F",
+      "D",
+      "B"
+    ],
+    "choice": "E",
+    "reason": "Candidate E combines evidence-based planning with a strong focus on schools and long-term resilience, which aligns with my priorities for my students and my own children. The open consultation process also gives community voice a real role, and while results may take time, I trust that careful, collaborative work will lead to lasting improvements rather than quick fixes that may not hold.",
+    "confidence": 68.0,
+    "factors": [
+      "Strong education focus and evidence-based approach",
+      "Open consultation process aligns with valuing community voice",
+      "Long-term resilience matters for families and neighborhoods",
+      "Candidate C is close second on equity but less flexible",
+      "Administrative reliability from A is reassuring but too incremental",
+      "B's growth promises feel risky for public services",
+      "D's security emphasis could undermine privacy and community trust",
+      "F is warm but lacks structural change I want to see"
+    ],
+    "concerns": [
+      "E's abstract communication may make it hard to see concrete near-term wins",
+      "Long-horizon plans could be stalled by political turnover",
+      "Need assurance that family support and housing are not deprioritized",
+      "Revenue and implementation details for E's proposals are unclear"
+    ]
+  },
+  "agent_18": {
+    "environment_summary": "A fictional public leadership selection context with six candidates offering different experience profiles, from administrative execution to crisis management to long-term reform. No specific office or current crisis is defined, so evaluation rests on general operational competence and reliability.",
+    "ranking": [
+      "A",
+      "D",
+      "B",
+      "F",
+      "E",
+      "C"
+    ],
+    "choice": "A",
+    "reason": "Candidate A has the most directly transferable record for running a complex public organization: fiscal discipline, cross-agency coordination, and reliable service delivery. In a hospital operations context, incremental, well-executed improvements beat dramatic promises that depend on uncertain assumptions. A's measured style and clear accountability focus align with my priorities of competence, continuity, and risk management.",
+    "confidence": 72.0,
+    "factors": [
+      "Track record of administrative execution and fiscal discipline",
+      "Lower risk of disruption to essential services",
+      "Clear cross-agency coordination experience relevant to health systems",
+      "Measured, technical style fits operational accountability",
+      "Avoids candidates with optimistic assumptions or uncompromising negotiation"
+    ],
+    "concerns": [
+      "A may be too incremental to address urgent structural problems",
+      "No explicit health-sector experience mentioned",
+      "Delayed difficult reforms in the past could indicate risk aversion",
+      "Limited visionary appeal might hamper public support"
+    ]
+  },
+  "agent_19": {
+    "environment_summary": "A local election with six candidates offering distinct styles and priorities, ranging from administrative stability to rapid growth, social equity, crisis management, long-term reform, and community pragmatism. No single candidate perfectly aligns with all values; tradeoffs are unavoidable.",
+    "ranking": [
+      "C",
+      "E",
+      "A",
+      "F",
+      "B",
+      "D"
+    ],
+    "choice": "C",
+    "reason": "Candidate C best matches my core priorities of accountability, fair process, and community knowledge. Their focus on affordable housing, health/family supports, and civil rights addresses structural inequities that affect my inner-city co-op neighbors. While their uncompromising style and spending plans are concerns, their persistence on equity and deep policy knowledge offer the most credible path to meaningful change, and I can maintain scrutiny as a journalist.",
+    "confidence": 72.0,
+    "factors": [
+      "Strong accountability agenda aligns with my value of accountability",
+      "Focus on equity and social services resonates with community knowledge and fair process",
+      "Policy-literate and persistent on difficult issues, despite potential rigidity",
+      "Concern about revenue choices and spending feasibility",
+      "Other candidates either too incremental (A, F), too reliant on optimistic assumptions (B), too security-focused with privacy risks (D), or too abstract/long-term (E)"
+    ],
+    "concerns": [
+      "C's uncompromising negotiation style may hinder coalition-building and practical compromises",
+      "New spending plans lack clear revenue sources, risking budget instability",
+      "Potential to over-focus on advocacy over administrative execution"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "focal":{"style":"facilitator","tendency":"主动归纳分歧、邀请较少发言者，并提出可检验的问题","persuasion_susceptibility":"medium","conflict":"de-escalates while preserving disagreement"},
+  "agent_01":{"style":"peer advisor","tendency":"会把身边人的实际困难转化为建议，也会接受具体反例","persuasion_susceptibility":"medium-high","conflict":"candid but non-hostile"},
+  "agent_02":{"style":"cautious listener","tendency":"先听取对方理由，只有在证据和执行细节充分时才提出建议","persuasion_susceptibility":"low","conflict":"avoids rhetorical escalation"},
+  "agent_03":{"style":"empathetic listener","tendency":"先确认对方担忧，再从照护与风险角度回应","persuasion_susceptibility":"medium","conflict":"seeks safety-oriented common ground"},
+  "agent_04":{"style":"analytical challenger","tendency":"常追问因果机制、隐含假设和可证伪条件","persuasion_susceptibility":"medium","conflict":"directly challenges claims, not people"},
+  "agent_05":{"style":"experienced mentor","tendency":"愿意给出基于长期服务经验的温和建议","persuasion_susceptibility":"low-medium","conflict":"uses stories to lower tension"},
+  "agent_06":{"style":"energetic persuader","tendency":"主动用经营中的具体代价说服他人，并寻求可执行的交易方案","persuasion_susceptibility":"medium","conflict":"assertive but pragmatic"},
+  "agent_07":{"style":"forceful rebutter","tendency":"会直接指出空泛承诺、不可核验说法和不公平风险","persuasion_susceptibility":"low","conflict":"blunt, evidence-demanding"},
+  "agent_08":{"style":"technical critic","tendency":"习惯拆解方案的约束、失效模式和实施顺序","persuasion_susceptibility":"low-medium","conflict":"precise rather than emotional"},
+  "agent_09":{"style":"reflective listener","tendency":"认真吸收他人信息，但会追问谁被方案遗漏","persuasion_susceptibility":"medium-high","conflict":"reframes conflict around affected people"},
+  "agent_10":{"style":"reserved skeptic","tendency":"较少主动推销；若发言会要求账目、激励和历史依据","persuasion_susceptibility":"very low","conflict":"withholds agreement until evidence clears a high bar"},
+  "agent_11":{"style":"mobilizing advocate","tendency":"会把价值紧迫性转成行动理由，并劝说他人考虑长期后果","persuasion_susceptibility":"medium","conflict":"principled and urgent"},
+  "agent_12":{"style":"decisive challenger","tendency":"会以责任归属、紧急情景和操作链条反驳模糊方案","persuasion_susceptibility":"low","conflict":"firm and operational"},
+  "agent_13":{"style":"bridge builder","tendency":"主动区分事实分歧与价值分歧，并尝试提出双方可检验的条件","persuasion_susceptibility":"medium","conflict":"constructive synthesis"},
+  "agent_14":{"style":"harmony broker","tendency":"倾向先找共同点，再提出折衷安排或现实约束","persuasion_susceptibility":"medium-high","conflict":"de-escalates and negotiates"},
+  "agent_15":{"style":"grounded skeptic","tendency":"用乡村日常经验检验建议；不容易被抽象论证说服","persuasion_susceptibility":"low","conflict":"plainspoken and cautious"},
+  "agent_16":{"style":"contrarian experimenter","tendency":"会挑战群体默认前提，并把分歧变成可试验的替代方案","persuasion_susceptibility":"medium","conflict":"provocative but solution-seeking"},
+  "agent_17":{"style":"supportive facilitator","tendency":"愿意复述他人观点、鼓励较弱立场表达，并提出家庭情境问题","persuasion_susceptibility":"medium","conflict":"inclusive and relational"},
+  "agent_18":{"style":"authority advocate","tendency":"会用管理经验给出明确建议，并要求对方说明责任与绩效标准","persuasion_susceptibility":"low","conflict":"formal and exacting"},
+  "agent_19":{"style":"probing interrogator","tendency":"习惯追问信息来源、激励和遗漏事实；不轻易接受共识","persuasion_susceptibility":"medium-low","conflict":"persistent questioning"}
+}

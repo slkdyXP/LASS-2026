@@ -1,0 +1,618 @@
+{
+  "focal": {
+    "scores": {
+      "A": 72.0,
+      "B": 55.0,
+      "C": 68.0,
+      "D": 60.0,
+      "E": 70.0,
+      "F": 78.0
+    },
+    "ranking": [
+      "F",
+      "A",
+      "E",
+      "C",
+      "D",
+      "B"
+    ],
+    "most_likely": "F",
+    "other_reasonable": [
+      "A",
+      "E"
+    ],
+    "rationale": "Alex values community access, competent institutions, fairness, and long-term opportunity, with a facilitator style that invites compromise and concrete follow-ups. F aligns most closely with neighborhood relationships, compromise, and pragmatic community mediation, despite fewer structural changes. A offers administrative competence and fiscal discipline, which appeals to Alex's high conscientiousness and trust in competent institutions, but may feel too incremental. E's evidence-based long-horizon approach matches Alex's openness and evidence comparison, though abstract communication may reduce engagement. C's equity focus is strong but uncompromising style may clash with Alex's transparent compromise preference. D's crisis strengths are less relevant to community access priorities and privacy concerns create tension. B's rapid growth agenda conflicts with Alex's moderate risk tolerance and preference for implementation detail over optimistic assumptions.",
+    "confidence": 78.0,
+    "persona_tensions": [
+      "Alex's high agreeableness and de-escalation style may find C's uncompromising negotiation difficult",
+      "D's security tools could conflict with Alex's fairness and community access values",
+      "B's optimistic investment assumptions clash with Alex's evidence-based, source-comparing approach"
+    ]
+  },
+  "agent_01": {
+    "scores": {
+      "A": 55.0,
+      "B": 45.0,
+      "C": 80.0,
+      "D": 35.0,
+      "E": 60.0,
+      "F": 75.0
+    },
+    "ranking": [
+      "C",
+      "F",
+      "E",
+      "A",
+      "B",
+      "D"
+    ],
+    "most_likely": "C",
+    "other_reasonable": [
+      "F",
+      "E"
+    ],
+    "rationale": "Mina values inclusion, affordability, and protecting vulnerable people, which aligns strongly with C's focus on affordable housing, health/family supports, and civil rights. C's forceful style may slightly clash with Mina's non-hostile candor, but the substantive fit outweighs that. F is a close second due to emphasis on cost of living and community mediation, matching Mina's peer-network and lived-experience orientation. E appeals to Mina's high openness and evidence values but may feel too abstract. A is competent but incremental, less inspiring. B's growth agenda may seem disconnected from everyday struggles and optimistic. D's security/privacy tradeoff conflicts with personal freedom and low authority trust.",
+    "confidence": 75.0,
+    "persona_tensions": [
+      "C's uncompromising negotiation could frustrate Mina's preference for compromise when it protects vulnerable people",
+      "E's abstract communication may fail Mina's concrete-life test",
+      "D's privacy-affecting security tools conflict with personal freedom"
+    ]
+  },
+  "agent_02": {
+    "scores": {
+      "A": 85.0,
+      "B": 30.0,
+      "C": 45.0,
+      "D": 75.0,
+      "E": 60.0,
+      "F": 70.0
+    },
+    "ranking": [
+      "A",
+      "D",
+      "F",
+      "E",
+      "C",
+      "B"
+    ],
+    "most_likely": "A",
+    "other_reasonable": [
+      "D",
+      "F"
+    ],
+    "rationale": "David values reliability, order, and practical results. Candidate A offers administrative experience, fiscal discipline, and a measured, detail-oriented style that aligns with his preference for evidence and execution. D's crisis leadership and institutional reliability also appeal to his cautious, safety-conscious side. F's pragmatic focus on cost of living and community mediation matches his practical concerns. E's evidence-based approach is valued but may be too abstract and slow. C's equity focus and uncompromising style may clash with his preference for fair rules and practical tradeoffs. B's rapid growth promises and limited public-sector experience are too risky for his low-risk, high-certainty profile.",
+    "confidence": 88.0,
+    "persona_tensions": [
+      "B's optimistic investment assumptions conflict with David's low risk tolerance and need for concrete delivery plans.",
+      "C's uncompromising negotiating style may clash with David's acceptance of practical tradeoffs and aversion to rhetorical escalation.",
+      "E's abstract communication and long-term horizons may frustrate David's desire for immediate, concrete operational details."
+    ]
+  },
+  "agent_03": {
+    "scores": {
+      "A": 70.0,
+      "B": 35.0,
+      "C": 65.0,
+      "D": 75.0,
+      "E": 50.0,
+      "F": 60.0
+    },
+    "ranking": [
+      "D",
+      "A",
+      "C",
+      "F",
+      "E",
+      "B"
+    ],
+    "most_likely": "D",
+    "other_reasonable": [
+      "A",
+      "C"
+    ],
+    "rationale": "Priya values safety, functional services, and explicit safeguards. D's crisis leadership and implementation clarity align with her frontline experience and need for reliable systems, though privacy tradeoffs are a concern. A offers administrative reliability and fiscal discipline, matching her high conscientiousness. C addresses health and family supports but may be too uncompromising. F is pragmatic but lacks structural depth. E is too long-term and abstract. B's risk and limited public-sector experience conflict with her low risk tolerance.",
+    "confidence": 80.0,
+    "persona_tensions": [
+      "D's security tools may threaten privacy and dignity, conflicting with her values.",
+      "C's uncompromising style may clash with her preference for compromise with safeguards.",
+      "A's incrementalism may frustrate her moderate change threshold.",
+      "E's abstract communication and long timelines may not reassure her practical concerns.",
+      "B's optimistic assumptions and inexperience risk implementation safety."
+    ]
+  },
+  "agent_04": {
+    "scores": {
+      "A": 52.0,
+      "B": 65.0,
+      "C": 70.0,
+      "D": 40.0,
+      "E": 85.0,
+      "F": 45.0
+    },
+    "ranking": [
+      "E",
+      "C",
+      "B",
+      "A",
+      "F",
+      "D"
+    ],
+    "most_likely": "E",
+    "other_reasonable": [
+      "C",
+      "B"
+    ],
+    "rationale": "Jonah values innovation, open information, and future opportunity, with a high openness and analytical style. Candidate E (research scientist) aligns strongly with evidence-based planning, long-horizon reform, and collaborative consultation, offering mechanisms and falsifiable approaches. Candidate C (public-interest lawyer) appeals to fairness and equity but may be less innovative and more uncompromising. Candidate B (entrepreneur) offers innovation and growth but relies on optimistic assumptions, which may trigger Jonah's demand for mechanisms. A, F, and D are more incremental, pragmatic, or security-focused, which conflicts with Jonah's preference for change and open information.",
+    "confidence": 75.0,
+    "persona_tensions": [
+      "E's long-term plans may not show immediate results, challenging Jonah's desire for future opportunity but also his moderate change threshold.",
+      "C's uncompromising style may conflict with Jonah's analytical challenge, but his equity focus aligns with fair access.",
+      "B's optimistic assumptions may lack falsifiable details, creating tension with Jonah's evidence-based scrutiny."
+    ]
+  },
+  "agent_05": {
+    "scores": {
+      "A": 72.0,
+      "B": 45.0,
+      "C": 60.0,
+      "D": 68.0,
+      "E": 65.0,
+      "F": 85.0
+    },
+    "ranking": [
+      "F",
+      "A",
+      "D",
+      "E",
+      "C",
+      "B"
+    ],
+    "most_likely": "F",
+    "other_reasonable": [
+      "A",
+      "D",
+      "E"
+    ],
+    "rationale": "Elena is a retired principal who values civic trust, intergenerational responsibility, kindness, and compromise. She trusts demonstrated service and professional consensus, and prefers measured change over dramatic disruption. Candidate F—a long-serving local representative with broad relationships, compromise skills, and a pragmatic focus on cost of living and community—aligns most closely with her values and communication style. A offers reliable administration and fiscal discipline that match her conscientiousness and trust in service records, though it lacks the warmth and community focus. D's crisis leadership and institutional reliability resonate with her caution and trust in clear implementation, but its privacy tradeoff may give her pause. E's evidence-based, long-horizon approach appeals to her education background and openness to research, but its abstract communication could reduce her comfort. C's equity agenda aligns with her kindness and education values, but the uncompromising style conflicts with her strong preference for compromise. B's entrepreneurial, rapid-change style is too risky and bureaucratic-challenging for her low risk tolerance and high change threshold. Overall, she would gravitate toward the familiar, relationship-based, and steady-handed candidate.",
+    "confidence": 88.0,
+    "persona_tensions": [
+      "F's ambiguous political alliances might test her trust in character and follow-through, though her high agreeableness could lead her to give benefit of the doubt",
+      "A's delayed reforms may frustrate her desire for intergenerational progress, but her patience and incrementalism mitigate this",
+      "D's privacy implications conflict with her civic trust and fairness values, though she may accept for safety",
+      "E's abstract communication could weaken her engagement despite her education background",
+      "C's uncompromising negotiation style directly conflicts with her strong compromise preference, making support conditional"
+    ]
+  },
+  "agent_06": {
+    "scores": {
+      "A": 45.0,
+      "B": 90.0,
+      "C": 35.0,
+      "D": 40.0,
+      "E": 30.0,
+      "F": 60.0
+    },
+    "ranking": [
+      "B",
+      "F",
+      "A",
+      "D",
+      "C",
+      "E"
+    ],
+    "most_likely": "B",
+    "other_reasonable": [
+      "F",
+      "A"
+    ],
+    "rationale": "Samir, a self-employed restaurant owner, prioritizes economic mobility, speed, and fair opportunity. Candidate B (entrepreneur) resonates with his growth-oriented, pro-small-business, and anti-bureaucracy stance. B's energetic style and focus on faster permitting and job creation align with Samir's pragmatic, high-risk tolerance. F is a strong secondary due to pragmatic focus on cost of living and community, but lacks B's growth agenda. A offers fiscal discipline but is too incremental for Samir's desire for speed. D's security focus and C's equity focus are less aligned with Samir's economic priorities. E's long-horizon approach conflicts with Samir's need for immediate practical results.",
+    "confidence": 85.0,
+    "persona_tensions": [
+      "Samir's low trust in authority may clash with A's administrative background and D's institutional emphasis.",
+      "C's uncompromising style could frustrate Samir's pragmatic, deal-making approach.",
+      "E's abstract and slow-moving plans may not satisfy Samir's need for immediate economic relief."
+    ]
+  },
+  "agent_07": {
+    "scores": {
+      "A": 65.0,
+      "B": 30.0,
+      "C": 70.0,
+      "D": 80.0,
+      "E": 55.0,
+      "F": 45.0
+    },
+    "ranking": [
+      "D",
+      "C",
+      "A",
+      "E",
+      "F",
+      "B"
+    ],
+    "most_likely": "D",
+    "other_reasonable": [
+      "C",
+      "A"
+    ],
+    "rationale": "Ruth values worker security, honesty, safety, and respect, with a low tolerance for unverifiable promises and a preference for enforceable commitments. Candidate D (emergency-management director) offers crisis leadership, clear implementation, and credible safety planning, which aligns with her high conscientiousness and safety priorities. His plainspoken, disciplined style matches her communication preference. Candidate C (public-interest lawyer) appeals to her accountability agenda and equity concerns, though his uncompromising negotiating style may create friction. Candidate A (former city manager) provides fiscal discipline and reliable services, which Ruth respects, but his incremental approach may not satisfy her desire for tangible worker protections. Candidate E (research scientist) is too abstract and long-term for her practical, evidence-demanding nature. Candidate F (local representative) has ambiguous alliances that trigger her low trust in unverifiable political relationships. Candidate B (entrepreneur) relies on optimistic assumptions, which Ruth would reject as unverifiable and risky for workers.",
+    "confidence": 75.0,
+    "persona_tensions": [
+      "Ruth's low trust in authority may conflict with D's emphasis on security tools that affect privacy.",
+      "Ruth's demand for enforceable commitments may clash with C's uncompromising style, potentially leading to gridlock.",
+      "Ruth's preference for plain language may be alienated by E's abstract communication.",
+      "Ruth's skepticism of polished language may make her wary of B's energetic but unproven promises."
+    ]
+  },
+  "agent_08": {
+    "scores": {
+      "A": 90.0,
+      "B": 35.0,
+      "C": 45.0,
+      "D": 70.0,
+      "E": 60.0,
+      "F": 50.0
+    },
+    "ranking": [
+      "A",
+      "D",
+      "E",
+      "F",
+      "C",
+      "B"
+    ],
+    "most_likely": "A",
+    "other_reasonable": [
+      "D",
+      "E"
+    ],
+    "rationale": "Wei values infrastructure, competence, long-term maintenance, and predictability. Candidate A's administrative execution, fiscal discipline, and practical infrastructure align strongly with Wei's priorities. A's measured, technical style matches Wei's systematic approach. D's crisis leadership and institutional reliability also appeal to Wei's low-risk, high-certainty preference, though security tradeoffs may cause some concern. E's evidence-based planning and long-term resilience resonate with Wei's analytical side, but abstract communication and slow results may reduce compatibility. F is pragmatic but lacks structural depth, C's uncompromising style and spending plans conflict with Wei's fiscal caution, and B's optimistic assumptions and limited public-sector experience are least compatible.",
+    "confidence": 85.0,
+    "persona_tensions": [
+      "Wei's low tolerance for uncertainty may clash with E's long-horizon plans that lack immediate milestones.",
+      "Wei's conditional trust in authority may be tested by C's forceful advocacy and D's security emphasis.",
+      "Wei's preference for feasibility analysis may find B's optimistic investment assumptions unconvincing."
+    ]
+  },
+  "agent_09": {
+    "scores": {
+      "A": 55.0,
+      "B": 30.0,
+      "C": 85.0,
+      "D": 40.0,
+      "E": 70.0,
+      "F": 65.0
+    },
+    "ranking": [
+      "C",
+      "E",
+      "F",
+      "A",
+      "D",
+      "B"
+    ],
+    "most_likely": "C",
+    "other_reasonable": [
+      "E",
+      "F"
+    ],
+    "rationale": "Talia is a social worker prioritizing dignity, housing security, fairness, and voice. Candidate C aligns most strongly with her core values, focusing on affordable housing, health/family supports, and civil rights, with a strong accountability agenda. Talia's evidence-based approach and relational style may find C's uncompromising negotiation a slight tension, but the shared equity focus outweighs that. E is a strong second due to evidence-based planning and collaborative consultation, though long-horizon results may not address immediate housing needs. F is reasonable for compromise and community mediation, but lacks structural change. A is reliable but incremental, D is too security-focused, and B's business emphasis conflicts with her priorities.",
+    "confidence": 82.0,
+    "persona_tensions": [
+      "C's uncompromising style may clash with Talia's mediator approach, though she supports it if affected people retain agency.",
+      "E's abstract communication may frustrate Talia's need to notice who is missing from proposals.",
+      "F's ambiguous alliances may raise fairness concerns for Talia."
+    ]
+  },
+  "agent_10": {
+    "scores": {
+      "A": 90.0,
+      "B": 20.0,
+      "C": 30.0,
+      "D": 75.0,
+      "E": 55.0,
+      "F": 70.0
+    },
+    "ranking": [
+      "A",
+      "D",
+      "F",
+      "E",
+      "C",
+      "B"
+    ],
+    "most_likely": "A",
+    "other_reasonable": [
+      "D",
+      "F"
+    ],
+    "rationale": "Omar values fiscal restraint, institutional continuity, and evidence-based decisions. Candidate A aligns strongly with his preference for administrative execution, budget discipline, and measured, technical style. D also appeals due to reliability and calm crisis management, though security tradeoffs may raise privacy concerns. F offers pragmatic compromise and local focus, but ambiguous alliances may lower trust. E has evidence-based planning but abstract communication and long timelines may not match Omar's low tolerance for uncertainty. C's equity focus implies new spending, which conflicts with fiscal restraint. B's optimism and limited public-sector experience are too risky for Omar.",
+    "confidence": 85.0,
+    "persona_tensions": [
+      "Omar's very high change threshold may conflict with any candidate promising significant reforms, including A's incremental approach might still be acceptable, but B, C, and E could be too change-oriented.",
+      "Omar's low extraversion and reserved skepticism may find C's forceful style and B's competitive energy off-putting.",
+      "Omar's high conscientiousness and evidence-checking may clash with D's less detailed long-term economic policy, even though D is otherwise compatible."
+    ]
+  },
+  "agent_11": {
+    "scores": {
+      "A": 45.0,
+      "B": 50.0,
+      "C": 70.0,
+      "D": 55.0,
+      "E": 85.0,
+      "F": 60.0
+    },
+    "ranking": [
+      "E",
+      "C",
+      "F",
+      "D",
+      "B",
+      "A"
+    ],
+    "most_likely": "E",
+    "other_reasonable": [
+      "C",
+      "F"
+    ],
+    "rationale": "Kira, as a climate nonprofit field organizer with very high openness and high urgency, prioritizes climate resilience, innovation, and participation. Candidate E (research scientist) aligns strongly with her evidence-based, long-term resilience values and collaborative consultation process, despite potential abstract communication. Candidate C (public-interest lawyer) also resonates with her equity and accountability concerns, though Kira's medium agreeableness and low authority trust may clash with C's uncompromising style. F's pragmatic coalition-building and community focus are secondary but acceptable. D's crisis leadership is relevant to climate disasters but security/privacy tradeoffs conflict with her values. B's rapid growth agenda is less aligned with her climate and equity focus, and A's incrementalism and delayed reforms frustrate her urgency.",
+    "confidence": 75.0,
+    "persona_tensions": [
+      "E's abstract communication may challenge Kira's urgent, values-driven style",
+      "C's uncompromising negotiation could clash with Kira's participation and compromise values",
+      "F's ambiguous alliances may conflict with Kira's low authority trust and principled stance"
+    ]
+  },
+  "agent_12": {
+    "scores": {
+      "A": 70.0,
+      "B": 30.0,
+      "C": 45.0,
+      "D": 90.0,
+      "E": 40.0,
+      "F": 60.0
+    },
+    "ranking": [
+      "D",
+      "A",
+      "F",
+      "C",
+      "E",
+      "B"
+    ],
+    "most_likely": "D",
+    "other_reasonable": [
+      "A",
+      "F"
+    ],
+    "rationale": "Marcus values public safety, stability, and clear operational responsibility. Candidate D is a former emergency-management director with crisis leadership, clear implementation chains, and a plainspoken, disciplined style—directly matching Marcus's operational mindset and high trust in procedures. A is also compatible due to administrative execution and fiscal discipline, though less focused on safety. F is pragmatic and community-oriented, which may appeal to Marcus's respect for service workers, but lacks the strong safety/security focus. C's equity agenda and uncompromising style may create tension. E's abstract, long-horizon plans conflict with Marcus's preference for clear procedures and immediate reliability. B's rapid-change, optimistic assumptions and limited public-sector experience are least compatible with Marcus's low risk tolerance and high change threshold.",
+    "confidence": 85.0,
+    "persona_tensions": [
+      "Candidate B's optimistic investment assumptions clash with Marcus's low risk tolerance and preference for clear procedures.",
+      "Candidate C's uncompromising negotiating style may conflict with Marcus's preference for clear responsibility and operational chains.",
+      "Candidate E's abstract communication and long-term focus may frustrate Marcus's direct, failure-mode-oriented approach.",
+      "Candidate D's emphasis on security tools may raise privacy concerns, but Marcus likely prioritizes safety and institutional reliability."
+    ]
+  },
+  "agent_13": {
+    "scores": {
+      "A": 70.0,
+      "B": 40.0,
+      "C": 60.0,
+      "D": 55.0,
+      "E": 85.0,
+      "F": 65.0
+    },
+    "ranking": [
+      "E",
+      "A",
+      "F",
+      "C",
+      "D",
+      "B"
+    ],
+    "most_likely": "E",
+    "other_reasonable": [
+      "A",
+      "F",
+      "C"
+    ],
+    "rationale": "Sofia values evidence, fairness, and institutional reform. Candidate E aligns strongly with her evidence-based planning, long-term perspective, and collaborative style. A is reliable but incremental, while F is pragmatic and compromise-oriented, fitting her bridge-builder tendency. C shares equity concerns but may be too uncompromising. D is competent but security-focused, and B's optimistic assumptions conflict with her evidence-driven approach.",
+    "confidence": 85.0,
+    "persona_tensions": [
+      "Sofia's high openness may appreciate B's innovation but B's lack of evidence is a concern.",
+      "Her conditional trust in authority may make D's security emphasis problematic.",
+      "C's uncompromising style may clash with her preference for principled compromise."
+    ]
+  },
+  "agent_14": {
+    "scores": {
+      "A": 70.0,
+      "B": 55.0,
+      "C": 45.0,
+      "D": 60.0,
+      "E": 50.0,
+      "F": 85.0
+    },
+    "ranking": [
+      "F",
+      "A",
+      "D",
+      "B",
+      "E",
+      "C"
+    ],
+    "most_likely": "F",
+    "other_reasonable": [
+      "A",
+      "D"
+    ],
+    "rationale": "Noah prioritizes cost of living, reliability, family security, and social cohesion. He is a harmony broker who values compromise and practical solutions. Candidate F aligns strongly with his top priorities (cost of living, local transport, community mediation) and style (warm, accessible, pragmatic). A offers reliable services and fiscal discipline, appealing to his conscientiousness and need for stability. D provides institutional reliability and safety, which supports family security, though privacy concerns may cause slight hesitation. B's rapid growth could appeal to his high extraversion but his risk-averse side and preference for reliability make it less likely. E's long-term abstract plans conflict with his preference for clear communication and practical examples. C's uncompromising style clashes with his harmony-seeking nature, and new spending plans raise cost concerns.",
+    "confidence": 85.0,
+    "persona_tensions": [
+      "C's uncompromising negotiating style may conflict with Noah's harmony broker approach.",
+      "E's abstract communication may frustrate Noah's preference for practical examples.",
+      "B's optimistic investment assumptions may clash with Noah's medium-low risk tolerance and desire for reliability."
+    ]
+  },
+  "agent_15": {
+    "scores": {
+      "A": 70.0,
+      "B": 45.0,
+      "C": 40.0,
+      "D": 65.0,
+      "E": 55.0,
+      "F": 80.0
+    },
+    "ranking": [
+      "F",
+      "A",
+      "D",
+      "E",
+      "B",
+      "C"
+    ],
+    "most_likely": "F",
+    "other_reasonable": [
+      "A",
+      "D"
+    ],
+    "rationale": "Inez values practical, local, and stable solutions. F's long-standing local representation, focus on cost of living, transport, and community mediation, plus pragmatic compromise aligns with her grounded, story-based style and distrust of abstract plans. A's administrative reliability and fiscal discipline also appeal to her conscientiousness and preference for stable rules, while D's plainspoken crisis leadership and institutional reliability resonate with her cautious, practical nature. B's rapid-growth promises and C's equity-heavy spending plans are less compatible due to her skepticism of big change and revenue uncertainty.",
+    "confidence": 78.0,
+    "persona_tensions": [
+      "F's ambiguous alliances may conflict with Inez's low trust in authority and desire for stable rules.",
+      "A's incremental approach may frustrate Inez if she perceives delays on rural issues.",
+      "D's security emphasis could raise privacy concerns for Inez, though she values safety.",
+      "E's long-term abstract plans may not resonate with her practical, experience-based mindset.",
+      "B's optimistic investment assumptions clash with her weather-sensitive, evidence-based pragmatism.",
+      "C's uncompromising style and revenue needs could alienate her pragmatic, local-voice values."
+    ]
+  },
+  "agent_16": {
+    "scores": {
+      "A": 55.0,
+      "B": 85.0,
+      "C": 45.0,
+      "D": 40.0,
+      "E": 70.0,
+      "F": 50.0
+    },
+    "ranking": [
+      "B",
+      "E",
+      "A",
+      "F",
+      "C",
+      "D"
+    ],
+    "most_likely": "B",
+    "other_reasonable": [
+      "E",
+      "A"
+    ],
+    "rationale": "Caleb values innovation, economic dynamism, and privacy, and is a contrarian experimenter who challenges assumptions. Candidate B aligns strongly with his growth and technology priorities, though B's limited public-sector experience and optimistic assumptions may be tempered by Caleb's high risk tolerance. E offers evidence-based, long-horizon reform that appeals to his analytical side and openness to experimentation. A provides fiscal discipline and execution but is too incremental for Caleb's taste. C's equity focus and uncompromising style may conflict with his preference for iteration and economic dynamism. D's security emphasis raises privacy concerns, and F's pragmatic, small-scale approach lacks the structural change he seeks.",
+    "confidence": 78.0,
+    "persona_tensions": [
+      "B's optimistic investment assumptions may clash with Caleb's evidence-driven, experiment-based approach",
+      "E's long-horizon plans may test Caleb's moderate change threshold and desire for quick feedback",
+      "A's incremental style may frustrate Caleb's high risk and innovation orientation"
+    ]
+  },
+  "agent_17": {
+    "scores": {
+      "A": 72.0,
+      "B": 45.0,
+      "C": 68.0,
+      "D": 55.0,
+      "E": 82.0,
+      "F": 80.0
+    },
+    "ranking": [
+      "E",
+      "F",
+      "A",
+      "C",
+      "D",
+      "B"
+    ],
+    "most_likely": "E",
+    "other_reasonable": [
+      "F",
+      "A",
+      "C"
+    ],
+    "rationale": "Lena values education, fairness, family stability, and community voice, with a high openness and conscientiousness. Candidate E aligns strongly on education and evidence-based planning, and her collaborative, open consultation style matches Lena's inclusive communication and desire for community input, despite some abstractness. Candidate F is a close second due to practical community mediation and warmth, though less structural change. Candidate A offers reliability and fiscal discipline, which supports family predictability, but lacks bold education focus. Candidate C aligns on equity and family supports, but uncompromising style may clash with Lena's relational approach. D's security emphasis and privacy tradeoff creates tension with fairness. B's rapid change and limited public-sector experience conflicts with Lena's need for implementation in daily institutions and moderate change threshold.",
+    "confidence": 78.0,
+    "persona_tensions": [
+      "C's uncompromising negotiation style may conflict with Lena's inclusive facilitation",
+      "B's optimistic investment assumptions and bureaucratic challenge may undermine family stability predictability",
+      "D's security tools affecting privacy could challenge fairness and community trust",
+      "A's incrementalism may not satisfy Lena's high openness for educational improvement",
+      "E's abstract communication could frustrate Lena's concrete, child-focused questions"
+    ]
+  },
+  "agent_18": {
+    "scores": {
+      "A": 85.0,
+      "B": 40.0,
+      "C": 55.0,
+      "D": 75.0,
+      "E": 60.0,
+      "F": 65.0
+    },
+    "ranking": [
+      "A",
+      "D",
+      "F",
+      "E",
+      "C",
+      "B"
+    ],
+    "most_likely": "A",
+    "other_reasonable": [
+      "D",
+      "F"
+    ],
+    "rationale": "Graham values competence, service continuity, efficiency, and risk management. Candidate A's record of balancing budgets and delivering routine services aligns perfectly with his operational and fiscal priorities, despite incremental change being acceptable given his high change threshold. D offers crisis leadership and institutional reliability, matching his risk-management focus, though privacy tradeoffs may cause slight concern. F's pragmatism and coalition-building appeal to his service-continuity values, but ambiguous alliances raise accountability questions. E's evidence-based approach is credible but too abstract and long-horizon for his operational immediacy. C's equity agenda conflicts with his efficiency and low-risk orientation, and uncompromising style clashes with his formal exacting nature. B's entrepreneurial risk and limited public-sector experience fail his competence and track-record test.",
+    "confidence": 82.0,
+    "persona_tensions": [
+      "Graham's low tolerance for uncertainty may conflict with E's long-term reform timelines",
+      "C's uncompromising negotiation style could clash with Graham's formal, accountability-driven communication",
+      "B's optimistic investment assumptions and limited public-sector experience challenge Graham's evidence-based, low-risk approach"
+    ]
+  },
+  "agent_19": {
+    "scores": {
+      "A": 55.0,
+      "B": 30.0,
+      "C": 85.0,
+      "D": 40.0,
+      "E": 70.0,
+      "F": 60.0
+    },
+    "ranking": [
+      "C",
+      "E",
+      "F",
+      "A",
+      "D",
+      "B"
+    ],
+    "most_likely": "C",
+    "other_reasonable": [
+      "E",
+      "F"
+    ],
+    "rationale": "Aisha values accountability, fair process, and community knowledge, with low trust in authority and a probing style. C aligns most strongly with an accountability agenda, equity concerns, and policy literacy, despite a potential uncompromising style that may conflict with her preference for scrutiny but not necessarily with her own persistence. E offers evidence-based planning and open consultation, appealing to her high openness and triangulation of claims, though abstract communication may frustrate her. F's pragmatism and coalition building could appeal to her community knowledge value, but ambiguous alliances and lack of structural change lower fit. A's administrative reliability is moderate but incremental and less accountability-focused. D's security emphasis and privacy tradeoffs conflict with free expression and community trust. B's optimism and limited public-sector experience conflict with her evidence and incentive scrutiny.",
+    "confidence": 82.0,
+    "persona_tensions": [
+      "C's uncompromising style may hinder fair process and compromise, which Aisha values if scrutiny remains possible",
+      "E's abstract communication may frustrate Aisha's desire for concrete missing information",
+      "F's ambiguous alliances may conflict with Aisha's low authority trust and accountability priority",
+      "D's privacy tradeoffs clash with free expression and community oversight",
+      "B's optimistic assumptions trigger Aisha's incentive and evidence probing"
+    ]
+  }
+}

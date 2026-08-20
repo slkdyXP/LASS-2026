@@ -1,0 +1,79 @@
+[
+  {
+    "round": 0,
+    "n": 20,
+    "estimate_mean": 2712750.0,
+    "estimate_median": 2710000.0,
+    "estimate_sd": 8955.2983434977,
+    "signed_log_error_mean": -0.012328869797032965,
+    "signed_log_error_sd": 0.003292725147387492,
+    "unique_estimate_rate": 0.3,
+    "focal_estimate": 2740000
+  },
+  {
+    "round": 1,
+    "n": 20,
+    "estimate_mean": 2710000.0,
+    "estimate_median": 2710000.0,
+    "estimate_sd": 2809.757434745082,
+    "signed_log_error_mean": -0.013338467703851739,
+    "signed_log_error_sd": 0.001037771426187829,
+    "unique_estimate_rate": 0.15,
+    "focal_estimate": 2710000
+  },
+  {
+    "round": 2,
+    "n": 20,
+    "estimate_mean": 2709750.0,
+    "estimate_median": 2710000.0,
+    "estimate_sd": 2552.0889276702023,
+    "signed_log_error_mean": -0.013430633611577083,
+    "signed_log_error_sd": 0.0009429188569545238,
+    "unique_estimate_rate": 0.15,
+    "focal_estimate": 2710000
+  },
+  {
+    "round": 3,
+    "n": 20,
+    "estimate_mean": 2709750.0,
+    "estimate_median": 2710000.0,
+    "estimate_sd": 2552.0889276702023,
+    "signed_log_error_mean": -0.013430633611577083,
+    "signed_log_error_sd": 0.0009429188569545238,
+    "unique_estimate_rate": 0.15,
+    "focal_estimate": 2710000
+  },
+  {
+    "round": 4,
+    "n": 20,
+    "estimate_mean": 2709750.0,
+    "estimate_median": 2710000.0,
+    "estimate_sd": 2552.0889276702023,
+    "signed_log_error_mean": -0.013430633611577083,
+    "signed_log_error_sd": 0.0009429188569545238,
+    "unique_estimate_rate": 0.15,
+    "focal_estimate": 2710000
+  },
+  {
+    "round": 5,
+    "n": 20,
+    "estimate_mean": 2709750.0,
+    "estimate_median": 2710000.0,
+    "estimate_sd": 2552.0889276702023,
+    "signed_log_error_mean": -0.013430633611577083,
+    "signed_log_error_sd": 0.0009429188569545238,
+    "unique_estimate_rate": 0.15,
+    "focal_estimate": 2710000
+  },
+  {
+    "round": 6,
+    "n": 20,
+    "estimate_mean": 2709750.0,
+    "estimate_median": 2710000.0,
+    "estimate_sd": 2552.0889276702023,
+    "signed_log_error_mean": -0.013430633611577083,
+    "signed_log_error_sd": 0.0009429188569545238,
+    "unique_estimate_rate": 0.15,
+    "focal_estimate": 2710000
+  }
+]

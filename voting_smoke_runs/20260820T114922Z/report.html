@@ -1,0 +1,63 @@
+<!doctype html><meta charset=utf-8><style>body{font:15px system-ui;margin:32px;max-width:1100px}td,th{border:1px solid #bbb;padding:7px}table{border-collapse:collapse}</style><h1>Voting social-simulation run</h1><p>Independent private initialization; six seeded pair-dialogue rounds; blind judge after interaction.</p><h2>Vote diversity by round</h2><table><tr><th>round</th><th>counts</th><th>normalized entropy</th><th>max share</th></tr><tr><td>0</td><td>{'A': 2, 'B': 0, 'C': 1, 'D': 1, 'E': 0, 'F': 0}</td><td>0.580</td><td>0.500</td></tr><tr><td>1</td><td>{'A': 2, 'B': 0, 'C': 1, 'D': 1, 'E': 0, 'F': 0}</td><td>0.580</td><td>0.500</td></tr></table><h2>Audit</h2><pre>{
+  &quot;broadcast_enabled&quot;: false,
+  &quot;broadcast_delivery_count&quot;: 0,
+  &quot;population_size&quot;: 4,
+  &quot;rounds&quot;: 1,
+  &quot;schedule_errors&quot;: [],
+  &quot;candidate_balance&quot;: {
+    &quot;candidate_count&quot;: 6,
+    &quot;ids_unique&quot;: true,
+    &quot;all_have_strength_and_tradeoff&quot;: true,
+    &quot;balanced_strength_counts&quot;: true,
+    &quot;balanced_tradeoff_counts&quot;: true,
+    &quot;dominant_candidate_detected&quot;: false,
+    &quot;note&quot;: &quot;Structural audit only: each candidate has explicit strengths and tradeoffs. It does not claim empirical absence of model preference.&quot;
+  },
+  &quot;judge_blind_inputs&quot;: [
+    &quot;persona&quot;,
+    &quot;candidate_material&quot;
+  ],
+  &quot;judge_forbidden_inputs&quot;: [
+    &quot;agent choices&quot;,
+    &quot;dialogue&quot;,
+    &quot;trajectory&quot;,
+    &quot;group outcome&quot;
+  ]
+}</pre><h2>Metrics</h2><pre>{
+  &quot;initial_final_distance&quot;: {
+    &quot;js_divergence&quot;: 0.0,
+    &quot;total_variation&quot;: 0.0
+  },
+  &quot;change_reasons&quot;: {},
+  &quot;transition_matrix&quot;: {},
+  &quot;pairing&quot;: {
+    &quot;unique_edges&quot;: 2,
+    &quot;repeated_pairs&quot;: 0,
+    &quot;degree&quot;: {
+      &quot;per_agent&quot;: {
+        &quot;agent_01&quot;: 1,
+        &quot;agent_03&quot;: 1,
+        &quot;focal&quot;: 1,
+        &quot;agent_02&quot;: 1
+      },
+      &quot;distribution&quot;: {
+        &quot;1&quot;: 4
+      }
+    },
+    &quot;choice_assortativity_initial&quot;: 0.2,
+    &quot;choice_assortativity_final&quot;: 0.2
+  },
+  &quot;judge&quot;: {
+    &quot;initial_top1&quot;: 0.75,
+    &quot;final_top1&quot;: 0.75,
+    &quot;initial_top3&quot;: 1,
+    &quot;final_top3&quot;: 1,
+    &quot;final_low_compatibility_rate&quot;: 0
+  },
+  &quot;stability&quot;: {
+    &quot;changes_mean&quot;: 0,
+    &quot;changes_sd&quot;: 0.0,
+    &quot;immediate_partner_adoption_rate&quot;: 0.0,
+    &quot;no_clear_reason_change_rate&quot;: 0.0
+  }
+}</pre>
