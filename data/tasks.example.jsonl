@@ -1,4 +1,0 @@
-{"task_id":"city_population_example","question":"Estimate the 2020 population of Chicago, Illinois. Give one integer estimate only.","truth":2746388}
-{"task_id":"river_length_example","question":"Estimate the length in kilometers of the Nile River. Give one integer estimate only.","truth":6650}
-{"task_id":"moon_distance_example","question":"Estimate the average distance in kilometers from Earth to the Moon. Give one integer estimate only.","truth":384400}
-{"task_id":"eiffel_height_example","question":"Estimate the height in meters of the Eiffel Tower including its antenna. Give one integer estimate only.","truth":330}

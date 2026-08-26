@@ -1,3 +1,5 @@
-.c2r.env
-runs/
+.env
 __pycache__/
+*.py[cod]
+runs/
+

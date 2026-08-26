@@ -1,0 +1,12 @@
+[project]
+name = "scopeprobe"
+version = "0.1.0"
+description = "Controlled diagnosis of cross-scope memory interference in social LLM agents"
+requires-python = ">=3.10"
+
+[project.scripts]
+scopeprobe = "scopeprobe.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
