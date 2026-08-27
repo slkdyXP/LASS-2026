@@ -1,0 +1,211 @@
+{
+  "n_records": 24,
+  "by_baseline": [
+    {
+      "baseline": "evidence_gated_reflection",
+      "n": 24,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 0.5833,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7875
+    }
+  ],
+  "by_baseline_scenario": [
+    {
+      "baseline": "evidence_gated_reflection",
+      "scenario_id": "fish_world_anomaly_recovery",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.7333,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9458
+    },
+    {
+      "baseline": "evidence_gated_reflection",
+      "scenario_id": "fish_world_regime",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3667,
+      "action_accuracy": 0.6667,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7958
+    },
+    {
+      "baseline": "evidence_gated_reflection",
+      "scenario_id": "long_history_late_world_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.1667,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7083
+    },
+    {
+      "baseline": "evidence_gated_reflection",
+      "scenario_id": "traffic_world_lane_closure",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.2667,
+      "action_accuracy": 0.3333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7
+    }
+  ],
+  "by_dimension": {
+    "family": [
+      {
+        "baseline": "evidence_gated_reflection",
+        "family": "fishery",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      {
+        "baseline": "evidence_gated_reflection",
+        "family": "power_grid",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "evidence_gated_reflection",
+        "family": "traffic",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.3333
+      }
+    ],
+    "axis": [
+      {
+        "baseline": "evidence_gated_reflection",
+        "axis": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "evidence_gated_reflection",
+        "axis": "source_attribution",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      {
+        "baseline": "evidence_gated_reflection",
+        "axis": "world_vs_other",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.3333
+      }
+    ],
+    "evidence_level": [
+      {
+        "baseline": "evidence_gated_reflection",
+        "evidence_level": "explicit",
+        "n": 24,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5833
+      }
+    ],
+    "temporal_pattern": [
+      {
+        "baseline": "evidence_gated_reflection",
+        "temporal_pattern": "persistent",
+        "n": 24,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5833
+      }
+    ],
+    "history_pressure": [
+      {
+        "baseline": "evidence_gated_reflection",
+        "history_pressure": "high",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "evidence_gated_reflection",
+        "history_pressure": "low",
+        "n": 18,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6111
+      }
+    ],
+    "matched_group": [
+      {
+        "baseline": "evidence_gated_reflection",
+        "matched_group": "commute_delay",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.3333
+      },
+      {
+        "baseline": "evidence_gated_reflection",
+        "matched_group": "fish_stock_drop",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "evidence_gated_reflection",
+        "matched_group": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "evidence_gated_reflection",
+        "matched_group": "temporary_vs_persistent_world",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      }
+    ]
+  },
+  "evaluator": null
+}

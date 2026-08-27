@@ -1,0 +1,100 @@
+{
+  "n_records": 2,
+  "by_baseline": [
+    {
+      "baseline": "reflection",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.85
+    }
+  ],
+  "by_baseline_scenario": [
+    {
+      "baseline": "reflection",
+      "scenario_id": "long_history_late_world_shift",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.85
+    }
+  ],
+  "by_dimension": {
+    "family": [
+      {
+        "baseline": "reflection",
+        "family": "power_grid",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      }
+    ],
+    "axis": [
+      {
+        "baseline": "reflection",
+        "axis": "history_pressure",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      }
+    ],
+    "evidence_level": [
+      {
+        "baseline": "reflection",
+        "evidence_level": "explicit",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      }
+    ],
+    "temporal_pattern": [
+      {
+        "baseline": "reflection",
+        "temporal_pattern": "persistent",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      }
+    ],
+    "history_pressure": [
+      {
+        "baseline": "reflection",
+        "history_pressure": "high",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      }
+    ],
+    "matched_group": [
+      {
+        "baseline": "reflection",
+        "matched_group": "history_pressure",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      }
+    ]
+  },
+  "evaluator": null
+}

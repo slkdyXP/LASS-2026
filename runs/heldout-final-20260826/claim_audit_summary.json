@@ -1,0 +1,1927 @@
+{
+  "warning": "Model-assisted audit; manually verify positive claims before publication.",
+  "records": 0,
+  "errors": [
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "structured_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "guarded_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "structured_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "guarded_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "baseline": "reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "guarded_reflection",
+      "repeat": 2,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "evidence_gated_reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "baseline": "evidence_gated_memory_only",
+      "repeat": 1,
+      "round": 5,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "baseline": "reflection",
+      "repeat": 0,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "baseline": "structured_reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 4,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "baseline": "reflection",
+      "repeat": 1,
+      "round": 6,
+      "error_type": "RuntimeError",
+      "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    }
+  ],
+  "baselines": {}
+}

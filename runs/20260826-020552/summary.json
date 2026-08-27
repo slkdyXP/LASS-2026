@@ -1,0 +1,840 @@
+{
+  "n_records": 48,
+  "by_baseline": [
+    {
+      "baseline": "direct",
+      "n": 8,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8234
+    },
+    {
+      "baseline": "full_history",
+      "n": 8,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8297
+    },
+    {
+      "baseline": "recent_window",
+      "n": 8,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8438
+    },
+    {
+      "baseline": "reflection",
+      "n": 8,
+      "scope_accuracy": 0.875,
+      "mean_leakage": 0.0875,
+      "action_accuracy": 0.875,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 0.75,
+      "mean_composite": 0.8141
+    },
+    {
+      "baseline": "retrieval",
+      "n": 8,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8078
+    },
+    {
+      "baseline": "summary",
+      "n": 8,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.85
+    }
+  ],
+  "by_baseline_scenario": [
+    {
+      "baseline": "direct",
+      "scenario_id": "epidemic_other_violation",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8063
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "epidemic_world_variant",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.7,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8375
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.55,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8812
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.15,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7688
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "epidemic_other_violation",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.85
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "epidemic_world_variant",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.4,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.65,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8938
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.2,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.775
+    },
+    {
+      "baseline": "recent_window",
+      "scenario_id": "epidemic_other_violation",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9125
+    },
+    {
+      "baseline": "recent_window",
+      "scenario_id": "epidemic_world_variant",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7875
+    },
+    {
+      "baseline": "recent_window",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8875
+    },
+    {
+      "baseline": "recent_window",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7875
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "epidemic_other_violation",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.25,
+      "mean_scope_margin": 0.05,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 0.0,
+      "mean_composite": 0.6625
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "epidemic_world_variant",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.9,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.925
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.1,
+      "mean_scope_margin": 0.55,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8875
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.25,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7812
+    },
+    {
+      "baseline": "retrieval",
+      "scenario_id": "epidemic_other_violation",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.7,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9
+    },
+    {
+      "baseline": "retrieval",
+      "scenario_id": "epidemic_world_variant",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.75
+    },
+    {
+      "baseline": "retrieval",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.4,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8
+    },
+    {
+      "baseline": "retrieval",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.25,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7812
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "epidemic_other_violation",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.95
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "epidemic_world_variant",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.15,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7688
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.65,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8938
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7875
+    }
+  ],
+  "by_dimension": {
+    "family": [
+      {
+        "baseline": "direct",
+        "family": "epidemic",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "family": "public_goods",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "family": "epidemic",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "family": "public_goods",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "recent_window",
+        "family": "epidemic",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "recent_window",
+        "family": "public_goods",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "family": "epidemic",
+        "n": 4,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.125,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      {
+        "baseline": "reflection",
+        "family": "public_goods",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "retrieval",
+        "family": "epidemic",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "retrieval",
+        "family": "public_goods",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "family": "epidemic",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "family": "public_goods",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "axis": [
+      {
+        "baseline": "direct",
+        "axis": "world_vs_other",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "axis": "world_vs_other",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "recent_window",
+        "axis": "world_vs_other",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "axis": "world_vs_other",
+        "n": 8,
+        "scope_accuracy": 0.875,
+        "mean_leakage": 0.0875,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.875
+      },
+      {
+        "baseline": "retrieval",
+        "axis": "world_vs_other",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "axis": "world_vs_other",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "evidence_level": [
+      {
+        "baseline": "direct",
+        "evidence_level": "explicit",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "evidence_level": "explicit",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "recent_window",
+        "evidence_level": "explicit",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "evidence_level": "explicit",
+        "n": 8,
+        "scope_accuracy": 0.875,
+        "mean_leakage": 0.0875,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.875
+      },
+      {
+        "baseline": "retrieval",
+        "evidence_level": "explicit",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "evidence_level": "explicit",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "temporal_pattern": [
+      {
+        "baseline": "direct",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "recent_window",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 0.875,
+        "mean_leakage": 0.0875,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.875
+      },
+      {
+        "baseline": "retrieval",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "history_pressure": [
+      {
+        "baseline": "direct",
+        "history_pressure": "low",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "history_pressure": "low",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "recent_window",
+        "history_pressure": "low",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "history_pressure": "low",
+        "n": 8,
+        "scope_accuracy": 0.875,
+        "mean_leakage": 0.0875,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.875
+      },
+      {
+        "baseline": "retrieval",
+        "history_pressure": "low",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "history_pressure": "low",
+        "n": 8,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "matched_group": [
+      {
+        "baseline": "direct",
+        "matched_group": "infection_surge",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "public_return_drop",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "infection_surge",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "public_return_drop",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "recent_window",
+        "matched_group": "infection_surge",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "recent_window",
+        "matched_group": "public_return_drop",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "infection_surge",
+        "n": 4,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.125,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "public_return_drop",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "retrieval",
+        "matched_group": "infection_surge",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "retrieval",
+        "matched_group": "public_return_drop",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "infection_surge",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "public_return_drop",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ]
+  },
+  "evaluator": {
+    "wrong_scope_claim": 0.0,
+    "unsupported_blame": 0.0,
+    "world_overgeneralization": 0.0,
+    "group_overgeneralization": 0.0,
+    "persona_drift": 0.0,
+    "behavioral_consequence": 0.0,
+    "n": 48
+  }
+}

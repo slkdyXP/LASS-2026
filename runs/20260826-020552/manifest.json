@@ -1,0 +1,258 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260826
+  },
+  "dry_run": false,
+  "baselines": [
+    "direct",
+    "recent_window",
+    "retrieval",
+    "full_history",
+    "summary",
+    "reflection"
+  ],
+  "scenario_ids": [
+    "public_goods_world_multiplier",
+    "public_goods_david_free_rider",
+    "epidemic_world_variant",
+    "epidemic_other_violation"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "public_goods_world_multiplier",
+      "family": "public_goods",
+      "matched_group": "public_return_drop",
+      "title": "Public-project productivity falls while contributions remain stable",
+      "persona": "You value reciprocity, community welfare, and prudent use of your private endowment.",
+      "role": "Five residents each receive 20 tokens per round and choose a contribution to a public project.",
+      "action_name": "contribution",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: everyone contributes 10. The project doubles the pool and each resident receives 20 back.",
+        "Round 2: everyone contributes 10. The project again doubles the pool.",
+        "Round 3: Alice, Bob, Carol, and David each contribute 10; you previously contributed 10. Returns remain normal.",
+        "Round 4: public ledgers show that all five contributions remain 10, but a documented equipment failure lowers the project multiplier and each resident receives only 12.",
+        "Round 5: all residents reduce contributions to 8. The same equipment failure persists and the multiplier remains low."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 5,
+          "action_max": 12
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 4,
+          "action_max": 10
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "public_goods_david_free_rider",
+      "family": "public_goods",
+      "matched_group": "public_return_drop",
+      "title": "One resident free-rides while project productivity stays stable",
+      "persona": "You value reciprocity, community welfare, and prudent use of your private endowment.",
+      "role": "Five residents each receive 20 tokens per round and choose a contribution to a public project.",
+      "action_name": "contribution",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: everyone contributes 10. The project doubles the pool and each resident receives 20 back.",
+        "Round 2: everyone contributes 10. The project again doubles the pool.",
+        "Round 3: everyone contributes 10 and returns remain normal.",
+        "Round 4: Alice, Bob, Carol, and you contribute 10, but the public ledger shows David contributes 0. The project multiplier remains exactly two, and each resident receives only 16.",
+        "Round 5: David again contributes 0 after promising 10; the other four residents remain at 10 and the multiplier remains two."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 6,
+          "action_max": 12
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 5,
+          "action_max": 12
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "epidemic_world_variant",
+      "family": "epidemic",
+      "matched_group": "infection_surge",
+      "title": "A more transmissible variant raises infections under stable compliance",
+      "persona": "You value public health, proportional restrictions, and fair treatment of neighbors.",
+      "role": "You are one of five neighborhood representatives choosing a daily precaution effort from 0 to 10.",
+      "action_name": "precaution",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Day 1: all representatives choose precaution 5. New infections remain at 5.",
+        "Day 2: everyone again chooses 5 and infections remain at 5.",
+        "Day 3: everyone chooses 5; mobility reports show stable compliance.",
+        "Day 4: all five still choose 5 and mobility is unchanged, but sequencing confirms a new variant and infections rise to 14.",
+        "Day 5: all representatives raise precaution to 7; sequencing shows the variant remains dominant and infections are still elevated."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 6,
+          "action_max": 9
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 6,
+          "action_max": 9
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "epidemic_other_violation",
+      "family": "epidemic",
+      "matched_group": "infection_surge",
+      "title": "One representative repeatedly violates precautions",
+      "persona": "You value public health, proportional restrictions, and fair treatment of neighbors.",
+      "role": "You are one of five neighborhood representatives choosing a daily precaution effort from 0 to 10.",
+      "action_name": "precaution",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Day 1: all representatives choose precaution 5. New infections remain at 5.",
+        "Day 2: everyone again chooses 5 and infections remain at 5.",
+        "Day 3: everyone chooses 5; pathogen sequencing and transmission conditions remain stable.",
+        "Day 4: Alice, Bob, Carol, and you maintain precaution 5. David publicly reports 5 but verified mobility logs show he holds a crowded event; infections rise to 14 while pathogen properties remain unchanged.",
+        "Day 5: David holds another crowded event; all other representatives maintain their policy and laboratory estimates of transmissibility remain stable."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 5,
+          "action_max": 8
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 5,
+          "action_max": 8
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    }
+  ],
+  "warning": null
+}

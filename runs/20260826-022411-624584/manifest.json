@@ -1,0 +1,446 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 3,
+    "seed": 20260826
+  },
+  "dry_run": false,
+  "baselines": [
+    "direct",
+    "full_history",
+    "summary",
+    "reflection"
+  ],
+  "scenario_ids": [
+    "fish_world_anomaly_recovery",
+    "auction_self_need_shift",
+    "public_goods_world_multiplier",
+    "public_goods_david_free_rider",
+    "epidemic_other_violation",
+    "grid_bob_overuse",
+    "traffic_world_lane_closure"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "fish_world_anomaly_recovery",
+      "family": "fishery",
+      "matched_group": "temporary_vs_persistent_world",
+      "title": "One-off lake shock followed by recovery",
+      "persona": "You value long-term sustainability and fair access. You avoid overreacting to weak evidence.",
+      "role": "You are one of five fishers managing a shared lake. Decide your own harvest each round.",
+      "action_name": "harvest",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: everyone harvests 10 from stock 100; after normal regeneration, stock returns to 100.",
+        "Round 2: everyone harvests 10 from stock 100; stock returns to 100.",
+        "Round 3: everyone harvests 10 from stock 100; stock returns to 100.",
+        "Round 4: everyone again harvests exactly 10, but an observed one-day contamination event kills fish and next stock is 78. The contamination is reported as cleared at the end of the round.",
+        "Round 5: all four partners harvest 8 and you previously harvested 8. Water tests are normal and regeneration returns to its earlier rate; stock recovery matches the original rule.",
+        "Round 6: all four partners harvest 10 and you previously harvested 10. Water remains normal and stock again follows the original regeneration rule."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "episodic",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": null,
+          "expected_group_generalization": null,
+          "probe_question": null,
+          "action_min": 0,
+          "action_max": 9
+        },
+        {
+          "round": 6,
+          "expected_scope": "none",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self",
+            "world"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": null,
+          "expected_group_generalization": null,
+          "probe_question": null,
+          "action_min": 8,
+          "action_max": 11
+        }
+      ],
+      "suite": "core",
+      "axis": "source_attribution",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "auction_self_need_shift",
+      "family": "auction",
+      "matched_group": "auction_pressure",
+      "title": "Own water need increases while market stays stable",
+      "persona": "You are budget-conscious, moderately risk-averse, and care about fair access to water.",
+      "role": "You participate in a daily water auction. Initial health is 8/10, daily need is 2 units, and initial budget is 600. Choose one bid each day.",
+      "action_name": "bid",
+      "action_bounds": [
+        0,
+        120
+      ],
+      "observations": [
+        "Day 1: supply is 10 and other bids are 45-55. Your need is 2, previous bid is 50, and you receive enough water.",
+        "Day 2: supply is 10 and other bids are 45-55. Your need remains 2 and a bid of 50 succeeds.",
+        "Day 3: supply is 10 and other bids are 45-55. Your need remains 2 and a bid of 50 succeeds.",
+        "Day 4: supply and other bids remain unchanged. A documented medical treatment raises your own daily need from 2 to 4 units for the next three days; your health is 5/10 and budget is 450.",
+        "Day 5: supply is 10 and other bids remain 45-55. Your treatment continues, need is 4, health is 6/10, and budget is 360."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "self",
+          "protected_scopes": [
+            "world",
+            "other",
+            "persona"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": null,
+          "expected_group_generalization": null,
+          "probe_question": null,
+          "action_min": 55,
+          "action_max": 100
+        },
+        {
+          "round": 5,
+          "expected_scope": "self",
+          "protected_scopes": [
+            "world",
+            "other",
+            "persona"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": null,
+          "expected_group_generalization": null,
+          "probe_question": null,
+          "action_min": 55,
+          "action_max": 100
+        }
+      ],
+      "suite": "core",
+      "axis": "source_attribution",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "public_goods_world_multiplier",
+      "family": "public_goods",
+      "matched_group": "public_return_drop",
+      "title": "Public-project productivity falls while contributions remain stable",
+      "persona": "You value reciprocity, community welfare, and prudent use of your private endowment.",
+      "role": "Five residents each receive 20 tokens per round and choose a contribution to a public project.",
+      "action_name": "contribution",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: everyone contributes 10. The project doubles the pool and each resident receives 20 back.",
+        "Round 2: everyone contributes 10. The project again doubles the pool.",
+        "Round 3: Alice, Bob, Carol, and David each contribute 10; you previously contributed 10. Returns remain normal.",
+        "Round 4: public ledgers show that all five contributions remain 10, but a documented equipment failure lowers the project multiplier and each resident receives only 12.",
+        "Round 5: all residents reduce contributions to 8. The same equipment failure persists and the multiplier remains low."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 5,
+          "action_max": 12
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 4,
+          "action_max": 10
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "public_goods_david_free_rider",
+      "family": "public_goods",
+      "matched_group": "public_return_drop",
+      "title": "One resident free-rides while project productivity stays stable",
+      "persona": "You value reciprocity, community welfare, and prudent use of your private endowment.",
+      "role": "Five residents each receive 20 tokens per round and choose a contribution to a public project.",
+      "action_name": "contribution",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: everyone contributes 10. The project doubles the pool and each resident receives 20 back.",
+        "Round 2: everyone contributes 10. The project again doubles the pool.",
+        "Round 3: everyone contributes 10 and returns remain normal.",
+        "Round 4: Alice, Bob, Carol, and you contribute 10, but the public ledger shows David contributes 0. The project multiplier remains exactly two, and each resident receives only 16.",
+        "Round 5: David again contributes 0 after promising 10; the other four residents remain at 10 and the multiplier remains two."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 6,
+          "action_max": 12
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 5,
+          "action_max": 12
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "epidemic_other_violation",
+      "family": "epidemic",
+      "matched_group": "infection_surge",
+      "title": "One representative repeatedly violates precautions",
+      "persona": "You value public health, proportional restrictions, and fair treatment of neighbors.",
+      "role": "You are one of five neighborhood representatives choosing a daily precaution effort from 0 to 10.",
+      "action_name": "precaution",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Day 1: all representatives choose precaution 5. New infections remain at 5.",
+        "Day 2: everyone again chooses 5 and infections remain at 5.",
+        "Day 3: everyone chooses 5; pathogen sequencing and transmission conditions remain stable.",
+        "Day 4: Alice, Bob, Carol, and you maintain precaution 5. David publicly reports 5 but verified mobility logs show he holds a crowded event; infections rise to 14 while pathogen properties remain unchanged.",
+        "Day 5: David holds another crowded event; all other representatives maintain their policy and laboratory estimates of transmissibility remain stable."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 5,
+          "action_max": 8
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 5,
+          "action_max": 8
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "grid_bob_overuse",
+      "family": "power_grid",
+      "matched_group": "grid_shortfall",
+      "title": "Bob increases consumption while generation stays stable",
+      "persona": "You value reliable electricity, conservation, and equitable burden sharing.",
+      "role": "Five households share a solar microgrid. Choose your consumption from 0 to 10 units each evening.",
+      "action_name": "consumption",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Evening 1: generation is 30 and every household consumes 5. The battery ends at 20.",
+        "Evening 2: generation is 30 and all consume 5. Battery remains healthy.",
+        "Evening 3: generation is 30 and all consume 5.",
+        "Evening 4: generation remains 30. Alice, Carol, David, and you consume 5, but Bob's verified smart meter records 23; the battery falls by the same amount as in a severe generation shortfall.",
+        "Evening 5: generation remains 30 and Bob again consumes 18 after agreeing to 4; all other households comply with 4."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Bob",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 3,
+          "action_max": 5
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Bob",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 3,
+          "action_max": 5
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "traffic_world_lane_closure",
+      "family": "traffic",
+      "matched_group": "commute_delay",
+      "title": "A lane closure increases travel time under stable driver behavior",
+      "persona": "You value predictable travel, courtesy, and avoiding unnecessary congestion for others.",
+      "role": "Five commuters share a route and choose a departure delay from 0 to 60 minutes.",
+      "action_name": "departure_delay",
+      "action_bounds": [
+        0,
+        60
+      ],
+      "observations": [
+        "Day 1: all commuters depart at the usual time and travel takes 25 minutes.",
+        "Day 2: departure patterns are unchanged and travel takes 25 minutes.",
+        "Day 3: all five follow the agreed schedule and travel remains 25 minutes.",
+        "Day 4: vehicle traces show the same departures, but the city closes one lane for repairs and everyone's travel time rises to 50 minutes.",
+        "Day 5: the closure remains posted. Other commuters stagger departure by 15 minutes."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 10,
+          "action_max": 30
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 10,
+          "action_max": 30
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    }
+  ],
+  "warning": null
+}

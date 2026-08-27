@@ -1,0 +1,209 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 3,
+    "seed": 20260826
+  },
+  "dry_run": false,
+  "baselines": [
+    "evidence_gated_reflection"
+  ],
+  "scenario_ids": [
+    "fish_world_anomaly_recovery",
+    "traffic_world_lane_closure",
+    "long_history_late_world_shift"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "fish_world_anomaly_recovery",
+      "family": "fishery",
+      "matched_group": "temporary_vs_persistent_world",
+      "title": "One-off lake shock followed by recovery",
+      "persona": "You value long-term sustainability and fair access. You avoid overreacting to weak evidence.",
+      "role": "You are one of five fishers managing a shared lake. Decide your own harvest each round.",
+      "action_name": "harvest",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: everyone harvests 10 from stock 100; after normal regeneration, stock returns to 100.",
+        "Round 2: everyone harvests 10 from stock 100; stock returns to 100.",
+        "Round 3: everyone harvests 10 from stock 100; stock returns to 100.",
+        "Round 4: everyone again harvests exactly 10, but an observed one-day contamination event kills fish and next stock is 78. The contamination is reported as cleared at the end of the round.",
+        "Round 5: all four partners harvest 8 and you previously harvested 8. Water tests are normal and regeneration returns to its earlier rate; stock recovery matches the original rule.",
+        "Round 6: all four partners harvest 10 and you previously harvested 10. Water remains normal and stock again follows the original regeneration rule."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "episodic",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": null,
+          "expected_group_generalization": null,
+          "probe_question": null,
+          "action_min": 0,
+          "action_max": 9
+        },
+        {
+          "round": 6,
+          "expected_scope": "none",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self",
+            "world"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": null,
+          "expected_group_generalization": null,
+          "probe_question": null,
+          "action_min": 8,
+          "action_max": 11
+        }
+      ],
+      "suite": "core",
+      "axis": "source_attribution",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "traffic_world_lane_closure",
+      "family": "traffic",
+      "matched_group": "commute_delay",
+      "title": "A lane closure increases travel time under stable driver behavior",
+      "persona": "You value predictable travel, courtesy, and avoiding unnecessary congestion for others.",
+      "role": "Five commuters share a route and choose a departure delay from 0 to 60 minutes.",
+      "action_name": "departure_delay",
+      "action_bounds": [
+        0,
+        60
+      ],
+      "observations": [
+        "Day 1: all commuters depart at the usual time and travel takes 25 minutes.",
+        "Day 2: departure patterns are unchanged and travel takes 25 minutes.",
+        "Day 3: all five follow the agreed schedule and travel remains 25 minutes.",
+        "Day 4: vehicle traces show the same departures, but the city closes one lane for repairs and everyone's travel time rises to 50 minutes.",
+        "Day 5: the closure remains posted. Other commuters stagger departure by 15 minutes."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 10,
+          "action_max": 30
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 10,
+          "action_max": 30
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "long_history_late_world_shift",
+      "family": "power_grid",
+      "matched_group": "history_pressure",
+      "title": "Late generation shift after a long history containing partner disputes",
+      "persona": "You value conservation and judge current evidence without letting old resolved disputes dominate.",
+      "role": "Five households share a microgrid. Choose consumption from 0 to 10 units.",
+      "action_name": "consumption",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Evening 1: generation 30; everyone consumes 5.",
+        "Evening 2: generation 30; everyone consumes 5. Alice asks a billing question that is resolved.",
+        "Evening 3: generation 30; everyone consumes 5. Bob briefly reports a faulty meter, then the utility confirms it was a display error.",
+        "Evening 4: generation 30; everyone consumes 5. Carol complains about noise; the issue is unrelated to electricity.",
+        "Evening 5: generation 30; everyone consumes 5. David pays a bill one day late and then clears it.",
+        "Evening 6: generation 30; every smart meter records consumption 5.",
+        "Evening 7: generation 30; every smart meter records consumption 5.",
+        "Evening 8: generation 30; every smart meter records consumption 5.",
+        "Evening 9: generation 30; every smart meter records consumption 5.",
+        "Evening 10: all meters still record 5, but an inverter failure reduces measured generation to 12 and the battery falls sharply.",
+        "Evening 11: the inverter remains failed, all partners reduce to 4, and generation remains 12."
+      ],
+      "checkpoints": [
+        {
+          "round": 10,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 2,
+          "action_max": 4
+        },
+        {
+          "round": 11,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 2,
+          "action_max": 4
+        }
+      ],
+      "suite": "stress",
+      "axis": "history_pressure",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "high"
+    }
+  ],
+  "warning": null
+}

@@ -1,0 +1,1946 @@
+{
+  "n_records": 336,
+  "by_baseline": [
+    {
+      "baseline": "direct",
+      "n": 84,
+      "scope_accuracy": 0.9167,
+      "mean_leakage": 0.004,
+      "action_accuracy": 0.8929,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8575
+    },
+    {
+      "baseline": "full_history",
+      "n": 84,
+      "scope_accuracy": 0.9405,
+      "mean_leakage": 0.0008,
+      "action_accuracy": 0.9048,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.871
+    },
+    {
+      "baseline": "reflection",
+      "n": 84,
+      "scope_accuracy": 0.7738,
+      "mean_leakage": 0.0589,
+      "action_accuracy": 0.7619,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.9762,
+      "generalization_accuracy": 0.9762,
+      "mean_composite": 0.8303
+    },
+    {
+      "baseline": "summary",
+      "n": 84,
+      "scope_accuracy": 0.869,
+      "mean_leakage": 0.0151,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 0.9881,
+      "mean_composite": 0.8503
+    }
+  ],
+  "by_baseline_scenario": [
+    {
+      "baseline": "direct",
+      "scenario_id": "auction_bob_conditional",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3833,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9021
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "auction_self_need_shift",
+      "n": 6,
+      "scope_accuracy": 0.6667,
+      "mean_leakage": 0.0333,
+      "mean_scope_margin": 0.2,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8667
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "entity_binding_bob_not_david",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.4667,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8708
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "epidemic_other_violation",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.5167,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8771
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "fish_other_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.5167,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8771
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "fish_world_anomaly_recovery",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6667,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8958
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "fish_world_regime",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3167,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7479
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "grid_bob_overuse",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9542
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "long_history_late_world_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3167,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7687
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6833,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9396
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3667,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7958
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "salience_other_storm_named",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9542
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "team_self_capability_drop",
+      "n": 6,
+      "scope_accuracy": 0.3333,
+      "mean_leakage": 0.0222,
+      "mean_scope_margin": -0.0333,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7722
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "traffic_world_lane_closure",
+      "n": 6,
+      "scope_accuracy": 0.8333,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.4333,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7833
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "auction_bob_conditional",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3333,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9167
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "auction_self_need_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3167,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9146
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "entity_binding_bob_not_david",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.65,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9562
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "epidemic_other_violation",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.7,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "fish_other_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.5833,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8854
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "fish_world_anomaly_recovery",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.75,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9062
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "fish_world_regime",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6167,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7646
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "grid_bob_overuse",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.975
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "long_history_late_world_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6333,
+      "action_accuracy": 0.6667,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7875
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6167,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8687
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7875
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "salience_other_storm_named",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.7333,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "team_self_capability_drop",
+      "n": 6,
+      "scope_accuracy": 0.1667,
+      "mean_leakage": 0.0111,
+      "mean_scope_margin": -0.0333,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7694
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "traffic_world_lane_closure",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3667,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7958
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "auction_bob_conditional",
+      "n": 6,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.1611,
+      "mean_scope_margin": -0.2167,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7319
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "auction_self_need_shift",
+      "n": 6,
+      "scope_accuracy": 0.6667,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.4333,
+      "action_accuracy": 0.6667,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8458
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "entity_binding_bob_not_david",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0111,
+      "mean_scope_margin": 0.3667,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8611
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "epidemic_other_violation",
+      "n": 6,
+      "scope_accuracy": 0.6667,
+      "mean_leakage": 0.0944,
+      "mean_scope_margin": 0.3333,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.8333,
+      "generalization_accuracy": 0.6667,
+      "mean_composite": 0.807
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "fish_other_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0722,
+      "mean_scope_margin": 0.5833,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.941
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "fish_world_anomaly_recovery",
+      "n": 6,
+      "scope_accuracy": 0.1667,
+      "mean_leakage": 0.075,
+      "mean_scope_margin": 0.2333,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7573
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "fish_world_regime",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0111,
+      "mean_scope_margin": 0.75,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8674
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "grid_bob_overuse",
+      "n": 6,
+      "scope_accuracy": 0.8333,
+      "mean_leakage": 0.0778,
+      "mean_scope_margin": 0.4,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.8333,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8611
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "long_history_late_world_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0444,
+      "mean_scope_margin": 0.7,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8632
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0278,
+      "mean_scope_margin": 0.65,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8549
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.2333,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7792
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "salience_other_storm_named",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.8167,
+      "action_accuracy": 0.6667,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9354
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "team_self_capability_drop",
+      "n": 6,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.1834,
+      "mean_scope_margin": -0.5167,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7104
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "traffic_world_lane_closure",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0667,
+      "mean_scope_margin": 0.5667,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8084
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "auction_bob_conditional",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0111,
+      "mean_scope_margin": 0.3,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9153
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "auction_self_need_shift",
+      "n": 6,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.0056,
+      "mean_scope_margin": 0.1833,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8368
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "entity_binding_bob_not_david",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.4167,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9062
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "epidemic_other_violation",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.7333,
+      "action_accuracy": 0.8333,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9042
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "fish_other_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6667,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8958
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "fish_world_anomaly_recovery",
+      "n": 6,
+      "scope_accuracy": 0.6667,
+      "mean_leakage": 0.0167,
+      "mean_scope_margin": 0.6667,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8604
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "fish_world_regime",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.75,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8854
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "grid_bob_overuse",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0222,
+      "mean_scope_margin": 0.5833,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9326
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "long_history_late_world_shift",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.2,
+      "action_accuracy": 0.6667,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7333
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0222,
+      "mean_scope_margin": 0.6,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8931
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.2333,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7792
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "salience_other_storm_named",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.7333,
+      "action_accuracy": 0.6667,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9042
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "team_self_capability_drop",
+      "n": 6,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.1333,
+      "mean_scope_margin": -0.4,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7333
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "traffic_world_lane_closure",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.4667,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 0.8333,
+      "mean_composite": 0.725
+    }
+  ],
+  "by_dimension": {
+    "family": [
+      {
+        "baseline": "direct",
+        "family": "auction",
+        "n": 12,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0167,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "family": "epidemic",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "family": "fishery",
+        "n": 18,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "direct",
+        "family": "power_grid",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.9167
+      },
+      {
+        "baseline": "direct",
+        "family": "public_goods",
+        "n": 18,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "family": "supply_chain",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "direct",
+        "family": "teamwork",
+        "n": 6,
+        "scope_accuracy": 0.3333,
+        "mean_leakage": 0.0222,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "direct",
+        "family": "traffic",
+        "n": 6,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "family": "auction",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "family": "epidemic",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "family": "fishery",
+        "n": 18,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "full_history",
+        "family": "power_grid",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "full_history",
+        "family": "public_goods",
+        "n": 18,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "family": "supply_chain",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "family": "teamwork",
+        "n": 6,
+        "scope_accuracy": 0.1667,
+        "mean_leakage": 0.0111,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "family": "traffic",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "family": "auction",
+        "n": 12,
+        "scope_accuracy": 0.5833,
+        "mean_leakage": 0.0806,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      {
+        "baseline": "reflection",
+        "family": "epidemic",
+        "n": 6,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0944,
+        "entity_accuracy": 0.8333,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "family": "fishery",
+        "n": 18,
+        "scope_accuracy": 0.7222,
+        "mean_leakage": 0.0528,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6111
+      },
+      {
+        "baseline": "reflection",
+        "family": "power_grid",
+        "n": 12,
+        "scope_accuracy": 0.9167,
+        "mean_leakage": 0.0611,
+        "entity_accuracy": 0.9167,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "reflection",
+        "family": "public_goods",
+        "n": 18,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.013,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.9444
+      },
+      {
+        "baseline": "reflection",
+        "family": "supply_chain",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "reflection",
+        "family": "teamwork",
+        "n": 6,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.1834,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "family": "traffic",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0667,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "summary",
+        "family": "auction",
+        "n": 12,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.0083,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "family": "epidemic",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "summary",
+        "family": "fishery",
+        "n": 18,
+        "scope_accuracy": 0.8889,
+        "mean_leakage": 0.0056,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "summary",
+        "family": "power_grid",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0111,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "summary",
+        "family": "public_goods",
+        "n": 18,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0074,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "family": "supply_chain",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "summary",
+        "family": "teamwork",
+        "n": 6,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.1333,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "family": "traffic",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      }
+    ],
+    "axis": [
+      {
+        "baseline": "direct",
+        "axis": "entity_binding",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "axis": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "direct",
+        "axis": "salience_misdirection",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "direct",
+        "axis": "self_vs_world",
+        "n": 6,
+        "scope_accuracy": 0.3333,
+        "mean_leakage": 0.0222,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "direct",
+        "axis": "source_attribution",
+        "n": 30,
+        "scope_accuracy": 0.9333,
+        "mean_leakage": 0.0067,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8
+      },
+      {
+        "baseline": "direct",
+        "axis": "world_vs_other",
+        "n": 30,
+        "scope_accuracy": 0.9667,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "axis": "entity_binding",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "axis": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "full_history",
+        "axis": "salience_misdirection",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "axis": "self_vs_world",
+        "n": 6,
+        "scope_accuracy": 0.1667,
+        "mean_leakage": 0.0111,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "axis": "source_attribution",
+        "n": 30,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8
+      },
+      {
+        "baseline": "full_history",
+        "axis": "world_vs_other",
+        "n": 30,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "axis": "entity_binding",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0111,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "axis": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0444,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "axis": "salience_misdirection",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "reflection",
+        "axis": "self_vs_world",
+        "n": 6,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.1834,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "axis": "source_attribution",
+        "n": 30,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0639,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "reflection",
+        "axis": "world_vs_other",
+        "n": 30,
+        "scope_accuracy": 0.9,
+        "mean_leakage": 0.0533,
+        "entity_accuracy": 0.9333,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "summary",
+        "axis": "entity_binding",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "axis": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "summary",
+        "axis": "salience_misdirection",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "summary",
+        "axis": "self_vs_world",
+        "n": 6,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.1333,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "axis": "source_attribution",
+        "n": 30,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0067,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8
+      },
+      {
+        "baseline": "summary",
+        "axis": "world_vs_other",
+        "n": 30,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0089,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8667
+      }
+    ],
+    "evidence_level": [
+      {
+        "baseline": "direct",
+        "evidence_level": "explicit",
+        "n": 78,
+        "scope_accuracy": 0.9103,
+        "mean_leakage": 0.0043,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8974
+      },
+      {
+        "baseline": "direct",
+        "evidence_level": "explicit_with_distractor",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "full_history",
+        "evidence_level": "explicit",
+        "n": 78,
+        "scope_accuracy": 0.9359,
+        "mean_leakage": 0.0009,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8974
+      },
+      {
+        "baseline": "full_history",
+        "evidence_level": "explicit_with_distractor",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "evidence_level": "explicit",
+        "n": 78,
+        "scope_accuracy": 0.7564,
+        "mean_leakage": 0.0635,
+        "entity_accuracy": 0.9744,
+        "action_accuracy": 0.7692
+      },
+      {
+        "baseline": "reflection",
+        "evidence_level": "explicit_with_distractor",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "summary",
+        "evidence_level": "explicit",
+        "n": 78,
+        "scope_accuracy": 0.859,
+        "mean_leakage": 0.0162,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8462
+      },
+      {
+        "baseline": "summary",
+        "evidence_level": "explicit_with_distractor",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      }
+    ],
+    "temporal_pattern": [
+      {
+        "baseline": "direct",
+        "temporal_pattern": "persistent",
+        "n": 78,
+        "scope_accuracy": 0.9615,
+        "mean_leakage": 0.0026,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8974
+      },
+      {
+        "baseline": "direct",
+        "temporal_pattern": "temporary_state",
+        "n": 6,
+        "scope_accuracy": 0.3333,
+        "mean_leakage": 0.0222,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "full_history",
+        "temporal_pattern": "persistent",
+        "n": 78,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8974
+      },
+      {
+        "baseline": "full_history",
+        "temporal_pattern": "temporary_state",
+        "n": 6,
+        "scope_accuracy": 0.1667,
+        "mean_leakage": 0.0111,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "temporal_pattern": "persistent",
+        "n": 78,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0494,
+        "entity_accuracy": 0.9744,
+        "action_accuracy": 0.7436
+      },
+      {
+        "baseline": "reflection",
+        "temporal_pattern": "temporary_state",
+        "n": 6,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.1834,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "temporal_pattern": "persistent",
+        "n": 78,
+        "scope_accuracy": 0.9359,
+        "mean_leakage": 0.006,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8205
+      },
+      {
+        "baseline": "summary",
+        "temporal_pattern": "temporary_state",
+        "n": 6,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.1333,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "history_pressure": [
+      {
+        "baseline": "direct",
+        "history_pressure": "high",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "direct",
+        "history_pressure": "low",
+        "n": 66,
+        "scope_accuracy": 0.8939,
+        "mean_leakage": 0.0051,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8939
+      },
+      {
+        "baseline": "direct",
+        "history_pressure": "medium",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.9167
+      },
+      {
+        "baseline": "full_history",
+        "history_pressure": "high",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "full_history",
+        "history_pressure": "low",
+        "n": 66,
+        "scope_accuracy": 0.9242,
+        "mean_leakage": 0.001,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.9091
+      },
+      {
+        "baseline": "full_history",
+        "history_pressure": "medium",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "history_pressure": "high",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0444,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "history_pressure": "low",
+        "n": 66,
+        "scope_accuracy": 0.7121,
+        "mean_leakage": 0.07,
+        "entity_accuracy": 0.9697,
+        "action_accuracy": 0.7727
+      },
+      {
+        "baseline": "reflection",
+        "history_pressure": "medium",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0056,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "summary",
+        "history_pressure": "high",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "summary",
+        "history_pressure": "low",
+        "n": 66,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0192,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8485
+      },
+      {
+        "baseline": "summary",
+        "history_pressure": "medium",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      }
+    ],
+    "matched_group": [
+      {
+        "baseline": "direct",
+        "matched_group": "auction_pressure",
+        "n": 12,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0167,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "commute_delay",
+        "n": 6,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "entity_binding",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "fish_stock_drop",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "grid_shortfall",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "infection_surge",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "public_return_drop",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "salience_misdirection",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "self_state",
+        "n": 6,
+        "scope_accuracy": 0.3333,
+        "mean_leakage": 0.0222,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "direct",
+        "matched_group": "temporary_vs_persistent_world",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "auction_pressure",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "commute_delay",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "entity_binding",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "fish_stock_drop",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "grid_shortfall",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "infection_surge",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "public_return_drop",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "salience_misdirection",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "self_state",
+        "n": 6,
+        "scope_accuracy": 0.1667,
+        "mean_leakage": 0.0111,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "full_history",
+        "matched_group": "temporary_vs_persistent_world",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "auction_pressure",
+        "n": 12,
+        "scope_accuracy": 0.5833,
+        "mean_leakage": 0.0806,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "commute_delay",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0667,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "entity_binding",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0111,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "fish_stock_drop",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0417,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "grid_shortfall",
+        "n": 6,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0778,
+        "entity_accuracy": 0.8333,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0444,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "infection_surge",
+        "n": 6,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0944,
+        "entity_accuracy": 0.8333,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "public_return_drop",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0139,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.9167
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "salience_misdirection",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "self_state",
+        "n": 6,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.1834,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "temporary_vs_persistent_world",
+        "n": 6,
+        "scope_accuracy": 0.1667,
+        "mean_leakage": 0.075,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "auction_pressure",
+        "n": 12,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.0083,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "commute_delay",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "entity_binding",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "fish_stock_drop",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "grid_shortfall",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0222,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "history_pressure",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "infection_surge",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.8333
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "public_return_drop",
+        "n": 12,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0111,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "salience_misdirection",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.6667
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "self_state",
+        "n": 6,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.1333,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "temporary_vs_persistent_world",
+        "n": 6,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0167,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      }
+    ]
+  },
+  "evaluator": null
+}

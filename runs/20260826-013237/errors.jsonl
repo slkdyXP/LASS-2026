@@ -1,0 +1,4 @@
+{"scenario_id": "public_goods_world_multiplier", "baseline": "summary", "repeat": 0, "error_type": "RuntimeError", "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"}
+{"scenario_id": "public_goods_world_multiplier", "baseline": "full_history", "repeat": 0, "error_type": "RuntimeError", "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"}
+{"scenario_id": "public_goods_david_free_rider", "baseline": "full_history", "repeat": 0, "error_type": "RuntimeError", "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"}
+{"scenario_id": "public_goods_david_free_rider", "baseline": "summary", "repeat": 0, "error_type": "RuntimeError", "error": "DeepSeek request failed after 4 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>"}

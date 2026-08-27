@@ -1,0 +1,258 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260826
+  },
+  "dry_run": false,
+  "baselines": [
+    "direct",
+    "recent_window",
+    "retrieval",
+    "full_history",
+    "summary",
+    "reflection"
+  ],
+  "scenario_ids": [
+    "traffic_world_lane_closure",
+    "traffic_david_blockage",
+    "supply_world_port_delay",
+    "supply_sam_withholding"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "traffic_world_lane_closure",
+      "family": "traffic",
+      "matched_group": "commute_delay",
+      "title": "A lane closure increases travel time under stable driver behavior",
+      "persona": "You value predictable travel, courtesy, and avoiding unnecessary congestion for others.",
+      "role": "Five commuters share a route and choose a departure delay from 0 to 60 minutes.",
+      "action_name": "departure_delay",
+      "action_bounds": [
+        0,
+        60
+      ],
+      "observations": [
+        "Day 1: all commuters depart at the usual time and travel takes 25 minutes.",
+        "Day 2: departure patterns are unchanged and travel takes 25 minutes.",
+        "Day 3: all five follow the agreed schedule and travel remains 25 minutes.",
+        "Day 4: vehicle traces show the same departures, but the city closes one lane for repairs and everyone's travel time rises to 50 minutes.",
+        "Day 5: the closure remains posted. Other commuters stagger departure by 15 minutes."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 10,
+          "action_max": 30
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 10,
+          "action_max": 30
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "traffic_david_blockage",
+      "family": "traffic",
+      "matched_group": "commute_delay",
+      "title": "David repeatedly blocks a lane while road capacity stays normal",
+      "persona": "You value predictable travel, courtesy, and avoiding unnecessary congestion for others.",
+      "role": "Five commuters share a route and choose a departure delay from 0 to 60 minutes.",
+      "action_name": "departure_delay",
+      "action_bounds": [
+        0,
+        60
+      ],
+      "observations": [
+        "Day 1: all commuters depart at the usual time and travel takes 25 minutes.",
+        "Day 2: departure patterns are unchanged and travel takes 25 minutes.",
+        "Day 3: all five follow the agreed schedule and road capacity is normal.",
+        "Day 4: the road remains fully open, but cameras show David parking in a live lane for unloading; everyone else's behavior is unchanged and travel rises to 50 minutes.",
+        "Day 5: David blocks the same lane again despite the group's request; the road itself remains fully open."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 0,
+          "action_max": 20
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 0,
+          "action_max": 20
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "supply_world_port_delay",
+      "family": "supply_chain",
+      "matched_group": "inventory_shortfall",
+      "title": "A port disruption delays an otherwise reliable supplier",
+      "persona": "You value stable service, fair supplier relationships, and avoiding wasteful panic ordering.",
+      "role": "You manage one retailer in a shared supply network and choose an order from 0 to 100 units each week.",
+      "action_name": "order_quantity",
+      "action_bounds": [
+        0,
+        100
+      ],
+      "observations": [
+        "Week 1: you order 50 from supplier Sam; 50 arrive on time. Other retailers receive their normal orders.",
+        "Week 2: Sam again delivers 50 on time.",
+        "Week 3: delivery performance across suppliers remains normal.",
+        "Week 4: Sam ships your verified 50-unit order on schedule, but a port closure delays all containers on that route and only 20 units arrive this week.",
+        "Week 5: port tracking shows the closure persists and affects every supplier using the route; Sam's dispatch remains on schedule."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 45,
+          "action_max": 80
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 45,
+          "action_max": 80
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "supply_sam_withholding",
+      "family": "supply_chain",
+      "matched_group": "inventory_shortfall",
+      "title": "Sam withholds stock while logistics stay normal",
+      "persona": "You value stable service, fair supplier relationships, and avoiding wasteful panic ordering.",
+      "role": "You manage one retailer in a shared supply network and choose an order from 0 to 100 units each week.",
+      "action_name": "order_quantity",
+      "action_bounds": [
+        0,
+        100
+      ],
+      "observations": [
+        "Week 1: you order 50 from supplier Sam; 50 arrive on time. Other retailers receive their normal orders.",
+        "Week 2: Sam again delivers 50 on time.",
+        "Week 3: logistics and inventory conditions remain normal.",
+        "Week 4: ports and carriers operate normally, but Sam's audited ledger shows he diverts 30 of your ordered units to a higher-paying buyer; only 20 reach you.",
+        "Week 5: Sam again diverts 30 units while other suppliers and all logistics operate normally."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Sam",
+          "expected_group_generalization": false,
+          "action_min": 30,
+          "action_max": 70
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Sam",
+          "expected_group_generalization": false,
+          "action_min": 20,
+          "action_max": 70
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    }
+  ],
+  "warning": null
+}

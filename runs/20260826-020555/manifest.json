@@ -1,0 +1,258 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260826
+  },
+  "dry_run": false,
+  "baselines": [
+    "direct",
+    "recent_window",
+    "retrieval",
+    "full_history",
+    "summary",
+    "reflection"
+  ],
+  "scenario_ids": [
+    "grid_world_cloud_cover",
+    "grid_bob_overuse",
+    "team_world_complexity",
+    "team_carol_effort_drop"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "grid_world_cloud_cover",
+      "family": "power_grid",
+      "matched_group": "grid_shortfall",
+      "title": "Cloud cover reduces generation while households remain stable",
+      "persona": "You value reliable electricity, conservation, and equitable burden sharing.",
+      "role": "Five households share a solar microgrid. Choose your consumption from 0 to 10 units each evening.",
+      "action_name": "consumption",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Evening 1: generation is 30 and every household consumes 5. The battery ends at 20.",
+        "Evening 2: generation is 30 and all consume 5. Battery remains healthy.",
+        "Evening 3: generation is 30 and all consume 5.",
+        "Evening 4: smart meters show every household still consumes 5, but measured solar generation falls from 30 to 12 during regional cloud cover; the battery falls sharply.",
+        "Evening 5: forecasts and meters show cloud cover persists. The other four households reduce consumption to 4."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 2,
+          "action_max": 4
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 2,
+          "action_max": 4
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "grid_bob_overuse",
+      "family": "power_grid",
+      "matched_group": "grid_shortfall",
+      "title": "Bob increases consumption while generation stays stable",
+      "persona": "You value reliable electricity, conservation, and equitable burden sharing.",
+      "role": "Five households share a solar microgrid. Choose your consumption from 0 to 10 units each evening.",
+      "action_name": "consumption",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Evening 1: generation is 30 and every household consumes 5. The battery ends at 20.",
+        "Evening 2: generation is 30 and all consume 5. Battery remains healthy.",
+        "Evening 3: generation is 30 and all consume 5.",
+        "Evening 4: generation remains 30. Alice, Carol, David, and you consume 5, but Bob's verified smart meter records 23; the battery falls by the same amount as in a severe generation shortfall.",
+        "Evening 5: generation remains 30 and Bob again consumes 18 after agreeing to 4; all other households comply with 4."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Bob",
+          "expected_group_generalization": false,
+          "action_min": 3,
+          "action_max": 5
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Bob",
+          "expected_group_generalization": false,
+          "action_min": 3,
+          "action_max": 5
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "team_world_complexity",
+      "family": "teamwork",
+      "matched_group": "team_delay",
+      "title": "Unexpected task complexity delays a cooperative team",
+      "persona": "You value reliable teamwork, fair workload, and completing the project without scapegoating.",
+      "role": "Five engineers share a project. Choose your work allocation from 0 to 12 hours for the next sprint.",
+      "action_name": "work_hours",
+      "action_bounds": [
+        0,
+        12
+      ],
+      "observations": [
+        "Sprint 1: every engineer works 8 hours and the team completes 40 points.",
+        "Sprint 2: everyone works 8 and completes 40 points.",
+        "Sprint 3: everyone works 8 and the workflow is stable.",
+        "Sprint 4: time logs show all five engineers still work 8 hours, but a newly discovered legacy dependency doubles task complexity and output falls to 22 points.",
+        "Sprint 5: all engineers work 9 hours. The dependency remains and per-hour output is still lower."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 7,
+          "action_max": 10
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 7,
+          "action_max": 10
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "team_carol_effort_drop",
+      "family": "teamwork",
+      "matched_group": "team_delay",
+      "title": "Carol silently reduces effort while task complexity stays stable",
+      "persona": "You value reliable teamwork, fair workload, and completing the project without scapegoating.",
+      "role": "Five engineers share a project. Choose your work allocation from 0 to 12 hours for the next sprint.",
+      "action_name": "work_hours",
+      "action_bounds": [
+        0,
+        12
+      ],
+      "observations": [
+        "Sprint 1: every engineer works 8 hours and the team completes 40 points.",
+        "Sprint 2: everyone works 8 and completes 40 points.",
+        "Sprint 3: everyone works 8 and task complexity is stable.",
+        "Sprint 4: Alice, Bob, David, and you log and verify 8 hours. Carol reports 8 but repository logs show only 1 hour; task complexity is unchanged and team output falls to 22 points.",
+        "Sprint 5: Carol again contributes only 1 verified hour while the other four engineers work 8; task estimates remain stable."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Carol",
+          "expected_group_generalization": false,
+          "action_min": 7,
+          "action_max": 10
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Carol",
+          "expected_group_generalization": false,
+          "action_min": 7,
+          "action_max": 10
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    }
+  ],
+  "warning": null
+}

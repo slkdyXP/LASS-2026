@@ -47,6 +47,10 @@ The evidence-gated method keeps single events as episodes or hypotheses, require
 
 The frozen held-out protocol is in [`configs/scenarios_heldout.json`](configs/scenarios_heldout.json), and its results are summarized in [`HELDOUT_RESULTS.md`](HELDOUT_RESULTS.md). The five-agent closed-loop fishery runner is available through `python3 -m scopeprobe closed-loop`.
 
+The six leave-one-section-out variants are named `ablate_stable_persona`, `ablate_current_self_state`, `ablate_consolidated_models`, `ablate_open_hypotheses`, `ablate_recent_observed_episodes`, and `ablate_action_policy`. Their frozen held-out comparison is summarized in [`ABLATION_RESULTS.md`](ABLATION_RESULTS.md).
+
+The follow-up compact baseline removes both consolidated models and open hypotheses, leaving stable persona, current self state, recent observed episodes, and action policy. Its four leave-one-out conditions and results are summarized in [`FOUR_COMPONENT_ABLATION_RESULTS.md`](FOUR_COMPONENT_ABLATION_RESULTS.md).
+
 ## Recommended one-day execution order
 
 First run a live API smoke test on one non-fishery matched pair:

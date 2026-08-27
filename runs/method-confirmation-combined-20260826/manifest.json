@@ -1,0 +1,8 @@
+{
+  "kind": "combined",
+  "source_runs": [
+    "/Users/slkdy/Desktop/cikm/runs/method-pilot-20260826",
+    "/Users/slkdy/Desktop/cikm/runs/method-confirmation-rest-20260826"
+  ],
+  "rescored_with_current_scenarios": false
+}

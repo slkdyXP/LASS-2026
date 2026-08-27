@@ -1,0 +1,9 @@
+{
+  "kind": "combined",
+  "source_runs": [
+    "/Users/slkdy/Desktop/cikm/runs/20260826-022411-624584",
+    "/Users/slkdy/Desktop/cikm/runs/20260826-022411-625027",
+    "/Users/slkdy/Desktop/cikm/runs/20260826-101439-700807"
+  ],
+  "rescored_with_current_scenarios": false
+}

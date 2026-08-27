@@ -1,0 +1,138 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260826
+  },
+  "dry_run": false,
+  "baselines": [
+    "full_history",
+    "summary"
+  ],
+  "scenario_ids": [
+    "public_goods_world_multiplier",
+    "public_goods_david_free_rider"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "public_goods_world_multiplier",
+      "family": "public_goods",
+      "matched_group": "public_return_drop",
+      "title": "Public-project productivity falls while contributions remain stable",
+      "persona": "You value reciprocity, community welfare, and prudent use of your private endowment.",
+      "role": "Five residents each receive 20 tokens per round and choose a contribution to a public project.",
+      "action_name": "contribution",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: everyone contributes 10. The project doubles the pool and each resident receives 20 back.",
+        "Round 2: everyone contributes 10. The project again doubles the pool.",
+        "Round 3: Alice, Bob, Carol, and David each contribute 10; you previously contributed 10. Returns remain normal.",
+        "Round 4: public ledgers show that all five contributions remain 10, but a documented equipment failure lowers the project multiplier and each resident receives only 12.",
+        "Round 5: all residents reduce contributions to 8. The same equipment failure persists and the multiplier remains low."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 5,
+          "action_max": 12
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 4,
+          "action_max": 10
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "public_goods_david_free_rider",
+      "family": "public_goods",
+      "matched_group": "public_return_drop",
+      "title": "One resident free-rides while project productivity stays stable",
+      "persona": "You value reciprocity, community welfare, and prudent use of your private endowment.",
+      "role": "Five residents each receive 20 tokens per round and choose a contribution to a public project.",
+      "action_name": "contribution",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: everyone contributes 10. The project doubles the pool and each resident receives 20 back.",
+        "Round 2: everyone contributes 10. The project again doubles the pool.",
+        "Round 3: everyone contributes 10 and returns remain normal.",
+        "Round 4: Alice, Bob, Carol, and you contribute 10, but the public ledger shows David contributes 0. The project multiplier remains exactly two, and each resident receives only 16.",
+        "Round 5: David again contributes 0 after promising 10; the other four residents remain at 10 and the multiplier remains two."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 6,
+          "action_max": 12
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 5,
+          "action_max": 12
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    }
+  ],
+  "warning": null
+}

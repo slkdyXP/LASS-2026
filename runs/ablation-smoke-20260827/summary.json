@@ -1,0 +1,1468 @@
+{
+  "n_records": 96,
+  "by_baseline": [
+    {
+      "baseline": "ablate_action_policy",
+      "n": 16,
+      "scope_accuracy": 0.0625,
+      "mean_leakage": 0.05,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.625,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.593
+    },
+    {
+      "baseline": "ablate_consolidated_models",
+      "n": 16,
+      "scope_accuracy": 0.0625,
+      "mean_leakage": 0.05,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.625,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.593
+    },
+    {
+      "baseline": "ablate_current_self_state",
+      "n": 16,
+      "scope_accuracy": 0.0625,
+      "mean_leakage": 0.05,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.625,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.593
+    },
+    {
+      "baseline": "ablate_open_hypotheses",
+      "n": 16,
+      "scope_accuracy": 0.0625,
+      "mean_leakage": 0.05,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.625,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.593
+    },
+    {
+      "baseline": "ablate_recent_observed_episodes",
+      "n": 16,
+      "scope_accuracy": 0.0625,
+      "mean_leakage": 0.05,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.625,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.593
+    },
+    {
+      "baseline": "ablate_stable_persona",
+      "n": 16,
+      "scope_accuracy": 0.0625,
+      "mean_leakage": 0.05,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.625,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.593
+    }
+  ],
+  "by_baseline_scenario": [
+    {
+      "baseline": "ablate_action_policy",
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_action_policy",
+      "scenario_id": "clinic_world_delivery_cut",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_action_policy",
+      "scenario_id": "compute_alex_emergency_job",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_action_policy",
+      "scenario_id": "compute_world_cooling_loss",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_action_policy",
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8688
+    },
+    {
+      "baseline": "ablate_action_policy",
+      "scenario_id": "greenhouse_world_drought",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_action_policy",
+      "scenario_id": "logistics_priya_emergency_batch",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_action_policy",
+      "scenario_id": "logistics_world_sorter_failure",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_consolidated_models",
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_consolidated_models",
+      "scenario_id": "clinic_world_delivery_cut",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_consolidated_models",
+      "scenario_id": "compute_alex_emergency_job",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_consolidated_models",
+      "scenario_id": "compute_world_cooling_loss",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_consolidated_models",
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8688
+    },
+    {
+      "baseline": "ablate_consolidated_models",
+      "scenario_id": "greenhouse_world_drought",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_consolidated_models",
+      "scenario_id": "logistics_priya_emergency_batch",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_consolidated_models",
+      "scenario_id": "logistics_world_sorter_failure",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_current_self_state",
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_current_self_state",
+      "scenario_id": "clinic_world_delivery_cut",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_current_self_state",
+      "scenario_id": "compute_alex_emergency_job",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_current_self_state",
+      "scenario_id": "compute_world_cooling_loss",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_current_self_state",
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8688
+    },
+    {
+      "baseline": "ablate_current_self_state",
+      "scenario_id": "greenhouse_world_drought",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_current_self_state",
+      "scenario_id": "logistics_priya_emergency_batch",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_current_self_state",
+      "scenario_id": "logistics_world_sorter_failure",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_open_hypotheses",
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_open_hypotheses",
+      "scenario_id": "clinic_world_delivery_cut",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_open_hypotheses",
+      "scenario_id": "compute_alex_emergency_job",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_open_hypotheses",
+      "scenario_id": "compute_world_cooling_loss",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_open_hypotheses",
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8688
+    },
+    {
+      "baseline": "ablate_open_hypotheses",
+      "scenario_id": "greenhouse_world_drought",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_open_hypotheses",
+      "scenario_id": "logistics_priya_emergency_batch",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_open_hypotheses",
+      "scenario_id": "logistics_world_sorter_failure",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_recent_observed_episodes",
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_recent_observed_episodes",
+      "scenario_id": "clinic_world_delivery_cut",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_recent_observed_episodes",
+      "scenario_id": "compute_alex_emergency_job",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_recent_observed_episodes",
+      "scenario_id": "compute_world_cooling_loss",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_recent_observed_episodes",
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8688
+    },
+    {
+      "baseline": "ablate_recent_observed_episodes",
+      "scenario_id": "greenhouse_world_drought",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_recent_observed_episodes",
+      "scenario_id": "logistics_priya_emergency_batch",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_recent_observed_episodes",
+      "scenario_id": "logistics_world_sorter_failure",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_stable_persona",
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_stable_persona",
+      "scenario_id": "clinic_world_delivery_cut",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_stable_persona",
+      "scenario_id": "compute_alex_emergency_job",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_stable_persona",
+      "scenario_id": "compute_world_cooling_loss",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    },
+    {
+      "baseline": "ablate_stable_persona",
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8688
+    },
+    {
+      "baseline": "ablate_stable_persona",
+      "scenario_id": "greenhouse_world_drought",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_stable_persona",
+      "scenario_id": "logistics_priya_emergency_batch",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.5
+    },
+    {
+      "baseline": "ablate_stable_persona",
+      "scenario_id": "logistics_world_sorter_failure",
+      "n": 2,
+      "scope_accuracy": 0.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.625
+    }
+  ],
+  "by_dimension": {
+    "family": [
+      {
+        "baseline": "ablate_action_policy",
+        "family": "clinic_inventory",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_action_policy",
+        "family": "compute_cluster",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_action_policy",
+        "family": "greenhouse",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_action_policy",
+        "family": "logistics",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "family": "clinic_inventory",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "family": "compute_cluster",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "family": "greenhouse",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "family": "logistics",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "family": "clinic_inventory",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "family": "compute_cluster",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "family": "greenhouse",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "family": "logistics",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "family": "clinic_inventory",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "family": "compute_cluster",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "family": "greenhouse",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "family": "logistics",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "family": "clinic_inventory",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "family": "compute_cluster",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "family": "greenhouse",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "family": "logistics",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "family": "clinic_inventory",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "family": "compute_cluster",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "family": "greenhouse",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "family": "logistics",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      }
+    ],
+    "axis": [
+      {
+        "baseline": "ablate_action_policy",
+        "axis": "temporary_vs_persistent",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_action_policy",
+        "axis": "world_vs_other",
+        "n": 12,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "axis": "temporary_vs_persistent",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "axis": "world_vs_other",
+        "n": 12,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "axis": "temporary_vs_persistent",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "axis": "world_vs_other",
+        "n": 12,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "axis": "temporary_vs_persistent",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "axis": "world_vs_other",
+        "n": 12,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "axis": "temporary_vs_persistent",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "axis": "world_vs_other",
+        "n": 12,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "axis": "temporary_vs_persistent",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "axis": "world_vs_other",
+        "n": 12,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      }
+    ],
+    "evidence_level": [
+      {
+        "baseline": "ablate_action_policy",
+        "evidence_level": "explicit",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "evidence_level": "explicit",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "evidence_level": "explicit",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "evidence_level": "explicit",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "evidence_level": "explicit",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "evidence_level": "explicit",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      }
+    ],
+    "temporal_pattern": [
+      {
+        "baseline": "ablate_action_policy",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      },
+      {
+        "baseline": "ablate_action_policy",
+        "temporal_pattern": "recovery",
+        "n": 8,
+        "scope_accuracy": 0.125,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.25,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "temporal_pattern": "recovery",
+        "n": 8,
+        "scope_accuracy": 0.125,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.25,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "temporal_pattern": "recovery",
+        "n": 8,
+        "scope_accuracy": 0.125,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.25,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "temporal_pattern": "recovery",
+        "n": 8,
+        "scope_accuracy": 0.125,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.25,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "temporal_pattern": "recovery",
+        "n": 8,
+        "scope_accuracy": 0.125,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.25,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "temporal_pattern": "persistent",
+        "n": 8,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.0
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "temporal_pattern": "recovery",
+        "n": 8,
+        "scope_accuracy": 0.125,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.25,
+        "action_accuracy": 1.0
+      }
+    ],
+    "history_pressure": [
+      {
+        "baseline": "ablate_action_policy",
+        "history_pressure": "low",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "history_pressure": "low",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "history_pressure": "low",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "history_pressure": "low",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "history_pressure": "low",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "history_pressure": "low",
+        "n": 16,
+        "scope_accuracy": 0.0625,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.625,
+        "action_accuracy": 0.5
+      }
+    ],
+    "matched_group": [
+      {
+        "baseline": "ablate_action_policy",
+        "matched_group": "clinic_shortage",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_action_policy",
+        "matched_group": "compute_slowdown",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_action_policy",
+        "matched_group": "greenhouse_dryness",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_action_policy",
+        "matched_group": "logistics_backlog",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "matched_group": "clinic_shortage",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "matched_group": "compute_slowdown",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "matched_group": "greenhouse_dryness",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_consolidated_models",
+        "matched_group": "logistics_backlog",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "matched_group": "clinic_shortage",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "matched_group": "compute_slowdown",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "matched_group": "greenhouse_dryness",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_current_self_state",
+        "matched_group": "logistics_backlog",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "matched_group": "clinic_shortage",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "matched_group": "compute_slowdown",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "matched_group": "greenhouse_dryness",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_open_hypotheses",
+        "matched_group": "logistics_backlog",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "matched_group": "clinic_shortage",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "matched_group": "compute_slowdown",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "matched_group": "greenhouse_dryness",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_recent_observed_episodes",
+        "matched_group": "logistics_backlog",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "matched_group": "clinic_shortage",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "matched_group": "compute_slowdown",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "matched_group": "greenhouse_dryness",
+        "n": 4,
+        "scope_accuracy": 0.25,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "ablate_stable_persona",
+        "matched_group": "logistics_backlog",
+        "n": 4,
+        "scope_accuracy": 0.0,
+        "mean_leakage": 0.05,
+        "entity_accuracy": 0.5,
+        "action_accuracy": 0.5
+      }
+    ]
+  },
+  "evaluator": null
+}

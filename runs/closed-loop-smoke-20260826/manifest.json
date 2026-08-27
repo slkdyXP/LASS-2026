@@ -1,0 +1,23 @@
+{
+  "kind": "closed_loop_fishery",
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260826
+  },
+  "dry_run": true,
+  "baselines": [
+    "reflection",
+    "evidence_gated_memory_only"
+  ],
+  "conditions": [
+    "other_emergency",
+    "world_contamination"
+  ],
+  "rounds": 5
+}

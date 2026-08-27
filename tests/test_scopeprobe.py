@@ -7,7 +7,13 @@ import unittest
 from scopeprobe.client import parse_json_object
 from scopeprobe.claim_audit import audit_claims
 from scopeprobe.closed_loop import run_fishery_episode
-from scopeprobe.memory import BASELINES
+from scopeprobe.memory import (
+    ABLATION_HEADINGS,
+    BASELINES,
+    EVIDENCE_GATED_HEADINGS,
+    FOUR_COMPONENT_EXCLUSIONS,
+    _evidence_gated_instruction,
+)
 from scopeprobe.mock import MockClient
 from scopeprobe.runner import run_trial
 from scopeprobe.scenarios import load_scenarios
@@ -56,6 +62,27 @@ class ScopeProbeTests(unittest.TestCase):
                 self.assertIn("scores", record)
                 self.assertIn("probe", record)
                 json.dumps(record)
+
+    def test_each_ablation_removes_exactly_one_memory_heading(self) -> None:
+        for baseline, removed in ABLATION_HEADINGS.items():
+            instruction = _evidence_gated_instruction(removed)
+            heading_block = instruction.split("Rules:", 1)[0]
+            self.assertNotIn(removed, heading_block, baseline)
+            for retained in EVIDENCE_GATED_HEADINGS:
+                if retained != removed:
+                    self.assertIn(retained, heading_block, baseline)
+
+    def test_four_component_baseline_and_ablations(self) -> None:
+        for baseline, excluded in FOUR_COMPONENT_EXCLUSIONS.items():
+            instruction = _evidence_gated_instruction(excluded)
+            heading_block = instruction.split("Rules:", 1)[0]
+            for heading in EVIDENCE_GATED_HEADINGS:
+                if heading in excluded:
+                    self.assertNotIn(heading, heading_block, baseline)
+                else:
+                    self.assertIn(heading, heading_block, baseline)
+            expected_sections = 4 if baseline == "four_component_memory" else 3
+            self.assertIn(f"under the {expected_sections} headings", instruction)
 
     def test_broad_scenarios_load(self) -> None:
         scenarios = load_scenarios(ROOT / "configs" / "scenarios_broad.json")

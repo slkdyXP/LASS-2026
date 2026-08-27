@@ -1,0 +1,14 @@
+{
+  "n_records": 0,
+  "by_baseline": [],
+  "by_baseline_scenario": [],
+  "by_dimension": {
+    "family": [],
+    "axis": [],
+    "evidence_level": [],
+    "temporal_pattern": [],
+    "history_pressure": [],
+    "matched_group": []
+  },
+  "evaluator": null
+}

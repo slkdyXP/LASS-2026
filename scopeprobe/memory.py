@@ -18,7 +18,52 @@ BASELINES = (
     "structured_reflection",
     "evidence_gated_memory_only",
     "evidence_gated_reflection",
+    "ablate_stable_persona",
+    "ablate_current_self_state",
+    "ablate_consolidated_models",
+    "ablate_open_hypotheses",
+    "ablate_recent_observed_episodes",
+    "ablate_action_policy",
+    "four_component_memory",
+    "four_ablate_stable_persona",
+    "four_ablate_current_self_state",
+    "four_ablate_recent_observed_episodes",
+    "four_ablate_action_policy",
 )
+
+EVIDENCE_GATED_HEADINGS = (
+    "STABLE PERSONA",
+    "CURRENT SELF STATE",
+    "CONSOLIDATED MODELS",
+    "OPEN HYPOTHESES",
+    "RECENT OBSERVED EPISODES",
+    "ACTION POLICY",
+)
+
+ABLATION_HEADINGS = {
+    "ablate_stable_persona": "STABLE PERSONA",
+    "ablate_current_self_state": "CURRENT SELF STATE",
+    "ablate_consolidated_models": "CONSOLIDATED MODELS",
+    "ablate_open_hypotheses": "OPEN HYPOTHESES",
+    "ablate_recent_observed_episodes": "RECENT OBSERVED EPISODES",
+    "ablate_action_policy": "ACTION POLICY",
+}
+
+FOUR_COMPONENT_EXCLUSIONS = {
+    "four_component_memory": frozenset({"CONSOLIDATED MODELS", "OPEN HYPOTHESES"}),
+    "four_ablate_stable_persona": frozenset(
+        {"CONSOLIDATED MODELS", "OPEN HYPOTHESES", "STABLE PERSONA"}
+    ),
+    "four_ablate_current_self_state": frozenset(
+        {"CONSOLIDATED MODELS", "OPEN HYPOTHESES", "CURRENT SELF STATE"}
+    ),
+    "four_ablate_recent_observed_episodes": frozenset(
+        {"CONSOLIDATED MODELS", "OPEN HYPOTHESES", "RECENT OBSERVED EPISODES"}
+    ),
+    "four_ablate_action_policy": frozenset(
+        {"CONSOLIDATED MODELS", "OPEN HYPOTHESES", "ACTION POLICY"}
+    ),
+}
 
 COMPRESSED_BASELINES = {
     "summary",
@@ -27,6 +72,8 @@ COMPRESSED_BASELINES = {
     "structured_reflection",
     "evidence_gated_memory_only",
     "evidence_gated_reflection",
+    *ABLATION_HEADINGS,
+    *FOUR_COMPONENT_EXCLUSIONS,
 }
 
 
@@ -138,29 +185,16 @@ RECENT OBSERVED EPISODES
 ACTION POLICY
 
 Preserve the supplied persona. Keep only decision-relevant content, put the newest episode first, keep at most six episode entries, and compress identical older rounds into a range. Output only the updated memory under the six headings."""
-    elif state.baseline in {"evidence_gated_memory_only", "evidence_gated_reflection"}:
-        instruction = """Maintain a compact evidence-grounded memory for future decisions. Keep the entire output under 450 words and use exactly these headings in this order:
-STABLE PERSONA
-CURRENT SELF STATE
-CONSOLIDATED MODELS
-OPEN HYPOTHESES
-RECENT OBSERVED EPISODES
-ACTION POLICY
-
-Rules:
-1. Preserve the supplied persona; ordinary outcomes cannot rewrite it.
-2. CURRENT SELF STATE contains only the latest decision-relevant state, not an action history.
-3. RECENT OBSERVED EPISODES contain only supplied facts and must retain actor, condition, and whether an event ended. Put the newest event first, keep at most six entries, and compress identical older rounds into one range such as "Rounds 1-3".
-4. Separate self, named-other, and world claims. Never generalize one person's conduct to the group.
-5. A single unusual event stays an episode. It may create an OPEN HYPOTHESIS, clearly marked uncertain, but not a persistent causal rule.
-6. Put a claim in CONSOLIDATED MODELS only after at least two independent consistent observations, or when the observation explicitly documents the cause or persistent state. Cite the supporting round/day/sprint identifiers. Do not invent thresholds, hidden rules, motives, collusion, automation, or system mechanics.
-7. Contradictory or recovery evidence must weaken or remove a hypothesis. A cleared event must not remain an active regime.
-8. Separate belief consolidation from action urgency. A directly observed current hazard may justify an immediate, proportional, reversible precaution even when its cause or duration is not yet consolidated. Evidence gating applies to persistent causal claims, not to responding to verified present conditions.
-9. ACTION POLICY must be proportional to verified evidence. It must not take aggressive, irreversible, or long-lasting action against an open hypothesis alone, but it may specify a temporary precaution tied to a current observation and a clear rollback condition.
-10. Every ACTION POLICY must state that a newly verified adverse condition overrides the old baseline policy and permits an immediate proportional, reversible precaution; repetition is required for long-term belief consolidation, not for first response.
-11. Use minimum sufficient intervention: when the benefit magnitude is unknown, prefer the smallest reasonable reversible adjustment and do not jump to a numeric action bound based on one event unless an immediate survival requirement is explicit.
-12. Never omit the newest observation. Prefer deleting old detail over truncating any heading.
-Output only the updated memory under the six headings."""
+    elif state.baseline in {
+        "evidence_gated_memory_only",
+        "evidence_gated_reflection",
+        *ABLATION_HEADINGS,
+        *FOUR_COMPONENT_EXCLUSIONS,
+    }:
+        excluded = ABLATION_HEADINGS.get(state.baseline)
+        if state.baseline in FOUR_COMPONENT_EXCLUSIONS:
+            excluded = FOUR_COMPONENT_EXCLUSIONS[state.baseline]
+        instruction = _evidence_gated_instruction(excluded)
     else:
         return state.compressed
     user = (
@@ -173,6 +207,50 @@ Output only the updated memory under the six headings."""
         [{"role": "system", "content": instruction}, {"role": "user", "content": user}],
         json_mode=False,
     ).strip()
+
+
+def _evidence_gated_instruction(
+    excluded_heading: str | frozenset[str] | None = None,
+) -> str:
+    """Build the full or leave-one-section-out evidence-gated memory prompt."""
+    if excluded_heading is None:
+        excluded: frozenset[str] = frozenset()
+    elif isinstance(excluded_heading, str):
+        excluded = frozenset({excluded_heading})
+    else:
+        excluded = excluded_heading
+    headings = [heading for heading in EVIDENCE_GATED_HEADINGS if heading not in excluded]
+    rules: list[tuple[set[str], str]] = [
+        ({"STABLE PERSONA"}, "Preserve the supplied persona; ordinary outcomes cannot rewrite it."),
+        ({"CURRENT SELF STATE"}, "CURRENT SELF STATE contains only the latest decision-relevant state, not an action history."),
+        ({"RECENT OBSERVED EPISODES"}, "RECENT OBSERVED EPISODES contain only supplied facts and must retain actor, condition, and whether an event ended. Put the newest event first, keep at most six entries, and compress identical older rounds into one range such as \"Rounds 1-3\"."),
+        (set(), "Separate self, named-other, and world claims. Never generalize one person's conduct to the group."),
+        ({"RECENT OBSERVED EPISODES", "OPEN HYPOTHESES"}, "A single unusual event stays an episode. It may create an OPEN HYPOTHESIS, clearly marked uncertain, but not a persistent causal rule."),
+        ({"CONSOLIDATED MODELS"}, "Put a claim in CONSOLIDATED MODELS only after at least two independent consistent observations, or when the observation explicitly documents the cause or persistent state. Cite the supporting round/day/sprint identifiers. Do not invent thresholds, hidden rules, motives, collusion, automation, or system mechanics."),
+        ({"OPEN HYPOTHESES"}, "Contradictory or recovery evidence must weaken or remove a hypothesis. A cleared event must not remain an active regime."),
+        ({"ACTION POLICY"}, "Separate belief consolidation from action urgency. A directly observed current hazard may justify an immediate, proportional, reversible precaution even when its cause or duration is not yet consolidated. Evidence gating applies to persistent causal claims, not to responding to verified present conditions."),
+        ({"ACTION POLICY"}, "ACTION POLICY must be proportional to verified evidence. It must not take aggressive, irreversible, or long-lasting action against an open hypothesis alone, but it may specify a temporary precaution tied to a current observation and a clear rollback condition."),
+        ({"ACTION POLICY"}, "Every ACTION POLICY must state that a newly verified adverse condition overrides the old baseline policy and permits an immediate proportional, reversible precaution; repetition is required for long-term belief consolidation, not for first response."),
+        ({"ACTION POLICY"}, "Use minimum sufficient intervention: when the benefit magnitude is unknown, prefer the smallest reasonable reversible adjustment and do not jump to a numeric action bound based on one event unless an immediate survival requirement is explicit."),
+        (set(), "Never omit the newest observation when it belongs in an available section. Prefer deleting old detail over truncating any heading."),
+    ]
+    applicable = [text for required, text in rules if not required or required.issubset(headings)]
+    numbered_rules = "\n".join(f"{index}. {text}" for index, text in enumerate(applicable, start=1))
+    section_count = len(headings)
+    excluded_label = ", ".join(
+        heading for heading in EVIDENCE_GATED_HEADINGS if heading in excluded
+    )
+    ablation_note = (
+        f" This is a controlled ablation: do not output or recreate the excluded sections: {excluded_label}."
+        if excluded
+        else ""
+    )
+    return (
+        "Maintain a compact evidence-grounded memory for future decisions. Keep the entire output under "
+        f"450 words and use exactly these headings in this order:\n{'\n'.join(headings)}\n\n"
+        f"Rules:\n{numbered_rules}\n"
+        f"Output only the updated memory under the {section_count} headings.{ablation_note}"
+    )
 
 
 def commit_round(

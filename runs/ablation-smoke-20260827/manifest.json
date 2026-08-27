@@ -1,0 +1,512 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260826
+  },
+  "dry_run": true,
+  "baselines": [
+    "ablate_stable_persona",
+    "ablate_current_self_state",
+    "ablate_consolidated_models",
+    "ablate_open_hypotheses",
+    "ablate_recent_observed_episodes",
+    "ablate_action_policy"
+  ],
+  "scenario_ids": [
+    "compute_world_cooling_loss",
+    "compute_alex_emergency_job",
+    "clinic_world_delivery_cut",
+    "clinic_lee_emergency_withdrawal",
+    "greenhouse_sensor_false_alarm_recovery",
+    "greenhouse_world_drought",
+    "logistics_world_sorter_failure",
+    "logistics_priya_emergency_batch"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "family": "compute_cluster",
+      "matched_group": "compute_slowdown",
+      "title": "Cooling capacity persistently declines while team jobs stay stable",
+      "persona": "You value reliable shared computing, proportional resource use, and fair access for other teams.",
+      "role": "Five teams share a GPU cluster. Choose your job size from 0 to 10 units each cycle.",
+      "action_name": "job_size",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Cycle 1: cooling capacity is 30; every team submits a job of size 5; all jobs finish normally.",
+        "Cycle 2: cooling capacity is 30; every team submits 5; all jobs finish normally.",
+        "Cycle 3: cooling capacity is 30; every team submits 5; all jobs finish normally.",
+        "Cycle 4: every team again submits 5, but facility diagnostics document that a failed cooling pump has reduced safe cluster capacity from 30 to 15; jobs throttle severely. No team exceeded 5.",
+        "Cycle 5: the pump remains failed and diagnostics still report safe capacity 15. The other four teams reduce their jobs to 3."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 2,
+          "action_max": 4
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 2,
+          "action_max": 4
+        }
+      ],
+      "suite": "heldout",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "compute_alex_emergency_job",
+      "family": "compute_cluster",
+      "matched_group": "compute_slowdown",
+      "title": "Alex submits one emergency job and then returns to normal",
+      "persona": "You value reliable shared computing, proportional resource use, and fair access for other teams.",
+      "role": "Five teams share a GPU cluster. Choose your job size from 0 to 10 units each cycle.",
+      "action_name": "job_size",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Cycle 1: cooling capacity is 30; every team submits a job of size 5; all jobs finish normally.",
+        "Cycle 2: cooling capacity is 30; every team submits 5; all jobs finish normally.",
+        "Cycle 3: cooling capacity is 30; every team submits 5; all jobs finish normally.",
+        "Cycle 4: cooling capacity remains 30. Alex's public deadline changes to today and Alex submits an emergency job of size 15; every other team submits 5. Your job throttles once because of Alex's job.",
+        "Cycle 5: Alex's deadline is complete and Alex returns to job size 5; cooling capacity remains 30 and all jobs finish normally.",
+        "Cycle 6: Alex again submits 5; all other teams submit 5; cooling capacity remains 30 and all jobs finish normally."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "Alex",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 4,
+          "action_max": 6
+        },
+        {
+          "round": 6,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "Alex",
+          "expected_group_generalization": false,
+          "probe_question": "What lasting conditional belief, if any, is warranted about Alex's emergency job after the deadline passed and two normal cycles followed?",
+          "action_min": 4,
+          "action_max": 6
+        }
+      ],
+      "suite": "heldout",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "recovery",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "clinic_world_delivery_cut",
+      "family": "clinic_inventory",
+      "matched_group": "clinic_shortage",
+      "title": "Supplier delivery persistently falls while clinic withdrawals stay stable",
+      "persona": "You value patient safety, conservative inventory use, and equitable access across clinics.",
+      "role": "Five clinics share a medicine depot. Choose your daily withdrawal from 0 to 10 crates.",
+      "action_name": "withdrawal",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Day 1: depot delivery is 30 crates; every clinic withdraws 5; stock remains healthy.",
+        "Day 2: delivery is 30; every clinic withdraws 5; stock remains healthy.",
+        "Day 3: delivery is 30; every clinic withdraws 5; stock remains healthy.",
+        "Day 4: all clinics again withdraw 5, but the supplier formally cuts daily delivery from 30 to 15 because a production line has closed; depot stock falls sharply. No clinic exceeded 5.",
+        "Day 5: the production line remains closed and delivery remains 15. The other clinics reduce withdrawals to 3."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 2,
+          "action_max": 4
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 2,
+          "action_max": 4
+        }
+      ],
+      "suite": "heldout",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "clinic_lee_emergency_withdrawal",
+      "family": "clinic_inventory",
+      "matched_group": "clinic_shortage",
+      "title": "Lee makes one emergency withdrawal and then returns to normal",
+      "persona": "You value patient safety, conservative inventory use, and equitable access across clinics.",
+      "role": "Five clinics share a medicine depot. Choose your daily withdrawal from 0 to 10 crates.",
+      "action_name": "withdrawal",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Day 1: depot delivery is 30 crates; every clinic withdraws 5; stock remains healthy.",
+        "Day 2: delivery is 30; every clinic withdraws 5; stock remains healthy.",
+        "Day 3: delivery is 30; every clinic withdraws 5; stock remains healthy.",
+        "Day 4: delivery remains 30. Lee's public emergency register shows an unexpected patient surge and Lee withdraws 15 crates; every other clinic withdraws 5. Depot stock falls sharply because of Lee's withdrawal.",
+        "Day 5: Lee's surge is resolved and Lee returns to 5; delivery remains 30 and depot stock stabilizes.",
+        "Day 6: Lee again withdraws 5; every other clinic withdraws 5; delivery remains 30 and stock remains healthy."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "Lee",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 4,
+          "action_max": 6
+        },
+        {
+          "round": 6,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "Lee",
+          "expected_group_generalization": false,
+          "probe_question": "What lasting conditional belief, if any, is warranted about Lee's withdrawal after the emergency resolved and two normal days followed?",
+          "action_min": 4,
+          "action_max": 6
+        }
+      ],
+      "suite": "heldout",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "recovery",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "greenhouse_sensor_false_alarm_recovery",
+      "family": "greenhouse",
+      "matched_group": "greenhouse_dryness",
+      "title": "One faulty sensor reports dryness and is replaced",
+      "persona": "You value crop health, water conservation, and proportionate responses to verified conditions.",
+      "role": "Five growers share a greenhouse water system. Choose irrigation from 0 to 20 units each day.",
+      "action_name": "irrigation",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Day 1: all independent moisture tests are normal; every grower irrigates 10; crops remain healthy.",
+        "Day 2: moisture tests are normal; every grower irrigates 10; crops remain healthy.",
+        "Day 3: moisture tests are normal; every grower irrigates 10; crops remain healthy.",
+        "Day 4: one automated sensor reports severe dryness, but two independent manual tests show normal moisture. Maintenance verifies that the sensor is faulty and replaces it before day end; all growers irrigate 10 and crops remain healthy.",
+        "Day 5: the replacement sensor and manual tests are normal; every grower irrigates 10; crops remain healthy.",
+        "Day 6: all tests remain normal; every grower irrigates 10; crops remain healthy."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "episodic",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self",
+            "world"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 8,
+          "action_max": 11
+        },
+        {
+          "round": 6,
+          "expected_scope": "none",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self",
+            "world"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 8,
+          "action_max": 11
+        }
+      ],
+      "suite": "heldout",
+      "axis": "temporary_vs_persistent",
+      "evidence_level": "explicit",
+      "temporal_pattern": "recovery",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "greenhouse_world_drought",
+      "family": "greenhouse",
+      "matched_group": "greenhouse_dryness",
+      "title": "Verified drought persists across independent measurements",
+      "persona": "You value crop health, water conservation, and proportionate responses to verified conditions.",
+      "role": "Five growers share a greenhouse water system. Choose irrigation from 0 to 20 units each day.",
+      "action_name": "irrigation",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Day 1: all independent moisture tests are normal; every grower irrigates 10; crops remain healthy.",
+        "Day 2: moisture tests are normal; every grower irrigates 10; crops remain healthy.",
+        "Day 3: moisture tests are normal; every grower irrigates 10; crops remain healthy.",
+        "Day 4: two calibrated sensors and independent manual tests all document severe dryness caused by a failed humidifier. Every grower previously irrigated 10 and crops begin wilting.",
+        "Day 5: the humidifier remains failed and all independent tests again show severe dryness. The other growers increase irrigation to 14."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 12,
+          "action_max": 16
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 12,
+          "action_max": 16
+        }
+      ],
+      "suite": "heldout",
+      "axis": "temporary_vs_persistent",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "logistics_world_sorter_failure",
+      "family": "logistics",
+      "matched_group": "logistics_backlog",
+      "title": "Sorter capacity persistently falls while partner batches stay stable",
+      "persona": "You value reliable delivery, fair use of shared machinery, and avoiding unnecessary backlog.",
+      "role": "Five sellers share a sorting machine. Choose a shipment batch from 0 to 20 parcels per shift.",
+      "action_name": "batch_size",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Shift 1: sorter capacity is 50; every seller submits 10 parcels; all parcels clear.",
+        "Shift 2: capacity is 50; every seller submits 10; all parcels clear.",
+        "Shift 3: capacity is 50; every seller submits 10; all parcels clear.",
+        "Shift 4: every seller again submits 10, but maintenance documents a motor failure that reduces sorter capacity from 50 to 25; a large backlog forms. No seller exceeded 10.",
+        "Shift 5: the motor remains failed and capacity remains 25. The other sellers reduce batches to 5."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 4,
+          "action_max": 7
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 4,
+          "action_max": 7
+        }
+      ],
+      "suite": "heldout",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "logistics_priya_emergency_batch",
+      "family": "logistics",
+      "matched_group": "logistics_backlog",
+      "title": "Priya submits one urgent batch and then returns to normal",
+      "persona": "You value reliable delivery, fair use of shared machinery, and avoiding unnecessary backlog.",
+      "role": "Five sellers share a sorting machine. Choose a shipment batch from 0 to 20 parcels per shift.",
+      "action_name": "batch_size",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Shift 1: sorter capacity is 50; every seller submits 10 parcels; all parcels clear.",
+        "Shift 2: capacity is 50; every seller submits 10; all parcels clear.",
+        "Shift 3: capacity is 50; every seller submits 10; all parcels clear.",
+        "Shift 4: sorter capacity remains 50. Priya's public dispatch record shows a one-day emergency order and Priya submits 30 parcels; every other seller submits 10. A large backlog forms because of Priya's batch.",
+        "Shift 5: the emergency order is complete and Priya returns to 10; capacity remains 50 and all parcels clear.",
+        "Shift 6: Priya again submits 10; every other seller submits 10; capacity remains 50 and all parcels clear."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "Priya",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 8,
+          "action_max": 11
+        },
+        {
+          "round": 6,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "Priya",
+          "expected_group_generalization": false,
+          "probe_question": "What lasting conditional belief, if any, is warranted about Priya's batch after the emergency ended and two normal shifts followed?",
+          "action_min": 8,
+          "action_max": 11
+        }
+      ],
+      "suite": "heldout",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "recovery",
+      "history_pressure": "low"
+    }
+  ],
+  "warning": "Dry-run outputs are plumbing checks and must not be reported as experimental evidence."
+}

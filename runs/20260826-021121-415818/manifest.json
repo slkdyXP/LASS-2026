@@ -1,0 +1,258 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260826
+  },
+  "dry_run": false,
+  "baselines": [
+    "direct",
+    "recent_window",
+    "retrieval",
+    "full_history",
+    "summary",
+    "reflection"
+  ],
+  "scenario_ids": [
+    "fish_world_inferential",
+    "fish_other_inferential",
+    "auction_world_inferential",
+    "auction_other_inferential"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "fish_world_inferential",
+      "family": "fishery",
+      "matched_group": "inferential_fish_drop",
+      "title": "Fish recruitment falls with indirect ecosystem evidence",
+      "persona": "You value sustainable harvest and avoid blaming partners without sufficient evidence.",
+      "role": "Five fishers share a lake. Choose harvest from 0 to 20 units.",
+      "action_name": "harvest",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: dock scales record 10 units for each fisher. Stock returns to 100 after recruitment.",
+        "Round 2: dock scales again record 10 each and stock returns to 100.",
+        "Round 3: individual dock records remain 10 each. A monitoring report notes unusually warm deep water, but no conclusion is given.",
+        "Round 4: all five dock records and boat-hold inspections show 10 each, yet stock falls to 78. A non-harvested indicator fish species also shows a 35% recruitment decline.",
+        "Round 5: every fisher reduces to 8. Warm-water readings persist, the indicator species remains low, and the shared stock recovers less than in rounds 1-2."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 5,
+          "action_max": 9
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 4,
+          "action_max": 8
+        }
+      ],
+      "suite": "inferential",
+      "axis": "world_vs_other",
+      "evidence_level": "inferential",
+      "temporal_pattern": "persistent",
+      "history_pressure": "medium"
+    },
+    {
+      "scenario_id": "fish_other_inferential",
+      "family": "fishery",
+      "matched_group": "inferential_fish_drop",
+      "title": "Unreported harvest is inferred from entity-specific traces",
+      "persona": "You value sustainable harvest and avoid blaming partners without sufficient evidence.",
+      "role": "Five fishers share a lake. Choose harvest from 0 to 20 units.",
+      "action_name": "harvest",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: dock scales record 10 units for each fisher. Stock returns to 100.",
+        "Round 2: dock scales again record 10 each and stock returns to 100.",
+        "Round 3: water and indicator-species readings match normal years. David begins unloading at an unmonitored private pier.",
+        "Round 4: public dock records show 10 for everyone, but stock falls to 78. Water and non-harvested indicator recruitment remain normal; David's fuel use and a market receipt indicate an additional 22 units sold from his boat.",
+        "Round 5: the four monitored fishers reduce to 8. Ecosystem indicators remain normal, while another private-market receipt records 14 extra units from David's boat."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 5,
+          "action_max": 10
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "action_min": 5,
+          "action_max": 10
+        }
+      ],
+      "suite": "inferential",
+      "axis": "world_vs_other",
+      "evidence_level": "inferential",
+      "temporal_pattern": "persistent",
+      "history_pressure": "medium"
+    },
+    {
+      "scenario_id": "auction_world_inferential",
+      "family": "auction",
+      "matched_group": "inferential_auction_pressure",
+      "title": "Market pressure rises with indirect evidence of supply loss",
+      "persona": "You are budget-conscious and update beliefs in proportion to evidence.",
+      "role": "You bid from 0 to 120 in a daily water auction. Your need is 2 units and health is 8/10.",
+      "action_name": "bid",
+      "action_bounds": [
+        0,
+        120
+      ],
+      "observations": [
+        "Day 1: other bids are 45-55, your bid is 50, and you receive 2 units.",
+        "Day 2: the same bid distribution clears normally.",
+        "Day 3: public bid histories remain 45-55. Upstream reservoir gauges begin falling across three districts.",
+        "Day 4: submitted bids remain in their prior ranges, but fewer winners receive water and the effective clearing pressure rises. All three upstream gauges report roughly half their earlier flow.",
+        "Day 5: bidder histories are still stable. Low upstream flow and reduced allocations recur in adjacent auctions as well as yours."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 55,
+          "action_max": 90
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 55,
+          "action_max": 95
+        }
+      ],
+      "suite": "inferential",
+      "axis": "world_vs_other",
+      "evidence_level": "inferential",
+      "temporal_pattern": "persistent",
+      "history_pressure": "medium"
+    },
+    {
+      "scenario_id": "auction_other_inferential",
+      "family": "auction",
+      "matched_group": "inferential_auction_pressure",
+      "title": "One bidder's hidden escalation is reconstructed from audit traces",
+      "persona": "You are budget-conscious and update beliefs in proportion to evidence.",
+      "role": "You bid from 0 to 120 in a daily water auction. Your need is 2 units and health is 8/10.",
+      "action_name": "bid",
+      "action_bounds": [
+        0,
+        120
+      ],
+      "observations": [
+        "Day 1: other bids are 45-55, your bid is 50, and you receive 2 units.",
+        "Day 2: the same bid distribution clears normally.",
+        "Day 3: reservoir gauges and posted supply remain stable. Bob's health falls to 2/10, but sealed bids are not yet attributed by name.",
+        "Day 4: posted supply remains stable, yet one sealed bid of 105 raises clearing pressure and you lose an allocation. Reservoir and neighboring-auction conditions remain normal.",
+        "Day 5: an audit links the 105 bid to Bob. His health has recovered to 8/10 and his new bid returns to 50; supply and all other bidders remain stable."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 50,
+          "action_max": 105
+        },
+        {
+          "round": 5,
+          "expected_scope": "none",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "action_min": 45,
+          "action_max": 60
+        }
+      ],
+      "suite": "inferential",
+      "axis": "conditional_other",
+      "evidence_level": "inferential",
+      "temporal_pattern": "conditional_recovery",
+      "history_pressure": "medium"
+    }
+  ],
+  "warning": null
+}

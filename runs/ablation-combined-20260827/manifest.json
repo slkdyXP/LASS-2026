@@ -1,0 +1,8 @@
+{
+  "kind": "combined",
+  "source_runs": [
+    "/Users/slkdy/Desktop/cikm/runs/heldout-final-20260826",
+    "/Users/slkdy/Desktop/cikm/runs/ablation-heldout-20260827"
+  ],
+  "rescored_with_current_scenarios": false
+}

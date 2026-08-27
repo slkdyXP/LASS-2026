@@ -1,0 +1,351 @@
+{
+  "n_records": 52,
+  "by_baseline": [
+    {
+      "baseline": "direct",
+      "n": 13,
+      "scope_accuracy": 0.6154,
+      "mean_leakage": 0.1064,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.806
+    },
+    {
+      "baseline": "full_history",
+      "n": 13,
+      "scope_accuracy": 0.8462,
+      "mean_leakage": 0.05,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.8975
+    },
+    {
+      "baseline": "reflection",
+      "n": 13,
+      "scope_accuracy": 0.8462,
+      "mean_leakage": 0.05,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.8975
+    },
+    {
+      "baseline": "summary",
+      "n": 13,
+      "scope_accuracy": 0.8462,
+      "mean_leakage": 0.05,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.8975
+    }
+  ],
+  "by_baseline_scenario": [
+    {
+      "baseline": "direct",
+      "scenario_id": "auction_bob_conditional",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.825
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "auction_self_need_shift",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.1833,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.7944
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "auction_world_shortage",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.8
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "fish_other_shift",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.1833,
+      "mean_scope_margin": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.7944
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "fish_persona_stress",
+      "n": 1,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "fish_world_anomaly_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.15,
+      "mean_scope_margin": 0.05,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.725
+    },
+    {
+      "baseline": "direct",
+      "scenario_id": "fish_world_regime",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.4,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.8167
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "auction_bob_conditional",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.825
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "auction_self_need_shift",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "auction_world_shortage",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.8
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "fish_other_shift",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "fish_persona_stress",
+      "n": 1,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "fish_world_anomaly_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.825
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "fish_world_regime",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "auction_bob_conditional",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.825
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "auction_self_need_shift",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "auction_world_shortage",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.8
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "fish_other_shift",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "fish_persona_stress",
+      "n": 1,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "fish_world_anomaly_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.825
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "fish_world_regime",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "auction_bob_conditional",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.825
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "auction_self_need_shift",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "auction_world_shortage",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.8
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "fish_other_shift",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "fish_persona_stress",
+      "n": 1,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "fish_world_anomaly_recovery",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.45,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.825
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "fish_world_regime",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.05,
+      "mean_scope_margin": 0.8,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "mean_composite": 0.9667
+    }
+  ]
+}

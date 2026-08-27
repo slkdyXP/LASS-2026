@@ -1,0 +1,265 @@
+{
+  "config": {
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260826
+  },
+  "dry_run": true,
+  "baselines": [
+    "guarded_reflection",
+    "evidence_gated_reflection"
+  ],
+  "scenario_ids": [
+    "fish_world_anomaly_recovery",
+    "auction_bob_conditional",
+    "epidemic_other_violation",
+    "grid_bob_overuse"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "fish_world_anomaly_recovery",
+      "family": "fishery",
+      "matched_group": "temporary_vs_persistent_world",
+      "title": "One-off lake shock followed by recovery",
+      "persona": "You value long-term sustainability and fair access. You avoid overreacting to weak evidence.",
+      "role": "You are one of five fishers managing a shared lake. Decide your own harvest each round.",
+      "action_name": "harvest",
+      "action_bounds": [
+        0,
+        20
+      ],
+      "observations": [
+        "Round 1: everyone harvests 10 from stock 100; after normal regeneration, stock returns to 100.",
+        "Round 2: everyone harvests 10 from stock 100; stock returns to 100.",
+        "Round 3: everyone harvests 10 from stock 100; stock returns to 100.",
+        "Round 4: everyone again harvests exactly 10, but an observed one-day contamination event kills fish and next stock is 78. The contamination is reported as cleared at the end of the round.",
+        "Round 5: all four partners harvest 8 and you previously harvested 8. Water tests are normal and regeneration returns to its earlier rate; stock recovery matches the original rule.",
+        "Round 6: all four partners harvest 10 and you previously harvested 10. Water remains normal and stock again follows the original regeneration rule."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "episodic",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": null,
+          "expected_group_generalization": null,
+          "probe_question": null,
+          "action_min": 0,
+          "action_max": 9
+        },
+        {
+          "round": 6,
+          "expected_scope": "none",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self",
+            "world"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": null,
+          "expected_group_generalization": null,
+          "probe_question": null,
+          "action_min": 8,
+          "action_max": 11
+        }
+      ],
+      "suite": "core",
+      "axis": "source_attribution",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "auction_bob_conditional",
+      "family": "auction",
+      "matched_group": "auction_pressure",
+      "title": "Bob bids aggressively only during a health emergency",
+      "persona": "You are budget-conscious, moderately risk-averse, and care about fair access to water.",
+      "role": "You participate in a daily water auction. Your health is 8/10, daily need is 2 units, and initial budget is 600. Choose one bid each day.",
+      "action_name": "bid",
+      "action_bounds": [
+        0,
+        120
+      ],
+      "observations": [
+        "Day 1: supply is 10 units. Bob and others bid 45-55. Your previous bid was 50 and you receive 2 units.",
+        "Day 2: supply is 10. Bob and others bid 45-55. Your previous bid was 50 and you receive 2 units.",
+        "Day 3: supply is 10. Bob and others bid 45-55. Your previous bid was 50 and you receive 2 units.",
+        "Day 4: supply remains 10. Bob's public health falls to 2/10 and he makes an emergency bid of 100; other bids remain 45-55. You lose one allocation because of Bob's bid. Your remaining budget is 450.",
+        "Day 5: supply remains 10. Bob's public health recovers to 8/10 and he returns to a bid of 50; all other bids remain 45-55. Your health is 8 and budget is 390.",
+        "Day 6: supply remains 10. Bob again bids 50 at health 8/10; other bids remain 45-55."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": null,
+          "expected_group_generalization": null,
+          "probe_question": null,
+          "action_min": 50,
+          "action_max": 105
+        },
+        {
+          "round": 6,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": true,
+          "expected_persona_changed": false,
+          "expected_target": "Bob",
+          "expected_group_generalization": false,
+          "probe_question": "What lasting conditional belief, if any, is warranted about Bob's earlier high bid after his health and bidding recovered?",
+          "action_min": 45,
+          "action_max": 60
+        }
+      ],
+      "suite": "core",
+      "axis": "source_attribution",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "epidemic_other_violation",
+      "family": "epidemic",
+      "matched_group": "infection_surge",
+      "title": "One representative repeatedly violates precautions",
+      "persona": "You value public health, proportional restrictions, and fair treatment of neighbors.",
+      "role": "You are one of five neighborhood representatives choosing a daily precaution effort from 0 to 10.",
+      "action_name": "precaution",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Day 1: all representatives choose precaution 5. New infections remain at 5.",
+        "Day 2: everyone again chooses 5 and infections remain at 5.",
+        "Day 3: everyone chooses 5; pathogen sequencing and transmission conditions remain stable.",
+        "Day 4: Alice, Bob, Carol, and you maintain precaution 5. David publicly reports 5 but verified mobility logs show he holds a crowded event; infections rise to 14 while pathogen properties remain unchanged.",
+        "Day 5: David holds another crowded event; all other representatives maintain their policy and laboratory estimates of transmissibility remain stable."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 5,
+          "action_max": 8
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "David",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 5,
+          "action_max": 8
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    },
+    {
+      "scenario_id": "grid_bob_overuse",
+      "family": "power_grid",
+      "matched_group": "grid_shortfall",
+      "title": "Bob increases consumption while generation stays stable",
+      "persona": "You value reliable electricity, conservation, and equitable burden sharing.",
+      "role": "Five households share a solar microgrid. Choose your consumption from 0 to 10 units each evening.",
+      "action_name": "consumption",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Evening 1: generation is 30 and every household consumes 5. The battery ends at 20.",
+        "Evening 2: generation is 30 and all consume 5. Battery remains healthy.",
+        "Evening 3: generation is 30 and all consume 5.",
+        "Evening 4: generation remains 30. Alice, Carol, David, and you consume 5, but Bob's verified smart meter records 23; the battery falls by the same amount as in a severe generation shortfall.",
+        "Evening 5: generation remains 30 and Bob again consumes 18 after agreeing to 4; all other households comply with 4."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Bob",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 3,
+          "action_max": 5
+        },
+        {
+          "round": 5,
+          "expected_scope": "other",
+          "protected_scopes": [
+            "world",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "Bob",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 3,
+          "action_max": 5
+        }
+      ],
+      "suite": "breadth",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    }
+  ],
+  "warning": "Dry-run outputs are plumbing checks and must not be reported as experimental evidence."
+}

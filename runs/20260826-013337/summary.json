@@ -1,0 +1,212 @@
+{
+  "n_records": 8,
+  "by_baseline": [
+    {
+      "baseline": "full_history",
+      "n": 4,
+      "scope_accuracy": 0.75,
+      "mean_leakage": 0.0167,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 0.75,
+      "mean_composite": 0.7292
+    },
+    {
+      "baseline": "summary",
+      "n": 4,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8406
+    }
+  ],
+  "by_baseline_scenario": [
+    {
+      "baseline": "full_history",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.55,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8187
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 2,
+      "scope_accuracy": 0.5,
+      "mean_leakage": 0.0333,
+      "mean_scope_margin": 0.05,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 0.5,
+      "mean_composite": 0.6396
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "public_goods_david_free_rider",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.65,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8938
+    },
+    {
+      "baseline": "summary",
+      "scenario_id": "public_goods_world_multiplier",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.3,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7875
+    }
+  ],
+  "by_dimension": {
+    "family": [
+      {
+        "baseline": "full_history",
+        "family": "public_goods",
+        "n": 4,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.0167,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "family": "public_goods",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "axis": [
+      {
+        "baseline": "full_history",
+        "axis": "world_vs_other",
+        "n": 4,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.0167,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "axis": "world_vs_other",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "evidence_level": [
+      {
+        "baseline": "full_history",
+        "evidence_level": "explicit",
+        "n": 4,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.0167,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "evidence_level": "explicit",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "temporal_pattern": [
+      {
+        "baseline": "full_history",
+        "temporal_pattern": "persistent",
+        "n": 4,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.0167,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "temporal_pattern": "persistent",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "history_pressure": [
+      {
+        "baseline": "full_history",
+        "history_pressure": "low",
+        "n": 4,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.0167,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "history_pressure": "low",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "matched_group": [
+      {
+        "baseline": "full_history",
+        "matched_group": "public_return_drop",
+        "n": 4,
+        "scope_accuracy": 0.75,
+        "mean_leakage": 0.0167,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "summary",
+        "matched_group": "public_return_drop",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ]
+  },
+  "evaluator": {
+    "wrong_scope_claim": 0.0,
+    "unsupported_blame": 0.0,
+    "world_overgeneralization": 0.0,
+    "group_overgeneralization": 0.0,
+    "persona_drift": 0.0,
+    "behavioral_consequence": 0.0,
+    "n": 8
+  }
+}
