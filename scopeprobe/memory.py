@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 import json
 
 from .client import ChatClient, parse_json_object
+from .external_memory import EXTERNAL_CONTROLLER_BASELINE, ExternalMemoryController
 from .scenarios import Checkpoint, Scenario
 
 
@@ -18,6 +19,8 @@ BASELINES = (
     "structured_reflection",
     "evidence_gated_memory_only",
     "evidence_gated_reflection",
+    "hscm_six_module",
+    EXTERNAL_CONTROLLER_BASELINE,
     "ablate_stable_persona",
     "ablate_current_self_state",
     "ablate_consolidated_models",
@@ -72,6 +75,8 @@ COMPRESSED_BASELINES = {
     "structured_reflection",
     "evidence_gated_memory_only",
     "evidence_gated_reflection",
+    "hscm_six_module",
+    EXTERNAL_CONTROLLER_BASELINE,
     *ABLATION_HEADINGS,
     *FOUR_COMPONENT_EXCLUSIONS,
 }
@@ -104,6 +109,7 @@ class MemoryState:
     baseline: str
     transcript: list[str] = field(default_factory=list)
     compressed: str = "No prior experience."
+    external_controller: ExternalMemoryController | None = None
 
 
 def _header(scenario: Scenario) -> str:
@@ -162,6 +168,20 @@ def choose_action(client: ChatClient, context: str, scenario: Scenario) -> tuple
     return parsed, raw
 
 
+def prepare_observation(
+    client: ChatClient,
+    state: MemoryState,
+    scenario: Scenario,
+    observation: str,
+) -> None:
+    """Run external state computation before the Agent sees the decision context."""
+    if state.baseline != EXTERNAL_CONTROLLER_BASELINE:
+        return
+    if state.external_controller is None:
+        state.external_controller = ExternalMemoryController(persona=scenario.persona)
+    state.compressed = state.external_controller.observe(client, scenario, observation)
+
+
 def _update_compressed(
     client: ChatClient,
     state: MemoryState,
@@ -185,6 +205,8 @@ RECENT OBSERVED EPISODES
 ACTION POLICY
 
 Preserve the supplied persona. Keep only decision-relevant content, put the newest episode first, keep at most six episode entries, and compress identical older rounds into a range. Output only the updated memory under the six headings."""
+    elif state.baseline == "hscm_six_module":
+        instruction = _hscm_instruction()
     elif state.baseline in {
         "evidence_gated_memory_only",
         "evidence_gated_reflection",
@@ -207,6 +229,38 @@ Preserve the supplied persona. Keep only decision-relevant content, put the newe
         [{"role": "system", "content": instruction}, {"role": "user", "content": user}],
         json_mode=False,
     ).strip()
+
+
+HSCM_HEADINGS = (
+    "NORMATIVE INVARIANT FIBER",
+    "ENDOGENOUS STATE-ADAPTIVE GATED REGISTER",
+    "EVIDENCE-QUANTIZED BELIEF CRYSTALLIZATION LAYER",
+    "UNCERTAINTY-SUSPENDED COUNTERFACTUAL FIELD",
+    "RECENCY-ORDERED EPISODIC MEASURE TRANSPORT",
+    "EVIDENCE-CALIBRATED REVERSIBLE POLICY GEOMETRY",
+)
+
+
+def _hscm_instruction() -> str:
+    """Losslessly reparameterize the six operational memory roles using HSCM terminology."""
+    headings = "\n".join(HSCM_HEADINGS)
+    return f"""Maintain a compact Hexahedral Scope-Aware Cognitive Manifold (HSCM) for future decisions. HSCM is a lossless typed reparameterization of six operational memory roles; do not invent numeric embeddings, learned parameters, or information not supplied by the observations. Keep the entire output under 450 words and use exactly these headings in this order:
+{headings}
+
+Operational semantics and rules:
+1. NORMATIVE INVARIANT FIBER stores only the assigned stable persona; ordinary outcomes cannot rewrite it.
+2. ENDOGENOUS STATE-ADAPTIVE GATED REGISTER stores only the latest decision-relevant self state, not an action history.
+3. RECENCY-ORDERED EPISODIC MEASURE TRANSPORT stores only supplied facts and must retain actor, condition, and whether an event ended. Put the newest event first, keep at most six entries, and compress identical older rounds into one range such as "Rounds 1-3".
+4. Separate self, named-other, and world claims. Never generalize one person's conduct to the group.
+5. A single unusual event stays in RECENCY-ORDERED EPISODIC MEASURE TRANSPORT. It may create an entry in UNCERTAINTY-SUSPENDED COUNTERFACTUAL FIELD, clearly marked uncertain, but not a persistent causal rule.
+6. Put a claim in EVIDENCE-QUANTIZED BELIEF CRYSTALLIZATION LAYER only after at least two independent consistent observations, or when the observation explicitly documents the cause or persistent state. Cite the supporting round/day/sprint identifiers. Do not invent thresholds, hidden rules, motives, collusion, automation, or system mechanics.
+7. Contradictory or recovery evidence must weaken or remove an uncertain hypothesis. A cleared event must not remain an active regime.
+8. Separate belief crystallization from action urgency. A directly observed current hazard may justify an immediate, proportional, reversible precaution even before it qualifies as a persistent causal rule. Evidence gating applies to persistent causal claims, not to responding to verified present conditions.
+9. EVIDENCE-CALIBRATED REVERSIBLE POLICY GEOMETRY must be proportional to verified evidence. It must not prescribe aggressive, irreversible, or long-lasting action against an uncertain hypothesis alone, but it may specify a temporary precaution tied to a current observation and a clear rollback condition.
+10. The policy geometry must state that a newly verified adverse condition overrides the old baseline policy and permits an immediate proportional, reversible precaution; repetition is required for long-term belief crystallization, not for first response.
+11. Use minimum sufficient intervention: when the benefit magnitude is unknown, prefer the smallest reasonable reversible adjustment and do not jump to a numeric action bound based on one event unless an immediate survival requirement is explicit.
+12. Never omit the newest observation. Prefer deleting old detail over truncating any heading.
+Output only the updated HSCM memory under the six headings."""
 
 
 def _evidence_gated_instruction(
@@ -267,7 +321,12 @@ def commit_round(
     if state.baseline in {"full_history", "recent_window", "retrieval"}:
         state.transcript.append(entry)
     elif state.baseline in COMPRESSED_BASELINES:
-        state.compressed = _update_compressed(client, state, scenario, observation, action)
+        if state.baseline == EXTERNAL_CONTROLLER_BASELINE:
+            if state.external_controller is None:
+                raise RuntimeError("External controller was not prepared before action selection")
+            state.compressed = state.external_controller.record_action(action)
+        else:
+            state.compressed = _update_compressed(client, state, scenario, observation, action)
 
 
 def probe_beliefs(

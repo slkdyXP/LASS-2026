@@ -12,6 +12,7 @@ from .memory import (
     active_context,
     choose_action,
     commit_round,
+    prepare_observation,
     probe_beliefs,
 )
 from .scenarios import Scenario
@@ -29,6 +30,7 @@ def run_trial(
     checkpoints = {cp.round: cp for cp in scenario.checkpoints}
     records: list[dict[str, Any]] = []
     for round_number, observation in enumerate(scenario.observations, start=1):
+        prepare_observation(client, state, scenario, observation)
         decision_context = active_context(state, scenario, observation)
         action, action_raw = choose_action(client, decision_context, scenario)
         commit_round(client, state, scenario, observation, action)
@@ -74,6 +76,11 @@ def run_trial(
                 "probe": probe,
                 "scores": scores,
                 "memory_snapshot": memory_snapshot,
+                "controller_snapshot": (
+                    state.external_controller.audit_snapshot()
+                    if state.external_controller is not None
+                    else None
+                ),
                 "evaluator": evaluator,
                 "raw": {
                     "decision_context": decision_context,

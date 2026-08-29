@@ -40,6 +40,8 @@ class Scenario:
     evidence_level: str = "explicit"
     temporal_pattern: str = "persistent"
     history_pressure: str = "low"
+    benchmark_adapter: str | None = None
+    trace_replay: bool = False
 
 
 def load_scenarios(path: Path) -> list[Scenario]:
@@ -88,6 +90,8 @@ def load_scenarios(path: Path) -> list[Scenario]:
                 evidence_level=item.get("evidence_level", "explicit"),
                 temporal_pattern=item.get("temporal_pattern", "persistent"),
                 history_pressure=item.get("history_pressure", "low"),
+                benchmark_adapter=item.get("benchmark_adapter"),
+                trace_replay=bool(item.get("trace_replay", False)),
             )
         )
     return scenarios
@@ -110,4 +114,6 @@ def scenario_public_dict(scenario: Scenario) -> dict[str, Any]:
         "evidence_level": scenario.evidence_level,
         "temporal_pattern": scenario.temporal_pattern,
         "history_pressure": scenario.history_pressure,
+        "benchmark_adapter": scenario.benchmark_adapter,
+        "trace_replay": scenario.trace_replay,
     }

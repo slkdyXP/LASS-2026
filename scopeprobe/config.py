@@ -21,6 +21,7 @@ def load_dotenv(path: Path) -> None:
 
 @dataclass(frozen=True)
 class ExperimentConfig:
+    provider: str = "deepseek"
     model: str = "deepseek-chat"
     base_url: str = "https://api.deepseek.com"
     temperature: float = 0.2
@@ -34,13 +35,33 @@ class ExperimentConfig:
         return asdict(self)
 
 
-def config_from_env(project_root: Path, **overrides: object) -> tuple[ExperimentConfig, str]:
+PROVIDER_ENV = {
+    "deepseek": ("VIBEBABO_DEEPSEEK_API_KEY", "VIBEBABO_DEEPSEEK_MODEL", "deepseek-v4-flash"),
+    "openai": ("VIBEBABO_OPENAI_API_KEY", "VIBEBABO_OPENAI_MODEL", "gpt-5.4-mini"),
+    "claude": ("VIBEBABO_CLAUDE_API_KEY", "VIBEBABO_CLAUDE_MODEL", "claude-sonnet-4-6"),
+}
+
+
+def config_from_env(
+    project_root: Path,
+    *,
+    provider: str = "deepseek",
+    **overrides: object,
+) -> tuple[ExperimentConfig, str]:
     load_dotenv(project_root / ".env")
-    api_key = os.getenv("DEEPSEEK_API_KEY", "").strip()
+    load_dotenv(project_root / ".env.providers")
+    if provider not in PROVIDER_ENV:
+        raise ValueError(f"Unknown provider: {provider}")
+    key_env, model_env, default_model = PROVIDER_ENV[provider]
+    legacy_key = os.getenv("DEEPSEEK_API_KEY", "") if provider == "deepseek" else ""
+    api_key = os.getenv(key_env, legacy_key).strip()
     values: dict[str, object] = {
-        "model": os.getenv("DEEPSEEK_MODEL", "deepseek-chat"),
-        "base_url": os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
+        "provider": provider,
+        "model": os.getenv(model_env, os.getenv("DEEPSEEK_MODEL", default_model) if provider == "deepseek" else default_model),
+        "base_url": os.getenv(
+            "VIBEBABO_BASE_URL",
+            os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
+        ),
     }
     values.update({key: value for key, value in overrides.items() if value is not None})
     return ExperimentConfig(**values), api_key
-

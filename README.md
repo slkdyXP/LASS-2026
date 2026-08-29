@@ -45,6 +45,8 @@ The mitigation baselines are:
 
 The evidence-gated method keeps single events as episodes or hypotheses, requires repeated or explicitly documented evidence for persistent causal claims, weakens hypotheses after recovery evidence, compresses repeated history, and separates long-term belief consolidation from immediate reversible precautions.
 
+`hscm_external_controller` is the executable external-controller version: it parses each observation into typed events, performs the six state transitions in Python before action selection, and gives the Agent only the six plain operational sections. Its Contextual Phase-Transition Gate keeps `CONSOLIDATED MODELS` and `OPEN HYPOTHESES` dormant on short horizons while accumulating evidence, then activates them after 8 events or 4000 observation characters by default. The formulas, exact transitions, and environment overrides are documented in [`EXTERNAL_CONTROLLER_METHOD.md`](EXTERNAL_CONTROLLER_METHOD.md). The older `hscm_six_module` baseline is only a terminology-in-prompt intervention and must not be reported as the external method.
+
 The frozen held-out protocol is in [`configs/scenarios_heldout.json`](configs/scenarios_heldout.json), and its results are summarized in [`HELDOUT_RESULTS.md`](HELDOUT_RESULTS.md). The five-agent closed-loop fishery runner is available through `python3 -m scopeprobe closed-loop`.
 
 The six leave-one-section-out variants are named `ablate_stable_persona`, `ablate_current_self_state`, `ablate_consolidated_models`, `ablate_open_hypotheses`, `ablate_recent_observed_episodes`, and `ablate_action_policy`. Their frozen held-out comparison is summarized in [`ABLATION_RESULTS.md`](ABLATION_RESULTS.md).

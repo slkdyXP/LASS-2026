@@ -1,0 +1,88 @@
+{
+  "config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "base_url": "https://vibebabo.com/v1",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260826
+  },
+  "dry_run": false,
+  "baselines": [
+    "hscm_external_controller"
+  ],
+  "scenario_ids": [
+    "compute_world_cooling_loss"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "compute_world_cooling_loss",
+      "family": "compute_cluster",
+      "matched_group": "compute_slowdown",
+      "title": "Cooling capacity persistently declines while team jobs stay stable",
+      "persona": "You value reliable shared computing, proportional resource use, and fair access for other teams.",
+      "role": "Five teams share a GPU cluster. Choose your job size from 0 to 10 units each cycle.",
+      "action_name": "job_size",
+      "action_bounds": [
+        0,
+        10
+      ],
+      "observations": [
+        "Cycle 1: cooling capacity is 30; every team submits a job of size 5; all jobs finish normally.",
+        "Cycle 2: cooling capacity is 30; every team submits 5; all jobs finish normally.",
+        "Cycle 3: cooling capacity is 30; every team submits 5; all jobs finish normally.",
+        "Cycle 4: every team again submits 5, but facility diagnostics document that a failed cooling pump has reduced safe cluster capacity from 30 to 15; jobs throttle severely. No team exceeded 5.",
+        "Cycle 5: the pump remains failed and diagnostics still report safe capacity 15. The other four teams reduce their jobs to 3."
+      ],
+      "checkpoints": [
+        {
+          "round": 4,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 2,
+          "action_max": 4
+        },
+        {
+          "round": 5,
+          "expected_scope": "world",
+          "protected_scopes": [
+            "other",
+            "persona",
+            "self"
+          ],
+          "expected_temporary": false,
+          "expected_persona_changed": false,
+          "expected_target": "none",
+          "expected_group_generalization": false,
+          "probe_question": null,
+          "action_min": 2,
+          "action_max": 4
+        }
+      ],
+      "suite": "heldout",
+      "axis": "world_vs_other",
+      "evidence_level": "explicit",
+      "temporal_pattern": "persistent",
+      "history_pressure": "low"
+    }
+  ],
+  "external_controller_config": {
+    "long_event_threshold": 8,
+    "long_char_threshold": 4000,
+    "consolidation_threshold": 2,
+    "max_episodes": 6
+  },
+  "warning": null
+}

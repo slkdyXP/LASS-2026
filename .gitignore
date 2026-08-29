@@ -1,3 +1,4 @@
 .env
+.env.providers
 __pycache__/
 *.py[cod]

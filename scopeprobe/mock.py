@@ -10,6 +10,30 @@ class MockClient:
     def complete(self, messages: list[dict[str, str]], *, json_mode: bool = False) -> str:
         system = messages[0]["content"]
         user = messages[-1]["content"]
+        if "structured event parser for an external agent-memory controller" in system:
+            return json.dumps(
+                {
+                    "self_updates": [],
+                    "evidence": [],
+                    "episodes": [
+                        {
+                            "actor": "world",
+                            "scope": "episodic",
+                            "condition": "unconditional",
+                            "fact": "Mock observed event",
+                            "resolved": False,
+                        }
+                    ],
+                    "hazard": {
+                        "status": "none",
+                        "scope": "none",
+                        "target_agent": "none",
+                        "description": "none",
+                        "verified": False,
+                        "persistence": "unknown",
+                    },
+                }
+            )
         if "reporting the participant's current beliefs" in system:
             lowered = user.lower()
             if "own daily need" in lowered or "raises your own daily need" in lowered:

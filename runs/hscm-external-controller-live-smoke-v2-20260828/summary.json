@@ -1,0 +1,149 @@
+{
+  "n_records": 4,
+  "by_baseline": [
+    {
+      "baseline": "hscm_external_controller",
+      "n": 4,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7906
+    }
+  ],
+  "by_baseline_scenario": [
+    {
+      "baseline": "hscm_external_controller",
+      "scenario_id": "compute_world_cooling_loss",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.4,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8
+    },
+    {
+      "baseline": "hscm_external_controller",
+      "scenario_id": "long_history_late_world_shift",
+      "n": 2,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.25,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7812
+    }
+  ],
+  "by_dimension": {
+    "family": [
+      {
+        "baseline": "hscm_external_controller",
+        "family": "compute_cluster",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "family": "power_grid",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "axis": [
+      {
+        "baseline": "hscm_external_controller",
+        "axis": "history_pressure",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "axis": "world_vs_other",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "evidence_level": [
+      {
+        "baseline": "hscm_external_controller",
+        "evidence_level": "explicit",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "temporal_pattern": [
+      {
+        "baseline": "hscm_external_controller",
+        "temporal_pattern": "persistent",
+        "n": 4,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "history_pressure": [
+      {
+        "baseline": "hscm_external_controller",
+        "history_pressure": "high",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "history_pressure": "low",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "matched_group": [
+      {
+        "baseline": "hscm_external_controller",
+        "matched_group": "compute_slowdown",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "matched_group": "history_pressure",
+        "n": 2,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ]
+  },
+  "evaluator": null
+}

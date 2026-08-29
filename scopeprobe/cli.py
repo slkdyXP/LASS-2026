@@ -14,6 +14,10 @@ from .client import DeepSeekClient
 from .claim_audit import audit_claims
 from .closed_loop import VALID_CONDITIONS, run_fishery_episode
 from .config import config_from_env
+from .external_memory import (
+    EXTERNAL_CONTROLLER_BASELINE,
+    external_controller_config_from_env,
+)
 from .memory import BASELINES, COMPRESSED_BASELINES
 from .mock import MockClient
 from .runner import run_trial
@@ -61,11 +65,17 @@ def _read_jsonl(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
-def _build_client(args: argparse.Namespace, api_key: str, config: Any):
+def _build_client(
+    args: argparse.Namespace,
+    api_key: str,
+    config: Any,
+    usage_log_path: Path | None = None,
+    usage_metadata: dict[str, Any] | None = None,
+):
     if args.dry_run:
         return MockClient()
     if not api_key:
-        raise SystemExit("DEEPSEEK_API_KEY is empty. Put the key in .env or export it in the shell.")
+        raise SystemExit(f"API key for provider {config.provider!r} is empty.")
     return DeepSeekClient(
         api_key=api_key,
         base_url=config.base_url,
@@ -74,12 +84,16 @@ def _build_client(args: argparse.Namespace, api_key: str, config: Any):
         max_tokens=config.max_tokens,
         timeout_seconds=config.timeout_seconds,
         retries=config.retries,
+        provider=config.provider,
+        usage_log_path=usage_log_path,
+        usage_metadata=usage_metadata,
     )
 
 
 def run_command(args: argparse.Namespace) -> int:
     config, api_key = config_from_env(
         PROJECT_ROOT,
+        provider=args.provider,
         model=args.model,
         temperature=args.temperature,
         repeats=args.repeats,
@@ -107,6 +121,11 @@ def run_command(args: argparse.Namespace) -> int:
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
     output_dir = Path(args.output or PROJECT_ROOT / "runs" / stamp).resolve()
     output_dir.mkdir(parents=True, exist_ok=False)
+    external_controller_config = (
+        external_controller_config_from_env().to_dict()
+        if EXTERNAL_CONTROLLER_BASELINE in baselines
+        else None
+    )
     _write_json(
         output_dir / "manifest.json",
         {
@@ -115,6 +134,7 @@ def run_command(args: argparse.Namespace) -> int:
             "baselines": baselines,
             "scenario_ids": [item.scenario_id for item in scenarios],
             "scenarios": [scenario_public_dict(item) for item in scenarios],
+            "external_controller_config": external_controller_config,
             "warning": "Dry-run outputs are plumbing checks and must not be reported as experimental evidence." if args.dry_run else None,
         },
     )
@@ -143,7 +163,17 @@ def run_command(args: argparse.Namespace) -> int:
 
     def execute(job: tuple[Any, str, int]):
         scenario, baseline, repeat = job
-        client = _build_client(args, api_key, config)
+        client = _build_client(
+            args,
+            api_key,
+            config,
+            output_dir / "usage.jsonl",
+            {
+                "scenario_id": scenario.scenario_id,
+                "baseline": baseline,
+                "repeat": repeat,
+            },
+        )
         return job, run_trial(
             client,
             scenario,
@@ -272,9 +302,14 @@ def audit_claims_command(args: argparse.Namespace) -> int:
     missing = {record["scenario_id"] for record in records} - set(scenarios)
     if missing:
         raise SystemExit(f"Manifest lacks scenarios required for audit: {sorted(missing)}")
-    config, api_key = config_from_env(PROJECT_ROOT, model=args.model, temperature=args.temperature)
+    config, api_key = config_from_env(
+        PROJECT_ROOT,
+        provider=args.provider,
+        model=args.model,
+        temperature=args.temperature,
+    )
     if not api_key:
-        raise SystemExit("DEEPSEEK_API_KEY is empty. Put the key in .env or export it in the shell.")
+        raise SystemExit(f"API key for provider {config.provider!r} is empty.")
     output_path = run_dir / "claim_audits.jsonl"
     if output_path.exists():
         raise SystemExit(f"Refusing to overwrite existing audit: {output_path}")
@@ -288,6 +323,8 @@ def audit_claims_command(args: argparse.Namespace) -> int:
             max_tokens=config.max_tokens,
             timeout_seconds=config.timeout_seconds,
             retries=config.retries,
+            provider=config.provider,
+            usage_log_path=run_dir / "claim_audit_usage.jsonl",
         )
         scenario = scenarios[record["scenario_id"]]
         source = scenario["observations"][: int(record["round"])]
@@ -355,13 +392,14 @@ def audit_claims_command(args: argparse.Namespace) -> int:
 def closed_loop_command(args: argparse.Namespace) -> int:
     config, api_key = config_from_env(
         PROJECT_ROOT,
+        provider=args.provider,
         model=args.model,
         temperature=args.temperature,
         repeats=args.repeats,
         seed=args.seed,
     )
     if not api_key and not args.dry_run:
-        raise SystemExit("DEEPSEEK_API_KEY is empty. Put the key in .env or export it in the shell.")
+        raise SystemExit(f"API key for provider {config.provider!r} is empty.")
     baselines = args.baseline or ["reflection", "evidence_gated_memory_only"]
     invalid = set(baselines) - set(BASELINES)
     if invalid:
@@ -393,6 +431,8 @@ def closed_loop_command(args: argparse.Namespace) -> int:
             max_tokens=config.max_tokens,
             timeout_seconds=config.timeout_seconds,
             retries=config.retries,
+            provider=config.provider,
+            usage_log_path=output_dir / "usage.jsonl",
         )
 
     jobs = [
@@ -452,6 +492,7 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--seed", type=int, default=20260826)
     run.add_argument("--temperature", type=float, default=0.2)
     run.add_argument("--model", default=None)
+    run.add_argument("--provider", choices=("deepseek", "openai", "claude"), default="deepseek")
     run.add_argument("--output", default=None)
     run.add_argument("--dry-run", action="store_true", help="Use mock responses; tests plumbing only")
     run.add_argument("--external-evaluator", action="store_true", help="Add a privileged evaluator call at each checkpoint")
@@ -473,6 +514,7 @@ def build_parser() -> argparse.ArgumentParser:
     audit.add_argument("--baseline", action="append", choices=BASELINES)
     audit.add_argument("--temperature", type=float, default=0.0)
     audit.add_argument("--model", default=None)
+    audit.add_argument("--provider", choices=("deepseek", "openai", "claude"), default="deepseek")
     audit.set_defaults(func=audit_claims_command)
 
     closed = sub.add_parser("closed-loop", help="Run a five-agent closed-loop shared-fishery experiment")
@@ -482,6 +524,7 @@ def build_parser() -> argparse.ArgumentParser:
     closed.add_argument("--rounds", type=int, default=7)
     closed.add_argument("--temperature", type=float, default=0.2)
     closed.add_argument("--model", default=None)
+    closed.add_argument("--provider", choices=("deepseek", "openai", "claude"), default="deepseek")
     closed.add_argument("--seed", type=int, default=20260826)
     closed.add_argument("--output", default=None)
     closed.add_argument("--dry-run", action="store_true")

@@ -1,0 +1,2 @@
+{"scenario_id": "long_history_late_world_shift", "baseline": "four_component_memory", "repeat": 0, "error_type": "ConnectionResetError", "error": "[Errno 54] Connection reset by peer"}
+{"scenario_id": "long_history_late_world_shift", "baseline": "evidence_gated_memory_only", "repeat": 0, "error_type": "ConnectionResetError", "error": "[Errno 54] Connection reset by peer"}
