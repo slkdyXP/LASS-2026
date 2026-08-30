@@ -1,0 +1,17 @@
+[
+  {
+    "parent_thread_id": "01a04e2e-68b9-7043-b462-15f9a38273ab",
+    "child_thread_id": "01a0521e-4c71-7851-b7ee-5f797c5aa109",
+    "status": "open"
+  },
+  {
+    "parent_thread_id": "01a04e2e-68b9-7043-b462-15f9a38273ab",
+    "child_thread_id": "01a0521e-6a09-7382-9537-facdeb8870d6",
+    "status": "open"
+  },
+  {
+    "parent_thread_id": "01a04e2e-68b9-7043-b462-15f9a38273ab",
+    "child_thread_id": "01a0521e-7f9a-7811-9353-f84ba0ddc3bf",
+    "status": "open"
+  }
+]

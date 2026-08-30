@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}引言}{3}{section.1}%
+\contentsline {section}{\numberline {2}相关工作}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}用于社会模拟的 LLM 智能体}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}反思与持久智能体记忆}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}归因、时间有效性与记忆到行动}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}预备知识与问题形式化}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}具有持久记忆的社会智能体}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}认知地址}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}反思性错误巩固}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}匹配干预诊断目标}{6}{subsection.3.4}%
+\contentsline {section}{\numberline {4}方法：证据门控巩固}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}设计原则}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}证据门控记忆}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}可执行的外部控制器}{7}{subsection.4.3}%
+\contentsline {paragraph}{上下文相变门。}{8}{paragraph*.4}%
+\contentsline {paragraph}{策略编译。}{8}{paragraph*.5}%
+\contentsline {section}{\numberline {5}实验}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}设置}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Q1：冻结留出诊断}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Q2：闭环后果实验}{9}{subsection.5.3}%
+\contentsline {paragraph}{无歧义的身份失效。}{10}{paragraph*.8}%
+\contentsline {paragraph}{后果是什么，以及不是什么。}{10}{paragraph*.10}%
+\contentsline {subsection}{\numberline {5.4}Q3：组件消融}{10}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}尺度与长时程评估}{11}{subsection.5.5}%
+\contentsline {section}{\numberline {6}局限性}{12}{section.6}%
+\contentsline {section}{\numberline {7}结论}{12}{section.7}%

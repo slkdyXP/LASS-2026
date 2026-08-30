@@ -1,0 +1,333 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{18}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter does
+%%% not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+\makeatletter
+\@ifundefined{NAT@parse@date}{}{\let\NAT@parse@date@orig\NAT@parse@date}
+\@ifundefined{NAT@parse@date}{}{\def\NAT@parse@date#1#2#3#4#5#6@@{\NAT@parse@date@orig#1#2#3#4#5#6@@\def\NAT@tempyear{0000}\def\NAT@tempexlab{{?}}\ifx\NAT@year\NAT@tempyear\ifx\NAT@exlab\NAT@tempexlab\def\NAT@date{[n.\,d.]}\else\edef\NAT@date{[n.\,d.]\NAT@exlab}\fi\fi}}
+\makeatother
+
+\bibitem[Chao et~al\mbox{.}(2026)]%
+        {chao2026stale}
+\bibfield{author}{\bibinfo{person}{Hanxiang Chao}, \bibinfo{person}{Yihan Bai},
+  \bibinfo{person}{Rui Sheng}, \bibinfo{person}{Tianle Li}, {and}
+  \bibinfo{person}{Yushi Sun}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{STALE}: Can {LLM} Agents Know When Their Memories
+  Are No Longer Valid?}
+\newblock
+\showeprint[arxiv]{2605.06527}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2605.06527}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Chen et~al\mbox{.}(2026)]%
+        {chen2026halumem}
+\bibfield{author}{\bibinfo{person}{Ding Chen}, \bibinfo{person}{Simin Niu},
+  \bibinfo{person}{Kehang Li}, \bibinfo{person}{Peng Liu},
+  \bibinfo{person}{Xiangping Zheng}, \bibinfo{person}{Bo Tang},
+  \bibinfo{person}{Xinchi Li}, \bibinfo{person}{Feiyu Xiong}, {and}
+  \bibinfo{person}{Zhiyu Li}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{HaluMem}: Evaluating Hallucinations in Memory
+  Systems of Agents}.
+\newblock
+\showeprint[arxiv]{2511.03506}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2511.03506}
+\showURL{%
+\tempurl}
+
+
+\bibitem[He et~al\mbox{.}(2026)]%
+        {he2026memoryarena}
+\bibfield{author}{\bibinfo{person}{Zexue He}, \bibinfo{person}{Yu Wang},
+  \bibinfo{person}{Churan Zhi}, \bibinfo{person}{Yuanzhe Hu},
+  \bibinfo{person}{Tzu-Ping Chen}, \bibinfo{person}{Lang Yin},
+  \bibinfo{person}{Ze Chen}, \bibinfo{person}{Tong~Arthur Wu},
+  \bibinfo{person}{Siru Ouyang}, \bibinfo{person}{Zihan Wang},
+  \bibinfo{person}{Jiaxin Pei}, \bibinfo{person}{Julian McAuley},
+  \bibinfo{person}{Yejin Choi}, {and} \bibinfo{person}{Alex Pentland}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{MemoryArena}: Benchmarking Agent Memory in
+  Interdependent Multi-Session Agentic Tasks}.
+\newblock
+\showeprint[arxiv]{2602.16313}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2602.16313}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Hu et~al\mbox{.}(2026)]%
+        {hu2026memoryagentbench}
+\bibfield{author}{\bibinfo{person}{Yuanzhe Hu}, \bibinfo{person}{Yu Wang},
+  {and} \bibinfo{person}{Julian McAuley}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Evaluating Memory in {LLM} Agents via Incremental
+  Multi-Turn Interactions}. In \bibinfo{booktitle}{\emph{International
+  Conference on Learning Representations}}. \bibinfo{pages}{156259--156291}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.iclr.cc/paper_files/paper/2026/file/fd1eff9dd295df50a41f2521942fa31d-Paper-Conference.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Kwon(2026)]%
+        {kwon2026explicit}
+\bibfield{author}{\bibinfo{person}{Alex Kwon}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Explicit, Not Longer: What Makes Epistemic Stance
+  Survive Memory Compression}.
+\newblock
+\showeprint[arxiv]{2608.06953}~[cs.CL]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2608.06953}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Li et~al\mbox{.}(2026)]%
+        {li2026actorobserver}
+\bibfield{author}{\bibinfo{person}{Bobo Li}, \bibinfo{person}{Wu Rui},
+  \bibinfo{person}{Zibo Ji}, \bibinfo{person}{Meishan Zhang},
+  \bibinfo{person}{Hao Fei}, \bibinfo{person}{Min Zhang},
+  \bibinfo{person}{Mong-Li Lee}, {and} \bibinfo{person}{Wynne Hsu}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Taming Actor-Observer Asymmetry in Agents via
+  Dialectical Alignment}. In \bibinfo{booktitle}{\emph{Proceedings of the 64th
+  Annual Meeting of the Association for Computational Linguistics (Volume 1:
+  Long Papers)}}. \bibinfo{publisher}{Association for Computational
+  Linguistics}, \bibinfo{address}{San Diego, California, United States},
+  \bibinfo{pages}{24068--24084}.
+\newblock
+\href{https://doi.org/10.18653/v1/2026.acl-long.1104}{doi:\nolinkurl{10.18653/v1/2026.acl-long.1104}}
+
+
+\bibitem[Li and Tao(2026)]%
+        {li2026agentsalone}
+\bibfield{author}{\bibinfo{person}{Yiming Li} {and} \bibinfo{person}{Dacheng
+  Tao}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{AI} Agents Alone Are Not (Yet) Sufficient for Social
+  Simulation}.
+\newblock
+\showeprint[arxiv]{2603.00113}~[cs.MA]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2603.00113}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Mao et~al\mbox{.}(2025)]%
+        {mao2025alympics}
+\bibfield{author}{\bibinfo{person}{Shaoguang Mao}, \bibinfo{person}{Yuzhe Cai},
+  \bibinfo{person}{Yan Xia}, \bibinfo{person}{Wenshan Wu}, \bibinfo{person}{Xun
+  Wang}, \bibinfo{person}{Fengyi Wang}, \bibinfo{person}{Qiang Guan},
+  \bibinfo{person}{Tao Ge}, {and} \bibinfo{person}{Furu Wei}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{ALYMPICS}: {LLM} Agents Meet Game Theory}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 31st International Conference on
+  Computational Linguistics}}. \bibinfo{publisher}{Association for
+  Computational Linguistics}, \bibinfo{address}{Abu Dhabi, UAE},
+  \bibinfo{pages}{2845--2866}.
+\newblock
+\urldef\tempurl%
+\url{https://aclanthology.org/2025.coling-main.193/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Mao et~al\mbox{.}(2026)]%
+        {mao2026pasb}
+\bibfield{author}{\bibinfo{person}{Xutao Mao}, \bibinfo{person}{Liangjie Zhao},
+  \bibinfo{person}{Leyao Wang}, \bibinfo{person}{Rui Qian},
+  \bibinfo{person}{Qiang Huang}, \bibinfo{person}{Wentao Wang},
+  \bibinfo{person}{Bo Han}, \bibinfo{person}{Xiang Zheng}, {and}
+  \bibinfo{person}{Cong Wang}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Agents Don't Just Agree, They Remember: Benchmarking
+  Persistent Sycophancy in Stateful Personal Agents}.
+\newblock
+\showeprint[arxiv]{2607.10526}~[cs.AI]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2607.10526}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Park et~al\mbox{.}(2023)]%
+        {park2023generative}
+\bibfield{author}{\bibinfo{person}{Joon~Sung Park}, \bibinfo{person}{Joseph
+  O'Brien}, \bibinfo{person}{Carrie~Jun Cai}, \bibinfo{person}{Meredith~Ringel
+  Morris}, \bibinfo{person}{Percy Liang}, {and} \bibinfo{person}{Michael~S.
+  Bernstein}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Generative Agents: Interactive Simulacra of Human
+  Behavior}. In \bibinfo{booktitle}{\emph{Proceedings of the 36th Annual ACM
+  Symposium on User Interface Software and Technology}}
+  \emph{(\bibinfo{series}{UIST '23})}. \bibinfo{publisher}{ACM},
+  \bibinfo{pages}{1--22}.
+\newblock
+\href{https://doi.org/10.1145/3586183.3606763}{doi:\nolinkurl{10.1145/3586183.3606763}}
+
+
+\bibitem[Piatti et~al\mbox{.}(2024)]%
+        {piatti2024cooperate}
+\bibfield{author}{\bibinfo{person}{Giorgio Piatti}, \bibinfo{person}{Zhijing
+  Jin}, \bibinfo{person}{Max Kleiman-Weiner}, \bibinfo{person}{Bernhard
+  Sch{\"o}lkopf}, \bibinfo{person}{Mrinmaya Sachan}, {and}
+  \bibinfo{person}{Rada Mihalcea}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Cooperate or Collapse: Emergence of Sustainable
+  Cooperation in a Society of {LLM} Agents}. In
+  \bibinfo{booktitle}{\emph{Advances in Neural Information Processing
+  Systems}}, Vol.~\bibinfo{volume}{37}. \bibinfo{publisher}{Curran Associates,
+  Inc.}, \bibinfo{pages}{111715--111759}.
+\newblock
+\href{https://doi.org/10.52202/079017-3548}{doi:\nolinkurl{10.52202/079017-3548}}
+
+
+\bibitem[Shen et~al\mbox{.}(2026)]%
+        {shen2026mem2act}
+\bibfield{author}{\bibinfo{person}{Yiting Shen}, \bibinfo{person}{Kun Li},
+  \bibinfo{person}{Wei Zhou}, {and} \bibinfo{person}{Songlin Hu}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{{Mem2ActBench}: A Benchmark for Evaluating
+  Long-Term Memory Utilization in Task-Oriented Autonomous Agents}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 64th Annual Meeting of the
+  Association for Computational Linguistics (Volume 1: Long Papers)}}.
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{address}{San Diego, California, United States},
+  \bibinfo{pages}{8173--8190}.
+\newblock
+\href{https://doi.org/10.18653/v1/2026.acl-long.370}{doi:\nolinkurl{10.18653/v1/2026.acl-long.370}}
+
+
+\bibitem[Shinn et~al\mbox{.}(2023)]%
+        {shinn2023reflexion}
+\bibfield{author}{\bibinfo{person}{Noah Shinn}, \bibinfo{person}{Federico
+  Cassano}, \bibinfo{person}{Ashwin Gopinath}, \bibinfo{person}{Karthik
+  Narasimhan}, {and} \bibinfo{person}{Shunyu Yao}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Reflexion: Language Agents with Verbal
+  Reinforcement Learning}. In \bibinfo{booktitle}{\emph{Advances in Neural
+  Information Processing Systems}}, Vol.~\bibinfo{volume}{36}.
+  \bibinfo{publisher}{Curran Associates, Inc.}, \bibinfo{pages}{8634--8652}.
+\newblock
+\href{https://doi.org/10.52202/075280-0377}{doi:\nolinkurl{10.52202/075280-0377}}
+
+
+\bibitem[Wu et~al\mbox{.}(2025)]%
+        {wu2025longmemeval}
+\bibfield{author}{\bibinfo{person}{Di Wu}, \bibinfo{person}{Hongwei Wang},
+  \bibinfo{person}{Wenhao Yu}, \bibinfo{person}{Yuwei Zhang},
+  \bibinfo{person}{Kai-Wei Chang}, {and} \bibinfo{person}{Dong Yu}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{LongMemEval}: Benchmarking Chat Assistants on
+  Long-Term Interactive Memory}. In \bibinfo{booktitle}{\emph{International
+  Conference on Learning Representations}}. \bibinfo{pages}{86809--86836}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.iclr.cc/paper_files/paper/2025/file/d813d324dbf0598bbdc9c8e79740ed01-Paper-Conference.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Xiong et~al\mbox{.}(2026)]%
+        {xiong2026memory}
+\bibfield{author}{\bibinfo{person}{Zidi Xiong}, \bibinfo{person}{Yuping Lin},
+  \bibinfo{person}{Wenya Xie}, \bibinfo{person}{Pengfei He},
+  \bibinfo{person}{Zirui Liu}, \bibinfo{person}{Jiliang Tang},
+  \bibinfo{person}{Himabindu Lakkaraju}, {and} \bibinfo{person}{Zhen Xiang}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{How Memory Management Impacts {LLM} Agents: An
+  Empirical Study of Experience-Following Behavior}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 64th Annual Meeting of the
+  Association for Computational Linguistics (Volume 1: Long Papers)}}.
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{address}{San Diego, California, United States},
+  \bibinfo{pages}{623--645}.
+\newblock
+\href{https://doi.org/10.18653/v1/2026.acl-long.27}{doi:\nolinkurl{10.18653/v1/2026.acl-long.27}}
+
+
+\bibitem[Yang et~al\mbox{.}(2026)]%
+        {yang2026trustmem}
+\bibfield{author}{\bibinfo{person}{Tianyu Yang}, \bibinfo{person}{Sudipta
+  Paul}, \bibinfo{person}{Vijay Srinivasan}, \bibinfo{person}{Vivek Kulkarni},
+  {and} \bibinfo{person}{Srinivas Chappidi}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{TrustMem}: Learning Trustworthy Memory Consolidation
+  for {LLM} Agents with Long-Term Memory}.
+\newblock
+\showeprint[arxiv]{2606.25161}~[cs.AI]
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2606.25161}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Zhong et~al\mbox{.}(2025)]%
+        {zhong2025spiral}
+\bibfield{author}{\bibinfo{person}{Mingze Zhong}, \bibinfo{person}{Meng Fang},
+  \bibinfo{person}{Zijing Shi}, \bibinfo{person}{Yuxuan Huang},
+  \bibinfo{person}{Shunfeng Zheng}, \bibinfo{person}{Yali Du},
+  \bibinfo{person}{Ling Chen}, {and} \bibinfo{person}{Jun Wang}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Spiral of Silence in Large Language Model Agents}.
+  In \bibinfo{booktitle}{\emph{Findings of the Association for Computational
+  Linguistics: EMNLP 2025}}. \bibinfo{publisher}{Association for Computational
+  Linguistics}, \bibinfo{address}{Suzhou, China},
+  \bibinfo{pages}{23238--23253}.
+\newblock
+\href{https://doi.org/10.18653/v1/2025.findings-emnlp.1262}{doi:\nolinkurl{10.18653/v1/2025.findings-emnlp.1262}}
+
+
+\bibitem[Zhou et~al\mbox{.}(2024)]%
+        {zhou2024sotopia}
+\bibfield{author}{\bibinfo{person}{Xuhui Zhou}, \bibinfo{person}{Hao Zhu},
+  \bibinfo{person}{Leena Mathur}, \bibinfo{person}{Ruohong Zhang},
+  \bibinfo{person}{Haofei Yu}, \bibinfo{person}{Zhengyang Qi},
+  \bibinfo{person}{Louis-Philippe Morency}, \bibinfo{person}{Yonatan Bisk},
+  \bibinfo{person}{Daniel Fried}, \bibinfo{person}{Graham Neubig}, {and}
+  \bibinfo{person}{Maarten Sap}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{SOTOPIA}: Interactive Evaluation for Social
+  Intelligence in Language Agents}. In \bibinfo{booktitle}{\emph{International
+  Conference on Learning Representations}}. \bibinfo{pages}{40975--41019}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.iclr.cc/paper_files/paper/2024/file/b3075b88e583a0e98d8b24338a613060-Paper-Conference.pdf}
+\showURL{%
+\tempurl}
+
+
+\end{thebibliography}
