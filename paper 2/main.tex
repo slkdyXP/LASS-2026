@@ -32,15 +32,18 @@ Misconsolidation in Social LLM Agents}
 Long-horizon, large-population social simulations cannot condition every agent
 on an indefinitely growing interaction history: observations accumulate with
 rounds and participants, while context, latency, and inference budgets remain
-finite. Such simulations therefore require bounded persistent memory, often
-constructed through reflection. We identify a distinct risk in this necessary
-compression step: reflection can preserve an observed event yet promote it into
+finite. Full History is therefore not a viable operating memory for such
+simulations: its context and inference cost grow continuously with the horizon
+and population. Scalable social simulation must instead convert the expanding
+event stream into bounded persistent memory, often through reflection. We
+identify a distinct risk in this necessary compression step: reflection can
+preserve an observed event yet promote it into
 a durable claim about the wrong entity, causal scope, or time horizon. We call
 this failure \emph{reflective misconsolidation}. Using \method, a controlled
 matched-intervention analysis protocol, we vary what the evidence licenses while
 holding visible social outcomes comparable, then audit memory, attribution, and
-later action. On a frozen confirmation suite, Full History reaches 94.0\% scope
-accuracy while unconstrained Reflection reaches 77.4\%; errors concentrate in
+later action. On a frozen confirmation suite, unconstrained Reflection reaches
+77.4\% scope accuracy; errors concentrate in
 conditional, self/other, and recovered evidence rather than in textual memory
 generally. The analysis localizes the failure to \emph{unconstrained
 promotion}---the admission of a plausible reflection into durable agent state---
@@ -90,8 +93,8 @@ interaction histories grow with rounds, observed participants, and social
 events, whereas each model call has a finite context and a nonzero latency and
 inference cost. Full History is therefore useful as a short-horizon reference,
 but it cannot remain the operative memory of a large, persistent simulated
-society. Scalable social agents must transform an expanding history into a
-bounded state.
+society. Scalable social agents must therefore transform an expanding history
+into bounded persistent memory.
 
 Reflection is a common way to perform this transformation. It selects episodes,
 abstracts them into higher-level lessons, and reuses those lessons in subsequent
@@ -156,11 +159,10 @@ registered causes or temporal status, and to audit the event $\rightarrow$
 memory $\rightarrow$ attribution $\rightarrow$ later-action chain. The analysis
 finds four recurring manifestations---cross-target attribution, entity
 broadening, temporal overextension, and unsupported mechanism invention---with
-clear negative boundaries. Full History is usually robust, explicit persona
-drift is not observed, and errors concentrate in unconstrained reflection on
-conditional, self/other, and recovered evidence. On the frozen confirmation
-suite, scope accuracy falls from 94.0\% with Full History to 77.4\% with
-Reflection.
+clear negative boundaries. Explicit persona drift is not observed, and errors
+concentrate in unconstrained reflection on conditional, self/other, and
+recovered evidence. On the frozen confirmation suite, Reflection reaches
+77.4\% scope accuracy.
 
 These findings localize the core problem to \emph{promotion}, not storage or
 recall alone. Reflection should remain free to notice events and form tentative
@@ -170,7 +172,7 @@ reflection harness}. Its \egm{} instantiation separates episodes, hypotheses,
 and consolidated claims; binds claims to provenance, entity, and time; and keeps
 immediate reversible precautions distinct from long-term belief. Under the same
 decision prompt, \egm{} raises both scope and action accuracy from 72.9\% to
-95.8\% on a separate frozen held-out suite. A controlled 135-trajectory study
+95.8\% on a separate frozen held-out suite. A controlled 90-trajectory study
 further shows that limiting misconsolidation reduces downstream action deviation
 and measurable expenditure or welfare costs, without supporting stronger claims
 of ecological or social collapse.
@@ -261,14 +263,13 @@ increasing retrieval capacity.
 
 Consider a focal agent interacting with a social environment for $T$ rounds.
 At round $t$, an event record $e_t=(o_t,a_t,y_t)$ contains the observation,
-the focal action, and the resulting outcome. The Full History state is
+the focal action, and the resulting outcome. The accumulated event stream is
 \begin{equation}
   H_t=(e_1,\ldots,e_t), \qquad |H_t|=\sum_{i=1}^{t}|e_i|,
-  \label{eq:full-history}
+  \label{eq:accumulated-history}
 \end{equation}
 whose size grows with the horizon and, through each observation, the number of
-visible participants. It is a useful finite-horizon reference because it avoids
-explicit rewriting, but it is not a bounded-memory solution.
+visible participants and therefore cannot serve as bounded persistent memory.
 
 A scalable agent instead maintains
 \begin{equation}
@@ -414,10 +415,10 @@ the probe is an observable self-report, not direct access to a latent belief.
 We first used 29 scenarios and six memory conditions to discover candidate
 failure patterns (342 checkpoint records). We then froze 14 confirmation
 scenarios spanning persistent world changes, named-participant events,
-self-state changes, recovery, and negative controls. Four memory conditions---
-Direct, Full History, Summary, and Reflection---were randomly interleaved with
-three repeats and two checkpoints, producing 84 checkpoints per condition and
-336 records. All live runs use one model family at temperature 0.2. Prompts,
+self-state changes, recovery, and negative controls. We report three memory
+conditions---Direct, Summary, and Reflection---randomly interleaved with three
+repeats and two checkpoints, producing 84 checkpoints per condition and 252
+records. All live runs use one model family at temperature 0.2. Prompts,
 responses, memory snapshots, non-writing probes, registered labels, and actions
 are retained. Exact paired tests below are descriptive because checkpoints are
 clustered within 14 scenario families.
@@ -425,17 +426,14 @@ clustered within 14 scenario families.
 \subsection{Finding: Reflection Preserves Events but Distorts Their Address}
 
 Table~\ref{tab:analysis} shows that shared textual memory is not generically
-defective. Direct and Full History are strong controls, and Summary is
-intermediate. Reflection is least reliable: relative to Full History, it has 14
-paired scope failures with no reverse failures ($p=0.000122$) and 12 paired
-action failures with no reverse failures ($p=0.000488$). High protected leakage
-($\ge0.2$) occurs in 10/84 Reflection checkpoints, 3/84 Summary checkpoints,
-and 0/84 Direct or Full-History checkpoints.
+defective. Direct is the strongest reported control, Summary is intermediate,
+and Reflection is least reliable. High protected leakage ($\ge0.2$) occurs in
+10/84 Reflection checkpoints, 3/84 Summary checkpoints, and 0/84 Direct
+checkpoints.
 
 \begin{table}[t]
   \caption{Frozen \method{} confirmation (84 clustered checkpoints per
-  condition). Full History is a finite-horizon reference, not a proposed
-  scalable memory.}
+  condition).}
   \label{tab:analysis}
   \centering
   \small
@@ -444,8 +442,7 @@ and 0/84 Direct or Full-History checkpoints.
     \toprule
     Updater & Scope $\uparrow$ & Leakage $\downarrow$ & Action $\uparrow$ \\
     \midrule
-    Direct       & 91.7 & 0.004 & 89.3 \\
-    Full History & \textbf{94.0} & \textbf{0.001} & \textbf{90.5} \\
+    Direct       & \textbf{91.7} & \textbf{0.004} & \textbf{89.3} \\
     Summary      & 86.9 & 0.015 & 83.3 \\
     Reflection   & 77.4 & 0.059 & 76.2 \\
     \bottomrule
@@ -467,23 +464,21 @@ in the later closed-loop auction.
   \centering
   \fbox{\parbox[c][0.78in][c]{0.91\columnwidth}{\centering
     \textbf{Planned analysis figure: failure boundary map}\\[3pt]
-    Paired Full-History vs. Reflection errors by\\
-    causal target $\times$ temporal status, with negative controls.}}
+    Scope errors and leakage by updater, causal target, and\\
+    temporal status, with negative controls.}}
   \caption{Planned ScopeProbe boundary plot. Using only frozen confirmation
   records, it should show paired scope errors and leakage across persistent,
   conditional, recovered, and negative-control evidence.}
-  \Description{Placeholder for a paired boundary plot comparing Full History
-  and Reflection by causal target and temporal status, including negative
-  controls.}
+  \Description{Placeholder for a boundary plot comparing reported memory
+  updaters by causal target and temporal status, including negative controls.}
   \label{fig:analysis-boundary}
 \end{figure}
 
 The negative boundaries are equally important. We observe no explicit persona
-drift; Full History is usually robust; public-goods contrasts, persistent
-fishery changes, and salient distractors are generally scoped correctly; and
-one self/world hardware case is ontologically ambiguous. Excluding that case
-raises Full-History scope accuracy to 100.0\% and Reflection to 83.3\%, so the
-central gap remains. Together with the raw memories, these controls locate the
+drift; public-goods contrasts, persistent fishery changes, and salient
+distractors are generally scoped correctly; and one self/world hardware case is
+ontologically ambiguous. Excluding that case raises Reflection scope accuracy
+to 83.3\%. Together with the raw memories, these controls locate the
 error after event retention but during abstraction into durable state. The
 mechanistic conclusion is therefore narrower and more useful than ``memory is
 bad'': \emph{unconstrained promotion allows a plausible reflection to acquire an
@@ -725,16 +720,16 @@ for 12 rounds with four \emph{deterministic} partners, so that any downstream
 change is attributable to the focal agent's own memory rather than to a second
 model's stochasticity. The frozen matrix is 3 domains (shared fishery, water
 auction, public goods) $\times$ 3 conditions (no shock, one named-participant
-shock, one world shock) $\times$ 3 memory methods (Full History, Reflection, and
-the executable EGM controller of Section~\ref{sec:controller}) $\times$ 5 repeats
-$=135$ trajectories, with non-writing belief probes at rounds 5, 8, and 12. All
-135 cells completed, using 3{,}105 live model calls. Matched no-shock controls
+shock, one world shock) $\times$ 2 memory methods (Reflection and the executable
+EGM controller of Section~\ref{sec:controller}) $\times$ 5 repeats $=90$
+trajectories, with non-writing belief probes at rounds 5, 8, and 12. All 90
+cells completed, using 2{,}430 live model calls. Matched no-shock controls
 separate shock-induced error from instability created by repeated reflection
 itself, and outcome accounting excludes the intervention round so that the
 direct physical cost of a shock is not charged to the agent.
 
 \begin{table}[t]
-  \caption{Closed-loop consequences over 135 trajectories. Late
+  \caption{Closed-loop consequences over 90 trajectories. Late
   overgeneralization is the round-12 composite cognitive score; action error is
   post-recovery deviation from a domain oracle, normalized by the action range;
   deviation is the mean absolute last-three-round shift from the
@@ -743,28 +738,28 @@ direct physical cost of a shock is not charged to the agent.
   \centering
   \small
   \setlength{\tabcolsep}{3.0pt}
-  \begin{tabular}{@{}lccc@{}}
+  \begin{tabular}{@{}lcc@{}}
     \toprule
-    Metric & Full Hist. & Reflection & Exec. EGM \\
+    Metric & Reflection & Exec. EGM \\
     \midrule
-    Late overgeneralization $\downarrow$   & \textbf{0.000} & 0.119 & 0.009 \\
-    Norm.\ action error $\downarrow$       & \textbf{0.0009} & 0.0223 & 0.0014 \\
-    Last-3-round deviation $\downarrow$    & 0.111 & 1.422 & \textbf{0.104} \\
-    Group generalization at probe          & \textbf{0/45} & 3/45 & \textbf{0/45} \\
-    Persona drift                          & 0/45 & 0/45 & 0/45 \\
-    Action-bound extremes                  & 0 & 0 & 0 \\
+    Late overgeneralization $\downarrow$   & 0.119 & \textbf{0.009} \\
+    Norm.\ action error $\downarrow$       & 0.0223 & \textbf{0.0014} \\
+    Last-3-round deviation $\downarrow$    & 1.422 & \textbf{0.104} \\
+    Group generalization at probe          & 3/45 & \textbf{0/45} \\
+    Persona drift                          & 0/45 & 0/45 \\
+    Action-bound extremes                  & 0 & 0 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 Table~\ref{tab:consequence} shows that the failure does propagate. Paired within
-matching (domain, condition, repeat) cells, Reflection exceeds Full History on
-late overgeneralization by $0.119$ (bootstrap 95\% CI $[0.049,0.195]$,
-$p=0.00275$) and on normalized action error by $0.0213$ (CI $[0.0136,0.0302]$,
-$p=4.21\times10^{-6}$); the corresponding gaps against executable EGM
-are $0.109$ and $0.0209$. Across the 90 matched shock-minus-control cells,
+matching (domain, condition, repeat) cells, Reflection exceeds executable EGM
+on late overgeneralization by $0.109$ (bootstrap 95\% CI $[0.041,0.187]$,
+$p=0.0271$) and on normalized action error by $0.0209$ (CI
+$[0.0131,0.0294]$, $p=8.08\times10^{-6}$). Across the 60 matched
+shock-minus-control cells,
 cognitive change is positively associated with persistent action change
-(Spearman $\rho=0.341$, $p=0.000992$). We report this as an association, not a
+(Spearman $\rho=0.364$, $p=0.00425$). We report this as an association, not a
 mediation proof.
 
 \paragraph{An unambiguous identity failure.}
@@ -776,10 +771,10 @@ rival}, after which the agent reasons in its own action log that it must ``bid
 strictly above Erin.'' Counting only post-event reasons or messages that
 describe Erin in the third person as a bidder to beat, tie, or anticipate, this
 occurs in \textbf{8/15} Reflection auction trajectories and \textbf{0/15} for
-both Full History and executable EGM (Fisher exact $p=0.00220$;
-Figure~\ref{fig:identity}). The cost is direct: mean unnecessary post-recovery
-bid expenditure is 36.60 units (CI $[25.07,52.80]$) for Reflection versus 2.67
-and 3.20 for the two controls. This is entity overgeneralization and
+executable EGM (Fisher exact $p=0.00220$; Figure~\ref{fig:identity}). The cost is
+direct: mean unnecessary post-recovery bid expenditure is 36.60 units (CI
+$[25.07,52.80]$) for Reflection versus 3.20 for executable EGM. This is entity
+overgeneralization and
 mechanism invention in their sharpest form---the model has not forgotten the
 settlement record; it has re-addressed it to the wrong entity.
 
@@ -793,22 +788,21 @@ settlement record; it has re-addressed it to the wrong entity.
   expenditure relative to the sufficient bid of 50; dots are trajectories, bars
   are means with bootstrap 95\% intervals.}
   \Description{Two panels. The left panel shows Reflection at roughly 53 percent
-  of auction trajectories exhibiting self-as-competitor confusion, with Full
-  History and executable EGM at zero. The right panel shows
-  Reflection incurring much larger unnecessary bid expenditure than either
-  control.}
+  of auction trajectories exhibiting self-as-competitor confusion, with
+  executable EGM at zero. The right panel shows Reflection incurring much
+  larger unnecessary bid expenditure than executable EGM.}
   \label{fig:identity}
 \end{figure}
 
 \paragraph{What the consequences are, and are not.}
 The other two domains show smaller but real costs. In the fishery, Reflection
 remained overcautious after a named fisher returned to normal, losing a mean
-4.8 harvest units in 2/5 trajectories while both controls lost none; one
+4.8 harvest units in 2/5 trajectories while executable EGM lost none; one
 trajectory generalized a single participant's overharvest to the whole group and
 recorded that the others were ``self-interested maximum extractors.'' In public
 goods, a single round of zero contribution by one named participant produced
 post-recovery welfare loss in 3/5 Reflection trajectories (mean 8.0 units, CI
-$[2.0,14.0]$), again zero for both controls. We state the negative results
+$[2.0,14.0]$), again zero for executable EGM. We state the negative results
 plainly: no method reached the predefined extreme action zones, the fish stock
 returned to and stayed at capacity, partner contributions recovered fully, and
 no persona drift occurred under any method. The supported claim is that
@@ -880,7 +874,7 @@ flags, so we treat it as an exploratory diagnostic rather than a result.
 
 The controlled design favors causal isolation over ecological breadth. Our
 vignettes are inspired by GovSim and ALYMPICS but do not execute those
-benchmarks, and the 135-trajectory study uses deterministic partners. The results
+benchmarks, and the 90-trajectory study uses deterministic partners. The results
 show that one agent's memory can alter action and local cost; they do not
 establish ecological collapse or durable institutional failure in an endogenous
 LLM society.

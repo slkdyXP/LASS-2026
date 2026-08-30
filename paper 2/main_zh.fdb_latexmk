@@ -1,20 +1,19 @@
 # Fdb version 4
-["bibtex main_zh"] 1788113467.92966 "main_zh.aux" "main_zh.bbl" "main_zh" 1788113504.1708 0
-  "./ACM-Reference-Format.bst" 1788108157 94292 6c9c536013d461258ea4a4813fe90aa8 ""
-  "./references.bib" 1788108157 9175 6be4bb002785998521cbc63b3b2b1d2b ""
-  "main_zh.aux" 1788113503.42437 12342 dc37fdef3bf6af2722e5c1b64604e776 "xelatex"
+["bibtex main_zh"] 1788125896.36819 "main_zh.aux" "main_zh.bbl" "main_zh" 1788126481.81065 0
+  "./ACM-Reference-Format.bst" 1788111938.21222 94292 6c9c536013d461258ea4a4813fe90aa8 ""
+  "./references.bib" 1788111938.23212 9175 6be4bb002785998521cbc63b3b2b1d2b ""
+  "main_zh.aux" 1788126481.17808 12296 093aafae546907b031eb5f4088851309 "xelatex"
   (generated)
   "main_zh.bbl"
   "main_zh.blg"
   (rewritten before read)
-["xdvipdfmx"] 1788113503.66704 "main_zh.xdv" "main_zh.pdf" "main_zh" 1788113504.17185 0
-  "main_zh.xdv" 1788113503.42777 304268 7f617fad8553ee7bd23d67792b047809 "xelatex"
+["xdvipdfmx"] 1788126481.41883 "main_zh.xdv" "main_zh.pdf" "main_zh" 1788126481.81151 0
+  "main_zh.xdv" 1788126481.179 303620 61c1ec13b11c426790639023c5c00865 "xelatex"
   (generated)
   "main_zh.pdf"
   (rewritten before read)
-["xelatex"] 1788113502.48973 "main_zh.tex" "main_zh.xdv" "main_zh" 1788113504.17088 0
-  "/System/Library/Fonts/Menlo.ttc" 1763779512 2156036 ec05dfca6821d85440da0899493002c3 ""
-  "/System/Library/Fonts/PingFang.ttc" 1763779512 77913936 fbbb35ac2c1edab8242d84cc60900322 ""
+["xelatex"] 1788126480.4764 "main_zh.tex" "main_zh.xdv" "main_zh" 1788126481.81071 0
+  "/System/Library/Fonts/Menlo.ttc" 1786589515 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -77,7 +76,7 @@
   "/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/ctexpatch.sty" 1657829894 8448 194e901f66d106236c72ef098b091d00 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def" 1657829894 4760 0d5b13f0f595d738e80c6aea423c7997 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-mac.def" 1657829894 1427 79eb29fe9bbec6915ffdfbe3a6667c81 ""
-  "/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-macnew.def" 1657829894 5350 c94b11a20720b1bdb9331fd02cd19fab ""
+  "/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-macold.def" 1657829894 2068 ddcbc0831d61a7afac273e7e344c11b3 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-article.def" 1657829894 4622 4f152431881516d2a81822d98108b61f ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/enumitem/enumitem.sty" 1738874546 52272 63d293bc0d496619edb57585740861a2 ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1759437024 46885 8953c67ffba03252c6090aa19568b8ba ""
@@ -116,15 +115,15 @@
   "/usr/local/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK.sty" 1659735237 183137 ed372550124703b2b73cbcc0b47cb20f ""
   "/usr/local/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJKfntef.sty" 1659735237 39577 b470f8a1dbecc9c45c9bf05ca7db9188 ""
   "/usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf" 1770478701 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
-  "/usr/local/texlive/2026/texmf-var/web2c/xetex/xelatex.fmt" 1787661497 5948561 4571e13a2dd24324388bccb0bb39505b ""
+  "/usr/local/texlive/2026/texmf-var/web2c/xetex/xelatex.fmt" 1776586231 5948563 975f84c8f9e7d1273c89f8142d0167eb ""
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "figures/consequence_identity_confusion.pdf" 1788109969 33920 5657710db1ea04b84c2f1c8986f37320 ""
-  "figures/scopeprobe_overview.pdf" 1788108157 1462729 c5f4773f3b18856f9e17b8d27fdf612a ""
-  "main_zh.aux" 1788113503.42437 12342 dc37fdef3bf6af2722e5c1b64604e776 "xelatex"
-  "main_zh.bbl" 1788113468.02986 14534 6d6fe8d6d722fa28d9fbcc79bf173888 "bibtex main_zh"
-  "main_zh.out" 1788113503.42649 2390 d3a49e57808aa014cb55b724d731d6dc "xelatex"
-  "main_zh.tex" 1788113494.62039 37063 fe9f0bab2fd3be2ce3ebbbd95a792e94 ""
-  "main_zh.toc" 1788113503.42768 2121 7914061b60957eac00322f3864a786bc "xelatex"
+  "figures/consequence_identity_confusion.pdf" 1788125477.41776 32827 544e62b321a46772442e9b58afbfd875 ""
+  "figures/scopeprobe_overview.pdf" 1788125965.90676 1462662 9ff1707e4e8bf8dab0867538ebf71f21 ""
+  "main_zh.aux" 1788126481.17808 12296 093aafae546907b031eb5f4088851309 "xelatex"
+  "main_zh.bbl" 1788125896.44743 14534 6d6fe8d6d722fa28d9fbcc79bf173888 "bibtex main_zh"
+  "main_zh.out" 1788126481.17875 2390 d3a49e57808aa014cb55b724d731d6dc "xelatex"
+  "main_zh.tex" 1788126426.36979 36912 6efe1c2710645d11f342bdf2b1caf699 ""
+  "main_zh.toc" 1788126481.17896 2121 7914061b60957eac00322f3864a786bc "xelatex"
   (generated)
   "main_zh.aux"
   "main_zh.log"

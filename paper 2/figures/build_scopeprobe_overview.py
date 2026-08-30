@@ -139,7 +139,7 @@ def build_png(source: Image.Image):
         draw,
         1462,
         y + 68,
-        "0/15 Full History   ·   0/15 scope-aware",
+        "0/15 scope-aware",
         6.9,
         CHARCOAL,
         scale,
@@ -225,7 +225,7 @@ def build_pdf(source: Image.Image):
     pdf.setLineWidth(1.0)
     pdf.roundRect(xpt(1445), ypt(y + 92), xpt(430), xpt(92), xpt(10), stroke=1, fill=1)
     text(1462, y + 35, "8/15  Reflection", 10.0, VERMILION, True)
-    text(1462, y + 68, "0/15 Full History   ·   0/15 scope-aware", 6.9, CHARCOAL)
+    text(1462, y + 68, "0/15 scope-aware", 6.9, CHARCOAL)
 
     pdf.showPage()
     pdf.save()

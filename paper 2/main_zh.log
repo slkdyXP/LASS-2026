@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.8.25)  31 AUG 2026 02:11
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.4.19)  31 AUG 2026 05:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,35 +440,47 @@ File: ctex-name-utf8.cfg 2022/07/14 v2.5.10 Caption with encoding UTF-8 (CTEX)
 (/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-mac.def
 File: ctex-fontset-mac.def 2022/07/14 v2.5.10 macOS fonts definition (CTEX)
 
-(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-macnew.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-macold.
 def
-File: ctex-fontset-macnew.def 2022/07/14 v2.5.10 macOS fonts definition for El 
-Capitan or later version (CTEX)
+File: ctex-fontset-macold.def 2022/07/14 v2.5.10 macOS fonts definition for Yos
+emite or earlier version (CTEX)
 
 Package fontspec Info: 
 (fontspec)             Script 'CJK' not explicitly supported within font
-(fontspec)             'Songti SC Light'. Check the typeset output, and if it
-(fontspec)             is okay then ignore this warning. Otherwise a different
-(fontspec)             font should be chosen.
+(fontspec)             'STSong'. Check the typeset output, and if it is okay
+(fontspec)             then ignore this warning. Otherwise a different font
+(fontspec)             should be chosen.
 
 
 Package fontspec Info: 
-(fontspec)             Font family 'SongtiSCLight(0)' created for font 'Songti
-(fontspec)             SC Light' with options
-(fontspec)             [Script={CJK},BoldItalicFont={Kaiti SC
-(fontspec)             Bold},BoldFont={Songti SC Bold},ItalicFont={Kaiti SC}].
+(fontspec)             Could not resolve font "STKaiti/B" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "STHeiti/I" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "STSong/BI" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'STSong(0)' created for font 'STSong' with
+(fontspec)             options
+(fontspec)             [Script={CJK},BoldFont={STHeiti},ItalicFont={STKaiti}].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
-(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Songti SC
-(fontspec)             Light/OT:script=hani;language=dflt;"
-(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Songti SC
-(fontspec)             Bold/OT:script=hani;language=dflt;"
-(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Kaiti
-(fontspec)             SC/OT:script=hani;language=dflt;"
-(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Kaiti SC
-(fontspec)             Bold/OT:script=hani;language=dflt;"
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"STSong/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"STHeiti/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"STKaiti/OT:script=hani;language=dflt;"
 
 ))) (/usr/local/texlive/2026/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
@@ -945,10 +957,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `main_zh.toc'.
 
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <10.95> not a
-vailable
-(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on inpu
-t line 31.
+LaTeX Font Info:    Font shape `TU/STSong(0)/m/sl' in size <10.95> not availabl
+e
+(Font)              Font shape `TU/STSong(0)/m/it' tried instead on input line 
+31.
  [2]
 File: figures/scopeprobe_overview.pdf Graphic file (type pdf)
 <use figures/scopeprobe_overview.pdf>
@@ -1000,7 +1012,6 @@ LaTeX Info: Redefining \tempurl on input line 118.
 LaTeX Info: Redefining \tempurl on input line 149.
 LaTeX Info: Redefining \tempurl on input line 168.
 LaTeX Info: Redefining \tempurl on input line 185.
- [13]
 LaTeX Info: Redefining \tempurl on input line 261.
 
 Underfull \hbox (badness 3407) in paragraph at lines 254--264
@@ -1027,6 +1038,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 254--264
 [][][] []
  []
 
+[13]
 LaTeX Info: Redefining \tempurl on input line 294.
 LaTeX Info: Redefining \tempurl on input line 328.
 
@@ -1069,12 +1081,12 @@ Package rerunfilecheck Info: File `main_zh.out' has not changed.
 (rerunfilecheck)             Checksum: D3A49E57808AA014CB55B724D731D6DC;2390.
  ) 
 Here is how much of TeX's memory you used:
- 18570 strings out of 468168
- 411277 string characters out of 5432815
- 821828 words of memory out of 5000000
- 47019 multiletter control sequences out of 15000+600000
- 637991 words of font info for 122 fonts, out of 8000000 for 9000
+ 18545 strings out of 468168
+ 407433 string characters out of 5432815
+ 821700 words of memory out of 5000000
+ 46991 multiletter control sequences out of 15000+600000
+ 638007 words of font info for 124 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,10n,114p,681b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,10n,114p,732b,582s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main_zh.xdv (14 pages, 304268 bytes).
+Output written on main_zh.xdv (14 pages, 303620 bytes).
