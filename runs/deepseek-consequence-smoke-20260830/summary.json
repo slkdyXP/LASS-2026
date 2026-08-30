@@ -1,0 +1,147 @@
+{
+  "episodes": 6,
+  "baselines": {
+    "full_history": {
+      "n": 3,
+      "metrics": {
+        "final_stock": 93.33333333333333,
+        "late_group_generalization": 0.0,
+        "late_overgeneralization": 0.0,
+        "late_scope_error": 0.0,
+        "minimum_stock": 93.33333333333333,
+        "overcautious_rounds": 0.0,
+        "overharvest_rounds": 0.0,
+        "persistent_action_deviation": 0.0,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 0.0,
+        "pre_action_mean": 10.0,
+        "total_harvest": 603.3333333333334
+      },
+      "by_domain_condition": {
+        "fishery/control": {
+          "final_stock": 100.0,
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "minimum_stock": 100.0,
+          "overcautious_rounds": 0.0,
+          "overharvest_rounds": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0,
+          "total_harvest": 600.0
+        },
+        "fishery/other_transient": {
+          "final_stock": 90.0,
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "minimum_stock": 90.0,
+          "overcautious_rounds": 0.0,
+          "overharvest_rounds": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0,
+          "total_harvest": 610.0
+        },
+        "fishery/world_transient": {
+          "final_stock": 90.0,
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "minimum_stock": 90.0,
+          "overcautious_rounds": 0.0,
+          "overharvest_rounds": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0,
+          "total_harvest": 600.0
+        }
+      }
+    },
+    "hscm_external_controller": {
+      "n": 2,
+      "metrics": {
+        "final_stock": 90.0,
+        "late_group_generalization": 0.0,
+        "late_overgeneralization": 0.0,
+        "late_scope_error": 0.0,
+        "minimum_stock": 90.0,
+        "overcautious_rounds": 0.0,
+        "overharvest_rounds": 0.0,
+        "persistent_action_deviation": 0.0,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 0.0,
+        "pre_action_mean": 10.0,
+        "total_harvest": 605.0
+      },
+      "by_domain_condition": {
+        "fishery/other_transient": {
+          "final_stock": 90.0,
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "minimum_stock": 90.0,
+          "overcautious_rounds": 0.0,
+          "overharvest_rounds": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0,
+          "total_harvest": 610.0
+        },
+        "fishery/world_transient": {
+          "final_stock": 90.0,
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "minimum_stock": 90.0,
+          "overcautious_rounds": 0.0,
+          "overharvest_rounds": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0,
+          "total_harvest": 600.0
+        }
+      }
+    },
+    "reflection": {
+      "n": 1,
+      "metrics": {
+        "final_stock": 90.0,
+        "late_group_generalization": 0.0,
+        "late_overgeneralization": 0.0,
+        "late_scope_error": 0.0,
+        "minimum_stock": 90.0,
+        "overcautious_rounds": 0.0,
+        "overharvest_rounds": 0.0,
+        "persistent_action_deviation": 0.0,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 0.0,
+        "pre_action_mean": 10.0,
+        "total_harvest": 600.0
+      },
+      "by_domain_condition": {
+        "fishery/world_transient": {
+          "final_stock": 90.0,
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "minimum_stock": 90.0,
+          "overcautious_rounds": 0.0,
+          "overharvest_rounds": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0,
+          "total_harvest": 600.0
+        }
+      }
+    }
+  },
+  "failed": 3
+}

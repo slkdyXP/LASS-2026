@@ -7,6 +7,7 @@ import unittest
 from scopeprobe.client import parse_json_object
 from scopeprobe.claim_audit import audit_claims
 from scopeprobe.closed_loop import run_fishery_episode
+from scopeprobe.consequence import CONDITIONS, DOMAINS, run_consequence_episode, summarize_consequence_episodes
 from scopeprobe.external_memory import (
     ExternalControllerConfig,
     ExternalMemoryController,
@@ -59,6 +60,30 @@ class ScopeProbeTests(unittest.TestCase):
         )
         self.assertEqual(len(episode["rounds"]), 5)
         self.assertIn("final_stock", episode["metrics"])
+
+    def test_consequence_matrix_dry_run(self) -> None:
+        episodes = []
+        for domain in DOMAINS:
+            for condition in CONDITIONS:
+                episode = run_consequence_episode(
+                    MockClient(), "full_history", domain, condition, repeat=0, rounds=12
+                )
+                self.assertEqual(len(episode["rounds"]), 12)
+                self.assertEqual([x["round"] for x in episode["probes"]], [5, 8, 12])
+                self.assertIn("persistent_action_deviation", episode["metrics"])
+                self.assertIn("memory_snapshot", episode["rounds"][-1])
+                episodes.append(episode)
+        summary = summarize_consequence_episodes(episodes)
+        self.assertEqual(summary["episodes"], len(DOMAINS) * len(CONDITIONS))
+
+    def test_consequence_transient_is_explicitly_resolved(self) -> None:
+        episode = run_consequence_episode(
+            MockClient(), "full_history", "fishery", "other_transient", repeat=0, rounds=12
+        )
+        settlement = episode["rounds"][3]["previous_settlement"]
+        self.assertIn("unexpectedly harvested 20", settlement)
+        self.assertIn("Regeneration telemetry remained normal", settlement)
+        self.assertNotIn("Measurement question", episode["rounds"][5]["observation"])
 
     def test_all_baselines_reach_checkpoints(self) -> None:
         scenario = load_scenarios(ROOT / "configs" / "scenarios.json")[0]
@@ -143,6 +168,13 @@ class ScopeProbeTests(unittest.TestCase):
         rendered = controller.render()
         for heading in EVIDENCE_GATED_HEADINGS:
             self.assertEqual(rendered.splitlines().count(heading), 1)
+
+    def test_external_controller_policy_does_not_anchor_on_last_action(self) -> None:
+        controller = ExternalMemoryController(persona="Stable persona.")
+        controller.record_action({"value": 8})
+        rendered = controller.render()
+        self.assertIn("last action", rendered.lower())
+        self.assertIn("not a recommendation", rendered.lower())
 
     def test_external_controller_runner_snapshot(self) -> None:
         scenario = load_scenarios(ROOT / "configs" / "scenarios.json")[0]

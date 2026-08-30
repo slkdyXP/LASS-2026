@@ -1,0 +1,31 @@
+{
+  "kind": "controlled_consequence_chains",
+  "config": {
+    "provider": "deepseek",
+    "model": "deepseek-v4-flash",
+    "base_url": "https://api.deepseek.com",
+    "temperature": 0.0,
+    "max_tokens": 700,
+    "timeout_seconds": 90,
+    "retries": 4,
+    "repeats": 1,
+    "seed": 20260830
+  },
+  "dry_run": false,
+  "baselines": [
+    "full_history",
+    "reflection",
+    "hscm_external_controller"
+  ],
+  "domains": [
+    "fishery"
+  ],
+  "conditions": [
+    "control",
+    "other_transient",
+    "world_transient"
+  ],
+  "rounds": 12,
+  "design": "single focal LLM agent with deterministic partners and matched no-shock controls",
+  "warning": null
+}

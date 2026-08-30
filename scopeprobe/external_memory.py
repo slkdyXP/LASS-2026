@@ -49,6 +49,10 @@ Return valid JSON only with exactly this schema:
 
 Use at most four evidence items and four episodes. A normal stable round may have no hazard. A named participant's explicitly condition-dependent emergency behavior is other-scoped and conditional, not a group trait. A documented facility, supply, generation, weather, or regeneration change is world-scoped. Recovery observations must use resolved=true and stance resolve when a known claim or event has ended."""
 
+EVENT_EXTRACTOR_SYSTEM += """
+
+Priority rule: when the observation contains a changed, adverse, causal, conditional, or resolved fact, allocate evidence and episode slots to those facts before repeated normal baselines or unchanged per-agent values. Never spend every available slot enumerating stable actors while omitting a documented environmental change, named-agent deviation, recovery notice, or active hazard."""
+
 # Claim keys identify variables, not events or values. For example, use
 # ``cooling_capacity`` in every cycle and put ``30`` or ``15`` in ``value``.
 EVENT_EXTRACTOR_SYSTEM += """
@@ -128,7 +132,10 @@ class ExternalMemoryController:
     hypothesis_keys: list[str] = field(default_factory=list)
     episodes: list[EpisodeState] = field(default_factory=list)
     policy_mode: str = "MAINTAIN"
-    policy_text: str = "Maintain the current baseline while monitoring verified observations."
+    policy_text: str = (
+        "Follow the current verified equilibrium shown in the latest observation while monitoring. "
+        "The last action is an audit record, not a recommendation."
+    )
     last_hazard: dict[str, Any] = field(default_factory=dict)
     last_action: dict[str, Any] = field(default_factory=dict)
     last_packet: dict[str, Any] = field(default_factory=dict)
@@ -316,8 +323,9 @@ class ExternalMemoryController:
         if status == "resolved":
             self.policy_mode = "ROLLBACK"
             self.policy_text = (
-                "The focal adverse condition has resolved. Roll back temporary precautions and return "
-                "toward the prior baseline unless another verified hazard remains active."
+                "The focal adverse condition has resolved. Roll back temporary precautions now and follow "
+                "the current verified normal equilibrium unless another verified hazard remains active. "
+                "The last action is an audit record, not a baseline or recommendation."
             )
         elif status == "active" and verified and scope == "other":
             self.policy_mode = "TARGETED_RESPONSE"
@@ -341,8 +349,9 @@ class ExternalMemoryController:
         else:
             self.policy_mode = "MAINTAIN"
             self.policy_text = (
-                "Maintain the current baseline while monitoring observations. Do not change long-term "
-                "beliefs or take aggressive action without verified evidence."
+                "Follow the current verified equilibrium shown in the latest observation while monitoring. "
+                "Do not anchor on the last action: it is an audit record, not a recommendation. Do not change "
+                "long-term beliefs or take aggressive action without verified evidence."
             )
 
     def render(self) -> str:

@@ -1,0 +1,3 @@
+{"baseline": "reflection", "domain": "fishery", "condition": "other_transient", "repeat": 0, "error_type": "IncompleteRead", "error": "IncompleteRead(0 bytes read)"}
+{"baseline": "hscm_external_controller", "domain": "fishery", "condition": "control", "repeat": 0, "error_type": "IncompleteRead", "error": "IncompleteRead(0 bytes read)"}
+{"baseline": "reflection", "domain": "fishery", "condition": "control", "repeat": 0, "error_type": "IncompleteRead", "error": "IncompleteRead(0 bytes read)"}

@@ -1,0 +1,291 @@
+{
+  "episodes": 135,
+  "baselines": {
+    "full_history": {
+      "n": 45,
+      "metrics": {
+        "late_group_generalization": 0.0,
+        "late_overgeneralization": 0.0,
+        "late_scope_error": 0.0,
+        "persistent_action_deviation": 0.1111111111111111,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 0.16666666666666666,
+        "pre_action_mean": 23.333333333333332
+      },
+      "by_domain_condition": {
+        "fishery/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "fishery/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "pre_action_mean": 10.0
+        },
+        "fishery/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "pre_action_mean": 10.0
+        },
+        "auction/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "auction/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "auction/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 1.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 1.0,
+          "pre_action_mean": 50.0
+        },
+        "public_goods/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        }
+      }
+    },
+    "hscm_external_controller": {
+      "n": 45,
+      "metrics": {
+        "late_group_generalization": 0.0,
+        "late_overgeneralization": 0.009444444444444445,
+        "late_scope_error": 0.06666666666666667,
+        "persistent_action_deviation": 0.10370370370370365,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 0.16481481481481478,
+        "pre_action_mean": 23.362962962962964
+      },
+      "by_domain_condition": {
+        "fishery/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "fishery/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "pre_action_mean": 10.0
+        },
+        "fishery/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.3,
+          "pre_action_mean": 10.0
+        },
+        "auction/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "auction/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.9333333333333329,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.9333333333333329,
+          "pre_action_mean": 50.266666666666666
+        },
+        "auction/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.034999999999999996,
+          "late_scope_error": 0.2,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "public_goods/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.05,
+          "late_scope_error": 0.4,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        }
+      }
+    },
+    "reflection": {
+      "n": 45,
+      "metrics": {
+        "late_group_generalization": 0.06666666666666667,
+        "late_overgeneralization": 0.11888888888888889,
+        "late_scope_error": 0.2,
+        "persistent_action_deviation": 1.422222222222222,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 1.3814814814814815,
+        "pre_action_mean": 23.844444444444445
+      },
+      "by_domain_condition": {
+        "fishery/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "fishery/other_transient": {
+          "late_group_generalization": 0.2,
+          "late_overgeneralization": 0.155,
+          "late_scope_error": 0.2,
+          "persistent_action_deviation": 0.5333333333333333,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.85,
+          "pre_action_mean": 10.0
+        },
+        "fishery/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "pre_action_mean": 10.0
+        },
+        "auction/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.08,
+          "late_scope_error": 0.2,
+          "persistent_action_deviation": 2.3333333333333344,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 1.8833333333333342,
+          "pre_action_mean": 52.06666666666666
+        },
+        "auction/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.21000000000000002,
+          "late_scope_error": 0.4,
+          "persistent_action_deviation": 5.199999999999999,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 4.241666666666665,
+          "pre_action_mean": 52.2
+        },
+        "auction/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.315,
+          "late_scope_error": 0.6,
+          "persistent_action_deviation": 4.533333333333333,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 3.958333333333333,
+          "pre_action_mean": 50.266666666666666
+        },
+        "public_goods/control": {
+          "late_group_generalization": 0.4,
+          "late_overgeneralization": 0.31,
+          "late_scope_error": 0.4,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.4,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.2,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.4,
+          "pre_action_mean": 10.066666666666666
+        },
+        "public_goods/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.45,
+          "pre_action_mean": 10.0
+        }
+      }
+    }
+  },
+  "failed": 0
+}

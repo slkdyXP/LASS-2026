@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 import random
 import time
-from http.client import RemoteDisconnected
+from http.client import IncompleteRead, RemoteDisconnected
 from typing import Any, Protocol
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -94,6 +94,7 @@ class DeepSeekClient:
                 HTTPError,
                 URLError,
                 ConnectionError,
+                IncompleteRead,
                 RemoteDisconnected,
                 TimeoutError,
                 KeyError,

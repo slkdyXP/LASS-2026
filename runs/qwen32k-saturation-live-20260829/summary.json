@@ -1,0 +1,295 @@
+{
+  "n_records": 18,
+  "by_baseline": [
+    {
+      "baseline": "full_history",
+      "n": 6,
+      "scope_accuracy": 0.8333,
+      "mean_leakage": 0.0278,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.8333,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7715
+    },
+    {
+      "baseline": "hscm_external_controller",
+      "n": 6,
+      "scope_accuracy": 0.6667,
+      "mean_leakage": 0.0556,
+      "action_accuracy": 0.5,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.6667,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7014
+    },
+    {
+      "baseline": "reflection",
+      "n": 6,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9479
+    }
+  ],
+  "by_baseline_scenario": [
+    {
+      "baseline": "full_history",
+      "scenario_id": "qwen32k_fish_other_saturation",
+      "n": 3,
+      "scope_accuracy": 0.6667,
+      "mean_leakage": 0.0556,
+      "mean_scope_margin": 0.1667,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.6667,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7014
+    },
+    {
+      "baseline": "full_history",
+      "scenario_id": "qwen32k_fish_world_saturation",
+      "n": 3,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.4,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.8417
+    },
+    {
+      "baseline": "hscm_external_controller",
+      "scenario_id": "qwen32k_fish_other_saturation",
+      "n": 3,
+      "scope_accuracy": 0.3333,
+      "mean_leakage": 0.1111,
+      "mean_scope_margin": -0.2667,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 0.3333,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.6195
+    },
+    {
+      "baseline": "hscm_external_controller",
+      "scenario_id": "qwen32k_fish_world_saturation",
+      "n": 3,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6,
+      "action_accuracy": 0.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.7833
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "qwen32k_fish_other_saturation",
+      "n": 3,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.5,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9375
+    },
+    {
+      "baseline": "reflection",
+      "scenario_id": "qwen32k_fish_world_saturation",
+      "n": 3,
+      "scope_accuracy": 1.0,
+      "mean_leakage": 0.0,
+      "mean_scope_margin": 0.6667,
+      "action_accuracy": 1.0,
+      "persona_stability": 1.0,
+      "entity_accuracy": 1.0,
+      "generalization_accuracy": 1.0,
+      "mean_composite": 0.9583
+    }
+  ],
+  "by_dimension": {
+    "family": [
+      {
+        "baseline": "full_history",
+        "family": "fishery",
+        "n": 6,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0278,
+        "entity_accuracy": 0.8333,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "family": "fishery",
+        "n": 6,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0556,
+        "entity_accuracy": 0.6667,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "family": "fishery",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "axis": [
+      {
+        "baseline": "full_history",
+        "axis": "early_evidence_under_irrelevant_load",
+        "n": 6,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0278,
+        "entity_accuracy": 0.8333,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "axis": "early_evidence_under_irrelevant_load",
+        "n": 6,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0556,
+        "entity_accuracy": 0.6667,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "axis": "early_evidence_under_irrelevant_load",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "evidence_level": [
+      {
+        "baseline": "full_history",
+        "evidence_level": "explicit_then_delayed_reference",
+        "n": 6,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0278,
+        "entity_accuracy": 0.8333,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "evidence_level": "explicit_then_delayed_reference",
+        "n": 6,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0556,
+        "entity_accuracy": 0.6667,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "evidence_level": "explicit_then_delayed_reference",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "temporal_pattern": [
+      {
+        "baseline": "full_history",
+        "temporal_pattern": "persistent",
+        "n": 6,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0278,
+        "entity_accuracy": 0.8333,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "temporal_pattern": "persistent",
+        "n": 6,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0556,
+        "entity_accuracy": 0.6667,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "temporal_pattern": "persistent",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "history_pressure": [
+      {
+        "baseline": "full_history",
+        "history_pressure": "qwen32k_saturated_by_round_8",
+        "n": 6,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0278,
+        "entity_accuracy": 0.8333,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "history_pressure": "qwen32k_saturated_by_round_8",
+        "n": 6,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0556,
+        "entity_accuracy": 0.6667,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "history_pressure": "qwen32k_saturated_by_round_8",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ],
+    "matched_group": [
+      {
+        "baseline": "full_history",
+        "matched_group": "qwen32k_context_saturation",
+        "n": 6,
+        "scope_accuracy": 0.8333,
+        "mean_leakage": 0.0278,
+        "entity_accuracy": 0.8333,
+        "action_accuracy": 1.0
+      },
+      {
+        "baseline": "hscm_external_controller",
+        "matched_group": "qwen32k_context_saturation",
+        "n": 6,
+        "scope_accuracy": 0.6667,
+        "mean_leakage": 0.0556,
+        "entity_accuracy": 0.6667,
+        "action_accuracy": 0.5
+      },
+      {
+        "baseline": "reflection",
+        "matched_group": "qwen32k_context_saturation",
+        "n": 6,
+        "scope_accuracy": 1.0,
+        "mean_leakage": 0.0,
+        "entity_accuracy": 1.0,
+        "action_accuracy": 1.0
+      }
+    ]
+  },
+  "evaluator": null
+}

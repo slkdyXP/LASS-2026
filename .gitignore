@@ -1,4 +1,5 @@
 .env
 .env.providers
+.env.qwen
 __pycache__/
 *.py[cod]

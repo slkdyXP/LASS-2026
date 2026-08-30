@@ -1,0 +1,291 @@
+{
+  "episodes": 27,
+  "baselines": {
+    "full_history": {
+      "n": 9,
+      "metrics": {
+        "late_group_generalization": 0.0,
+        "late_overgeneralization": 0.0,
+        "late_scope_error": 0.0,
+        "persistent_action_deviation": 0.0,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 0.05555555555555555,
+        "pre_action_mean": 23.333333333333332
+      },
+      "by_domain_condition": {
+        "fishery/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "fishery/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "pre_action_mean": 10.0
+        },
+        "fishery/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "pre_action_mean": 10.0
+        },
+        "auction/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "auction/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "auction/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "public_goods/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        }
+      }
+    },
+    "hscm_external_controller": {
+      "n": 9,
+      "metrics": {
+        "late_group_generalization": 0.0,
+        "late_overgeneralization": 0.0,
+        "late_scope_error": 0.0,
+        "persistent_action_deviation": 0.4444444444444444,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 0.4444444444444444,
+        "pre_action_mean": 23.333333333333332
+      },
+      "by_domain_condition": {
+        "fishery/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "fishery/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 2.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 2.0,
+          "pre_action_mean": 10.0
+        },
+        "fishery/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 2.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 2.0,
+          "pre_action_mean": 10.0
+        },
+        "auction/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "auction/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "auction/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 50.0
+        },
+        "public_goods/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        }
+      }
+    },
+    "reflection": {
+      "n": 9,
+      "metrics": {
+        "late_group_generalization": 0.1111111111111111,
+        "late_overgeneralization": 0.18333333333333332,
+        "late_scope_error": 0.3333333333333333,
+        "persistent_action_deviation": 7.7407407407407405,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 5.791666666666667,
+        "pre_action_mean": 23.62962962962963
+      },
+      "by_domain_condition": {
+        "fishery/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "fishery/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "pre_action_mean": 10.0
+        },
+        "fishery/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "pre_action_mean": 10.0
+        },
+        "auction/control": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.65,
+          "late_scope_error": 1.0,
+          "persistent_action_deviation": 34.333333333333336,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 37.083333333333336,
+          "pre_action_mean": 51.333333333333336
+        },
+        "auction/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.6666666666666643,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.6666666666666643,
+          "pre_action_mean": 51.333333333333336
+        },
+        "auction/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.425,
+          "late_scope_error": 1.0,
+          "persistent_action_deviation": 34.666666666666664,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 13.625,
+          "pre_action_mean": 50.0
+        },
+        "public_goods/control": {
+          "late_group_generalization": 1.0,
+          "late_overgeneralization": 0.575,
+          "late_scope_error": 1.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/other_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "pre_action_mean": 10.0
+        },
+        "public_goods/world_transient": {
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.0,
+          "pre_action_mean": 10.0
+        }
+      }
+    }
+  },
+  "failed": 0
+}

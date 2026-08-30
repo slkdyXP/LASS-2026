@@ -14,6 +14,13 @@ from .client import DeepSeekClient
 from .claim_audit import audit_claims
 from .closed_loop import VALID_CONDITIONS, run_fishery_episode
 from .config import config_from_env
+from .consequence import (
+    CONDITIONS as CONSEQUENCE_CONDITIONS,
+    DOMAINS as CONSEQUENCE_DOMAINS,
+    consequence_markdown_report,
+    run_consequence_episode,
+    summarize_consequence_episodes,
+)
 from .external_memory import (
     EXTERNAL_CONTROLLER_BASELINE,
     external_controller_config_from_env,
@@ -473,6 +480,94 @@ def closed_loop_command(args: argparse.Namespace) -> int:
     return 0 if episodes else 2
 
 
+def consequences_command(args: argparse.Namespace) -> int:
+    config, api_key = config_from_env(
+        PROJECT_ROOT, provider=args.provider, model=args.model,
+        temperature=args.temperature, repeats=args.repeats, seed=args.seed,
+    )
+    if not api_key and not args.dry_run:
+        raise SystemExit(f"API key for provider {config.provider!r} is empty.")
+    baselines = args.baseline or ["full_history", "reflection", EXTERNAL_CONTROLLER_BASELINE]
+    invalid = set(baselines) - set(BASELINES)
+    if invalid:
+        raise SystemExit(f"Unknown baselines: {sorted(invalid)}")
+    domains = args.domain or list(CONSEQUENCE_DOMAINS)
+    conditions = args.condition or list(CONSEQUENCE_CONDITIONS)
+    if args.rounds < 12:
+        raise SystemExit("--rounds must be at least 12")
+    stamp = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
+    output_dir = Path(args.output or PROJECT_ROOT / "runs" / f"consequences-{stamp}").resolve()
+    if args.resume:
+        if not output_dir.is_dir() or not (output_dir / "manifest.json").exists():
+            raise SystemExit("--resume requires an existing --output directory with manifest.json")
+        manifest = json.loads((output_dir / "manifest.json").read_text(encoding="utf-8"))
+        baselines, domains, conditions = manifest["baselines"], manifest["domains"], manifest["conditions"]
+        args.rounds = int(manifest["rounds"])
+        repeats = int(manifest["config"]["repeats"])
+    else:
+        output_dir.mkdir(parents=True, exist_ok=False)
+        repeats = config.repeats
+        _write_json(output_dir / "manifest.json", {
+            "kind": "controlled_consequence_chains", "config": config.to_dict(),
+            "dry_run": args.dry_run, "baselines": baselines, "domains": domains,
+            "conditions": conditions, "rounds": args.rounds,
+            "design": "single focal LLM agent with deterministic partners and matched no-shock controls",
+            "warning": "Dry-run outputs are plumbing checks, not evidence." if args.dry_run else None,
+        })
+    prior_episodes = _read_jsonl(output_dir / "episodes.jsonl") if args.resume else []
+    completed_keys = {
+        (x["baseline"], x["domain"], x["condition"], int(x["repeat"])) for x in prior_episodes
+    }
+    jobs = [
+        (baseline, domain, condition, repeat)
+        for repeat in range(repeats)
+        for domain in domains for condition in conditions for baseline in baselines
+        if (baseline, domain, condition, repeat) not in completed_keys
+    ]
+    random.Random(config.seed).shuffle(jobs)
+    print(
+        f"Planned consequences: {len(domains)} domains × {len(conditions)} conditions × "
+        f"{len(baselines)} baselines × {repeats} repeats = {len(jobs)} pending episodes; "
+        f"approximately {sum(args.rounds + 3 + (args.rounds if b in COMPRESSED_BASELINES else 0) for b, _, _, _ in jobs)} calls",
+        flush=True,
+    )
+
+    def execute(job: tuple[str, str, str, int]):
+        baseline, domain, condition, repeat = job
+        client = _build_client(
+            args, api_key, config, output_dir / "usage.jsonl",
+            {"baseline": baseline, "domain": domain, "condition": condition, "repeat": repeat},
+        )
+        return run_consequence_episode(client, baseline, domain, condition, repeat, rounds=args.rounds)
+
+    episodes: list[dict[str, Any]] = list(prior_episodes)
+    errors: list[dict[str, Any]] = []
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        future_map = {pool.submit(execute, job): job for job in jobs}
+        for index, future in enumerate(as_completed(future_map), start=1):
+            baseline, domain, condition, repeat = future_map[future]
+            try:
+                episode = future.result()
+                episodes.append(episode)
+                _append_jsonl(output_dir / "episodes.jsonl", [episode])
+            except Exception as exc:
+                error = {
+                    "baseline": baseline, "domain": domain, "condition": condition,
+                    "repeat": repeat, "error_type": type(exc).__name__, "error": str(exc),
+                }
+                errors.append(error)
+                _append_jsonl(output_dir / "errors.jsonl", [error])
+            print(f"[{index}/{len(jobs)}] {domain}/{condition}/{baseline}/repeat-{repeat}", flush=True)
+    summary = summarize_consequence_episodes(episodes)
+    summary["failed"] = len(errors)
+    _write_json(output_dir / "summary.json", summary)
+    (output_dir / "report.md").write_text(
+        consequence_markdown_report(summary, errors), encoding="utf-8"
+    )
+    print(f"Consequence results: {output_dir}; successful={len(episodes)}, failed={len(errors)}")
+    return 0 if episodes else 2
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="scopeprobe")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -492,7 +587,7 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--seed", type=int, default=20260826)
     run.add_argument("--temperature", type=float, default=0.2)
     run.add_argument("--model", default=None)
-    run.add_argument("--provider", choices=("deepseek", "openai", "claude"), default="deepseek")
+    run.add_argument("--provider", choices=("deepseek", "openai", "claude", "qwen"), default="deepseek")
     run.add_argument("--output", default=None)
     run.add_argument("--dry-run", action="store_true", help="Use mock responses; tests plumbing only")
     run.add_argument("--external-evaluator", action="store_true", help="Add a privileged evaluator call at each checkpoint")
@@ -514,7 +609,7 @@ def build_parser() -> argparse.ArgumentParser:
     audit.add_argument("--baseline", action="append", choices=BASELINES)
     audit.add_argument("--temperature", type=float, default=0.0)
     audit.add_argument("--model", default=None)
-    audit.add_argument("--provider", choices=("deepseek", "openai", "claude"), default="deepseek")
+    audit.add_argument("--provider", choices=("deepseek", "openai", "claude", "qwen"), default="deepseek")
     audit.set_defaults(func=audit_claims_command)
 
     closed = sub.add_parser("closed-loop", help="Run a five-agent closed-loop shared-fishery experiment")
@@ -524,11 +619,27 @@ def build_parser() -> argparse.ArgumentParser:
     closed.add_argument("--rounds", type=int, default=7)
     closed.add_argument("--temperature", type=float, default=0.2)
     closed.add_argument("--model", default=None)
-    closed.add_argument("--provider", choices=("deepseek", "openai", "claude"), default="deepseek")
+    closed.add_argument("--provider", choices=("deepseek", "openai", "claude", "qwen"), default="deepseek")
     closed.add_argument("--seed", type=int, default=20260826)
     closed.add_argument("--output", default=None)
     closed.add_argument("--dry-run", action="store_true")
     closed.set_defaults(func=closed_loop_command)
+
+    consequences = sub.add_parser("consequences", help="Run controlled belief-to-action-to-outcome experiments")
+    consequences.add_argument("--baseline", action="append", choices=BASELINES)
+    consequences.add_argument("--domain", action="append", choices=CONSEQUENCE_DOMAINS)
+    consequences.add_argument("--condition", action="append", choices=CONSEQUENCE_CONDITIONS)
+    consequences.add_argument("--repeats", type=int, default=3)
+    consequences.add_argument("--rounds", type=int, default=12)
+    consequences.add_argument("--workers", type=int, default=4)
+    consequences.add_argument("--temperature", type=float, default=0.2)
+    consequences.add_argument("--model", default=None)
+    consequences.add_argument("--provider", choices=("deepseek", "openai", "claude", "qwen"), default="deepseek")
+    consequences.add_argument("--seed", type=int, default=20260830)
+    consequences.add_argument("--output", default=None)
+    consequences.add_argument("--dry-run", action="store_true")
+    consequences.add_argument("--resume", action="store_true", help="Retry only missing cells in an existing output directory")
+    consequences.set_defaults(func=consequences_command)
     return parser
 
 

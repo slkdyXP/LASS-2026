@@ -39,6 +39,7 @@ PROVIDER_ENV = {
     "deepseek": ("VIBEBABO_DEEPSEEK_API_KEY", "VIBEBABO_DEEPSEEK_MODEL", "deepseek-v4-flash"),
     "openai": ("VIBEBABO_OPENAI_API_KEY", "VIBEBABO_OPENAI_MODEL", "gpt-5.4-mini"),
     "claude": ("VIBEBABO_CLAUDE_API_KEY", "VIBEBABO_CLAUDE_MODEL", "claude-sonnet-4-6"),
+    "qwen": ("DASHSCOPE_API_KEY", "DASHSCOPE_MODEL", "qwen-max"),
 }
 
 
@@ -50,18 +51,35 @@ def config_from_env(
 ) -> tuple[ExperimentConfig, str]:
     load_dotenv(project_root / ".env")
     load_dotenv(project_root / ".env.providers")
+    load_dotenv(project_root / ".env.qwen")
     if provider not in PROVIDER_ENV:
         raise ValueError(f"Unknown provider: {provider}")
     key_env, model_env, default_model = PROVIDER_ENV[provider]
     legacy_key = os.getenv("DEEPSEEK_API_KEY", "") if provider == "deepseek" else ""
-    api_key = os.getenv(key_env, legacy_key).strip()
+    use_direct_deepseek = provider == "deepseek" and os.getenv("DEEPSEEK_USE_DIRECT", "").lower() in {
+        "1", "true", "yes"
+    }
+    api_key = (
+        legacy_key if use_direct_deepseek else os.getenv(key_env, legacy_key)
+    ).strip()
+    base_url = (
+        os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
+        if use_direct_deepseek
+        else
+        os.getenv(
+            "DASHSCOPE_BASE_URL",
+            "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        )
+        if provider == "qwen"
+        else os.getenv(
+            "VIBEBABO_BASE_URL",
+            os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
+        )
+    )
     values: dict[str, object] = {
         "provider": provider,
         "model": os.getenv(model_env, os.getenv("DEEPSEEK_MODEL", default_model) if provider == "deepseek" else default_model),
-        "base_url": os.getenv(
-            "VIBEBABO_BASE_URL",
-            os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
-        ),
+        "base_url": base_url,
     }
     values.update({key: value for key, value in overrides.items() if value is not None})
     return ExperimentConfig(**values), api_key

@@ -1,0 +1,2 @@
+{"scenario_id": "qwen32k_fish_other_crowding_no_truncation", "baseline": "full_history", "repeat": 0, "error_type": "RuntimeError", "error": "DeepSeek request failed after 4 attempts: HTTP Error 400: Bad Request"}
+{"scenario_id": "qwen32k_fish_world_crowding_no_truncation", "baseline": "full_history", "repeat": 0, "error_type": "RuntimeError", "error": "DeepSeek request failed after 4 attempts: HTTP Error 400: Bad Request"}

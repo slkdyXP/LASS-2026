@@ -1,0 +1,679 @@
+{
+  "design": {
+    "methods": [
+      "full_history",
+      "hscm_external_controller",
+      "reflection"
+    ],
+    "domains": [
+      "auction",
+      "fishery",
+      "public_goods"
+    ],
+    "conditions": [
+      "control",
+      "other_transient",
+      "world_transient"
+    ],
+    "repeats": [
+      0
+    ],
+    "missing_or_duplicated": [],
+    "balanced": true
+  },
+  "source_runs": [
+    "/Users/slkdy/Desktop/cikm/runs/deepseek-consequence-pilot-v2-20260830"
+  ],
+  "episodes": 27,
+  "source_error_records": 0,
+  "matched_effects": [
+    {
+      "method": "full_history",
+      "domain": "auction",
+      "condition": "other_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "auction",
+      "condition": "other_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "auction",
+      "condition": "other_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "auction",
+      "condition": "world_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "auction",
+      "condition": "world_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "auction",
+      "condition": "world_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "fishery",
+      "condition": "other_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "fishery",
+      "condition": "other_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "fishery",
+      "condition": "other_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "fishery",
+      "condition": "world_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "fishery",
+      "condition": "world_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "fishery",
+      "condition": "world_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "public_goods",
+      "condition": "other_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "public_goods",
+      "condition": "other_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "public_goods",
+      "condition": "other_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "public_goods",
+      "condition": "world_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "public_goods",
+      "condition": "world_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "full_history",
+      "domain": "public_goods",
+      "condition": "world_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "auction",
+      "condition": "other_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "auction",
+      "condition": "other_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "auction",
+      "condition": "other_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "auction",
+      "condition": "world_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "auction",
+      "condition": "world_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "auction",
+      "condition": "world_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "fishery",
+      "condition": "other_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "fishery",
+      "condition": "other_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 2.0,
+      "ci95": [
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "fishery",
+      "condition": "other_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 14.0,
+      "ci95": [
+        14.0,
+        14.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "fishery",
+      "condition": "world_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "fishery",
+      "condition": "world_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 2.0,
+      "ci95": [
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "fishery",
+      "condition": "world_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 14.0,
+      "ci95": [
+        14.0,
+        14.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "public_goods",
+      "condition": "other_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "public_goods",
+      "condition": "other_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "public_goods",
+      "condition": "other_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "public_goods",
+      "condition": "world_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "public_goods",
+      "condition": "world_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "hscm_external_controller",
+      "domain": "public_goods",
+      "condition": "world_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "auction",
+      "condition": "other_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": -0.65,
+      "ci95": [
+        -0.65,
+        -0.65
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "auction",
+      "condition": "other_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": -33.66666666666667,
+      "ci95": [
+        -33.66666666666667,
+        -33.66666666666667
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "auction",
+      "condition": "other_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 16.0,
+      "ci95": [
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "auction",
+      "condition": "world_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": -0.22500000000000003,
+      "ci95": [
+        -0.22500000000000003,
+        -0.22500000000000003
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "auction",
+      "condition": "world_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.3333333333333286,
+      "ci95": [
+        0.3333333333333286,
+        0.3333333333333286
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "auction",
+      "condition": "world_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 7.0,
+      "ci95": [
+        7.0,
+        7.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "fishery",
+      "condition": "other_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "fishery",
+      "condition": "other_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "fishery",
+      "condition": "other_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "fishery",
+      "condition": "world_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "fishery",
+      "condition": "world_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "fishery",
+      "condition": "world_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "public_goods",
+      "condition": "other_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": -0.575,
+      "ci95": [
+        -0.575,
+        -0.575
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "public_goods",
+      "condition": "other_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "public_goods",
+      "condition": "other_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 10.0,
+      "ci95": [
+        10.0,
+        10.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "public_goods",
+      "condition": "world_transient",
+      "metric": "delta_overgeneralization",
+      "n": 1,
+      "mean": -0.575,
+      "ci95": [
+        -0.575,
+        -0.575
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "public_goods",
+      "condition": "world_transient",
+      "metric": "delta_action_deviation",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "reflection",
+      "domain": "public_goods",
+      "condition": "world_transient",
+      "metric": "outcome_harm",
+      "n": 1,
+      "mean": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

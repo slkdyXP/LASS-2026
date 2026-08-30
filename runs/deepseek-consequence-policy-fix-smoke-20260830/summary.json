@@ -1,0 +1,59 @@
+{
+  "episodes": 2,
+  "baselines": {
+    "hscm_external_controller": {
+      "n": 2,
+      "metrics": {
+        "final_stock": 100.0,
+        "late_group_generalization": 0.0,
+        "late_overgeneralization": 0.0,
+        "late_scope_error": 0.0,
+        "minimum_stock": 90.0,
+        "overcautious_rounds": 0.0,
+        "overharvest_rounds": 0.0,
+        "persistent_action_deviation": 0.0,
+        "persona_changed": 0.0,
+        "post_absolute_deviation": 0.25,
+        "post_recovery_focal_harvest": 78.0,
+        "post_recovery_stock_deficit": 0.0,
+        "pre_action_mean": 10.0,
+        "total_harvest": 595.0
+      },
+      "by_domain_condition": {
+        "fishery/other_transient": {
+          "final_stock": 100.0,
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "minimum_stock": 90.0,
+          "overcautious_rounds": 0.0,
+          "overharvest_rounds": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "post_recovery_focal_harvest": 78.0,
+          "post_recovery_stock_deficit": 0.0,
+          "pre_action_mean": 10.0,
+          "total_harvest": 600.0
+        },
+        "fishery/world_transient": {
+          "final_stock": 100.0,
+          "late_group_generalization": 0.0,
+          "late_overgeneralization": 0.0,
+          "late_scope_error": 0.0,
+          "minimum_stock": 90.0,
+          "overcautious_rounds": 0.0,
+          "overharvest_rounds": 0.0,
+          "persistent_action_deviation": 0.0,
+          "persona_changed": 0.0,
+          "post_absolute_deviation": 0.25,
+          "post_recovery_focal_harvest": 78.0,
+          "post_recovery_stock_deficit": 0.0,
+          "pre_action_mean": 10.0,
+          "total_harvest": 590.0
+        }
+      }
+    }
+  },
+  "failed": 0
+}
