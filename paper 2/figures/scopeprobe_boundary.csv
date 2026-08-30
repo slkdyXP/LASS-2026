@@ -1,0 +1,19 @@
+category,method,n_checkpoints,scope_errors,scope_error_rate_pct,mean_protected_leakage
+Persistent world,Full History,24,0,0.0,0.0
+Persistent world,Summary,24,0,0.0,0.0
+Persistent world,Reflection,24,0,0.0,0.030562500000000003
+Named other,Full History,24,0,0.0,0.0
+Named other,Summary,24,0,0.0,0.011116666666666665
+Named other,Reflection,24,3,12.5,0.06807083333333334
+Conditional other,Full History,6,0,0.0,0.0
+Conditional other,Summary,6,0,0.0,0.011116666666666665
+Conditional other,Reflection,6,3,50.0,0.16111666666666666
+Self-state change,Full History,12,5,41.666666666666664,0.005558333333333333
+Self-state change,Summary,12,9,75.0,0.06944166666666667
+Self-state change,Reflection,12,8,66.66666666666667,0.09167499999999999
+Recovered,Full History,6,0,0.0,0.0
+Recovered,Summary,6,2,33.333333333333336,0.016666666666666666
+Recovered,Reflection,6,5,83.33333333333333,0.075
+Negative control,Full History,12,0,0.0,0.0
+Negative control,Summary,12,0,0.0,0.0
+Negative control,Reflection,12,0,0.0,0.005558333333333333

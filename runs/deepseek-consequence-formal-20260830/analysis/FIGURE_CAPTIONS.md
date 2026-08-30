@@ -6,7 +6,7 @@
 
 ## Trajectory figure
 
-**Post-event action recovery differs across memory methods.** Mean focal-agent action over 12 rounds for named-other and world shocks in the fishery (**a,b**), water auction (**c,d**), and public-goods game (**e,f**). Shading denotes mean ± 1.96 s.e.m. across five API trajectories. The dashed line and grey band mark the intervention settlement at round 4. Full History and scope-aware memory generally return to the verified equilibrium, whereas Reflection exhibits prolonged under-harvesting, bid escalation, and transient contribution changes.
+**Post-event action recovery differs across memory methods.** Mean focal-agent action over 12 rounds for named-other and world shocks in the fishery (**a,b**), water auction (**c,d**), and public-goods game (**e,f**). Shading denotes mean ± 1.96 s.e.m. across five API trajectories. The dashed line and grey band mark the intervention settlement at round 4. Full History and EGM generally return to the verified equilibrium, whereas Reflection exhibits prolonged under-harvesting, bid escalation, and transient contribution changes.
 
 ## Identity-confusion figure
 

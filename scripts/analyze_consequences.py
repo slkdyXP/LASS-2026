@@ -23,7 +23,7 @@ from scipy.stats import fisher_exact, spearmanr, wilcoxon
 METHOD_LABELS = {
     "full_history": "Full history",
     "reflection": "Reflection",
-    "hscm_external_controller": "Scope-aware memory",
+    "hscm_external_controller": "EGM",
 }
 COLORS = {
     "full_history": "#3B6FB6",
@@ -192,7 +192,8 @@ def style() -> None:
 
 
 def panel_label(ax: plt.Axes, label: str) -> None:
-    ax.text(-0.16, 1.08, label, transform=ax.transAxes, fontsize=10, fontweight="bold", va="top")
+    ax.text(0.01, 1.10, label, transform=ax.transAxes, fontsize=10,
+            fontweight="bold", va="top", ha="left")
 
 
 def point_ci(ax: plt.Axes, data: pd.DataFrame, metric: str, rng: np.random.Generator) -> None:
@@ -299,8 +300,9 @@ def make_trajectory_figure(round_df: pd.DataFrame, output: Path) -> None:
 
 def make_identity_figure(episode_df: pd.DataFrame, output: Path) -> None:
     style(); auction = episode_df[episode_df.domain == "auction"].copy()
-    methods = [m for m in METHOD_LABELS if m in set(auction.method)]
-    fig, axes = plt.subplots(1, 2, figsize=(7.2, 2.7), constrained_layout=True)
+    methods = [m for m in ("reflection", "hscm_external_controller") if m in set(auction.method)]
+    fig, axes = plt.subplots(1, 2, figsize=(3.35, 1.85), constrained_layout=True)
+    fig.set_constrained_layout_pads(w_pad=0.08, h_pad=0.04, wspace=0.12, hspace=0.02)
     ax = axes[0]
     for i, method in enumerate(methods):
         vals = auction[auction.method == method].explicit_self_other_confusion.to_numpy(float)
@@ -311,8 +313,9 @@ def make_identity_figure(episode_df: pd.DataFrame, output: Path) -> None:
         ax.errorbar(i, 100*rate, yerr=[[100*(rate-max(0,center-half))],[100*(min(1,center+half)-rate)]],
                     fmt="none", ecolor="black", capsize=2, lw=.8)
         ax.text(i, 100*rate+3, f"{int(vals.sum())}/{n}", ha="center", fontsize=7)
-    ax.set_xticks(range(len(methods)), [METHOD_LABELS[m] for m in methods], rotation=20, ha="right")
-    ax.set_ylabel("Explicit self-as-competitor confusion (%)"); ax.set_ylim(0, 100)
+    ax.set_xticks(range(len(methods)), [METHOD_LABELS[m] for m in methods])
+    ax.set_xlim(-0.72, len(methods) - 0.28)
+    ax.set_ylabel("Self-as-competitor\ntrajectories (%)"); ax.set_ylim(0, 100)
     ax.spines[["top", "right"]].set_visible(False); panel_label(ax, "a")
 
     ax = axes[1]
@@ -324,8 +327,9 @@ def make_identity_figure(episode_df: pd.DataFrame, output: Path) -> None:
         center=np.mean(vals); low,high=bootstrap_ci(vals,rng)
         ax.errorbar(i,center,yerr=[[center-low],[high-center]],fmt="_",markersize=10,
                     color="black",capsize=2,lw=.9)
-    ax.set_xticks(range(len(methods)), [METHOD_LABELS[m] for m in methods], rotation=20, ha="right")
-    ax.set_ylabel("Unnecessary post-recovery bid expenditure")
+    ax.set_xticks(range(len(methods)), [METHOD_LABELS[m] for m in methods])
+    ax.set_xlim(-0.72, len(methods) - 0.28)
+    ax.set_ylabel("Excess post-recovery\nbid expenditure")
     ax.spines[["top", "right"]].set_visible(False); panel_label(ax, "b")
     for suffix in ("pdf", "svg", "png"):
         fig.savefig(output / f"consequence_identity_confusion.{suffix}", bbox_inches="tight")
