@@ -107,13 +107,19 @@ Simulation}{November 8, 2026}{Rome, Italy}
 
 In a long-running social simulation, memory is not merely a convenience for
 recovering old dialogue; it is part of the simulator's evolving social state.
-Agents summarize interactions into beliefs about their own capabilities,
-particular partners, and shared institutions, then use those beliefs to decide
-whom to trust, punish, imitate, or cooperate with. Reflection has therefore
-become a common component of language-agent architectures
-\cite{park2023generative,shinn2023reflexion}, while social-agent testbeds use
-persistent interaction to study open-ended social intelligence, strategic
-behavior, and common-resource governance
+The interaction history grows with the number of agents, rounds, and events,
+whereas every deployed model has a finite context window. Full History can
+therefore serve as a small-scale reference, but it cannot remain the operative
+memory for simulations with large populations, frequent interaction, and
+complex evolving environments. Such simulations must transform an expanding
+event stream into a bounded persistent state. Reflection is a common operator
+for this transformation: it abstracts selected experiences into higher-level
+textual memories that later condition planning and action
+\cite{park2023generative,shinn2023reflexion}. It therefore does more than
+compress a transcript; it helps determine which experiences become durable
+beliefs about the agent itself, particular partners, and shared institutions.
+Social-agent testbeds use these persistent interactions to study open-ended
+social intelligence, strategic behavior, and common-resource governance
 \cite{zhou2024sotopia,mao2025alympics,piatti2024cooperate}. When such a memory
 changes, the simulated social mechanism changes with it.
 
@@ -135,8 +141,9 @@ globally unstable. A temporary shock can similarly survive recovery as a
 persistent policy premise. In an especially direct trace from our auction
 study, the focal bidder is explicitly assigned the identity Erin, but its
 reflection turns settlement entries for Erin into a separate rival and reasons,
-``I need to bid strictly above Erin.'' We call the erroneous promotion of
-evidence into an unsupported durable claim \emph{reflective
+``I need to bid strictly above Erin.''
+
+We call the erroneous promotion of evidence into an unsupported durable claim \emph{reflective
 misconsolidation}; its cross-target and cross-time manifestations are
 \emph{scope interference}. Unlike a retrieval failure, the relevant event is
 still available. The error is introduced when experience is rewritten as a
@@ -144,8 +151,8 @@ lesson about the wrong entity, mechanism, or duration.
 
 To isolate this process, we introduce \method, a diagnostic harness built from
 matched social trajectories. Each pair holds the persona, action interface,
-and surface consequence nearly fixed while intervening on the latent source or
-temporal validity of evidence. The harness retains the persistent memory,
+and surface consequence nearly fixed while intervening on the controlled causal
+source or temporal validity of evidence. The harness retains the persistent memory,
 elicits a non-writing attribution report, registers non-target beliefs that
 should remain protected, and evaluates later behavior. The results reveal a
 boundary rather than a universal memory defect: Full History is often robust,
@@ -158,7 +165,9 @@ trajectories and 0/15 trajectories under either control. Guided by the
 diagnosis, we instantiate a lightweight mitigation, \egm, that separates
 observations from persistent models, gates consolidation by evidence and
 causal target, and keeps immediate reversible precautions distinct from
-long-term policy.
+long-term policy. Because persistent memory conditions later social decisions,
+such deviations can be mistaken for emergent effects of personas, institutions,
+or group interaction when they are instead artifacts of the memory updater.
 
 Our contributions are threefold:
 \begin{itemize}
@@ -167,7 +176,7 @@ Our contributions are threefold:
   target, entity, temporal status, and evidence provenance.
   \item \textbf{A matched diagnostic.}\\[-1pt]
   \method{} traces event $\rightarrow$ persistent memory $\rightarrow$ elicited
-  attribution $\rightarrow$ later action under matched latent-cause
+  attribution $\rightarrow$ later action under matched causal-source
   interventions and protected-belief controls.
   \item \textbf{Mechanistic findings and a diagnosis-derived mitigation.} In
   controlled scenarios with one model family, we separate consolidation errors
@@ -206,8 +215,11 @@ right social model for the right reason.
 
 \subsection{LLM Agents for Social Simulation}
 
-Generative Agents established memory, reflection, and planning as a practical
-architecture for sustained agent interaction \cite{park2023generative}.
+Generative Agents established a practical architecture in which agents retrieve
+selected observations, synthesize higher-level reflections, and use both to
+plan later behavior \cite{park2023generative}. Rather than placing an ever-growing
+transcript into every decision context, this design makes reflection a
+consolidation operator between experience and subsequent action.
 Subsequent environments broadened the evaluation target: SOTOPIA studies social
 goal pursuit in interactive scenarios \cite{zhou2024sotopia}; ALYMPICS uses
 language agents for controlled strategic games \cite{mao2025alympics}; and
@@ -224,9 +236,12 @@ original closed-loop benchmarks.
 
 \subsection{Reflection and Persistent Agent Memory}
 
-Reflection abstracts experience into higher-level text in Generative Agents
-\cite{park2023generative}, while Reflexion stores verbal feedback to improve
-later trials \cite{shinn2023reflexion}. A growing evaluation literature tests
+Reflection abstracts selected experience into higher-level text in Generative
+Agents \cite{park2023generative}, while Reflexion stores verbal feedback to
+improve later trials \cite{shinn2023reflexion}. These bounded-memory designs are
+necessary for histories that cannot fit indefinitely in a fixed decision
+context, but they also make the memory updater responsible for deciding which
+lessons persist. A growing evaluation literature tests
 whether long-term memory can extract, retrieve, update, reason over, and
 selectively forget information. LongMemEval emphasizes multi-session and
 temporal reasoning \cite{wu2025longmemeval}; MemoryAgentBench evaluates four
@@ -239,9 +254,9 @@ optimizes consolidation for coverage, preservation, and faithfulness
 \cite{yang2026trustmem}. Concurrent evidence shows that compression can erase
 an epistemic qualifier even when the underlying claim is retained
 \cite{kwon2026explicit}. These studies establish that memory can be unfaithful,
-stale, or lossy. Our focus is narrower and orthogonal: semantic retention does
-not ensure that a social event remains attached to the correct causal target,
-entity, and time horizon.
+stale, or lossy. Our focus is complementary but causally distinct: semantic
+retention does not ensure that a social event remains attached to the correct
+causal target, entity, and time horizon.
 
 \subsection{Attribution, Temporal Validity, and Memory-to-Action}
 
@@ -270,11 +285,15 @@ or useful; we ask whether social evidence is consolidated at the correct
 
 Consider a focal agent interacting with a social environment for $T$ rounds.
 At round $t$, it receives observation $o_t$, acts using the persistent memory
-available before the current write, and then updates that memory:
+available before the current write, and observes an outcome $y_t$ produced
+jointly by its action, the other agents' actions $a_t^{-}$, and environment
+state $s_t$. It then updates that memory:
 \begin{equation}
-  a_t \sim \pi(\cdot \mid o_t,m_{t-1}),
-  \qquad
-  m_t = U(m_{t-1},o_t,a_t).
+  \begin{aligned}
+    a_t &\sim \pi(\cdot \mid o_t,m_{t-1}),\\
+    (s_{t+1},y_t)&\sim\mathcal{T}(s_t,a_t,a_t^{-}),\\
+    m_t &= U(m_{t-1},o_t,a_t,y_t).
+  \end{aligned}
   \label{eq:agent-loop}
 \end{equation}
 Here $U$ may append full history, summarize, reflect, or invoke an external
@@ -282,7 +301,7 @@ memory controller. A measurement query $Q$ produces an attribution readout
 $\hat b_t=Q(m_t)$ without writing the query or response back to memory. Thus the
 causal sequence under study is
 \begin{equation}
-  (o_t,a_t) \longrightarrow m_t \longrightarrow \hat b_t
+  (o_t,a_t,y_t) \longrightarrow m_t \longrightarrow \hat b_t
   \longrightarrow a_{t+1:T},
   \label{eq:chain}
 \end{equation}
