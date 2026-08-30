@@ -1,0 +1,388 @@
+% Anonymous LASS 2026 submission draft.
+% Workshop requirements: ACM CIKM 2026 two-column format, 4--8 pages
+% excluding references, and double-blind review.
+\documentclass[sigconf,anonymous]{acmart}
+
+\usepackage{amsmath}
+\usepackage{tabularx}
+
+% Submission copy: suppress metadata assigned only after acceptance.
+\setcopyright{none}
+\settopmatter{printacmref=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+
+\newcommand{\method}{\textsc{ScopeProbe}}
+\newcommand{\egm}{\textsc{Evidence-Gated Memory}}
+\newcommand{\ourscope}{\mathcal{Z}}
+
+\begin{document}
+
+\title{The Right Event, the Wrong Lesson: Diagnosing Reflective
+Misconsolidation in Social LLM Agents}
+
+% Keep the source anonymous during review.
+\author{Anonymous Author(s)}
+\affiliation{%
+  \institution{Anonymous Institution}
+  \country{Anonymous}
+}
+
+\begin{abstract}
+Long-running social simulations require language-model agents to convert
+interaction histories into persistent beliefs about themselves, particular
+partners, and the shared environment. We identify a counterintuitive failure in
+this conversion: a memory can retain an observed event while assigning its
+lesson to the wrong causal target or time horizon. We call this
+\emph{reflective misconsolidation}. We introduce \method, an
+intervention-based diagnostic harness that constructs matched social
+trajectories with similar outcomes but different latent causes, then jointly
+audits persistent memory, an elicited attribution readout, and later action.
+Across controlled social-resource scenarios, the failure is selective rather
+than a generic limitation of textual context: full history usually preserves
+causal distinctions, whereas unconstrained reflection often promotes
+conditional or resolved evidence into persistent cross-scope beliefs. Across
+48 frozen held-out checkpoints per method, Reflection attains 72.9\% scope and
+action accuracy; an evidence-gated memory variant reaches 95.8\% on both under
+the same decision prompt. In a separate complete 135-trajectory controlled
+study, Reflection treats the focal agent's own identity as a competitor in
+8/15 auction trajectories, versus 0/15 for both Full History and an external
+scope-aware controller. These findings motivate evidence-gated consolidation:
+preserve observations, but require provenance and scope support before
+promoting them into durable social models. Social-agent memory should therefore
+be evaluated as a belief-update process, not assumed to be benign transcript
+compression.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10010147.10010257</concept_id>
+  <concept_desc>Computing methodologies~Machine learning</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010405.10010455</concept_id>
+  <concept_desc>Applied computing~Sociology</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Computing methodologies~Machine learning}
+\ccsdesc[300]{Applied computing~Sociology}
+
+\keywords{LLM agents, social simulation, agent memory, reflection,
+causal attribution, evaluation}
+
+\acmConference[LASS '26]{The 2nd Workshop on LLM Agents for Social
+Simulation}{November 8, 2026}{Rome, Italy}
+\acmYear{2026}
+\acmDOI{}
+\acmISBN{}
+
+\begin{teaserfigure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/scopeprobe_overview.pdf}
+  \caption{The same adverse outcome can license different persistent beliefs.
+  A world-level capacity change and a named participant's temporary emergency
+  should not be consolidated into the same global rule. \method{} audits the
+  resulting event $\rightarrow$ memory $\rightarrow$ attribution
+  $\rightarrow$ later-action chain, while evidence gating routes claims to
+  their supported causal target and temporal status. A concrete identity
+  failure appears in our controlled auction: although the role says ``You are
+  Erin,'' Reflection reasons that it must ``bid strictly above Erin'' in 8/15
+  trajectories (Full History: 0/15; scope-aware controller: 0/15).}
+  \Description{Four panels show matched social-resource events with different
+  causes, their collapse into a generic belief under reflection, an audit chain
+  from observation through memory and attribution to later action, and an
+  evidence gate routing claims to self, named-other, world, or temporal-status
+  channels. A lower evidence strip shows a focal agent named Erin mistakenly
+  treating Erin as a competing bidder.}
+  \label{fig:overview}
+\end{teaserfigure}
+
+\maketitle
+
+\section{Introduction}
+
+In a long-running social simulation, memory is not merely a convenience for
+recovering old dialogue; it is part of the simulator's evolving social state.
+Agents summarize interactions into beliefs about their own capabilities,
+particular partners, and shared institutions, then use those beliefs to decide
+whom to trust, punish, imitate, or cooperate with. Reflection has therefore
+become a common component of language-agent architectures
+\cite{park2023generative,shinn2023reflexion}, while social-agent testbeds use
+persistent interaction to study open-ended social intelligence, strategic
+behavior, and common-resource governance
+\cite{zhou2024sotopia,mao2025alympics,piatti2024cooperate}. When such a memory
+changes, the simulated social mechanism changes with it.
+
+Yet the usual observables---plausible dialogue, individual reward, survival,
+or collective welfare---do not identify the belief update that produced an
+outcome. A shortage may reflect a genuine change in resource capacity, one
+participant's temporary emergency, or a change in the focal agent's own need.
+Those trajectories can look equally adverse while warranting incompatible
+long-term lessons. This gap matters if agent simulations are to function as
+scientific instruments: role-play plausibility and aggregate behavior do not
+by themselves make the internal mechanism faithful or auditable
+\cite{li2026agentsalone}.
+
+We expose a failure hidden by outcome-only evaluation: \emph{the event remains
+legible, but its epistemic address changes}. As illustrated in
+Figure~\ref{fig:overview}, a reflection can retain that a named participant
+overused a resource yet rewrite the event as evidence that the shared system is
+globally unstable. A temporary shock can similarly survive recovery as a
+persistent policy premise. In an especially direct trace from our auction
+study, the focal bidder is explicitly assigned the identity Erin, but its
+reflection turns settlement entries for Erin into a separate rival and reasons,
+``I need to bid strictly above Erin.'' We call the erroneous promotion of
+evidence into an unsupported durable claim \emph{reflective
+misconsolidation}; its cross-target and cross-time manifestations are
+\emph{scope interference}. Unlike a retrieval failure, the relevant event is
+still available. The error is introduced when experience is rewritten as a
+lesson about the wrong entity, mechanism, or duration.
+
+To isolate this process, we introduce \method, a diagnostic harness built from
+matched social trajectories. Each pair holds the persona, action interface,
+and surface consequence nearly fixed while intervening on the latent source or
+temporal validity of evidence. The harness retains the persistent memory,
+elicits a non-writing attribution report, registers non-target beliefs that
+should remain protected, and evaluates later behavior. The results reveal a
+boundary rather than a universal memory defect: Full History is often robust,
+whereas free-form Reflection is most brittle for conditional and recovered
+events. Table~\ref{tab:heldout} shows the frozen held-out diagnostic. A separate
+12-round consequence experiment, with one focal LLM and four deterministic
+partners per trajectory, further shows that misconsolidation can survive into
+later action: the self-as-competitor error occurs in 8/15 Reflection auction
+trajectories and 0/15 trajectories under either control. Guided by the
+diagnosis, we instantiate a lightweight mitigation, \egm, that separates
+observations from persistent models, gates consolidation by evidence and
+causal target, and keeps immediate reversible precautions distinct from
+long-term policy.
+
+Our contributions are threefold:
+\begin{itemize}
+  \item \textbf{A diagnostic problem formulation.} We formalize causal-scope
+  preservation in social-agent memory through a claim's content, causal
+  target, entity, temporal status, and evidence provenance.
+  \item \textbf{A matched diagnostic.}\\[-1pt]
+  \method{} traces event $\rightarrow$ persistent memory $\rightarrow$ elicited
+  attribution $\rightarrow$ later action under matched latent-cause
+  interventions and protected-belief controls.
+  \item \textbf{Mechanistic findings and a diagnosis-derived mitigation.} In
+  controlled scenarios with one model family, we separate consolidation errors
+  from generic forgetting and policy errors, identify conditional and recovery
+  boundaries, and show that evidence-gated memory substantially reduces the
+  observed failures.
+\end{itemize}
+
+The resulting takeaway is methodological: social simulation should ask not
+only whether agents reach a plausible outcome, but whether they learn the
+right social model for the right reason.
+
+\begin{table}[t]
+  \caption{Frozen held-out diagnostic: 48 clustered checkpoints per row
+  (8 scenarios $\times$ 3 repeats $\times$ 2 checkpoints). Leakage is mean
+  probe-reported update strength on registered non-target labels, not a claim
+  error rate; action correctness uses registered intervals. Reflection and
+  \egm{} share a decision prompt.}
+  \label{tab:heldout}
+  \centering
+  \small
+  \setlength{\tabcolsep}{3.4pt}
+  \begin{tabular}{@{}lccc@{}}
+    \toprule
+    Memory updater & Scope $\uparrow$ & Leakage $\downarrow$ & Action $\uparrow$ \\
+    \midrule
+    Reflection            & 72.9 & 0.0979          & 72.9 \\
+    Guarded Reflection    & 91.7 & \textbf{0.0028} & 75.0 \\
+    Structured Reflection & 91.7 & 0.0398          & 87.5 \\
+    \egm                  & \textbf{95.8} & \textbf{0.0028} & \textbf{95.8} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Related Work}
+
+\subsection{LLM Agents for Social Simulation}
+
+Generative Agents established memory, reflection, and planning as a practical
+architecture for sustained agent interaction \cite{park2023generative}.
+Subsequent environments broadened the evaluation target: SOTOPIA studies social
+goal pursuit in interactive scenarios \cite{zhou2024sotopia}; ALYMPICS uses
+language agents for controlled strategic games \cite{mao2025alympics}; and
+GovSim studies cooperation and sustainability in common-resource societies
+\cite{piatti2024cooperate}. Controlled agent populations have also been used to
+probe social mechanisms such as the interaction between history, persona, and
+spiral-of-silence dynamics \cite{zhong2025spiral}. These works demonstrate the
+scientific potential of agent simulation, but their primary readouts are
+interaction quality, strategy, or population outcome. \method{} is
+complementary: it treats the persistent belief update that generates those
+outcomes as the object of intervention. Our resource scenarios are synthetic
+diagnostic adaptations inspired by GovSim and ALYMPICS, not executions of the
+original closed-loop benchmarks.
+
+\subsection{Reflection and Persistent Agent Memory}
+
+Reflection abstracts experience into higher-level text in Generative Agents
+\cite{park2023generative}, while Reflexion stores verbal feedback to improve
+later trials \cite{shinn2023reflexion}. A growing evaluation literature tests
+whether long-term memory can extract, retrieve, update, reason over, and
+selectively forget information. LongMemEval emphasizes multi-session and
+temporal reasoning \cite{wu2025longmemeval}; MemoryAgentBench evaluates four
+interactive competencies including selective forgetting
+\cite{hu2026memoryagentbench}; and HaluMem localizes hallucinations to
+extraction, update, or question-answering operations \cite{chen2026halumem}.
+Empirical work further shows that stored experiences can propagate errors or
+induce misaligned replay \cite{xiong2026memory}, while TrustMem explicitly
+optimizes consolidation for coverage, preservation, and faithfulness
+\cite{yang2026trustmem}. Concurrent evidence shows that compression can erase
+an epistemic qualifier even when the underlying claim is retained
+\cite{kwon2026explicit}. These studies establish that memory can be unfaithful,
+stale, or lossy. Our focus is narrower and orthogonal: semantic retention does
+not ensure that a social event remains attached to the correct causal target,
+entity, and time horizon.
+
+\subsection{Attribution, Temporal Validity, and Memory-to-Action}
+
+The closest work exposes individual facets of this problem. PASB identifies
+status promotion, attribution removal, and scope broadening when user claims
+are committed to a personal agent's durable state \cite{mao2026pasb}. STALE
+tests implicit invalidation of old memories and downstream policy adaptation
+\cite{chao2026stale}. Actor--observer studies reveal perspective-sensitive
+failure attribution in reflection and external auditing
+\cite{li2026actorobserver}. Finally, Mem2ActBench and MemoryArena connect
+long-term memory to tool use and interdependent later actions
+\cite{shen2026mem2act,he2026memoryarena}. We do not claim priority over scope
+broadening, stale memory, attribution bias, or memory-conditioned action.
+Instead, \method{} combines them in a controlled social-agent setting: matched
+trajectories vary the latent cause while holding the visible consequence
+similar, factor attribution into self, named-other, world, and temporal status,
+measure leakage into registered protected beliefs, and trace the result into
+later social action. Existing work asks whether memory is faithful, current,
+or useful; we ask whether social evidence is consolidated at the correct
+\emph{epistemic address}.
+
+\section{Preliminaries and Problem Formulation}
+\label{sec:prelim}
+
+\subsection{Social Agent with Persistent Memory}
+
+Consider a focal agent interacting with a social environment for $T$ rounds.
+At round $t$, it receives observation $o_t$, acts using the persistent memory
+available before the current write, and then updates that memory:
+\begin{equation}
+  a_t \sim \pi(\cdot \mid o_t,m_{t-1}),
+  \qquad
+  m_t = U(m_{t-1},o_t,a_t).
+  \label{eq:agent-loop}
+\end{equation}
+Here $U$ may append full history, summarize, reflect, or invoke an external
+memory controller. A measurement query $Q$ produces an attribution readout
+$\hat b_t=Q(m_t)$ without writing the query or response back to memory. Thus the
+causal sequence under study is
+\begin{equation}
+  (o_t,a_t) \longrightarrow m_t \longrightarrow \hat b_t
+  \longrightarrow a_{t+1:T},
+  \label{eq:chain}
+\end{equation}
+not a claim that the newly written memory caused the already chosen $a_t$.
+The readout is an observable self-report, not direct access to a latent belief.
+
+\subsection{Epistemic Address}
+
+Let a memory claim be
+\begin{equation}
+  c=(\phi,z,e,\tau,w),
+  \label{eq:claim}
+\end{equation}
+where $\phi$ is semantic content, $z\in\ourscope$ is its causal target,
+$e$ is the referenced entity, $\tau$ is temporal status, and $w$ records the
+supporting evidence or provenance. We use four causal targets---\textsc{self},
+\textsc{named-other}, \textsc{world}, and \textsc{persona}---and factor time
+separately as \textsc{temporary}, \textsc{persistent}, or \textsc{resolved}.
+The triple
+\begin{equation}
+  \alpha(c)=(z,e,\tau)
+  \label{eq:address}
+\end{equation}
+is the claim's \emph{epistemic address}: whom or what the claim concerns and
+for how long it is licensed. Remembering content $\phi$ is therefore
+insufficient. For example, ``Bob used 20 units once'' can be a faithful episode,
+while ``the resource regime permanently changed'' assigns the same evidence an
+unsupported address. Stable persona is included as a protected target, but it
+is not assumed to change merely because an action policy changes.
+
+Our operational probe uses a compact label space that mixes these factored
+dimensions: \texttt{self}, \texttt{other}, \texttt{world}, and
+\texttt{persona} denote causal targets; \texttt{episodic} denotes a temporary
+event; and \texttt{none} denotes a resolved event or no licensed persistent
+update. The factorization in Equation~\ref{eq:address} makes this implementation
+choice explicit rather than treating all six labels as equivalent ontological
+scopes.
+
+\subsection{Reflective Misconsolidation}
+
+Let $E_t$ denote the evidence observed through round $t$, and let
+$\Gamma(E_t)=\{c:E_t\vdash c\}$ be the set of claims licensed by that evidence.
+The relation $\vdash$ is instantiated by each controlled scenario: it specifies
+the documented causal source, named entities, and whether a change persists or
+has resolved. Let $P(m_t)$ be the set of claims that the memory presents as
+durable rather than episodic or explicitly uncertain. Misconsolidation occurs
+when
+\begin{equation}
+  \mathcal{M}_t=P(m_t)\setminus\Gamma(E_t)\neq\emptyset.
+  \label{eq:misconsolidation}
+\end{equation}
+When $U$ is a reflective updater, we call this \emph{reflective
+misconsolidation}. \emph{Scope interference} is the observable subset in which
+a claim is grounded in an observed event but its address $\alpha(c)$ is not
+licensed. It includes: (i) cross-target misattribution, such as named-other
+evidence promoted to a world rule; (ii) entity overgeneralization, such as one
+participant promoted to the group; (iii) temporal overextension, such as a
+resolved anomaly retained as persistent; and (iv) mechanism invention, where a
+surface outcome is assigned an unsupported hidden cause. Retaining a single
+event as an episode or uncertain hypothesis is not an error. Nor does weak
+evidence for persistence preclude a minimal, reversible response to a verified
+current hazard.
+
+\subsection{Matched-Intervention Diagnostic Objective}
+
+A trajectory $\xi=(x_0,o_1,a_1,\ldots,o_T,a_T)$ is generated under a registered
+intervention $I=(z^\star,e^\star,\tau^\star)$. \method{} pairs trajectories
+whose personas, interfaces, and visible adverse outcomes are similar, while
+changing the intervention's latent causal target or temporal status. This
+prevents the outcome alone from revealing which belief should change.
+
+At checkpoint $t$, the non-writing probe returns a primary label $\hat y_t$
+and update strengths $r_t(k)\in[0,1]$ over operational labels $k$. Let
+$g(z^\star,\tau^\star)$ map the factored target to its registered probe label,
+and let $\mathcal{P}_t$ be labels that should remain unchanged. The principal
+diagnostics are
+\begin{align}
+  \mathrm{ScopeAcc}_t
+    &=\mathbf{1}\!\left[\hat y_t=g(z^\star,\tau^\star)\right],
+    \label{eq:scope-acc}\\
+  \mathrm{Leakage}_t
+    &=\frac{1}{|\mathcal{P}_t|}\sum_{k\in\mathcal{P}_t} r_t(k),
+    \label{eq:leakage}\\
+  \mathrm{Margin}_t
+    &=r_t\!\left(g(z^\star,\tau^\star)\right)
+      -\max_{k\in\mathcal{P}_t}r_t(k).
+    \label{eq:margin}
+\end{align}
+Leakage is therefore a probe-reported protected-update strength, not a claim
+error rate. We separately inspect persistent text and score whether actions
+fall inside scenario-registered acceptable sets. A memory-to-action consequence
+is attributed only to actions chosen after the relevant write, as in
+Equation~\ref{eq:chain}. The diagnostic objective is not simply to maximize
+recall: it is to strengthen the licensed target while preserving protected
+beliefs and producing a proportionate downstream response.
+
+% Method, experiments, limitations, and conclusion will be integrated by the
+% paper team after this complete front-half draft.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

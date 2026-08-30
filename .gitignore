@@ -3,3 +3,15 @@
 .env.qwen
 __pycache__/
 *.py[cod]
+
+# Local rendering and LaTeX build products. Publication assets and the
+# deliverable PDF under output/pdf/ remain tracked explicitly.
+tmp/
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/main.pdf
