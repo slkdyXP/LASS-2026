@@ -15,13 +15,12 @@ from pathlib import Path
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-from matplotlib.colors import LinearSegmentedColormap
 import numpy as np
 
 
 METHODS = ("full_history", "summary", "reflection")
 METHOD_LABELS = {
-    "full_history": "Full History",
+    "full_history": "Direct",
     "summary": "Summary",
     "reflection": "Reflection",
 }
@@ -119,9 +118,10 @@ def build_figure(rows: list[dict], output_stem: Path) -> None:
             "font.family": "sans-serif",
             "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
             "font.size": 7,
-            "axes.titlesize": 8,
-            "xtick.labelsize": 6.0,
-            "ytick.labelsize": 7,
+            "axes.titlesize": 8.2,
+            "xtick.labelsize": 6.2,
+            "ytick.labelsize": 6.8,
+            "axes.linewidth": 0.7,
             "pdf.fonttype": 42,
             "ps.fonttype": 42,
             "svg.fonttype": "none",
@@ -147,40 +147,46 @@ def build_figure(rows: list[dict], output_stem: Path) -> None:
          for method in method_labels]
     )
 
-    error_cmap = LinearSegmentedColormap.from_list(
-        "scope_error", ["#F7FAFC", "#FADBD5", "#D95F4E"]
-    )
-    leak_cmap = LinearSegmentedColormap.from_list(
-        "scope_leakage", ["#F7FAFC", "#DCE9F6", "#3B6FB6"]
-    )
-
-    fig, axes = plt.subplots(1, 2, figsize=(7.1, 2.35), constrained_layout=True)
+    short_labels = ("Persist.", "Named", "Cond.", "Self", "Recov.", "Control")
+    method_colors = ("#8492A6", "#5F8FB8", "#C65D52")
+    bar_width = 0.23
+    x = np.arange(len(categories))
+    fig, axes = plt.subplots(1, 2, figsize=(7.12, 2.38), layout="constrained")
+    fig.set_constrained_layout_pads(w_pad=0.03, h_pad=0.06, wspace=0.10, hspace=0.02)
     panels = (
-        (axes[0], errors, error_cmap, 100.0, "a", "Scope error rate (%)"),
-        (axes[1], leakage, leak_cmap, max(0.12, float(np.nanmax(leakage))), "b", "Protected-scope leakage"),
+        (axes[0], errors, "Scope error rate (%)", (0.0, 100.0), np.arange(0, 101, 25), "a"),
+        (axes[1], leakage, "Protected-scope leakage", (0.0, 0.18), np.arange(0.0, 0.181, 0.05), "b"),
     )
-    for ax, matrix, cmap, vmax, label, title in panels:
-        image = ax.imshow(matrix, cmap=cmap, vmin=0, vmax=vmax, aspect="auto")
-        ax.set_title(title, loc="left", fontweight="bold", pad=7)
-        ax.set_xticks(
-            np.arange(len(categories)),
-            [f"{name}\n$n$={n}" for name, n in zip(categories, counts)],
-        )
-        ax.set_yticks(np.arange(len(method_labels)), method_labels)
-        ax.tick_params(length=0)
-        for spine in ax.spines.values():
-            spine.set_visible(False)
-        for i in range(matrix.shape[0]):
-            for j in range(matrix.shape[1]):
-                if label == "a":
-                    text = f"{int(error_counts[i, j])}/{counts[j]}\n{matrix[i, j]:.0f}%"
-                else:
-                    text = f"{matrix[i, j]:.3f}"
-                color = "white" if matrix[i, j] > 0.58 * vmax else "#1F2933"
-                ax.text(j, i, text, ha="center", va="center", fontsize=6.2, color=color)
-        cbar = fig.colorbar(image, ax=ax, fraction=0.033, pad=0.018)
-        cbar.ax.tick_params(labelsize=6, length=2)
-        ax.text(-0.12, 1.13, label, transform=ax.transAxes, fontweight="bold", fontsize=9, va="top")
+    handles = []
+    for ax, matrix, ylabel, limits, ticks, panel_label in panels:
+        for index, (method, color) in enumerate(zip(method_labels, method_colors)):
+            bars = ax.bar(
+                x + (index - 1) * bar_width,
+                matrix[index],
+                width=bar_width,
+                color=color,
+                edgecolor="white",
+                linewidth=0.35,
+                label=method,
+                zorder=3,
+            )
+            if ax is axes[0]:
+                handles.append(bars[0])
+        ax.set_xlim(-0.55, len(categories) - 0.45)
+        ax.set_ylim(*limits)
+        ax.set_yticks(ticks)
+        ax.set_xticks(x, [f"{name}\n$n$={n}" for name, n in zip(short_labels, counts)])
+        ax.set_ylabel(ylabel)
+        ax.tick_params(axis="x", length=0, pad=3)
+        ax.tick_params(axis="y", length=2.5, pad=2)
+        ax.grid(axis="y", color="#E7E4DE", linewidth=0.55, zorder=0)
+        ax.spines[["top", "right"]].set_visible(False)
+        ax.text(-0.10, 1.06, panel_label, transform=ax.transAxes, fontweight="bold",
+                fontsize=8.8, va="bottom")
+
+    fig.legend(handles, method_labels, loc="upper center", ncol=3,
+               bbox_to_anchor=(0.5, 1.10), columnspacing=1.4, handlelength=1.2,
+               handletextpad=0.45, frameon=False)
 
     output_stem.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_stem.with_suffix(".pdf"), bbox_inches="tight")

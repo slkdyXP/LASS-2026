@@ -179,18 +179,18 @@ further shows that limiting misconsolidation reduces downstream action deviation
 and measurable expenditure or welfare costs, without supporting stronger claims
 of ecological or social collapse.
 
-Our contributions are twofold:
-\begin{itemize}
-  \item \textbf{Problem discovery and characterization.} We formalize
-  reflective misconsolidation and, using controlled matched-intervention
-  experiments, distinguish it from generic forgetting, identify four error
-  manifestations, and characterize where the phenomenon does and does not
-  occur.
-  \item \textbf{A diagnosis-derived reflection harness.} We translate the
-  promotion failure into an evidence-gated design, instantiate it as \egm, and
-  show on frozen held-out and closed-loop evaluations that it reduces unsupported
-  consolidation and its downstream behavioral cost.
-\end{itemize}
+\noindent\textbf{Contributions.}
+\textbf{(1) Diagnosis.} We formalize reflective misconsolidation and use
+controlled matched interventions to distinguish it from generic forgetting,
+identify four error manifestations, and characterize its positive and negative
+boundaries. \textbf{(2) Method.} We derive an evidence-gated reflection
+harness, instantiate it as \egm, and show that it reduces unsupported durable
+promotion and its downstream behavioral cost. \textbf{(3) Evidence.} We
+triangulate these claims across 342 discovery checkpoints, 252 frozen
+confirmation records, 240 held-out method records, a six-component
+leave-one-out audit, and 90 controlled closed-loop trajectories (2{,}430 live
+model calls), explicitly reporting weakly identified components and negative
+boundaries rather than only wins.
 
 The paper follows this causal sequence. Section~\ref{sec:prelim} formalizes
 bounded-memory promotion and epistemic address. Section~\ref{sec:analysis} uses
@@ -421,7 +421,7 @@ We first used 29 scenarios and six memory conditions to discover candidate
 failure patterns (342 checkpoint records). We then froze 14 confirmation
 scenarios spanning persistent world changes, named-participant events,
 self-state changes, recovery, and negative controls. We report three memory
-conditions---Full History, Summary, and Reflection---randomly interleaved with
+conditions---Direct (the full-history control), Summary, and Reflection---randomly interleaved with
 three repeats and two checkpoints, producing 84 checkpoints per condition and
 252 records. These confirmation records were generated with the archived
 \texttt{deepseek-chat} endpoint at temperature 0.2. Prompts, responses, memory
@@ -429,42 +429,47 @@ snapshots, non-writing probes, registered labels, and actions are retained.
 Exact paired tests below are descriptive because checkpoints are clustered
 within 14 scenario families.
 
-The tables reserve the planned reporting grid for DeepSeek V4 Pro,
-GPT-5.6-sol, and Claude Opus 4.8. A dagger marks provisional values from an
-archived DeepSeek endpoint; \pending{} marks a planned, unrun cell and is never an
-imputed score. We therefore make no cross-model claim in this draft.
+The target reporting grid comprises DeepSeek V4 Pro, GPT-5.6-sol, and Claude
+Opus 4.8. The main-text tables retain this grid horizontally, using abbreviated
+model labels and metric blocks so that they remain legible at one-column width.
+A dagger marks archived DeepSeek values that require an exact V4 Pro rerun;
+\pending{} is never an imputed score. We therefore make no cross-model claim in
+this draft.
 
 \subsection{Finding: Reflection Preserves Events but Distorts Their Address}
 
 Table~\ref{tab:analysis} shows that shared textual memory is not generically
-defective. Full History is the strongest reported control, Summary is
+defective. Direct is the strongest reported control, Summary is
 intermediate, and Reflection is least reliable. High protected leakage
 ($\ge0.2$) occurs in 10/84 Reflection checkpoints, 3/84 Summary checkpoints,
-and 0/84 Full History checkpoints.
+and 0/84 Direct checkpoints.
 
-\begin{table*}[t]
+\begin{table}[t]
   \caption{Frozen \method{} confirmation (84 clustered checkpoints per
-  condition and model). $^\dagger$Provisional archived \texttt{deepseek-chat}
-  results occupy the DeepSeek V4 Pro reporting block until an exact endpoint
-  rerun; \pending{} denotes a planned but unrun cell.}
+  completed condition). Each model block reports Scope/Leak./Act. (S/L/A).
+  $^\dagger$Archived \texttt{deepseek-chat}; exact V4 Pro, GPT-5.6-sol, and
+  Opus 4.8 runs remain pending.}
   \label{tab:analysis}
   \centering
   \scriptsize
-  \setlength{\tabcolsep}{3.2pt}
-  \begin{tabular}{@{}l*{9}{c}@{}}
+  \setlength{\tabcolsep}{1.1pt}
+  \begin{tabular*}{\columnwidth}{@{}l@{\extracolsep{\fill}}*{9}{c}@{}}
     \toprule
-    & \multicolumn{3}{c}{DeepSeek V4 Pro$^\dagger$}
-    & \multicolumn{3}{c}{GPT-5.6-sol}
-    & \multicolumn{3}{c}{Claude Opus 4.8} \\
+    & \multicolumn{3}{c}{DS V4$^\dagger$}
+    & \multicolumn{3}{c}{GPT-5.6}
+    & \multicolumn{3}{c}{Opus 4.8} \\
     \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
-    Updater & Scope & Leak. & Action & Scope & Leak. & Action & Scope & Leak. & Action \\
+    Mem. & Sc. & Lk. & Ac. & Sc. & Lk. & Ac. & Sc. & Lk. & Ac. \\
     \midrule
-    Full History & \textbf{94.0} & \textbf{0.001} & \textbf{90.5} & \pending & \pending & \pending & \pending & \pending & \pending \\
-    Summary      & 86.9 & 0.015 & 83.3 & \pending & \pending & \pending & \pending & \pending & \pending \\
-    Reflection   & 77.4 & 0.059 & 76.2 & \pending & \pending & \pending & \pending & \pending & \pending \\
+    Direct & \textbf{94.0} & \textbf{0.001} & \textbf{90.5}
+          & \pending & \pending & \pending & \pending & \pending & \pending \\
+    Sum.  & 86.9 & 0.015 & 83.3
+          & \pending & \pending & \pending & \pending & \pending & \pending \\
+    Refl. & 77.4 & 0.059 & 76.2
+          & \pending & \pending & \pending & \pending & \pending & \pending \\
     \bottomrule
-  \end{tabular}
-\end{table*}
+  \end{tabular*}
+\end{table}
 
 The retained traces organize the failure into four manifestations.
 \textbf{Cross-target attribution} turns self or named-other evidence into a
@@ -481,15 +486,18 @@ in the later closed-loop auction.
   \centering
   \includegraphics[width=\textwidth]{figures/scopeprobe_boundary.pdf}
   \caption{The failure is selective rather than a generic memory deficit.
-  Cells aggregate frozen confirmation records by registered evidence type;
-  labels show error count/rate in \textbf{(a)} and mean protected-scope leakage
-  in \textbf{(b)}. Reflection fails most strongly on conditional, self-state,
-  and recovered evidence, while all updaters remain stable on negative controls.
+  Grouped bars compare the same three updaters across evidence types:
+  \textbf{(a)} the checkpoint-level scope-error rate and \textbf{(b)} mean
+  protected-scope leakage. Reflection spikes on conditional, self-state, and
+  recovered evidence, whereas persistent-change and negative-control cases stay
+  near zero. Self-state is difficult for all three updaters, so the result
+  localizes a selective promotion failure rather than a universal ranking.
   Sample sizes are checkpoint counts, not independent trials.}
-  \Description{Two heatmaps compare Full History, Summary, and Reflection over
-  six evidence categories. Reflection has its largest scope-error rates and
-  leakage on conditional-other, self-state, and recovered-anomaly evidence;
-  negative controls are near zero.}
+  \Description{Two grouped bar charts compare Direct, Summary, and
+  Reflection over six abbreviated evidence categories. The left chart shows
+  scope-error rate and the right chart protected-scope leakage. Reflection has
+  the largest bars on conditional, self-state, and recovered evidence, while
+  persistent-change and negative-control bars remain near zero.}
   \label{fig:analysis-boundary}
 \end{figure*}
 
@@ -497,7 +505,7 @@ The negative boundaries are equally important. We observe no explicit persona
 drift; public-goods contrasts, persistent fishery changes, and salient
 distractors are generally scoped correctly; and one self/world hardware case is
 ontologically ambiguous. Excluding that case raises Reflection scope accuracy
-to 83.3\%, while Full History remains at 100.0\%. Together with the raw
+to 83.3\%, while Direct remains at 100.0\%. Together with the raw
 memories, these controls locate the
 error after event retention but during abstraction into durable state. The
 mechanistic conclusion is therefore narrower and more useful than ``memory is
@@ -680,69 +688,44 @@ and regresses on 0 ($p=0.00098$). Adding decision-time guidance on top of the
 gated memory raises scope to 100.0\% but does not improve action (93.8\% versus
 95.8\%), so we report memory-only gating as the primary method.
 
-\begin{table*}[t]
-  \caption{Frozen EGM evaluation: 48 clustered checkpoints per row and model
-  (8 scenarios $\times$ 3 repeats $\times$ 2 checkpoints). Reflection and
-  \egm{} use the same decision prompt; the final row adds the action guide.
-  $^\dagger$Provisional \texttt{deepseek-chat} values; \pending{} denotes an
-  planned but unrun cell.}
+\begin{table}[t]
+  \caption{Frozen EGM evaluation (48 clustered checkpoints per completed
+  row). Model blocks give S/L/A. R: Reflection; G-R: Guarded Reflection; S-R:
+  Structured Reflection; EGM+G: EGM with the action guide. $^\dagger$Archived
+  \texttt{deepseek-chat}; exact target-model runs remain pending.}
   \label{tab:heldout}
   \centering
   \scriptsize
-  \setlength{\tabcolsep}{2.8pt}
-  \begin{tabular}{@{}l*{9}{c}@{}}
+  \setlength{\tabcolsep}{1.1pt}
+  \begin{tabular*}{\columnwidth}{@{}l@{\extracolsep{\fill}}*{9}{c}@{}}
     \toprule
-    & \multicolumn{3}{c}{DeepSeek V4 Pro$^\dagger$}
-    & \multicolumn{3}{c}{GPT-5.6-sol}
-    & \multicolumn{3}{c}{Claude Opus 4.8} \\
+    & \multicolumn{3}{c}{DS V4$^\dagger$}
+    & \multicolumn{3}{c}{GPT-5.6}
+    & \multicolumn{3}{c}{Opus 4.8} \\
     \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
-    Memory updater & Scope & Leak. & Action & Scope & Leak. & Action & Scope & Leak. & Action \\
+    Upd. & Sc. & Lk. & Ac. & Sc. & Lk. & Ac. & Sc. & Lk. & Ac. \\
     \midrule
-    Reflection             & 72.9 & 0.0979 & 72.9 & \pending & \pending & \pending & \pending & \pending & \pending \\
-    Guarded Reflection     & 91.7 & 0.0028 & 75.0 & \pending & \pending & \pending & \pending & \pending & \pending \\
-    Structured Reflection  & 91.7 & 0.0398 & 87.5 & \pending & \pending & \pending & \pending & \pending & \pending \\
-    \egm{}                  & \textbf{95.8} & 0.0028 & \textbf{95.8} & \pending & \pending & \pending & \pending & \pending & \pending \\
-    \egm{} + action guide   & 100.0 & \textbf{0.0014} & 93.8 & \pending & \pending & \pending & \pending & \pending & \pending \\
+    R     & 72.9 & 0.0979 & 72.9
+          & \pending & \pending & \pending & \pending & \pending & \pending \\
+    G-R   & 91.7 & 0.0028 & 75.0
+          & \pending & \pending & \pending & \pending & \pending & \pending \\
+    S-R   & 91.7 & 0.0398 & 87.5
+          & \pending & \pending & \pending & \pending & \pending & \pending \\
+    EGM   & \textbf{95.8} & 0.0028 & \textbf{95.8}
+          & \pending & \pending & \pending & \pending & \pending & \pending \\
+    EGM+G & 100.0 & \textbf{0.0014} & 93.8
+          & \pending & \pending & \pending & \pending & \pending & \pending \\
     \bottomrule
-  \end{tabular}
-\end{table*}
+  \end{tabular*}
+\end{table}
 
-Table~\ref{tab:split} shows that the gain is not obtained by refusing to
-recognize real change. Reflection is already near-ceiling on persistent world
-change in \emph{attribution} (91.7\%) yet acts correctly only 58.3\% of the
-time; its scope accuracy collapses to 54.2\% precisely on conditional and
-recovered events, which is the temporal-overextension mode identified in
-Section~\ref{sec:analysis}. Evidence gating repairs that subset without
+The gain is not obtained by refusing to recognize real change. On persistent
+world changes, Reflection is already near-ceiling in attribution (91.7\%) but
+acts correctly only 58.3\% of the time; EGM reaches 95.8\% scope and 91.7\%
+action accuracy. On conditional and recovered events, Reflection's scope accuracy
+collapses to 54.2\%, while EGM reaches 95.8\% scope and 100.0\% action accuracy.
+Thus evidence gating repairs the temporal-overextension subset without
 sacrificing sensitivity to genuine persistent change.
-
-\begin{table*}[t]
-  \caption{Held-out results split by whether the intervention was a genuine
-  persistent world change or a conditional/recovered event (24 checkpoints per
-  cell and model). The scope deficit is concentrated in conditional/recovered
-  evidence, while action also improves for persistent change.
-  $^\dagger$Provisional \texttt{deepseek-chat} values; \pending{} is unrun.}
-  \label{tab:split}
-  \centering
-  \scriptsize
-  \setlength{\tabcolsep}{2.2pt}
-  \begin{tabular}{@{}ll*{9}{c}@{}}
-    \toprule
-    & & \multicolumn{3}{c}{DeepSeek V4 Pro$^\dagger$}
-    & \multicolumn{3}{c}{GPT-5.6-sol}
-    & \multicolumn{3}{c}{Claude Opus 4.8} \\
-    \cmidrule(lr){3-5}\cmidrule(lr){6-8}\cmidrule(l){9-11}
-    Subset & Updater & Scope & Leak. & Action & Scope & Leak. & Action & Scope & Leak. & Action \\
-    \midrule
-    \multirow{2}{*}{\shortstack[l]{Persistent\\change}}
-      & Reflection & 91.7 & 0.101 & 58.3 & \pending & \pending & \pending & \pending & \pending & \pending \\
-      & \egm       & \textbf{95.8} & \textbf{0.006} & \textbf{91.7} & \pending & \pending & \pending & \pending & \pending & \pending \\
-    \addlinespace[1pt]
-    \multirow{2}{*}{\shortstack[l]{Recovery /\\conditional}}
-      & Reflection & 54.2 & 0.094 & 87.5 & \pending & \pending & \pending & \pending & \pending & \pending \\
-      & \egm       & \textbf{95.8} & \textbf{0.000} & \textbf{100.0} & \pending & \pending & \pending & \pending & \pending & \pending \\
-    \bottomrule
-  \end{tabular}
-\end{table*}
 
 The effect is also not explained by writing more text. Mean memory snapshot
 length is 2746.5 characters for Reflection versus 1884.1 for \egm: the gated
@@ -769,31 +752,31 @@ separate shock-induced error from instability created by repeated reflection
 itself, and outcome accounting excludes the intervention round so that the
 direct physical cost of a shock is not charged to the agent.
 
-\begin{table*}[t]
-  \caption{Closed-loop consequences over 90 completed DeepSeek trajectories.
-  Late
-  overgeneralization is the round-12 composite cognitive score; action error is
-  post-recovery deviation from a domain oracle, normalized by the action range.
-  $^\dagger$Provisional \texttt{deepseek-v4-flash} values occupy the DeepSeek
-  V4 Pro reporting block; \pending{} denotes a planned but unrun cell.}
+\begin{table}[t]
+  \caption{Closed-loop consequences over 90 completed trajectories. Each model
+  block gives Reflection/EGM. $^\dagger$Completed \texttt{deepseek-v4-flash};
+  GPT-5.6-sol and Opus 4.8 target-model cells remain pending.}
   \label{tab:consequence}
   \centering
   \scriptsize
-  \setlength{\tabcolsep}{4.2pt}
-  \begin{tabular}{@{}l*{6}{c}@{}}
+  \setlength{\tabcolsep}{1.6pt}
+  \begin{tabular*}{\columnwidth}{@{}l@{\extracolsep{\fill}}*{6}{c}@{}}
     \toprule
-    & \multicolumn{2}{c}{DeepSeek V4 Pro$^\dagger$}
-    & \multicolumn{2}{c}{GPT-5.6-sol}
-    & \multicolumn{2}{c}{Claude Opus 4.8} \\
+    & \multicolumn{2}{c}{DS-F$^\dagger$}
+    & \multicolumn{2}{c}{GPT-5.6}
+    & \multicolumn{2}{c}{Opus 4.8} \\
     \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(l){6-7}
-    Metric & Reflection & EGM & Reflection & EGM & Reflection & EGM \\
+    Metric & Refl. & EGM & Refl. & EGM & Refl. & EGM \\
     \midrule
-    Late overgeneralization $\downarrow$ & 0.119 & \textbf{0.009} & \pending & \pending & \pending & \pending \\
-    Norm.\ action error $\downarrow$     & 0.0223 & \textbf{0.0014} & \pending & \pending & \pending & \pending \\
-    Group generalization at probe        & 3/45 & \textbf{0/45} & \pending & \pending & \pending & \pending \\
+    Late overgen. $\downarrow$ & 0.119 & \textbf{0.009}
+      & \pending & \pending & \pending & \pending \\
+    Norm.\ action err. $\downarrow$ & 0.0223 & \textbf{0.0014}
+      & \pending & \pending & \pending & \pending \\
+    Group gen. at probe & 3/45 & \textbf{0/45}
+      & \pending & \pending & \pending & \pending \\
     \bottomrule
-  \end{tabular}
-\end{table*}
+  \end{tabular*}
+\end{table}
 
 Table~\ref{tab:consequence} shows that the failure does propagate. Paired within
 matching (domain, condition, repeat) cells, Reflection exceeds executable EGM
@@ -857,32 +840,28 @@ causes ecological collapse or durable social breakdown at this horizon.
 
 We reran the frozen held-out suite with all six leave-one-section-out variants
 of \egm{} (288 checkpoints, no failed trials, and no variant ever recreated its
-excluded heading). Table~\ref{tab:ablation} reports the complete six-section
-ablation.
+excluded heading). Figure~\ref{fig:ablation} uses conventional horizontal bar
+charts to summarize the two action-facing outcomes against the full six-section
+control, avoiding a dense table of near-equal raw scores.
 
-\begin{table}[t]
-  \caption{Complete six-section leave-one-out ablation on the frozen held-out
-  suite (48 checkpoints per condition; provisional \texttt{deepseek-chat}
-  endpoint). Violation is the mean normalized distance outside the registered
-  acceptable action interval.}
-  \label{tab:ablation}
+\begin{figure}[t]
   \centering
-  \small
-  \setlength{\tabcolsep}{3.0pt}
-  \begin{tabular}{@{}lccc@{}}
-    \toprule
-    Condition & Scope $\uparrow$ & Action $\uparrow$ & Violation $\downarrow$ \\
-    \midrule
-    Six-section control          & 95.8 & 95.8 & 0.42\% \\
-    \ \ w/o stable persona       & 95.8 & 100.0 & 0.00\% \\
-    \ \ w/o current self         & 93.8 & 95.8 & 0.42\% \\
-    \ \ w/o consolidated models  & 100.0 & 97.9 & 0.10\% \\
-    \ \ w/o open hypotheses      & 100.0 & 97.9 & 0.21\% \\
-    \ \ w/o recent episodes      & 95.8 & 87.5 & 1.46\% \\
-    \ \ w/o action policy        & 95.8 & 72.9 & 4.27\% \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+  \includegraphics[width=\columnwidth]{figures/component_ablation.pdf}
+  \caption{Only action-facing sections show a consistent removal cost.
+  Horizontal bars show each removal's change from full EGM (95.8\% action
+  accuracy; 0.42\% mean normalized violation) over 48 checkpoints per
+  condition. In \textbf{(a)}, negative is worse; in \textbf{(b)}, positive is
+  worse. The apparent Persona improvement is batch sensitivity: persona remains
+  in the decision header, so it is not evidence that removing persona helps.}
+  \Description{Two horizontal bar charts show changes from full EGM after
+  removing each memory section. Removing action policy has by far the largest
+  harmful action effect, followed by removing recent episodes. Persona and
+  several cognitive sections show small favorable changes that are not
+  interpreted as improvements.}
+  \label{fig:ablation}
+\end{figure}
+
+\FloatBarrier
 
 \textsc{action policy} is the only component with strong necessity evidence.
 Removing it leaves scope attribution untouched---indeed it slightly
@@ -899,14 +878,20 @@ behavior}---which is why the evaluation scores both.
 
 \textsc{recent observed episodes} shows a smaller behavioral contribution but
 remains underpowered. We explicitly do \emph{not} claim that all six sections
-are independently necessary. The held-out suite contains no targeted
-self-state intervention, and persona is supplied separately in every decision
-header, so \textsc{current self} and \textsc{stable persona} are weakly
-identified by construction; the near-null or favorable removals of
+are independently necessary. In particular, the 100.0\% action score without
+\textsc{stable persona} is only a two-checkpoint difference from the 95.8\%
+control. Both misses occur at the first clinic supply-cut checkpoint, where two
+full-model samples retain the old action but all three leave-one-out samples
+take the registered reversible precaution. The ablation was sampled in a later
+batch, persona is still supplied separately in every decision header, and the
+suite contains no targeted persona-change intervention. The result therefore
+indicates weak identification and sampling sensitivity, not that persona is
+harmful. \textsc{current self} is similarly weakly identified; the near-null or
+favorable removals of
 \textsc{consolidated models} and \textsc{open hypotheses} may also reflect
 substitution by the remaining sections. A model-assisted
 claim-level forensic audit of all 576 memory snapshots was run at temperature 0
-and is consistent with these tables, but manual inspection found debatable
+and is consistent with these trends, but manual inspection found debatable
 flags, so we treat it as an exploratory diagnostic rather than a result.
 
 \section{Limitations}
