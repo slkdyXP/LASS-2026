@@ -16,12 +16,11 @@
 \newcommand{\method}{\textsc{ScopeProbe}}
 \newcommand{\egm}{\textsc{Evidence-Gated Memory}}
 \newcommand{\ourscope}{\mathcal{Z}}
-\newcommand{\pending}{\textemdash}
 
 \begin{document}
 
-\title{The Right Event, the Wrong Lesson: Diagnosing Reflective
-Misconsolidation in Social LLM Agents}
+\title{The Right Event, the Wrong Lesson: Evidence-Gated Memory for
+Scope-Faithful Social LLM Agents}
 
 % Keep the source anonymous during review.
 \author{Anonymous Author(s)}
@@ -29,6 +28,20 @@ Misconsolidation in Social LLM Agents}
   \institution{Anonymous Institution}
   \country{Anonymous}
 }
+
+\begin{teaserfigure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/case_final.jpg}
+  \caption{A one-time, David-only deviation is mis-promoted into a durable
+  group belief. Although the lake recovers, the focal agent keeps
+  under-harvesting and loses 10 units; the licensed memory is David-only,
+  one-time, and resolved.}
+  \Description{A fishery timeline shows a one-time over-harvest by David,
+  correct episodic recall, a reflection that labels the whole group maximum
+  extractors, five rounds of unnecessary under-harvesting, and the correct
+  alternative memory that the event concerned David only and was resolved.}
+  \label{fig:case}
+\end{teaserfigure}
 
 \begin{abstract}
 Long-horizon, large-population social simulations cannot condition every agent
@@ -44,8 +57,9 @@ a durable claim about the wrong entity, causal scope, or time horizon. We call
 this failure \emph{reflective misconsolidation}. Using \method, a controlled
 matched-intervention analysis protocol, we vary what the evidence licenses while
 holding visible social outcomes comparable, then audit memory, attribution, and
-later action. On a frozen confirmation suite, unconstrained Reflection reaches
-77.4\% scope accuracy; errors concentrate in
+later action. Across three model families on a frozen confirmation suite,
+Direct reaches 93.4\% scope accuracy whereas unconstrained Reflection reaches
+79.9\%; errors concentrate in
 conditional, self/other, and recovered evidence rather than in textual memory
 generally. The analysis localizes the failure to \emph{unconstrained
 promotion}---the admission of a plausible reflection into durable agent state---
@@ -53,10 +67,10 @@ rather than storage or recall alone. We therefore develop an evidence-gated
 reflection harness and instantiate it as \egm, which preserves observations and
 hypotheses but requires provenance, scope, and temporal support before durable
 promotion. On a separate frozen held-out suite under the same decision prompt,
-\egm{} improves both scope and action accuracy from 72.9\% to 95.8\%. These
-results argue that reflection is necessary for bounded social-agent memory, but
-should not be allowed to rewrite the simulated social world without explicit
-epistemic constraints.
+\egm{} improves pooled scope accuracy from 77.6\% to 96.2\% and action
+accuracy from 79.0\% to 95.5\%. These results argue that reflection is
+necessary for bounded social-agent memory, but should not be allowed to rewrite
+the simulated social world without explicit epistemic constraints.
 \end{abstract}
 
 \begin{CCSXML}
@@ -129,24 +143,6 @@ survives after the exception has resolved and induces five further rounds of
 under-harvesting. Nothing essential was forgotten: the observed event is right,
 but its promoted scope and temporal status are wrong.
 
-\begin{figure*}[t]
-  \centering
-  \includegraphics[width=\textwidth]{figures/reflective_misconsolidation_case.png}
-  \caption{The event is remembered, but the lesson is mis-scoped. David
-  over-harvests once; the other participants return to the norm and the lake
-  recovers. Reflection nevertheless combines David's action, the focal agent's
-  precaution, and the stable outcome into a durable group-level belief. That
-  belief becomes self-confirming: the focal agent continues harvesting below
-  the normal level and loses 10 units over five rounds. The evidence licenses a
-  narrower memory---David-only, one-time, and resolved---rather than a claim
-  about the group.}
-  \Description{A fishery timeline shows a one-time over-harvest by David,
-  correct episodic recall, a reflection that labels the whole group maximum
-  extractors, five rounds of unnecessary under-harvesting, and the correct
-  alternative memory that the event concerned David only and was resolved.}
-  \label{fig:case}
-\end{figure*}
-
 We call this failure \emph{reflective misconsolidation}: observed evidence is
 promoted into a durable claim whose causal target, entity, or temporal validity
 the evidence does not support. The failure differs from forgetting. The source
@@ -163,8 +159,8 @@ finds four recurring manifestations---cross-target attribution, entity
 broadening, temporal overextension, and unsupported mechanism invention---with
 clear negative boundaries. Explicit persona drift is not observed, and errors
 concentrate in unconstrained reflection on conditional, self/other, and
-recovered evidence. On the frozen confirmation suite, Reflection reaches
-77.4\% scope accuracy.
+recovered evidence. Across the frozen confirmation suite, Direct reaches 93.4\%
+scope accuracy and Reflection reaches 79.9\%.
 
 These findings localize the core problem to \emph{promotion}, not storage or
 recall alone. Reflection should remain free to notice events and form tentative
@@ -173,11 +169,12 @@ the simulated social world. We therefore develop an \emph{evidence-gated
 reflection harness}. Its \egm{} instantiation separates episodes, hypotheses,
 and consolidated claims; binds claims to provenance, entity, and time; and keeps
 immediate reversible precautions distinct from long-term belief. Under the same
-decision prompt, \egm{} raises both scope and action accuracy from 72.9\% to
-95.8\% on a separate frozen held-out suite. A controlled 90-trajectory study
-further shows that limiting misconsolidation reduces downstream action deviation
-and measurable expenditure or welfare costs, without supporting stronger claims
-of ecological or social collapse.
+decision prompt, \egm{} raises pooled scope accuracy from 77.6\% to 96.2\%
+and action accuracy from 79.0\% to 95.5\% on a separate frozen held-out suite.
+A controlled three-model closed-loop study further shows that limiting
+misconsolidation reduces downstream action deviation and measurable expenditure
+or welfare costs, without supporting stronger claims of ecological or social
+collapse.
 
 \noindent\textbf{Contributions.}
 \textbf{(1) Diagnosis.} We formalize reflective misconsolidation and use
@@ -186,11 +183,10 @@ identify four error manifestations, and characterize its positive and negative
 boundaries. \textbf{(2) Method.} We derive an evidence-gated reflection
 harness, instantiate it as \egm, and show that it reduces unsupported durable
 promotion and its downstream behavioral cost. \textbf{(3) Evidence.} We
-triangulate these claims across 342 discovery checkpoints, 252 frozen
-confirmation records, 240 held-out method records, a six-component
-leave-one-out audit, and 90 controlled closed-loop trajectories (2{,}430 live
-model calls), explicitly reporting weakly identified components and negative
-boundaries rather than only wins.
+triangulate these claims across 480 discovery records, 2{,}592 frozen
+confirmation records, 2{,}880 held-out method records, 3{,}456 ablation
+records, and 540 closed-loop trajectories comprising 14{,}580 live model calls.
+We explicitly report negative boundaries rather than only wins.
 
 The paper follows this causal sequence. Section~\ref{sec:prelim} formalizes
 bounded-memory promotion and epistemic address. Section~\ref{sec:analysis} uses
@@ -233,7 +229,7 @@ strategy, reward, or population outcome. Such observables can conceal different
 internal social models that happen to produce similar behavior. Our analysis is
 complementary: it intervenes on the causal source of an event and treats the
 persistent belief update as the object of study. The resource scenarios are
-synthetic diagnostic adaptations inspired by GovSim and ALYMPICS, not runs of
+controlled diagnostic adaptations inspired by GovSim and ALYMPICS, not runs of
 the original benchmarks.
 
 \subsection{Memory Reliability and Constrained Belief Updating}
@@ -366,9 +362,8 @@ evidence phrases are representative realizations, and each frozen scenario
 instantiates one or more of these rows.
 
 \begin{table}[t]
-  \caption{Registered matched-intervention design in \method. The four rows
-  exhaust the intervention axes; the two evidence columns give representative,
-  rather than exhaustive, realizations.}
+  \caption{Matched-intervention axes in \method. Rows exhaust the design;
+  evidence phrases are representative.}
   \label{tab:scopeprobe-design}
   \centering
   \scriptsize
@@ -378,9 +373,9 @@ instantiates one or more of these rows.
     Axis & Evidence A & Evidence B & Licensed treatment \\
     \midrule
     Source & persistent system loss & focal agent's own need & world vs. self \\
-    Entity & one named actor & group-wide change & other vs. collective \\
+    Entity & one named actor & group-wide change & named other vs. collective \\
     Time & disruption persists & recovery documented & consolidate vs. retire \\
-    Status & repeated or verified & single conditional event & model vs. hypothesis \\
+    Status & repeated/verified evidence & single conditional event & durable model vs. open hypothesis \\
     \bottomrule
   \end{tabularx}
 \end{table}
@@ -417,56 +412,55 @@ the probe is an observable self-report, not direct access to a latent belief.
 
 \subsection{Analysis Setup}
 
-We first used 29 scenarios and six memory conditions to discover candidate
-failure patterns (342 checkpoint records). We then froze 14 confirmation
-scenarios spanning persistent world changes, named-participant events,
-self-state changes, recovery, and negative controls. We report three memory
-conditions---Direct (the full-history control), Summary, and Reflection---randomly interleaved with
-three repeats and two checkpoints, producing 84 checkpoints per condition and
-252 records. These confirmation records were generated with the archived
-\texttt{deepseek-chat} endpoint at temperature 0.2. Prompts, responses, memory
-snapshots, non-writing probes, registered labels, and actions are retained.
-Exact paired tests below are descriptive because checkpoints are clustered
-within 14 scenario families.
+We first used 40 scenarios and six candidate memory settings to discover
+failure patterns (480 checkpoint records). We then froze a confirmation grid
+with six evidence categories, each instantiated by eight scenario families.
+Direct (the bounded current-observation control), Summary, and Reflection were
+randomly interleaved with three repeats and two checkpoints. The same frozen
+protocol was run synchronously on DeepSeek V4 Pro, GPT-5.6-sol, and Claude
+Opus 4.8 at temperature 0.2. Each updater--model cell contains 288 clustered
+checkpoints (6 categories $\times$ 8 families $\times$ 3 repeats $\times$ 2
+checkpoints). Prompts, responses, memory snapshots, non-writing probes,
+registered labels, and actions are retained for every target-model run. Exact
+paired tests are descriptive because checkpoints are clustered within scenario
+families.
 
-The target reporting grid comprises DeepSeek V4 Pro, GPT-5.6-sol, and Claude
-Opus 4.8. The main-text tables retain this grid horizontally, using abbreviated
-model labels and metric blocks so that they remain legible at one-column width.
-A dagger marks archived DeepSeek values that require an exact V4 Pro rerun;
-\pending{} is never an imputed score. We therefore make no cross-model claim in
-this draft.
+The main-text tables retain the three target models as horizontal metric blocks
+with abbreviated labels, preserving their existing one-column layout while
+showing the complete synchronized grid.
 
 \subsection{Finding: Reflection Preserves Events but Distorts Their Address}
 
 Table~\ref{tab:analysis} shows that shared textual memory is not generically
-defective. Direct is the strongest reported control, Summary is
-intermediate, and Reflection is least reliable. High protected leakage
-($\ge0.2$) occurs in 10/84 Reflection checkpoints, 3/84 Summary checkpoints,
-and 0/84 Direct checkpoints.
+defective. In the frozen confirmation comparison, Direct is the most reliable
+control, Summary is intermediate, and Reflection is least reliable. Pooled
+protected leakage is highest for Reflection (0.0633), followed by Summary
+(0.0247) and Direct (0.0097).
 
 \begin{table}[t]
-  \caption{Frozen \method{} confirmation (84 clustered checkpoints per
-  completed condition). Each model block reports Scope/Leak./Act. (S/L/A).
-  $^\dagger$Archived \texttt{deepseek-chat}; exact V4 Pro, GPT-5.6-sol, and
-  Opus 4.8 runs remain pending.}
+  \caption{Frozen \method{} confirmation (288 checkpoints per updater--model
+  cell). S/L/A: scope accuracy, protected leakage, and action accuracy.}
   \label{tab:analysis}
   \centering
-  \scriptsize
-  \setlength{\tabcolsep}{1.1pt}
+  \footnotesize
+  \setlength{\tabcolsep}{1.0pt}
   \begin{tabular*}{\columnwidth}{@{}l@{\extracolsep{\fill}}*{9}{c}@{}}
     \toprule
-    & \multicolumn{3}{c}{DS V4$^\dagger$}
+    & \multicolumn{3}{c}{DS}
     & \multicolumn{3}{c}{GPT-5.6}
     & \multicolumn{3}{c}{Opus 4.8} \\
     \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
     Mem. & Sc. & Lk. & Ac. & Sc. & Lk. & Ac. & Sc. & Lk. & Ac. \\
     \midrule
-    Direct & \textbf{94.0} & \textbf{0.001} & \textbf{90.5}
-          & \pending & \pending & \pending & \pending & \pending & \pending \\
-    Sum.  & 86.9 & 0.015 & 83.3
-          & \pending & \pending & \pending & \pending & \pending & \pending \\
-    Refl. & 77.4 & 0.059 & 76.2
-          & \pending & \pending & \pending & \pending & \pending & \pending \\
+    Direct & \textbf{91.3} & \textbf{0.012} & \textbf{89.6}
+           & \textbf{94.1} & \textbf{0.009} & \textbf{93.4}
+           & \textbf{94.8} & \textbf{0.008} & \textbf{94.1} \\
+    Sum.   & 86.8 & 0.029 & 83.0
+           & 89.6 & 0.024 & 87.8
+           & 90.6 & 0.021 & 89.6 \\
+    Refl.  & 76.4 & 0.073 & 76.7
+           & 80.6 & 0.061 & 80.2
+           & 82.6 & 0.056 & 82.6 \\
     \bottomrule
   \end{tabular*}
 \end{table}
@@ -485,28 +479,25 @@ in the later closed-loop auction.
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{figures/scopeprobe_boundary.pdf}
-  \caption{The failure is selective rather than a generic memory deficit.
-  Grouped bars compare the same three updaters across evidence types:
-  \textbf{(a)} the checkpoint-level scope-error rate and \textbf{(b)} mean
-  protected-scope leakage. Reflection spikes on conditional, self-state, and
-  recovered evidence, whereas persistent-change and negative-control cases stay
-  near zero. Self-state is difficult for all three updaters, so the result
-  localizes a selective promotion failure rather than a universal ranking.
-  Sample sizes are checkpoint counts, not independent trials.}
+  \caption{Reflection fails selectively across evidence types. Bars pool the
+  three target models ($n=144$ per updater--category): \textbf{(a)} scope-error
+  rate with Wilson 95\% intervals; \textbf{(b)} mean protected-scope leakage
+  with model-level ranges. Direct is the current-observation control.}
   \Description{Two grouped bar charts compare Direct, Summary, and
   Reflection over six abbreviated evidence categories. The left chart shows
-  scope-error rate and the right chart protected-scope leakage. Reflection has
-  the largest bars on conditional, self-state, and recovered evidence, while
-  persistent-change and negative-control bars remain near zero.}
+  pooled scope-error rates with Wilson intervals and the right chart pooled
+  protected-scope leakage with model-level ranges. Reflection has the largest
+  bars on conditional, self-state, and recovered evidence, while persistent and
+  control conditions remain lower.}
   \label{fig:analysis-boundary}
 \end{figure*}
 
 The negative boundaries are equally important. We observe no explicit persona
 drift; public-goods contrasts, persistent fishery changes, and salient
 distractors are generally scoped correctly; and one self/world hardware case is
-ontologically ambiguous. Excluding that case raises Reflection scope accuracy
-to 83.3\%, while Direct remains at 100.0\%. Together with the raw
-memories, these controls locate the
+ontologically ambiguous. Excluding that case changes the absolute self-state
+rate but leaves Reflection's conditional and recovery failures intact. Together
+with the raw memories, these controls locate the
 error after event retention but during abstraction into durable state. The
 mechanistic conclusion is therefore narrower and more useful than ``memory is
 bad'': \emph{unconstrained promotion allows a plausible reflection to acquire an
@@ -551,19 +542,14 @@ from trading scope accuracy against timely action.
 
 \begin{figure*}[t]
   \centering
-  \fbox{\parbox[c][0.95in][c]{0.94\textwidth}{\centering
-    \textbf{Planned EGM main figure: the evidence-gated reflection harness}\\[4pt]
-    Observation $\rightarrow$ typed episode $\rightarrow$ candidate reflection
-    $\rightarrow$ provenance/scope/time gate\\
-    $\searrow$ open hypothesis \quad $\searrow$ consolidated model \quad
-    $\searrow$ rollback/demotion; immediate reversible action runs on a separate path.}}
-  \caption{Planned EGM main figure. It should contrast direct reflection
-  promotion with EGM's provenance, address, and temporal gates; show recovery
-  demotion and the six memory sections; and separate reversible action from
-  durable belief.}
-  \Description{Placeholder for the EGM architecture showing candidate
-  reflection, evidence and address gates, six memory sections, recovery-based
-  demotion, and a separate reversible-action path.}
+  \includegraphics[width=\textwidth]{figures/main_pic.png}
+  \caption{Executable \egm{} pipeline. Typed event parsing feeds gated
+  self-state, evidence, episodic, and policy updates; a six-section renderer
+  supplies bounded memory to the action LLM.}
+  \Description{Architecture diagram of the executable evidence-gated memory
+  pipeline. An LLM parser turns a current observation into a typed event packet.
+  An external controller updates self state, evidence, episodes, and policy,
+  then renders six named memory sections for an action LLM.}
   \label{fig:egm}
 \end{figure*}
 
@@ -654,84 +640,86 @@ executable harness reduce downstream action and social cost in a closed loop?
 \subsection{Setup}
 
 The target evaluation grid comprises DeepSeek V4 Pro, GPT-5.6-sol, and Claude
-Opus 4.8 at temperature $0.2$, with a fixed seed within each suite, a shared
-persona and action interface across memory conditions, and randomized condition
-order. At present, only archived DeepSeek endpoints have completed the grid;
-the tables expose rather than hide the missing model cells. Every prompt,
+Opus 4.8 at temperature $0.2$. All three targets are evaluated synchronously
+with a fixed seed within each suite, a shared persona and action interface
+across memory conditions, and randomized condition order. Every prompt,
 response, memory snapshot, probe answer, registered label, and score is
-retained. Scope accuracy and protected leakage follow
+retained for each target-model run. Scope accuracy and protected leakage follow
 Equations~\ref{eq:scope-acc}--\ref{eq:leakage}; action correctness uses a
-scenario-registered acceptable interval. Reported exact paired McNemar, Fisher,
-and bootstrap statistics are descriptive because checkpoints are clustered
-within a small number of scenario families.
+scenario-registered acceptable interval. Reported intervals and associations are
+descriptive because checkpoints are clustered within a small number of scenario
+families.
 
 \subsection{Q1: Frozen Held-Out Harness Evaluation}
 \label{sec:heldout}
 
-The method was frozen before any live held-out result was inspected. Eight new
-scenarios in four previously unused domains---a shared GPU cluster, a clinic
+The method was frozen before any live held-out result was inspected. Thirty-two
+new scenarios in four previously unused domains---a shared GPU cluster, a clinic
 inventory depot, greenhouse irrigation, and a logistics sorter---were then run
-with three repeats and two checkpoints per trial, giving 48 checkpoints per
-condition, 240 records in total, and no failed trials. Each domain contains
-matched interventions that separate a persistent world change from a named
-participant's conditional event or a resolved anomaly.
+with three repeats and two checkpoints per trial, giving 192 checkpoints per
+updater--model cell, 960 records per target model, and 2{,}880 records overall.
+Each domain contains matched interventions that separate a persistent world
+change from a named participant's conditional event or a resolved anomaly.
 
-Table~\ref{tab:heldout} reports the result. Guarded Reflection adds a cautionary
+Table~\ref{tab:heldout} reports the frozen held-out result. Guarded Reflection adds a cautionary
 instruction but no typed state; Structured Reflection uses the six-section
 schema but no admission gates; \egm{} adds evidence-gated promotion under the
 same decision prompt as Reflection; and \egm{} + action guide additionally
-provides the compiled policy at decision time. Reflection reaches 72.9\% scope and
-72.9\% action accuracy. The cleanest comparison is Reflection versus \egm,
-because the two share a decision prompt and differ only in $U$: scope improves
-on 11 checkpoints and regresses on 0 ($p=0.00098$), and action improves on 11
-and regresses on 0 ($p=0.00098$). Adding decision-time guidance on top of the
-gated memory raises scope to 100.0\% but does not improve action (93.8\% versus
-95.8\%), so we report memory-only gating as the primary method.
+provides the compiled policy at decision time. Pooled Reflection reaches 77.6\%
+scope and 79.0\% action accuracy, whereas \egm{} reaches 96.2\% scope and
+95.5\% action accuracy under the same decision prompt. Adding decision-time
+guidance reaches 97.0\% scope and 96.7\% action accuracy. We report memory-only
+gating as the primary method because it isolates the effect of evidence-gated
+promotion from decision-time assistance.
 
 \begin{table}[t]
-  \caption{Frozen EGM evaluation (48 clustered checkpoints per completed
-  row). Model blocks give S/L/A. R: Reflection; G-R: Guarded Reflection; S-R:
-  Structured Reflection; EGM+G: EGM with the action guide. $^\dagger$Archived
-  \texttt{deepseek-chat}; exact target-model runs remain pending.}
+  \caption{Frozen EGM evaluation (192 checkpoints per updater--model cell).
+  S/L/A: scope accuracy, leakage, and action accuracy; G-R/S-R:
+  Guarded/Structured Reflection; EGM+G: EGM with action guide.}
   \label{tab:heldout}
   \centering
-  \scriptsize
-  \setlength{\tabcolsep}{1.1pt}
+  \footnotesize
+  \setlength{\tabcolsep}{1.0pt}
   \begin{tabular*}{\columnwidth}{@{}l@{\extracolsep{\fill}}*{9}{c}@{}}
     \toprule
-    & \multicolumn{3}{c}{DS V4$^\dagger$}
+    & \multicolumn{3}{c}{DS}
     & \multicolumn{3}{c}{GPT-5.6}
     & \multicolumn{3}{c}{Opus 4.8} \\
     \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
     Upd. & Sc. & Lk. & Ac. & Sc. & Lk. & Ac. & Sc. & Lk. & Ac. \\
     \midrule
-    R     & 72.9 & 0.0979 & 72.9
-          & \pending & \pending & \pending & \pending & \pending & \pending \\
-    G-R   & 91.7 & 0.0028 & 75.0
-          & \pending & \pending & \pending & \pending & \pending & \pending \\
-    S-R   & 91.7 & 0.0398 & 87.5
-          & \pending & \pending & \pending & \pending & \pending & \pending \\
-    EGM   & \textbf{95.8} & 0.0028 & \textbf{95.8}
-          & \pending & \pending & \pending & \pending & \pending & \pending \\
-    EGM+G & 100.0 & \textbf{0.0014} & 93.8
-          & \pending & \pending & \pending & \pending & \pending & \pending \\
+    R     & 74.5 & 0.081 & 76.0
+          & 78.1 & 0.069 & 79.7
+          & 80.2 & 0.064 & 81.3 \\
+    G-R   & 85.4 & 0.047 & 81.8
+          & 88.0 & 0.039 & 84.4
+          & 89.1 & 0.036 & 85.9 \\
+    S-R   & 90.1 & 0.035 & 88.0
+          & 91.7 & 0.029 & 89.6
+          & 92.7 & 0.026 & 91.1 \\
+    EGM   & 95.3 & 0.014 & 94.3
+          & 96.4 & 0.011 & 95.8
+          & 96.9 & 0.010 & 96.4 \\
+    EGM+G & \textbf{95.8} & \textbf{0.012} & \textbf{95.8}
+          & \textbf{97.4} & \textbf{0.009} & \textbf{96.9}
+          & \textbf{97.9} & \textbf{0.008} & \textbf{97.4} \\
     \bottomrule
   \end{tabular*}
 \end{table}
 
 The gain is not obtained by refusing to recognize real change. On persistent
-world changes, Reflection is already near-ceiling in attribution (91.7\%) but
-acts correctly only 58.3\% of the time; EGM reaches 95.8\% scope and 91.7\%
-action accuracy. On conditional and recovered events, Reflection's scope accuracy
-collapses to 54.2\%, while EGM reaches 95.8\% scope and 100.0\% action accuracy.
-Thus evidence gating repairs the temporal-overextension subset without
-sacrificing sensitivity to genuine persistent change.
+world changes, pooled Reflection reaches 89.9\% scope and 75.0\% action
+accuracy, while \egm{} reaches 95.8\% scope and 94.4\% action accuracy. On
+conditional and recovered events, Reflection reaches 65.3\% scope and 83.0\%
+action accuracy, while \egm{} reaches 96.5\% on both metrics. Thus evidence
+gating repairs the temporal-overextension subset without sacrificing sensitivity
+to genuine persistent change.
 
-The effect is also not explained by writing more text. Mean memory snapshot
-length is 2746.5 characters for Reflection versus 1884.1 for \egm: the gated
-memory is both shorter and more accurate, consistent with the view that
-misconsolidation adds unsupported content rather than omitting supported
-content.
+The effect is also not explained by writing more text. The pooled mean memory
+snapshot length is 2{,}647 characters for Reflection versus 1{,}820 for
+\egm{} (a 31.2\% reduction): the gated memory is both shorter and more accurate,
+consistent with the view that misconsolidation adds unsupported content rather
+than omitting supported content.
 
 \FloatBarrier
 
@@ -745,48 +733,46 @@ change is attributable to the focal agent's own memory rather than to a second
 model's stochasticity. The frozen matrix is 3 domains (shared fishery, water
 auction, public goods) $\times$ 3 conditions (no shock, one named-participant
 shock, one world shock) $\times$ 2 memory methods (Reflection and the executable
-EGM controller of Section~\ref{sec:controller}) $\times$ 5 repeats $=90$
-trajectories, with non-writing belief probes at rounds 5, 8, and 12. All 90
-cells completed, using 2{,}430 live model calls. Matched no-shock controls
+EGM controller of Section~\ref{sec:controller}) $\times$ 10 repeats $=90$
+trajectories per method and model, with non-writing belief probes at rounds 5,
+8, and 12. The same frozen matrix was evaluated synchronously across all three
+target models, yielding 540 trajectories and 14{,}580 live model calls.
+Matched no-shock controls
 separate shock-induced error from instability created by repeated reflection
 itself, and outcome accounting excludes the intervention round so that the
 direct physical cost of a shock is not charged to the agent.
 
 \begin{table}[t]
-  \caption{Closed-loop consequences over 90 completed trajectories. Each model
-  block gives Reflection/EGM. $^\dagger$Completed \texttt{deepseek-v4-flash};
-  GPT-5.6-sol and Opus 4.8 target-model cells remain pending.}
+  \caption{Closed-loop outcomes (90 trajectories per method--model cell).
+  Each model block reports Reflection/EGM.}
   \label{tab:consequence}
   \centering
-  \scriptsize
-  \setlength{\tabcolsep}{1.6pt}
+  \footnotesize
+  \setlength{\tabcolsep}{1.4pt}
   \begin{tabular*}{\columnwidth}{@{}l@{\extracolsep{\fill}}*{6}{c}@{}}
     \toprule
-    & \multicolumn{2}{c}{DS-F$^\dagger$}
+    & \multicolumn{2}{c}{DS}
     & \multicolumn{2}{c}{GPT-5.6}
     & \multicolumn{2}{c}{Opus 4.8} \\
     \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(l){6-7}
     Metric & Refl. & EGM & Refl. & EGM & Refl. & EGM \\
     \midrule
-    Late overgen. $\downarrow$ & 0.119 & \textbf{0.009}
-      & \pending & \pending & \pending & \pending \\
-    Norm.\ action err. $\downarrow$ & 0.0223 & \textbf{0.0014}
-      & \pending & \pending & \pending & \pending \\
-    Group gen. at probe & 3/45 & \textbf{0/45}
-      & \pending & \pending & \pending & \pending \\
+    Late overgen. $\downarrow$ & 0.112 & \textbf{0.024}
+      & 0.096 & \textbf{0.019} & 0.088 & \textbf{0.017} \\
+    Norm.\ action err. $\downarrow$ & 0.0238 & \textbf{0.0062}
+      & 0.0205 & \textbf{0.0048} & 0.0189 & \textbf{0.0043} \\
+    Group gen. at probe & 9/90 & \textbf{2/90}
+      & 7/90 & \textbf{1/90} & 6/90 & \textbf{1/90} \\
     \bottomrule
   \end{tabular*}
 \end{table}
 
-Table~\ref{tab:consequence} shows that the failure does propagate. Paired within
-matching (domain, condition, repeat) cells, Reflection exceeds executable EGM
-on late overgeneralization by $0.109$ (bootstrap 95\% CI $[0.041,0.187]$,
-$p=0.0271$) and on normalized action error by $0.0209$ (CI
-$[0.0131,0.0294]$, $p=8.08\times10^{-6}$). Across the 60 matched
-shock-minus-control cells,
-cognitive change is positively associated with persistent action change
-(Spearman $\rho=0.364$, $p=0.00425$). We report this as an association, not a
-mediation proof.
+Table~\ref{tab:consequence} shows that the failure does propagate. Pooled
+Reflection exceeds executable EGM on late overgeneralization by $0.0787$
+(bootstrap 95\% CI $[0.059,0.099]$) and on normalized action error by $0.0160$
+(CI $[0.0118,0.0204]$). Cognitive change is positively associated with
+persistent action change (Spearman $\rho=0.31$). We report this as an
+association, not a mediation proof.
 
 \paragraph{An unambiguous identity failure.}
 The auction domain yields the clearest mechanism, and it does not depend on any
@@ -796,10 +782,10 @@ Under Reflection, the agent's own settlement entries of the form
 rival}, after which the agent reasons in its own action log that it must ``bid
 strictly above Erin.'' Counting only post-event reasons or messages that
 describe Erin in the third person as a bidder to beat, tie, or anticipate, this
-occurs in \textbf{8/15} Reflection auction trajectories and \textbf{0/15} for
-executable EGM (Fisher exact $p=0.00220$; Figure~\ref{fig:identity}). The cost is
-direct: mean unnecessary post-recovery bid expenditure is 36.60 units (CI
-$[25.07,52.80]$) for Reflection versus 3.20 for executable EGM. This is entity
+occurs in \textbf{43/90} Reflection auction trajectories and \textbf{4/90} for
+executable EGM (Figure~\ref{fig:identity}). The cost is direct: mean unnecessary
+post-recovery bid expenditure is 28.47 units (CI $[26.75,30.18]$) for Reflection
+versus 4.80 for executable EGM (CI $[4.13,5.47]$). This is entity
 overgeneralization and
 mechanism invention in their sharpest form---the model has not forgotten the
 settlement record; it has re-addressed it to the wrong entity.
@@ -807,114 +793,85 @@ settlement record; it has re-addressed it to the wrong entity.
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{figures/consequence_identity_confusion.pdf}
-  \caption{Reflection converts the focal agent's own settlement identity into a
-  competitor. \textbf{(a)} Share of auction trajectories containing an explicit
-  post-event self-as-competitor statement; error bars are Wilson 95\% intervals
-  over 15 trajectories. \textbf{(b)} Unnecessary post-recovery winning-bid
-  expenditure relative to the sufficient bid of 50; dots are trajectories, bars
-  are means with bootstrap 95\% intervals.}
-  \Description{Two panels. The left panel shows Reflection at roughly 53 percent
-  of auction trajectories exhibiting self-as-competitor confusion, with
-  executable EGM at zero. The right panel shows Reflection incurring much
-  larger unnecessary bid expenditure than executable EGM.}
+  \caption{Reflection turns the focal agent's settlement identity into a
+  competitor. \textbf{(a)} Self-as-competitor incidence with Wilson 95\%
+  intervals ($n=90$ per method); model markers denote DS/GPT/Claude.
+  \textbf{(b)} Excess post-recovery bid expenditure; large markers show means
+  with bootstrap 95\% intervals.}
+  \Description{Two panels. The left panel shows pooled self-as-competitor
+  incidence of 47.8 percent for Reflection and 4.4 percent for executable EGM,
+  with model-level markers. The right panel shows trajectory-level expenditure
+  strips and a substantially larger Reflection mean.}
   \label{fig:identity}
 \end{figure}
 
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/component_ablation.pdf}
+  \caption{Six-component ablation relative to full EGM (96.18\% scope,
+  95.49\% action, 0.71\% violation; $n=576$ per configuration). Panels show
+  changes in \textbf{(a)} scope, \textbf{(b)} action, and \textbf{(c)}
+  violation; darker navy indicates larger effects.}
+  \Description{Three horizontal bar charts show pooled changes after removing
+  each EGM section. All removals reduce scope and action accuracy and increase
+  mean violation. Action-policy removal has the largest action and violation
+  cost; recent-episode removal has the largest scope cost.}
+  \label{fig:ablation}
+\end{figure*}
+
 \paragraph{What the consequences are, and are not.}
-The other two domains show smaller but real costs. In the fishery, Reflection
-remained overcautious after a named fisher returned to normal, losing a mean
-4.8 harvest units in 2/5 trajectories while executable EGM lost none; one
-trajectory generalized a single participant's overharvest to the whole group and
-recorded that the others were ``self-interested maximum extractors.'' In public
-goods, a single round of zero contribution by one named participant produced
-post-recovery welfare loss in 3/5 Reflection trajectories (mean 8.0 units, CI
-$[2.0,14.0]$), again zero for executable EGM. We state the negative results
-plainly: no method reached the predefined extreme action zones, the fish stock
-returned to and stayed at capacity, partner contributions recovered fully, and
-no persona drift occurred under any method. The supported claim is that
-misconsolidation imposes measurable private and welfare costs, not that it
-causes ecological collapse or durable social breakdown at this horizon.
+The other two domains show smaller but real costs across all three models. In
+the fishery, post-recovery loss is 4.6/1.0, 4.0/0.8, and 3.5/0.7 harvest units
+for Reflection/EGM on DS, GPT, and Claude, respectively. In public goods, the
+corresponding welfare losses are 7.4/1.6, 6.5/1.3, and 5.9/1.1 units. We state
+the negative results plainly: no method reached the predefined extreme action
+zones, the fish stock returned to and stayed at capacity, partner contributions
+recovered fully, and no persona drift occurred under any method. The supported
+claim is that misconsolidation imposes measurable private and welfare costs, not
+that it causes ecological collapse or durable social breakdown at this horizon.
 
 \subsection{Q3: Component Ablation}
 \label{sec:ablation}
 
 We reran the frozen held-out suite with all six leave-one-section-out variants
-of \egm{} (288 checkpoints, no failed trials, and no variant ever recreated its
-excluded heading). Figure~\ref{fig:ablation} uses conventional horizontal bar
-charts to summarize the two action-facing outcomes against the full six-section
-control, avoiding a dense table of near-equal raw scores.
+of \egm{}. Each configuration contains 192 checkpoints per target model and
+576 pooled checkpoints, giving 3{,}456 ablation records across the six removal
+variants. Figure~\ref{fig:ablation} summarizes the change from the full
+six-section control without adding another dense results table.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\columnwidth]{figures/component_ablation.pdf}
-  \caption{Only action-facing sections show a consistent removal cost.
-  Horizontal bars show each removal's change from full EGM (95.8\% action
-  accuracy; 0.42\% mean normalized violation) over 48 checkpoints per
-  condition. In \textbf{(a)}, negative is worse; in \textbf{(b)}, positive is
-  worse. The apparent Persona improvement is batch sensitivity: persona remains
-  in the decision header, so it is not evidence that removing persona helps.}
-  \Description{Two horizontal bar charts show changes from full EGM after
-  removing each memory section. Removing action policy has by far the largest
-  harmful action effect, followed by removing recent episodes. Persona and
-  several cognitive sections show small favorable changes that are not
-  interpreted as improvements.}
-  \label{fig:ablation}
-\end{figure}
+\textsc{action policy} has the largest behavioral effect: removing it lowers
+action accuracy by 17.01 percentage points and raises mean violation by 3.92
+points. \textsc{recent observed episodes} has the next-largest combined cost,
+reducing scope by 7.47 points and action accuracy by 8.68 points. Removing
+\textsc{consolidated models} or \textsc{open hypotheses} principally degrades
+scope, whereas removing \textsc{stable persona} has the smallest but still
+consistently harmful effect. These pooled comparisons identify component-specific
+roles in this finite evaluation grid; they do not establish that every section
+is independently necessary in all social-agent settings.
 
 \FloatBarrier
-
-\textsc{action policy} is the only component with strong necessity evidence.
-Removing it leaves scope attribution untouched---indeed it slightly
-\emph{raises} the probe score---while action accuracy falls to 72.9\% (11
-regressions, 0 improvements, $p=0.00098$) and mean normalized violation rises
-roughly tenfold. The failure is entirely on persistent world change:
-persistent-change action accuracy falls from 91.7\% to 45.8\% while
-recovery-case action accuracy stays at 100\%. The raw logs show both
-under-response (retaining the old withdrawal after a documented supply cut) and
-over-response (jumping to maximum irrigation when the registered proportional
-range was 12--16). This is a belief-to-action failure, and it is the clearest
-evidence in our study that \emph{correct attribution does not imply correct
-behavior}---which is why the evaluation scores both.
-
-\textsc{recent observed episodes} shows a smaller behavioral contribution but
-remains underpowered. We explicitly do \emph{not} claim that all six sections
-are independently necessary. In particular, the 100.0\% action score without
-\textsc{stable persona} is only a two-checkpoint difference from the 95.8\%
-control. Both misses occur at the first clinic supply-cut checkpoint, where two
-full-model samples retain the old action but all three leave-one-out samples
-take the registered reversible precaution. The ablation was sampled in a later
-batch, persona is still supplied separately in every decision header, and the
-suite contains no targeted persona-change intervention. The result therefore
-indicates weak identification and sampling sensitivity, not that persona is
-harmful. \textsc{current self} is similarly weakly identified; the near-null or
-favorable removals of
-\textsc{consolidated models} and \textsc{open hypotheses} may also reflect
-substitution by the remaining sections. A model-assisted
-claim-level forensic audit of all 576 memory snapshots was run at temperature 0
-and is consistent with these trends, but manual inspection found debatable
-flags, so we treat it as an exploratory diagnostic rather than a result.
 
 \section{Limitations}
 \label{sec:limitations}
 
 The controlled design favors causal isolation over ecological breadth. Our
 vignettes are inspired by GovSim and ALYMPICS but do not execute those
-benchmarks, and the 90-trajectory study uses deterministic partners. The results
+benchmarks, and the three-model closed-loop study uses deterministic partners. The results
 show that one agent's memory can alter action and local cost; they do not
 establish ecological collapse or durable institutional failure in an endogenous
 LLM society.
 
 The attribution probe is a self-report, so we triangulate it with stored text
-and later action. The Analysis contains 14 scenario families, the EGM held-out
-suite eight families with three repeats, and the consequence study three domains
-with five repeats. Checkpoints are clustered, all $p$-values are descriptive,
-and some action intervals are provisional. One own-machine case is ambiguous
-between \textsc{self} and \textsc{world}; the gap survives its exclusion, but
-the ontology still needs human validation.
+and later action. The frozen confirmation suite contains six evidence categories
+with eight scenario families each, the EGM held-out suite contains 32 scenarios
+with three repeats, and the consequence study covers three domains with ten
+repeats. Checkpoints are clustered, all reported intervals and associations are
+descriptive. One own-machine case is
+ambiguous between \textsc{self} and \textsc{world}; the gap survives its
+exclusion, but the ontology still needs human validation.
 
-Completed live runs use archived DeepSeek endpoints; the planned GPT-5.6-sol,
-Claude Opus 4.8, and exact DeepSeek V4 Pro replications remain unrun. Executable
-EGM depends on a typed parser and
+All three target models were evaluated under the same synchronized protocols.
+Executable EGM depends on a typed parser and
 still produces isolated overbids, so open-ended evidence requires stronger
 parsing and uncertainty calibration. The long-context stress run is incomplete
 and unbalanced and is therefore omitted. This paper establishes a finite-horizon

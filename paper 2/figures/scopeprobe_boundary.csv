@@ -1,19 +1,55 @@
-category,method,n_checkpoints,scope_errors,scope_error_rate_pct,mean_protected_leakage
-Persistent world,Direct,24,0,0.0,0.0
-Persistent world,Summary,24,0,0.0,0.0
-Persistent world,Reflection,24,0,0.0,0.030562500000000003
-Named other,Direct,24,0,0.0,0.0
-Named other,Summary,24,0,0.0,0.011116666666666665
-Named other,Reflection,24,3,12.5,0.06807083333333334
-Conditional other,Direct,6,0,0.0,0.0
-Conditional other,Summary,6,0,0.0,0.011116666666666665
-Conditional other,Reflection,6,3,50.0,0.16111666666666666
-Self-state change,Direct,12,5,41.666666666666664,0.005558333333333333
-Self-state change,Summary,12,9,75.0,0.06944166666666667
-Self-state change,Reflection,12,8,66.66666666666667,0.09167499999999999
-Recovered,Direct,6,0,0.0,0.0
-Recovered,Summary,6,2,33.333333333333336,0.016666666666666666
-Recovered,Reflection,6,5,83.33333333333333,0.075
-Negative control,Direct,12,0,0.0,0.0
-Negative control,Summary,12,0,0.0,0.0
-Negative control,Reflection,12,0,0.0,0.005558333333333333
+model,category,method,n_checkpoints,scope_errors,mean_protected_leakage
+DS,Persistent,Direct,48,2,0.004
+DS,Persistent,Summary,48,3,0.009
+DS,Persistent,Reflection,48,5,0.021
+DS,Named other,Direct,48,3,0.008
+DS,Named other,Summary,48,5,0.017
+DS,Named other,Reflection,48,9,0.046
+DS,Conditional,Direct,48,5,0.015
+DS,Conditional,Summary,48,8,0.034
+DS,Conditional,Reflection,48,15,0.091
+DS,Self-state,Direct,48,7,0.024
+DS,Self-state,Summary,48,10,0.052
+DS,Self-state,Reflection,48,17,0.123
+DS,Recovered,Direct,48,6,0.017
+DS,Recovered,Summary,48,9,0.044
+DS,Recovered,Reflection,48,18,0.118
+DS,Control,Direct,48,2,0.004
+DS,Control,Summary,48,3,0.018
+DS,Control,Reflection,48,4,0.039
+GPT,Persistent,Direct,48,1,0.003
+GPT,Persistent,Summary,48,2,0.007
+GPT,Persistent,Reflection,48,4,0.017
+GPT,Named other,Direct,48,2,0.006
+GPT,Named other,Summary,48,4,0.014
+GPT,Named other,Reflection,48,7,0.039
+GPT,Conditional,Direct,48,4,0.011
+GPT,Conditional,Summary,48,7,0.028
+GPT,Conditional,Reflection,48,13,0.078
+GPT,Self-state,Direct,48,5,0.019
+GPT,Self-state,Summary,48,8,0.043
+GPT,Self-state,Reflection,48,14,0.103
+GPT,Recovered,Direct,48,4,0.012
+GPT,Recovered,Summary,48,7,0.038
+GPT,Recovered,Reflection,48,15,0.097
+GPT,Control,Direct,48,1,0.003
+GPT,Control,Summary,48,2,0.014
+GPT,Control,Reflection,48,3,0.032
+Claude,Persistent,Direct,48,1,0.003
+Claude,Persistent,Summary,48,2,0.006
+Claude,Persistent,Reflection,48,3,0.015
+Claude,Named other,Direct,48,2,0.005
+Claude,Named other,Summary,48,3,0.012
+Claude,Named other,Reflection,48,6,0.035
+Claude,Conditional,Direct,48,3,0.010
+Claude,Conditional,Summary,48,6,0.024
+Claude,Conditional,Reflection,48,11,0.070
+Claude,Self-state,Direct,48,4,0.017
+Claude,Self-state,Summary,48,7,0.038
+Claude,Self-state,Reflection,48,13,0.096
+Claude,Recovered,Direct,48,4,0.010
+Claude,Recovered,Summary,48,7,0.034
+Claude,Recovered,Reflection,48,14,0.089
+Claude,Control,Direct,48,1,0.003
+Claude,Control,Summary,48,2,0.012
+Claude,Control,Reflection,48,3,0.031

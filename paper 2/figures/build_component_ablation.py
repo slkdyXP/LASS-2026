@@ -1,145 +1,121 @@
 #!/usr/bin/env python3
-"""Plot six-section leave-one-out effects from saved held-out checkpoints."""
+"""Build Figure 5 from the pooled six-component ablation result grid."""
 from __future__ import annotations
 
 import argparse
 import csv
-import json
-import re
-from collections import defaultdict
 from pathlib import Path
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.colors import to_rgb
 
 
-CONTROL = "evidence_gated_memory_only"
-VARIANTS = (
-    ("ablate_stable_persona", "Persona"),
-    ("ablate_current_self_state", "Self state"),
-    ("ablate_consolidated_models", "Models"),
-    ("ablate_open_hypotheses", "Hypotheses"),
-    ("ablate_recent_observed_episodes", "Episodes"),
-    ("ablate_action_policy", "Action policy"),
+FULL_EGM = "Full EGM"
+ORDER = (
+    "Persona",
+    "Self state",
+    "Consolidated models",
+    "Open hypotheses",
+    "Recent episodes",
+    "Action policy",
 )
+NAVY_LIGHT = "#D8E0E9"
+NAVY_DARK = "#36536F"
+EGM_TEAL = "#177E78"
 
 
-def action_range(record: dict) -> float:
-    match = re.search(
-        r"bounded \[(-?[\d.]+),\s*(-?[\d.]+)\]",
-        record["raw"]["decision_context"],
-    )
-    if not match:
-        raise ValueError(f"Missing action bounds for {record['scenario_id']}")
-    return float(match.group(2)) - float(match.group(1))
-
-
-def aggregate(path: Path) -> list[dict]:
-    grouped: dict[str, list[dict]] = defaultdict(list)
-    wanted = {CONTROL, *(name for name, _ in VARIANTS)}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if not line.strip():
-            continue
-        record = json.loads(line)
-        if record["baseline"] in wanted:
-            grouped[record["baseline"]].append(record)
-    if any(len(grouped[name]) != 48 for name in wanted):
-        raise ValueError({name: len(grouped[name]) for name in wanted})
-
-    def summarize(name: str) -> dict:
-        records = grouped[name]
-        violations = []
-        for record in records:
-            value = float(record["action"]["value"])
-            low = record["checkpoint"].get("action_min")
-            high = record["checkpoint"].get("action_max")
-            distance = max(
-                (float(low) - value) if low is not None else 0.0,
-                (value - float(high)) if high is not None else 0.0,
-                0.0,
-            )
-            violations.append(100.0 * distance / action_range(record))
-        return {
-            "scope": 100.0 * np.mean([r["scores"]["scope_correct"] for r in records]),
-            "action": 100.0 * np.mean([r["scores"]["action_correct"] for r in records]),
-            "violation": float(np.mean(violations)),
-        }
-
-    control = summarize(CONTROL)
-    rows = []
-    for name, label in VARIANTS:
-        values = summarize(name)
+def read_rows(path: Path) -> list[dict[str, float | str]]:
+    with path.open(encoding="utf-8", newline="") as stream:
+        raw = list(csv.DictReader(stream))
+    rows: list[dict[str, float | str]] = []
+    for row in raw:
         rows.append(
             {
-                "component_removed": label,
-                "n_checkpoints": 48,
-                "scope_accuracy_pct": values["scope"],
-                "action_accuracy_pct": values["action"],
-                "mean_violation_pct": values["violation"],
-                "delta_scope_pp": values["scope"] - control["scope"],
-                "delta_action_pp": values["action"] - control["action"],
-                "delta_violation_pp": values["violation"] - control["violation"],
+                "configuration": row["configuration"],
+                "n": int(row["n_checkpoints"]),
+                "scope": float(row["scope_accuracy_pct"]),
+                "action": float(row["action_accuracy_pct"]),
+                "violation": float(row["mean_violation_pct"]),
+                "delta_scope": float(row["delta_scope_pp"]),
+                "delta_action": float(row["delta_action_pp"]),
+                "delta_violation": float(row["delta_violation_pp"]),
             }
         )
+    if [str(row["configuration"]) for row in rows] != [FULL_EGM, *ORDER]:
+        raise ValueError("CSV must contain Full EGM followed by the six configured removals")
+    if any(int(row["n"]) != 576 for row in rows):
+        raise ValueError("Every pooled ablation row must contain 576 checkpoints")
+    baseline = rows[0]
+    if (baseline["scope"], baseline["action"], baseline["violation"]) != (96.18, 95.49, 0.71):
+        raise ValueError("Full-EGM baseline must agree with the held-out EGM row")
     return rows
 
 
-def write_csv(rows: list[dict], path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
+def severity_colors(values: np.ndarray) -> list[tuple[float, float, float]]:
+    low = np.array(to_rgb(NAVY_LIGHT))
+    high = np.array(to_rgb(NAVY_DARK))
+    fraction = np.abs(values) / float(np.max(np.abs(values)))
+    return [tuple(low + (0.18 + 0.82 * score) * (high - low)) for score in fraction]
 
 
-def build(rows: list[dict], output: Path) -> None:
+def build(rows: list[dict[str, float | str]], output: Path) -> None:
     mpl.rcParams.update(
         {
             "font.family": "sans-serif",
             "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
-            "font.size": 7,
-            "axes.titlesize": 7.5,
-            "xtick.labelsize": 6.2,
-            "ytick.labelsize": 6.5,
+            "font.size": 8,
+            "axes.labelsize": 8,
+            "xtick.labelsize": 7,
+            "ytick.labelsize": 7,
+            "axes.linewidth": 0.8,
             "pdf.fonttype": 42,
             "ps.fonttype": 42,
             "svg.fonttype": "none",
         }
     )
-    labels = [f"-{r['component_removed']}" for r in rows]
-    action = np.array([r["delta_action_pp"] for r in rows])
-    violation = np.array([r["delta_violation_pp"] for r in rows])
-    y = np.arange(len(labels))
-    fig, axes = plt.subplots(1, 2, figsize=(3.35, 2.40), sharey=True, layout="constrained")
-    fig.set_constrained_layout_pads(w_pad=0.03, h_pad=0.03, wspace=0.10, hspace=0.02)
-
-    configs = (
-        (axes[0], action, "$\\Delta$ action acc. (pp)", (-25.5, 6.5)),
-        (axes[1], violation, "$\\Delta$ violation (pp)", (-0.65, 4.35)),
+    removals = rows[1:]
+    labels = [f"-{row['configuration']}" for row in removals]
+    y = np.arange(len(removals))
+    panels = (
+        ("delta_scope", r"$\Delta$ scope accuracy (pp)", (-8.8, 0.7), "a", "negative"),
+        ("delta_action", r"$\Delta$ action accuracy (pp)", (-19.0, 0.9), "b", "negative"),
+        ("delta_violation", r"$\Delta$ mean violation (pp)", (-0.25, 4.55), "c", "positive"),
     )
-    for panel, (ax, values, xlabel, limits) in enumerate(configs):
-        ax.axvline(0, color="#8B8B86", lw=0.7, zorder=0)
-        harmful = values < 0 if panel == 0 else values > 0
-        colors = ["#C65D52" if is_harmful else "#A9B3BE" for is_harmful in harmful]
-        ax.barh(y, values, height=0.58, color=colors, edgecolor="white", linewidth=0.45,
-                zorder=2)
-        for yi, value, is_harmful in zip(y, values, harmful):
-            place_right = value >= 0
-            offset = 2.5 if place_right else -2.5
-            align = "left" if place_right else "right"
-            ax.annotate(f"{value:+.1f}", (value, yi), xytext=(offset, 0),
-                        textcoords="offset points", ha=align, va="center", fontsize=5.6,
-                        color="#7E332D" if is_harmful else "#4F5862")
+    fig, axes = plt.subplots(1, 3, figsize=(7.12, 2.62), sharey=True, layout="constrained")
+    fig.set_constrained_layout_pads(w_pad=0.035, h_pad=0.05, wspace=0.11, hspace=0.02)
+    for index, (key, xlabel, limits, letter, direction) in enumerate(panels):
+        ax = axes[index]
+        values = np.array([float(row[key]) for row in removals])
+        colors = severity_colors(values)
+        ax.axvline(0, color=EGM_TEAL, lw=1.0, zorder=1)
+        bars = ax.barh(y, values, height=0.60, color=colors, edgecolor="white", linewidth=0.45, zorder=3)
+        for bar, value in zip(bars, values):
+            side = 2.6 if value >= 0 else -2.6
+            alignment = "left" if value >= 0 else "right"
+            label = f"{value:+.2f}"
+            ax.annotate(
+                label,
+                (value, bar.get_y() + bar.get_height() / 2),
+                xytext=(side, 0),
+                textcoords="offset points",
+                ha=alignment,
+                va="center",
+                fontsize=6.4,
+                color="#263849",
+            )
         ax.set_xlim(*limits)
         ax.set_xlabel(xlabel)
         ax.tick_params(axis="y", length=0)
+        ax.tick_params(axis="x", length=2.5, pad=2)
+        ax.grid(axis="x", color="#E9EDF2", linewidth=0.55, zorder=0)
         ax.spines[["top", "right", "left"]].set_visible(False)
-        ax.grid(axis="x", color="#ECE9E3", lw=0.5)
-        ax.text(-0.12, 1.06, chr(ord("a") + panel), transform=ax.transAxes,
-                fontweight="bold", fontsize=8.5, va="top")
+        ax.text(-0.10, 1.04, letter, transform=ax.transAxes, fontweight="bold", fontsize=9, va="bottom")
     axes[0].set_yticks(y, labels)
     axes[0].invert_yaxis()
+    for ax in axes[1:]:
+        ax.tick_params(axis="y", labelleft=False)
 
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output.with_suffix(".pdf"), bbox_inches="tight")
@@ -150,20 +126,10 @@ def build(rows: list[dict], output: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--records",
-        type=Path,
-        default=Path("runs/ablation-combined-20260827/records.jsonl"),
-    )
-    parser.add_argument(
-        "--output",
-        type=Path,
-        default=Path("paper 2/figures/component_ablation"),
-    )
+    parser.add_argument("--input", type=Path, default=Path(__file__).with_name("component_ablation.csv"))
+    parser.add_argument("--output", type=Path, default=Path(__file__).with_name("component_ablation"))
     args = parser.parse_args()
-    rows = aggregate(args.records)
-    write_csv(rows, args.output.with_suffix(".csv"))
-    build(rows, args.output)
+    build(read_rows(args.input), args.output)
 
 
 if __name__ == "__main__":

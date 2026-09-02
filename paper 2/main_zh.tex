@@ -195,7 +195,7 @@ k\in\mathcal{C}_t\iff g_t^{\mathrm{long}}=1\ \land\ (|C_t^k|\ge2\ \lor\ d_t^k=1)
 
 \subsection{设置}
 
-所有运行使用 DeepSeek 模型族，温度为 $0.2$，采用固定随机种子，在不同记忆条件下共享 persona 与行动接口，并随机交错条件。每个提示、响应、记忆快照、探针回答、登记标签和分数均被保留。范围准确率、受保护泄漏和 margin 遵循式 \ref{eq:scope-acc-zh}--\ref{eq:margin-zh}；行动正确性采用场景登记的可接受区间。报告的 $p$ 值为精确配对 McNemar 或 Fisher 检验，并仅作\emph{描述性}解释，因为检查点聚集在少量场景族内。
+实验在 DeepSeek V4 Pro、GPT-5.6-sol 与 Claude Opus 4.8 上按同步协议运行，温度为 $0.2$，采用固定随机种子，在不同记忆条件下共享 persona 与行动接口，并随机交错条件。每个目标模型的提示、响应、记忆快照、探针回答、登记标签和分数均被保留。范围准确率、受保护泄漏和 margin 遵循式 \ref{eq:scope-acc-zh}--\ref{eq:margin-zh}；行动正确性采用场景登记的可接受区间。报告的 $p$ 值为精确配对 McNemar 或 Fisher 检验，并仅作\emph{描述性}解释，因为检查点聚集在少量场景族内。
 
 \subsection{Q1：冻结留出诊断}\label{sec:heldout-zh}
 

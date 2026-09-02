@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
-"""Build Figure 2 from the frozen ScopeProbe confirmation records.
+"""Build Figure 2 from the three-model frozen ScopeProbe result grid.
 
-The plot is intentionally descriptive. Cells aggregate registered checkpoints
-within evidence categories and do not treat checkpoints as independent samples.
-No values are simulated or imputed.
+The checked-in CSV is the plot source. Error-rate bars pool the three models
+within an evidence category (n=144); their intervals are Wilson 95% intervals.
+Leakage bars are equal-weight model means, with a thin range spanning the three
+model-level means rather than a checkpoint-level confidence interval.
 """
 from __future__ import annotations
 
 import argparse
 import csv
-import json
+import math
 from collections import defaultdict
 from pathlib import Path
 
@@ -18,176 +19,176 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-METHODS = ("full_history", "summary", "reflection")
-METHOD_LABELS = {
-    "full_history": "Direct",
-    "summary": "Summary",
-    "reflection": "Reflection",
+CATEGORIES = ("Persistent", "Named other", "Conditional", "Self-state", "Recovered", "Control")
+METHODS = ("Direct", "Summary", "Reflection")
+MODELS = ("DS", "GPT", "Claude")
+METHOD_COLORS = {
+    "Direct": "#8A97A8",
+    "Summary": "#5B87B3",
+    "Reflection": "#C65D4F",
 }
-
-CATEGORY_SCENARIOS = {
-    "Persistent\nworld": {
-        "fish_world_regime",
-        "long_history_late_world_shift",
-        "public_goods_world_multiplier",
-        "traffic_world_lane_closure",
-    },
-    "Named\nother": {
-        "epidemic_other_violation",
-        "fish_other_shift",
-        "grid_bob_overuse",
-        "public_goods_david_free_rider",
-    },
-    "Conditional\nother": {"auction_bob_conditional"},
-    "Self-state\nchange": {
-        "auction_self_need_shift",
-        "team_self_capability_drop",
-    },
-    "Recovered": {"fish_world_anomaly_recovery"},
-    "Negative\ncontrol": {
-        "entity_binding_bob_not_david",
-        "salience_other_storm_named",
-    },
-}
+SHORT_LABELS = ("Persist.", "Named", "Cond.", "Self", "Recov.", "Control")
 
 
-def read_jsonl(path: Path) -> list[dict]:
-    return [
-        json.loads(line)
-        for line in path.read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
+def read_rows(path: Path) -> list[dict[str, object]]:
+    with path.open(encoding="utf-8", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    parsed: list[dict[str, object]] = []
+    for row in rows:
+        parsed.append(
+            {
+                "model": row["model"],
+                "category": row["category"],
+                "method": row["method"],
+                "n": int(row["n_checkpoints"]),
+                "errors": int(row["scope_errors"]),
+                "leakage": float(row["mean_protected_leakage"]),
+            }
+        )
+    expected = {(model, category, method) for model in MODELS for category in CATEGORIES for method in METHODS}
+    observed = {(r["model"], r["category"], r["method"]) for r in parsed}
+    if observed != expected or len(parsed) != len(expected):
+        raise ValueError("CSV must contain exactly one row for every model/category/updater cell")
+    if any(r["n"] != 48 for r in parsed):
+        raise ValueError("Every model/category/updater cell must contain 48 checkpoints")
+    return parsed
 
 
-def category_for(scenario_id: str) -> str:
-    hits = [name for name, ids in CATEGORY_SCENARIOS.items() if scenario_id in ids]
-    if len(hits) != 1:
-        raise ValueError(f"Scenario must map to exactly one category: {scenario_id!r} -> {hits}")
-    return hits[0]
+def wilson_interval(k: int, n: int, z: float = 1.959963984540054) -> tuple[float, float]:
+    p = k / n
+    denom = 1.0 + z * z / n
+    center = (p + z * z / (2.0 * n)) / denom
+    radius = z * math.sqrt((p * (1.0 - p) + z * z / (4.0 * n)) / n) / denom
+    return center - radius, center + radius
 
 
-def aggregate(records: list[dict]) -> list[dict]:
-    grouped: dict[tuple[str, str], list[dict]] = defaultdict(list)
-    observed_scenarios: set[str] = set()
-    for record in records:
-        method = record["baseline"]
-        if method not in METHODS:
-            continue
-        scenario_id = record["scenario_id"]
-        observed_scenarios.add(scenario_id)
-        grouped[(method, category_for(scenario_id))].append(record)
+def summarize(rows: list[dict[str, object]]) -> dict[tuple[str, str], dict[str, float]]:
+    grouped: dict[tuple[str, str], list[dict[str, object]]] = defaultdict(list)
+    for row in rows:
+        grouped[(str(row["category"]), str(row["method"]))].append(row)
 
-    registered = set().union(*CATEGORY_SCENARIOS.values())
-    if observed_scenarios != registered:
-        missing = sorted(registered - observed_scenarios)
-        extra = sorted(observed_scenarios - registered)
-        raise ValueError(f"Unexpected confirmation coverage; missing={missing}, extra={extra}")
-
-    rows: list[dict] = []
-    for category in CATEGORY_SCENARIOS:
+    summary: dict[tuple[str, str], dict[str, float]] = {}
+    for category in CATEGORIES:
         for method in METHODS:
-            items = grouped[(method, category)]
-            if not items:
-                raise ValueError(f"No records for {method}/{category}")
-            errors = sum(not bool(x["scores"]["scope_correct"]) for x in items)
-            leakage = float(np.mean([x["scores"]["protected_leakage"] for x in items]))
-            rows.append(
-                {
-                    "category": category.replace("\n", " "),
-                    "method": METHOD_LABELS[method],
-                    "n_checkpoints": len(items),
-                    "scope_errors": errors,
-                    "scope_error_rate_pct": 100.0 * errors / len(items),
-                    "mean_protected_leakage": leakage,
-                }
-            )
-    return rows
+            items = grouped[(category, method)]
+            if {item["model"] for item in items} != set(MODELS):
+                raise ValueError(f"Incomplete model coverage for {category}/{method}")
+            errors = sum(int(item["errors"]) for item in items)
+            n = sum(int(item["n"]) for item in items)
+            low, high = wilson_interval(errors, n)
+            leakage_values = [float(item["leakage"]) for item in items]
+            summary[(category, method)] = {
+                "errors": errors,
+                "n": n,
+                "rate": 100.0 * errors / n,
+                "ci_low": 100.0 * low,
+                "ci_high": 100.0 * high,
+                "leakage": float(np.mean(leakage_values)),
+                "leakage_low": min(leakage_values),
+                "leakage_high": max(leakage_values),
+            }
+
+    expected_errors = {"Direct": 57, "Summary": 95, "Reflection": 174}
+    actual_errors = {method: sum(int(summary[(category, method)]["errors"]) for category in CATEGORIES) for method in METHODS}
+    if actual_errors != expected_errors:
+        raise ValueError(f"Pooled error totals disagree with Table 2: {actual_errors}")
+    return summary
 
 
-def write_csv(rows: list[dict], path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
-
-
-def build_figure(rows: list[dict], output_stem: Path) -> None:
+def build_figure(summary: dict[tuple[str, str], dict[str, float]], output_stem: Path) -> None:
     mpl.rcParams.update(
         {
             "font.family": "sans-serif",
             "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
-            "font.size": 7,
-            "axes.titlesize": 8.2,
-            "xtick.labelsize": 6.2,
-            "ytick.labelsize": 6.8,
-            "axes.linewidth": 0.7,
+            "font.size": 8,
+            "axes.labelsize": 8,
+            "xtick.labelsize": 7,
+            "ytick.labelsize": 7,
+            "axes.linewidth": 0.8,
+            "legend.frameon": False,
             "pdf.fonttype": 42,
             "ps.fonttype": 42,
             "svg.fonttype": "none",
         }
     )
 
-    categories = list(CATEGORY_SCENARIOS)
-    method_labels = [METHOD_LABELS[m] for m in METHODS]
-    lookup = {(r["method"], r["category"]): r for r in rows}
-    plain_categories = [c.replace("\n", " ") for c in categories]
+    x = np.arange(len(CATEGORIES))
+    width = 0.22
+    fig, axes = plt.subplots(1, 2, figsize=(7.12, 2.62), layout="constrained")
+    fig.set_constrained_layout_pads(w_pad=0.035, h_pad=0.06, wspace=0.12, hspace=0.02)
 
-    errors = np.array(
-        [[lookup[(method, category)]["scope_error_rate_pct"] for category in plain_categories]
-         for method in method_labels]
-    )
-    leakage = np.array(
-        [[lookup[(method, category)]["mean_protected_leakage"] for category in plain_categories]
-         for method in method_labels]
-    )
-    counts = [lookup[(method_labels[0], category)]["n_checkpoints"] for category in plain_categories]
-    error_counts = np.array(
-        [[lookup[(method, category)]["scope_errors"] for category in plain_categories]
-         for method in method_labels]
-    )
-
-    short_labels = ("Persist.", "Named", "Cond.", "Self", "Recov.", "Control")
-    method_colors = ("#8492A6", "#5F8FB8", "#C65D52")
-    bar_width = 0.23
-    x = np.arange(len(categories))
-    fig, axes = plt.subplots(1, 2, figsize=(7.12, 2.38), layout="constrained")
-    fig.set_constrained_layout_pads(w_pad=0.03, h_pad=0.06, wspace=0.10, hspace=0.02)
-    panels = (
-        (axes[0], errors, "Scope error rate (%)", (0.0, 100.0), np.arange(0, 101, 25), "a"),
-        (axes[1], leakage, "Protected-scope leakage", (0.0, 0.18), np.arange(0.0, 0.181, 0.05), "b"),
-    )
     handles = []
-    for ax, matrix, ylabel, limits, ticks, panel_label in panels:
-        for index, (method, color) in enumerate(zip(method_labels, method_colors)):
-            bars = ax.bar(
-                x + (index - 1) * bar_width,
-                matrix[index],
-                width=bar_width,
-                color=color,
-                edgecolor="white",
-                linewidth=0.35,
-                label=method,
-                zorder=3,
-            )
-            if ax is axes[0]:
-                handles.append(bars[0])
-        ax.set_xlim(-0.55, len(categories) - 0.45)
-        ax.set_ylim(*limits)
+    for method_index, method in enumerate(METHODS):
+        positions = x + (method_index - 1) * width
+        values = np.array([summary[(category, method)]["rate"] for category in CATEGORIES])
+        lower = np.array([summary[(category, method)]["ci_low"] for category in CATEGORIES])
+        upper = np.array([summary[(category, method)]["ci_high"] for category in CATEGORIES])
+        bars = axes[0].bar(
+            positions,
+            values,
+            width=width,
+            color=METHOD_COLORS[method],
+            edgecolor="white",
+            linewidth=0.45,
+            zorder=3,
+            label=method,
+        )
+        axes[0].errorbar(
+            positions,
+            values,
+            yerr=np.vstack((values - lower, upper - values)),
+            fmt="none",
+            ecolor="#374151",
+            elinewidth=0.65,
+            capsize=1.8,
+            capthick=0.65,
+            zorder=4,
+        )
+        handles.append(bars[0])
+
+        leakage = np.array([summary[(category, method)]["leakage"] for category in CATEGORIES])
+        leakage_low = np.array([summary[(category, method)]["leakage_low"] for category in CATEGORIES])
+        leakage_high = np.array([summary[(category, method)]["leakage_high"] for category in CATEGORIES])
+        axes[1].bar(
+            positions,
+            leakage,
+            width=width,
+            color=METHOD_COLORS[method],
+            edgecolor="white",
+            linewidth=0.45,
+            zorder=3,
+        )
+        axes[1].vlines(positions, leakage_low, leakage_high, color="#374151", linewidth=0.65, zorder=4)
+        axes[1].hlines(leakage_low, positions - 0.025, positions + 0.025, color="#374151", linewidth=0.65, zorder=4)
+        axes[1].hlines(leakage_high, positions - 0.025, positions + 0.025, color="#374151", linewidth=0.65, zorder=4)
+
+    common_labels = [f"{label}\n$n$=144" for label in SHORT_LABELS]
+    panels = (
+        (axes[0], "Scope error rate (%)", (0.0, 43.0), np.arange(0, 41, 10), "a"),
+        (axes[1], "Protected-scope leakage", (0.0, 0.135), (0.00, 0.05, 0.10), "b"),
+    )
+    for ax, ylabel, ylim, ticks, panel_label in panels:
+        ax.set_xlim(-0.55, len(CATEGORIES) - 0.45)
+        ax.set_ylim(*ylim)
         ax.set_yticks(ticks)
-        ax.set_xticks(x, [f"{name}\n$n$={n}" for name, n in zip(short_labels, counts)])
+        ax.set_xticks(x, common_labels)
         ax.set_ylabel(ylabel)
         ax.tick_params(axis="x", length=0, pad=3)
         ax.tick_params(axis="y", length=2.5, pad=2)
-        ax.grid(axis="y", color="#E7E4DE", linewidth=0.55, zorder=0)
+        ax.grid(axis="y", color="#E9EDF2", linewidth=0.55, zorder=0)
         ax.spines[["top", "right"]].set_visible(False)
-        ax.text(-0.10, 1.06, panel_label, transform=ax.transAxes, fontweight="bold",
-                fontsize=8.8, va="bottom")
+        ax.text(-0.10, 1.04, panel_label, transform=ax.transAxes, fontweight="bold", fontsize=9, va="bottom")
 
-    fig.legend(handles, method_labels, loc="upper center", ncol=3,
-               bbox_to_anchor=(0.5, 1.10), columnspacing=1.4, handlelength=1.2,
-               handletextpad=0.45, frameon=False)
-
+    fig.legend(
+        handles,
+        METHODS,
+        loc="upper center",
+        ncol=3,
+        bbox_to_anchor=(0.5, 1.08),
+        columnspacing=1.6,
+        handlelength=1.3,
+        handletextpad=0.45,
+    )
     output_stem.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_stem.with_suffix(".pdf"), bbox_inches="tight")
     fig.savefig(output_stem.with_suffix(".svg"), bbox_inches="tight")
@@ -197,20 +198,10 @@ def build_figure(rows: list[dict], output_stem: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--records",
-        type=Path,
-        default=Path("runs/combined-20260826-101634-645291/records.jsonl"),
-    )
-    parser.add_argument(
-        "--output",
-        type=Path,
-        default=Path("paper 2/figures/scopeprobe_boundary"),
-    )
+    parser.add_argument("--input", type=Path, default=Path(__file__).with_name("scopeprobe_boundary.csv"))
+    parser.add_argument("--output", type=Path, default=Path(__file__).with_name("scopeprobe_boundary"))
     args = parser.parse_args()
-    rows = aggregate(read_jsonl(args.records))
-    write_csv(rows, args.output.with_suffix(".csv"))
-    build_figure(rows, args.output)
+    build_figure(summarize(read_rows(args.input)), args.output)
 
 
 if __name__ == "__main__":
